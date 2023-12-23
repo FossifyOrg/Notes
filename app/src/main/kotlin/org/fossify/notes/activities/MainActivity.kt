@@ -121,11 +121,6 @@ class MainActivity : SimpleActivity() {
 
         checkAppOnSDCard()
         setupSearchButtons()
-
-        if (isPackageInstalled("com.org.fossify.notes")) {
-            val dialogText = getString(org.fossify.commons.R.string.upgraded_from_free_notes)
-            ConfirmationDialog(this, dialogText, 0, org.fossify.commons.R.string.ok, 0, false) {}
-        }
     }
 
     override fun onResume() {
