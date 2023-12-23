@@ -82,6 +82,6 @@
     <string name="faq_1_text">În cazul în care aveți doar un singur widget activ, îl puteți fie recrea, fie puteți utiliza butonul din setările aplicației pentru a-l personaliza. În cazul în care aveți mai multe widgeturi active, butonul din setările aplicației nu va fi disponibil. Deoarece aplicația acceptă personalizarea culorilor pentru fiecare widget în parte, va trebui să recreați widgetul pe care doriți să îl personalizați.</string>
     <!--
         Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
     -->
 </resources>

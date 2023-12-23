@@ -84,6 +84,6 @@
     <string name="faq_1_text">သင့်မှာ ဝစ်ဂျစ်တ်တစ်ခုတည်းသာ ဖန်တီးထားလျှင် အသစ်ပြန်ဖန်တီးတာဖြစ်​စေ အက်ပ်ဆက်တင်ထဲက​နေဖြစ်​စေ ပြောင်းလဲနိုင်ပါတယ်။သင်မှာဝစ်ဂျစ်တ် အများအပြားရှိရင်​တော့ အက်ပ်ဆက်တင်ထဲ က​နေ​​ပြောင်းလဲလို့မရနိုင်ပါ။သင်​ပြောင်းလဲလိုတဲ့ ဝစ်ဂျစ်တ်တစ်ခုချင်းစီကို ပြန်ဖန်တီးဖို့လိုပါတယ်။</string>
     <!--
         Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
     -->
 </resources>

@@ -82,6 +82,6 @@
     <string name="faq_1_text">في حال كان لديك عنصر واجهة مستخدم نشط واحد فقط، يمكنك إما إعادة إنشائه، أو استخدام الزر في إعدادات التطبيق لتخصيصه. إذا كان لديك العديد من الحاجيات النشطة، لن يكون الزر الموجود في إعدادات التطبيق متاحا. بما أن التطبيق يدعم تخصيص الألوان لكل عنصر واجهة مستخدم ، سيكون عليك إعادة إنشاء القطعة التي تريد تخصيصها.</string>
     <!--
         Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
     -->
 </resources>
