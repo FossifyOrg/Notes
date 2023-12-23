@@ -1,2 +1,0 @@
- * Show smaller preview of notes at Open Note dialog
- * Added some stability translation improvements

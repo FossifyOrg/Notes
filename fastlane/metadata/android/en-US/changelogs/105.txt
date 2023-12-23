@@ -1,2 +1,0 @@
- * Improved the UX at importing files
- * Added some stability and translation improvements
