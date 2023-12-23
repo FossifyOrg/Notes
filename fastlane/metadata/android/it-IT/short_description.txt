@@ -1,1 +1,0 @@
-Widget per la lista delle cose da fare con appunti, checklist, lista della spesa

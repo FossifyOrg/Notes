@@ -1,1 +1,0 @@
-Widget pro seznam úkolů s organizérem poznámek, kontrolní seznam, nákupní seznam

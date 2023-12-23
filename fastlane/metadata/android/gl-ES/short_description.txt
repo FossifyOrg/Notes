@@ -1,1 +1,0 @@
-Widget de lista de tarefas un organizador de cuadernos, lista de verificación
