@@ -1270,19 +1270,6 @@ class MainActivity : SimpleActivity() {
 
     private fun checkWhatsNewDialog() {
         arrayListOf<Release>().apply {
-            add(Release(25, R.string.release_25))
-            add(Release(28, R.string.release_28))
-            add(Release(29, R.string.release_29))
-            add(Release(39, R.string.release_39))
-            add(Release(45, R.string.release_45))
-            add(Release(49, R.string.release_49))
-            add(Release(51, R.string.release_51))
-            add(Release(57, R.string.release_57))
-            add(Release(62, R.string.release_62))
-            add(Release(64, R.string.release_64))
-            add(Release(67, R.string.release_67))
-            add(Release(81, R.string.release_81))
-            add(Release(86, R.string.release_86))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }

@@ -1,33 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="package_name">org.fossify.notes</string>
-
-    <!-- Release notes -->
-    <string name="release_86">Allow changing checklist item sorting</string>
-    <string name="release_81">Notes linked to files have been reset, please set them up again</string>
-    <string name="release_67">
-        Allow reordering checklist items by dragging, once selection mode by long pressing is activated\n
-        Added a new settings item for moving undone checklist items at the top automatically
-    </string>
-    <string name="release_64">Allow setting different text and background color per widget</string>
-    <string name="release_62">Allow customizing the bottom navigation bar color</string>
-    <string name="release_57">Added a Checklist type of note</string>
-    <string name="release_51">Allow creating separate widgets per notes</string>
-    <string name="release_49">Added undo/redo</string>
-    <string name="release_45">Allow exporting all notes at once, toggling line wrap and autosave</string>
-    <string name="release_39">
-        Added a new option to use english language on non-english devices\n
-        Allow scrolling widgets vertically
-    </string>
-    <string name="release_29">
-        Added an option to make emails and links clickable\n
-        Allow importing text from files\n
-        Allow saving notes to files
-    </string>
-    <string name="release_28">Allow picking colors by hex codes</string>
-    <string name="release_25">
-        Added more color customization options\n
-        Your settings have been cleared, please reset them
-    </string>
-
 </resources>
