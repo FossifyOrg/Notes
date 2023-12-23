@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.simplemobiletools.notes.pro.views.MyHorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<org.fossify.notes.views.MyHorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/notes_horizontal_scrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbarSize="5dp"
     android:scrollbars="horizontal">
 
-    <com.simplemobiletools.commons.views.MyEditText
+    <org.fossify.commons.views.MyEditText
         android:id="@+id/text_note_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,4 +19,4 @@
         android:scrollbars="vertical"
         android:textCursorDrawable="@null" />
 
-</com.simplemobiletools.notes.pro.views.MyHorizontalScrollView>
+</org.fossify.notes.views.MyHorizontalScrollView>

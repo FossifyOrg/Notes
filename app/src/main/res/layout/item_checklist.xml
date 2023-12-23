@@ -11,7 +11,7 @@
     android:foreground="@drawable/selector"
     android:paddingEnd="@dimen/normal_margin">
 
-    <com.simplemobiletools.commons.views.MyTextView
+    <org.fossify.commons.views.MyTextView
         android:id="@+id/checklist_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

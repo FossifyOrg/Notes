@@ -24,7 +24,7 @@
             android:id="@+id/search_wrapper"
             layout="@layout/search_bar" />
 
-        <com.simplemobiletools.commons.views.MyViewPager
+        <org.fossify.commons.views.MyViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -36,6 +36,6 @@
                 android:layout_gravity="top"
                 android:background="@null" />
 
-        </com.simplemobiletools.commons.views.MyViewPager>
+        </org.fossify.commons.views.MyViewPager>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

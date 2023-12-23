@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_margin"
     android:paddingEnd="@dimen/activity_margin">
 
-    <com.simplemobiletools.commons.views.MyTextInputLayout
+    <org.fossify.commons.views.MyTextInputLayout
         android:id="@+id/open_file_filename_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,14 +21,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-    </com.simplemobiletools.commons.views.MyTextInputLayout>
+    </org.fossify.commons.views.MyTextInputLayout>
 
     <RadioGroup
         android:id="@+id/open_file_type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
+        <org.fossify.commons.views.MyCompatRadioButton
             android:id="@+id/open_file_update_file"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             android:paddingBottom="@dimen/normal_margin"
             android:text="@string/update_file_at_note" />
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
+        <org.fossify.commons.views.MyCompatRadioButton
             android:id="@+id/open_file_content_only"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

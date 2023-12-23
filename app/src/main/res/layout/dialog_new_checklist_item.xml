@@ -32,7 +32,7 @@
             android:paddingBottom="@dimen/medium_margin"
             android:src="@drawable/ic_plus_vector" />
 
-        <com.simplemobiletools.commons.views.MyAppCompatCheckbox
+        <org.fossify.commons.views.MyAppCompatCheckbox
             android:id="@+id/settings_add_checklist_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

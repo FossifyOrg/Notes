@@ -1,4 +1,4 @@
--keep class com.simplemobiletools.notes.pro.models.* {
+-keep class org.fossify.notes.models.* {
     <fields>;
 }
 

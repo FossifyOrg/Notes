@@ -15,17 +15,17 @@
         android:minHeight="@dimen/min_open_note_popup_height"
         app:layout_constraintHeight_max="@dimen/max_open_note_popup_height">
 
-        <com.simplemobiletools.commons.views.MyRecyclerView
+        <org.fossify.commons.views.MyRecyclerView
             android:id="@+id/dialog_open_note_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:itemCount="10"
             android:paddingBottom="@dimen/open_note_popup_bottom_extra_padding"
+            tools:itemCount="10"
             tools:listitem="@layout/open_note_item" />
 
     </androidx.core.widget.NestedScrollView>
 
-    <com.simplemobiletools.commons.views.MyFloatingActionButton
+    <org.fossify.commons.views.MyFloatingActionButton
         android:id="@+id/new_note_fab"
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"

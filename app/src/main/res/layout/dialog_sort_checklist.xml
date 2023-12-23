@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/medium_margin">
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
+        <org.fossify.commons.views.MyCompatRadioButton
             android:id="@+id/sorting_dialog_radio_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             android:paddingBottom="@dimen/normal_margin"
             android:text="@string/title" />
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
+        <org.fossify.commons.views.MyCompatRadioButton
             android:id="@+id/sorting_dialog_radio_date_created"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:paddingBottom="@dimen/normal_margin"
             android:text="@string/date_created" />
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
+        <org.fossify.commons.views.MyCompatRadioButton
             android:id="@+id/sorting_dialog_radio_custom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
         android:layout_marginTop="@dimen/medium_margin"
         android:layout_marginBottom="@dimen/medium_margin">
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
+        <org.fossify.commons.views.MyCompatRadioButton
             android:id="@+id/sorting_dialog_radio_ascending"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             android:paddingBottom="@dimen/normal_margin"
             android:text="@string/ascending" />
 
-        <com.simplemobiletools.commons.views.MyCompatRadioButton
+        <org.fossify.commons.views.MyCompatRadioButton
             android:id="@+id/sorting_dialog_radio_descending"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
         android:paddingTop="@dimen/medium_margin"
         android:paddingBottom="@dimen/medium_margin">
 
-        <com.simplemobiletools.commons.views.MyAppCompatCheckbox
+        <org.fossify.commons.views.MyAppCompatCheckbox
             android:id="@+id/settings_move_undone_checklist_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
