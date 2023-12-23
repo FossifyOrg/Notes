@@ -82,6 +82,6 @@
     <string name="faq_1_text">Kui sa kasutad vaid üht vidinat, siis kas saad ta uuesti luua või kasutada rakenduse seadistusi värvide kohandamiseks. Kui sul on pidevas kasutuses mitu vidinat, siis rakenduste seadistuste nupp ei toimi. Kuna rakendus võimaldab eri vidinatele määrata erinevaid värve, siis sa pead muudetava vidina uuesti looma.</string>
     <!--
         Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
     -->
 </resources>

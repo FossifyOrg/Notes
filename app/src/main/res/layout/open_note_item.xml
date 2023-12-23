@@ -19,7 +19,7 @@
         android:src="@drawable/ic_lock_vector"
         android:visibility="gone" />
 
-    <com.simplemobiletools.commons.views.MyTextView
+    <org.fossify.commons.views.MyTextView
         android:id="@+id/open_note_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         android:textStyle="bold"
         tools:text="Title" />
 
-    <com.simplemobiletools.commons.views.MyTextView
+    <org.fossify.commons.views.MyTextView
         android:id="@+id/open_note_item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

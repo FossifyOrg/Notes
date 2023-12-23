@@ -82,6 +82,6 @@
     <string name="faq_1_text">Om du bara har 1 aktiv widget kan du antingen återskapa den eller använda knappen i appinställningarna för att anpassa den. Om du har flera aktiva widgetar är knappen i appinställningarna inte tillgänglig. Eftersom appen stöder färganpassning per widget måste du återskapa den widget som du vill anpassa.</string>
     <!--
         Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
     -->
 </resources>

@@ -82,6 +82,6 @@
     <string name="faq_1_text">Σε περίπτωση που έχετε μόνο 1 ενεργό Γραφικό στοιχείο, μπορείτε να το δημιουργήσετε εκ νέου ή να χρησιμοποιήσετε το κουμπί στις ρυθμίσεις της εφαρμογής για να το προσαρμόσετε. Αν έχετε πολλά ενεργά , το κουμπί στις ρυθμίσεις της εφαρμογής δεν θα είναι διαθέσιμο. Καθώς η εφαρμογή υποστηρίζει προσαρμογή χρώματος ανά Γραφικό στοιχείο, θα πρέπει να το δημιουργήσετε ξανά αυτό που θέλετε να προσαρμόσετε.</string>
     <!--
         Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
     -->
 </resources>

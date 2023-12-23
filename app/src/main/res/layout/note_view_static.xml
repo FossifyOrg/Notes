@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.simplemobiletools.commons.views.MyEditText xmlns:android="http://schemas.android.com/apk/res/android"
+<org.fossify.commons.views.MyEditText xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/text_note_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"

@@ -82,6 +82,6 @@
     <string name="faq_1_text">В случай че имате само 1 активна джаджа, можете да я създадете отново или да използвате бутона в настройките на приложението за персонализирането ѝ. Ако имате няколко активни уиджета, бутонът в настройките на приложението няма да бъде достъпен. Тъй като приложението поддържа персонализиране на цвета за всяка джаджа, ще трябва да пресъздадете джаджата, която искате да персонализирате.</string>
     <!--
         Haven't found some strings? There's more at
-        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
     -->
 </resources>

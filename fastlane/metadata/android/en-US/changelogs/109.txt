@@ -1,1 +1,0 @@
- * Avoid showing locked note contents at the Open Note dialog

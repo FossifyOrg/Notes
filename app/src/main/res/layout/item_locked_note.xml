@@ -10,7 +10,7 @@
     android:focusable="true"
     android:paddingHorizontal="@dimen/normal_margin">
 
-    <com.simplemobiletools.commons.views.MyTextView
+    <org.fossify.commons.views.MyTextView
         android:id="@+id/locked_note_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
