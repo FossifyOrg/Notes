@@ -15,6 +15,8 @@ import org.fossify.commons.extensions.beGoneIf
 import org.fossify.commons.extensions.beVisibleIf
 import org.fossify.commons.extensions.getColoredDrawableWithColor
 import org.fossify.commons.extensions.isBlackAndWhiteTheme
+import org.fossify.commons.extensions.applyColorFilter
+import org.fossify.commons.extensions.toast
 import org.fossify.commons.helpers.LOWER_ALPHA_INT
 import org.fossify.commons.helpers.SORT_BY_CUSTOM
 import org.fossify.commons.views.MyRecyclerView
@@ -74,6 +76,13 @@ class OpenNoteAdapter(
             openNoteItemText.apply {
                 text = formattedText
                 setTextColor(textColor)
+            }
+            openNoteItemIcon.apply {
+                beVisibleIf(note.path.isNotEmpty())
+                applyColorFilter(textColor)
+                setOnClickListener {
+                    activity.toast(note.path)
+                }
             }
         }
     }
