@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sadə Qeydlər</string>
     <string name="app_launcher_name">Qeydlər</string>
-    <string name="widget_config">Sadə Qeydləri istifadə etdiyiniz üçün təşəkkürlər.
-\nDaha çox sadə tətbiq üçün SimpleMobileTools.com saytını ziyarət edin.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Boş mətni paylaşmaq olmur</string>
-    <string name="simple_note">Sadə Qeyd</string>
     <string name="new_note">Yeni qeyd əlavə et</string>
     <string name="no_title">Qeydi adlandırın</string>
     <string name="title_taken">Bu başlıqda qeyd artıq mövcuddur</string>

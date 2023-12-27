@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Απλή Σημείωση</string>
     <string name="app_launcher_name">Σημείωση</string>
-    <string name="widget_config">Σας ευχαριστούμε που χρησιμοποιείτε τις Απλές σημειώσεις.
-\nΓια άλλες Απλές εφαρμογές, επισκεφθείτε το SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Αδύνατη η κοινή χρήση κενού κειμένου</string>
-    <string name="simple_note">Απλή Σημείωση</string>
     <string name="new_note">Προσθήκη νέας σημείωσης</string>
     <string name="no_title">Δώστε όνομα στη σημείωσή σας</string>
     <string name="title_taken">Υπάρχει ήδη μια σημείωση με αυτόν τον τίτλο</string>

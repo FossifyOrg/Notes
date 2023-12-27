@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Schlichte Notizen</string>
     <string name="app_launcher_name">Notizen</string>
-    <string name="widget_config">Vielen Dank, dass du Simple Notes benutzt.
-\nWeitere einfache Apps findest du auf SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Eine leere Notiz kann nicht geteilt werden</string>
-    <string name="simple_note">Einfache Notiz</string>
     <string name="new_note">Neue Notiz hinzufügen</string>
     <string name="no_title">Bitte benenne deine Notiz</string>
     <string name="title_taken">Es existiert bereits eine Notiz mit diesem Namen</string>

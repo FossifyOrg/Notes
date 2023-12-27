@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ရိုးရှင်း မှတ်စု</string>
     <string name="app_launcher_name">မှတ်စုများ</string>
-    <string name="widget_config">ရိုးရှင်း မှတ်စုများကိုအသုံးပြုတဲ့အတွက်​ကျေးဇူးတင်ပါတယ်။\nအခြား​သော ရိုးရှင်း အက်ပ်များအတွက် SimpleMobileTools.com</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">မှတ်စုအလွတ်ကို မမျှ​ဝေနိုင်ပါ</string>
-    <string name="simple_note">ရိုးရှင်း မှတ်စု</string>
     <string name="new_note">မှတ်စုအသစ်</string>
     <string name="no_title">ကျေးဇူးပြု၍မှတ်စုအသစ်​ခေါင်းစဥ် ပေးပါ</string>
     <string name="title_taken">ပေးထား​​သော​ခေါင်းစဥ်ဖြင့် မှတ်စုတစ်ခုရှိပြီးသား</string>

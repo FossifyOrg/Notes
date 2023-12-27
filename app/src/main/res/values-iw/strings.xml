@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">הערות פשוטות</string>
     <string name="app_launcher_name">הערות</string>
-    <string name="widget_config">תודה על השימוש ב-Simple Notes.
-\n לאפליקציות פשוטות נוספות, בקר ב- SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">לא ניתן לשתף טקסט ריק</string>
-    <string name="simple_note">הערה פשוטה</string>
     <string name="new_note">הוסף הערה חדשה</string>
     <string name="no_title">נא לתת שם להערה שלך</string>
     <string name="title_taken">הערה עם הכותרת הזו כבר קיימת</string>

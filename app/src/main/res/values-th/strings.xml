@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">โน็ตแบบเรียบง่าย</string>
     <string name="app_launcher_name">โน้ต</string>
-    <string name="widget_config">ขอบคุณที่ใช้โน็ตแบบเรียบง่าย
-\nสำหรับแอปแบบเรียบง่ายอื่นๆโปรดไปที่ SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">ไม่สามารถแชร์ข้อความที่ว่างเปล่าได้</string>
-    <string name="simple_note">โน็ตแบบเรียบง่าย</string>
     <string name="new_note">เพิ่มโน็ตใหม่</string>
     <string name="no_title">โปรดตั้งชื่อโน็ตของคุณ</string>
     <string name="title_taken">โน็ตในชื่อนั้นมีอยู่แล้ว</string>

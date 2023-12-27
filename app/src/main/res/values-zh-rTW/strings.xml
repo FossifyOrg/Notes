@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">簡易筆記</string>
     <string name="app_launcher_name">簡易筆記</string>
-    <string name="widget_config">感謝您使用簡易筆記。
-\n歡迎造訪 SimpleMobileTools.com 了解更多簡易 app。</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">無法分享空白內容</string>
-    <string name="simple_note">簡易筆記</string>
     <string name="new_note">新增筆記</string>
     <string name="no_title">請為你的筆記命名</string>
     <string name="title_taken">已經存在這標題的筆記</string>

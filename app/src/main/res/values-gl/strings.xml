@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes: Notas</string>
     <string name="app_launcher_name">Notas</string>
-    <string name="widget_config">Grazas por utilizar Simple Notes.
-\nPara máis aplicacións simples visite SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Non pode compartir un texto baleiro</string>
-    <string name="simple_note">Simple Note</string>
     <string name="new_note">Engadir unha nova nota</string>
     <string name="no_title">Déalle nome á nota</string>
     <string name="title_taken">Xa existe unha nota con ese nome</string>

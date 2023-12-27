@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Нататкі</string>
-    <string name="widget_config">Дзякуй за выкарыстанне Simple Notes. 
-\nДля атрымання больш простых праграм наведайце SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Немагчыма абагуліць пусты тэкст</string>
-    <string name="simple_note">Простая нататка</string>
     <string name="new_note">Дадаць новую нататку</string>
     <string name="no_title">Назавіце нататку</string>
     <string name="title_taken">Нататка з такой назвай ужо існуе</string>

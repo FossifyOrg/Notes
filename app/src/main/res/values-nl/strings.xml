@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Eenvoudige Notities</string>
     <string name="app_launcher_name">Notities</string>
-    <string name="widget_config">Kijk op SimpleMobileTools.com voor meer eenvoudig te gebruiken apps.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Kan geen lege notitie delen</string>
-    <string name="simple_note">Eenvoudige Notitie</string>
     <string name="new_note">Nieuwe notitie</string>
     <string name="no_title">Geef de notitie een naam</string>
     <string name="title_taken">Notitie met deze naam bestaat reeds</string>

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lihtne märkmik</string>
     <string name="app_launcher_name">Märkmik</string>
-    <string name="widget_config">Täname et kasutad Lihtsat märkmikku.
-\nTeisi rakendusi meie Lihtsate tarvikute seeriast leiad SimpleMobileTools.com saidist.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Tühja sisu ei saa jagada</string>
-    <string name="simple_note">Lihtne märge</string>
     <string name="new_note">Lisa uus märge</string>
     <string name="no_title">Palun pane oma märkele nimi</string>
     <string name="title_taken">Sellise nimega märge on juba olemas</string>

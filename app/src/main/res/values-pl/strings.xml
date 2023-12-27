@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Proste notatki</string>
     <string name="app_launcher_name">Notatki</string>
-    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Proste notatki.
-\nWięcej prostych aplikacji można znaleźć na SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Nie można udostępnić pustego tekstu</string>
-    <string name="simple_note">Prosta notatka</string>
     <string name="new_note">Dodaj nową notatkę</string>
     <string name="no_title">Nazwij swoją notatkę</string>
     <string name="title_taken">Notatka o tym tytule już istnieje</string>

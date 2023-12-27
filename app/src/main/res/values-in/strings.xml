@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Catatan</string>
-    <string name="widget_config">Terima kasih sudah menggunakan Simple Notes.
-\nUntuk aplikasi lainnya silakan kunjungi SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Tidak bisa membagikan teks kosong</string>
-    <string name="simple_note">Catatan</string>
     <string name="new_note">Tambah catatan baru</string>
     <string name="no_title">Beri nama catatan anda</string>
     <string name="title_taken">Catatan dengan nama sama sudah ada</string>

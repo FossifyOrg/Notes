@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ghi Chú Nhanh</string>
     <string name="app_launcher_name">Ghi Chú</string>
-    <string name="widget_config">Cảm ơn bạn đã sử dụng Simple Notes. \nĐể có các ứng dụng đơn giản hơn, vui lòng truy cập SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Không thể chia sẻ văn bản trống</string>
-    <string name="simple_note">Ghi chú Đơn giản</string>
     <string name="new_note">Thêm ghi chú mới</string>
     <string name="no_title">Vui lòng đặt tên cho ghi chú của bạn</string>
     <string name="title_taken">Một ghi chú với tiêu đề đó đã tồn tại</string>

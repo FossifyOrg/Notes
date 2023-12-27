@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jednoduché poznámky</string>
     <string name="app_launcher_name">Poznámky</string>
-    <string name="widget_config">Děkujeme za používání Jednoduchých poznámek.
-\nPro více jednoduchých aplikací, prosím, navštivte SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Nelze sdílet prázdný text</string>
-    <string name="simple_note">Jednoduchá poznámka</string>
     <string name="new_note">Přidat novou poznámku</string>
     <string name="no_title">Prosím, pojmenujte poznámku</string>
     <string name="title_taken">Poznámka s tímto názvem již existuje</string>

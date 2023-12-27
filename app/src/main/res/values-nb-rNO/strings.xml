@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Enkle notater</string>
     <string name="app_launcher_name">Notater</string>
-    <string name="widget_config">Takk for at du bruker Enkle notater
-\nFlere enkle programmer er å finne på SimpleMobileTools.com</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Kan ikke dele tom tekst</string>
-    <string name="simple_note">Enkelt notat</string>
     <string name="new_note">Legg til nytt notat</string>
     <string name="no_title">Gi ditt notat et navn</string>
     <string name="title_taken">Et notat med det navnet finnes allerede</string>

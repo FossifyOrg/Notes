@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simpleメモ</string>
     <string name="app_launcher_name">メモ</string>
-    <string name="widget_config">シンプルメモのご利用ありがとうございます。
-\n他のシンプルアプリは SimpleMobileTools.com をご覧ください。</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">空のテキストは共有できません</string>
-    <string name="simple_note">シンプル メモ</string>
     <string name="new_note">新しいメモを追加</string>
     <string name="no_title">メモに名前をつけてください</string>
     <string name="title_taken">そのタイトルのメモはすでに存在します</string>

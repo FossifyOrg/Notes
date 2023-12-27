@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Enostavne opombe</string>
     <string name="app_launcher_name">Opombe</string>
-    <string name="widget_config">Hvala za uporabo Enostavnih opomb.\nVeč enostavnih aplikacij najdete SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Prazno besedilo ni deljivo</string>
-    <string name="simple_note">Enostavne opombe</string>
     <string name="new_note">Novo opombo dodajte</string>
     <string name="no_title">Poimenujte vašo opombo</string>
     <string name="title_taken">Že obstajajo opombe identične</string>

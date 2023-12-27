@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simplaj Notoj</string>
     <string name="app_launcher_name">Notoj</string>
-    <string name="widget_config">Thank you for using Simple Notes.
-\nFor more simple apps please visit SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Cannot share empty text</string>
-    <string name="simple_note">Simpla noto</string>
     <string name="new_note">Krei novan noton</string>
     <string name="no_title">Please name your note</string>
     <string name="title_taken">A note with that title already exists</string>

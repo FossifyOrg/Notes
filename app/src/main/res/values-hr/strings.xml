@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jednostavne bilješke</string>
     <string name="app_launcher_name">Bilješke</string>
-    <string name="widget_config">Hvala što koristiš „Jednostavne bilješke”.
-\nZa daljnje jednostavne aplikacije posjeti SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Nije moguće dijeliti prazan tekst</string>
-    <string name="simple_note">Jednostavna bilješka</string>
     <string name="new_note">Dodaj novu bilješku</string>
     <string name="no_title">Zadaj ime za tvoju bilješku</string>
     <string name="title_taken">Bilješka s tim naslovom već postoji</string>

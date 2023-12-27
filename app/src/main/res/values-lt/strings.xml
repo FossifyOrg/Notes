@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Paprasti užrašai</string>
     <string name="app_launcher_name">Užrašai</string>
-    <string name="widget_config">Ačiū, jog naudojate Simple Notes.
-\nDaugiau paprastų programų rasite SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Negalima dalintis tuščiu įrašu</string>
-    <string name="simple_note">Paprastas užrašas</string>
     <string name="new_note">Pridėti naują įrašą</string>
     <string name="no_title">Įrašo pavadinimas</string>
     <string name="title_taken">Įrašas tokiu pavadinimu jau egzistuoja</string>

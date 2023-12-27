@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">یادداشت آسان</string>
     <string name="app_launcher_name">یادداشت</string>
-    <string name="widget_config">ممنون که از یادداشت آسان استفاده میکنید.
-\nبرای داشتن برنامه‌های آسان دیگر از سایت SimpleMobileTools.com دیدن کنید.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">نمیتوان متن خالی را اشتراک گذاشت</string>
-    <string name="simple_note">یادداشت آسان</string>
     <string name="new_note">افزودن یادداشت جدید</string>
     <string name="no_title">لطفا نام یادداشت خود را بنویسید</string>
     <string name="title_taken">یک یادداشت با این عنوان هم‌اکنون وجود دارد</string>

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Basit Notlar</string>
     <string name="app_launcher_name">Notlar</string>
-    <string name="widget_config">Basit Notlar\'ı kullandığınız için teşekkürler.
-\nDaha fazla basit uygulamalar için lütfen SimpleMobileTools.com adresini ziyaret edin.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Boş metin paylaşılamaz</string>
-    <string name="simple_note">Basit Not</string>
     <string name="new_note">Yeni not ekle</string>
     <string name="no_title">Lütfen notunuzu adlandırın</string>
     <string name="title_taken">Bu başlığa sahip bir not zaten mevcut</string>

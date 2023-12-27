@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Nodiadau</string>
-    <string name="widget_config">Diolch am ddefnyddio Simple Notes.
-\nAm ragor o apiau syml, gweler SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Methu rhannu testun gwag</string>
-    <string name="simple_note">Nodyn Syml</string>
     <string name="new_note">Ychwanegu nodyn newydd</string>
     <string name="no_title">Rho enw i dy nodyn</string>
     <string name="title_taken">Mae eisoes nodyn gyda\'r teitl yna</string>
