@@ -10,7 +10,7 @@ androidx-documentfile = "1.0.1"
 #Room
 room = "2.6.0-alpha02"
 #Fossify
-commons = "8d12b39e48"
+commons = "cbf79568d3"
 #Gradle
 gradlePlugins-agp = "8.2.0"
 #build
