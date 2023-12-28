@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Note</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
+    <string name="widget_config">Grazie per aver utilizzato Fossify Notes.
+\nPer ulteriori applicazioni da Fossify, si prega di visitare fossilfy.org.</string>
     <string name="cannot_share_empty_text">Impossibile condividere un testo vuoto</string>
     <string name="new_note">Aggiungi una nuova nota</string>
     <string name="no_title">Inserisci il nome della nota</string>
