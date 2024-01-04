@@ -26,7 +26,7 @@
     <string name="found_locked_notes_info">Die folgenden Notizen sind gesperrt. Du kannst sie entweder einzeln entsperren oder den Export überspringen.</string>
     <string name="note_content_locked">Der Inhalt der Notizen ist gesperrt.</string>
     <string name="show_content">Inhalt anzeigen</string>
-    <string name="locking_warning">ACHTUNG: Wenn du das Kennwort für die Notizen vergisst, kannst du sie nicht mehr wiederherstellen oder auf den Inhalt der Notizen zugreifen.</string>
+    <string name="locking_warning">ACHTUNG: Wenn du das Passwort für die Notizen vergisst, kannst du sie nicht mehr wiederherstellen oder auf den Inhalt der Notizen zugreifen.</string>
     <string name="new_text_note">Neue Textnotiz</string>
     <string name="new_checklist">Neue Checkliste</string>
     <string name="cannot_load_over_internet">Die App kann keine Dateien über das Internet laden</string>
