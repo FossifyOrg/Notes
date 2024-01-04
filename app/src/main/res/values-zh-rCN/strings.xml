@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">笔记</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
+    <string name="widget_config">感谢您使用 Fossify 笔记。
+\n访问 fossify.org 了解更多 Fossify 应用。</string>
     <string name="cannot_share_empty_text">没有内容不能分享</string>
     <string name="new_note">添加一个新的笔记</string>
     <string name="no_title">请提供笔记名字</string>
