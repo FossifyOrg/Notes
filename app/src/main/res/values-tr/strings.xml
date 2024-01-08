@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Notlar</string>
+    <string name="widget_config">Fossify Notlar\'ı kullandığınız için teşekkür ederiz.
+\nFossify\'dan daha fazla uygulama için lütfen fossify.org adresini ziyaret edin.</string>
     <string name="cannot_share_empty_text">Boş metin paylaşılamaz</string>
     <string name="new_note">Yeni not ekle</string>
     <string name="no_title">Lütfen notunuzu adlandırın</string>
@@ -64,6 +66,7 @@
     <string name="add_new_checklist_items">Yeni yapılacak listesi ögeleri ekle</string>
     <string name="checklist_is_empty">Yapılacak listesi boş</string>
     <string name="remove_done_items">Tamamlanan ögeleri kaldır</string>
+    <string name="add_to_the_top">En üste ekle</string>
     <string name="import_folder">Klasörü içe aktar</string>
     <string name="export_notes">Notları dışa aktar</string>
     <string name="import_notes">Notları içe aktar</string>

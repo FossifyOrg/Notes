@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Ghi Chú</string>
+    <string name="widget_config">Cảm ơn bạn đã sử dụng Ghi chú Fossify.
+\nĐể biết thêm ứng dụng từ Fossify, vui lòng truy cập fossify.org.</string>
     <string name="cannot_share_empty_text">Không thể chia sẻ văn bản trống</string>
     <string name="new_note">Thêm ghi chú mới</string>
     <string name="no_title">Vui lòng đặt tên cho ghi chú của bạn</string>
@@ -20,12 +22,15 @@
     <string name="text_note">Ghi chú văn bản</string>
     <string name="lock_note">Khóa ghi chú</string>
     <string name="unlock_note">Mở khóa ghi chú</string>
+    <string name="unlock_notes">Mở khóa ghi chú</string>
+    <string name="found_locked_notes_info">Các ghi chú sau đây đã bị khóa. Bạn có thể mở khóa từng cái một hoặc bỏ qua việc xuất chúng.</string>
     <string name="note_content_locked">Nội dung của ghi chú đã bị khóa.</string>
     <string name="show_content">Hiển thị nội dung</string>
-    <string name="locking_warning">Cảnh Báo: Nếu bạn quên khi chú mật khẩu, bạn sẽ không thể nào lấy lại hay truy cập vào những ghi chú nữa</string>
+    <string name="locking_warning">Cảnh Báo: Nếu bạn quên mật khẩu ghi chú, bạn sẽ không thể nào lấy lại hay truy cập vào những ghi chú nữa</string>
     <string name="new_text_note">Ghi chú văn bản mới</string>
     <string name="new_checklist">Danh sách kiểm tra mới</string>
-    <string name="open_file">Mở tệp</string>
+    <string name="cannot_load_over_internet">Ứng dụng không thể tải tập tin qua internet</string>
+    <string name="open_file">Mở tập tin</string>
     <string name="export_as_file">Xuất dưới dạng tệp</string>
     <string name="file_too_large">Tệp quá lớn, giới hạn là 1MB</string>
     <string name="only_import_file_content">Chỉ nhập nội dung tệp \n (việc thay đổi tệp sẽ không ảnh hưởng đến ghi chú)</string>
@@ -42,12 +47,13 @@
     <string name="show_word_count">Hiển thị số lượng từ</string>
     <string name="show_character_count">Hiển thị số lượng ký tự</string>
     <string name="alignment">Căn chỉnh</string>
+    <string name="left">Trái</string>
     <string name="center">Trung tâm</string>
-    <string name="right">Đúng</string>
+    <string name="right">Phải</string>
     <string name="widget_note">Ghi chú được sử dụng trong widget</string>
     <string name="show_note_picker">Hiển thị bộ chọn ghi chú khi khởi động</string>
     <string name="autosave_notes">Tự động lưu ghi chú</string>
-    <string name="enable_line_wrap">Bật gói dòng</string>
+    <string name="enable_line_wrap">Bật xuống dòng</string>
     <string name="use_incognito_mode">Sử dụng chế độ Ẩn danh của bàn phím</string>
     <string name="move_done_checklist_items">Di chuyển các mục trong danh sách kiểm tra đã hoàn thành xuống dưới cùng</string>
     <string name="add_new_checklist_items_top">Thêm các mục mới trong danh sách kiểm tra ở trên cùng</string>
@@ -57,10 +63,11 @@
     <string name="add_new_checklist_items">Thêm các mục mới trong danh sách kiểm tra</string>
     <string name="checklist_is_empty">Danh sách kiểm tra trống</string>
     <string name="remove_done_items">Xóa các mục đã hoàn thành</string>
+    <string name="add_to_the_top">Thêm trên đầu</string>
     <string name="import_folder">Nhập thư mục</string>
     <string name="export_notes">Xuất tất cả các ghi chú</string>
     <string name="import_notes">Nhập ghi chú</string>
     <string name="import_notes_pro">Nhập ghi chú (Bản trả phí)</string>
     <string name="faq_1_title">Làm cách nào để thay đổi màu tiện ích?</string>
-    <string name="faq_1_text">Trong trường hợp bạn chỉ có 1 tiện ích con đang hoạt động, bạn có thể tạo lại nó hoặc sử dụng nút trong cài đặt ứng dụng để tùy chỉnh nó. Nếu bạn có nhiều tiện ích con đang hoạt động, nút trong cài đặt ứng dụng sẽ không khả dụng. Vì ứng dụng hỗ trợ tùy chỉnh màu sắc cho mỗi tiện ích, bạn sẽ phải tạo lại tiện ích mà bạn muốn tùy chỉnh.</string>    
+    <string name="faq_1_text">Trong trường hợp bạn chỉ có 1 tiện ích con đang hoạt động, bạn có thể tạo lại nó hoặc sử dụng nút trong cài đặt ứng dụng để tùy chỉnh nó. Nếu bạn có nhiều tiện ích con đang hoạt động, nút trong cài đặt ứng dụng sẽ không khả dụng. Vì ứng dụng hỗ trợ tùy chỉnh màu sắc cho mỗi tiện ích, bạn sẽ phải tạo lại tiện ích mà bạn muốn tùy chỉnh.</string>
 </resources>
