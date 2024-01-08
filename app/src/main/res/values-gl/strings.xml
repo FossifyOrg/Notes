@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Notas</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Non pode compartir un texto baleiro</string>
     <string name="new_note">Engadir unha nova nota</string>
     <string name="no_title">Déalle nome á nota</string>
@@ -19,7 +18,6 @@
     <string name="show_note_title">Mostralo título da nota</string>
     <string name="new_note_type">Novo tipo de nota:</string>
     <string name="text_note">Nota de texto</string>
-    <string name="lock_note">Lock note</string>
     <string name="unlock_note">Desbloqueala nota</string>
     <string name="unlock_notes">Desbloquear as notas</string>
     <string name="found_locked_notes_info">As seguintes notas atopanse bloqueadas. Podes desbloquealas unha por unha ou non exportalas.</string>
@@ -28,8 +26,6 @@
     <string name="locking_warning">PERIGO: Se esqueces o contrasinal das notas, xa non poderás recuperalo nin acceder ao contido das notas.</string>
     <string name="new_text_note">Nova nota de texto</string>
     <string name="new_checklist">Nova lista de verificación</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
     <string name="file_too_large">O ficheiro é demasiado grande, o límite é de 1 MB</string>
@@ -42,7 +38,6 @@
     <string name="note_exported_successfully">A nota \"%s\" exportouse correctamente</string>
     <string name="only_export_file_content">Só exportar o contido do ficheiro actual
 \n(se cambias a nota, non afectará ao ficheiro)</string>
-    <!-- Settings -->
     <string name="display_success_message">Mostra mensaxe de gardado correcto</string>
     <string name="links_and_emails_clickable">Fai que ligazóns e correo-e sexan premibles</string>
     <string name="place_cursor_end">Coloca o cursor ao final da nota</string>
@@ -61,24 +56,15 @@
     <string name="use_incognito_mode">Usar o modo incógnito dos teclados</string>
     <string name="move_done_checklist_items">Mover os elementos dunha lista de verificación non rematada a arriba</string>
     <string name="add_new_checklist_items_top">Engade novos elementos da lista de verificación na parte superior</string>
-    <!-- Checklists -->
     <string name="checklist">Lista de verificación</string>
     <string name="checklists">Listas de verificación</string>
     <string name="add_new_checklist_item">Engadir un elemento a unha nova lista de verificación</string>
     <string name="add_new_checklist_items">Engadir elementos a unha nova lista de verificación</string>
     <string name="checklist_is_empty">A lista de verificación está baleira</string>
     <string name="remove_done_items">Elimina os elementos feitos</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importar cartafoles</string>
     <string name="export_notes">Exportar notas</string>
-    <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Importar notas (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Como podo cambiala cor dos widgets\?</string>
     <string name="faq_1_text">No caso de que teñas só un widget activo, podes crealo de novo ou usar o botón nos axustes do app para personalizalo.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

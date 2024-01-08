@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Notas</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">No se puede compartir una nota vacía</string>
     <string name="new_note">Añadir una nueva nota</string>
     <string name="no_title">Por favor, asigne un nombre a la nota</string>
@@ -29,7 +28,6 @@
     <string name="new_text_note">Nueva nota de texto</string>
     <string name="new_checklist">Nueva lista de tareas</string>
     <string name="cannot_load_over_internet">La aplicación no puede cargar archivos a través de Internet</string>
-    <!-- File notes -->
     <string name="open_file">Abrir archivo</string>
     <string name="export_as_file">Exportar como archivo</string>
     <string name="file_too_large">Archivo demasiado grande, el límite es 1MB</string>
@@ -42,7 +40,6 @@
     <string name="note_exported_successfully">Nota \"%s\" exportada con éxito</string>
     <string name="only_export_file_content">Solo exportar el contenido del archivo actual
 \n(Modificar la nota no afectará el archivo)</string>
-    <!-- Settings -->
     <string name="display_success_message">Mostrar mensajes de guardado con éxito</string>
     <string name="links_and_emails_clickable">Mostrar enlaces y direcciones de correo como seleccionables</string>
     <string name="place_cursor_end">Colocar el cursor al final de la nota</string>
@@ -61,24 +58,15 @@
     <string name="use_incognito_mode">Usar modo incógnito de los teclados</string>
     <string name="move_done_checklist_items">Mover ítems completados al final de la lista</string>
     <string name="add_new_checklist_items_top">Añade nuevos elementos a la parte superior de la lista de control</string>
-    <!-- Checklists -->
     <string name="checklist">Lista</string>
     <string name="checklists">Listas de control</string>
     <string name="add_new_checklist_item">Añadir un nuevo ítem a la lista</string>
     <string name="add_new_checklist_items">Añadir nuevos ítems a la lista</string>
     <string name="checklist_is_empty">La lista está vacía</string>
     <string name="remove_done_items">Borrar ítems completados</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importar carpeta</string>
     <string name="export_notes">Exportar las notas</string>
-    <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Importar notas (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">¿Cómo puedo cambiar los colores del widget\?</string>
     <string name="faq_1_text">En caso de que solo tengas un widget activo, Puedes volverlo a crear, o usar el botón en los ajustes de la aplicación para personalziarlo. Si tienes múltiples widgets activos, el botón en los ajustes de la aplicación no estará disponible. Ya que la aplicación soporta personalización de color por widget, tendrás que volver a crear el widget tque quieres personalizar.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

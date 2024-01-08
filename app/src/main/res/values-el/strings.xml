@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Σημείωση</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Αδύνατη η κοινή χρήση κενού κειμένου</string>
     <string name="new_note">Προσθήκη νέας σημείωσης</string>
     <string name="no_title">Δώστε όνομα στη σημείωσή σας</string>
@@ -29,7 +28,6 @@
     <string name="new_text_note">Νέα σημείωση κειμένου</string>
     <string name="new_checklist">Νέα λίστα ελέγχου</string>
     <string name="cannot_load_over_internet">Η εφαρμογή δεν μπορεί να φορτώσει αρχεία μέσω διαδικτύου</string>
-    <!-- File notes -->
     <string name="open_file">Άνοιγμα αρχείου</string>
     <string name="export_as_file">Εξαγωγή ως αρχείο</string>
     <string name="file_too_large">Το αρχείο είναι πολύ μεγάλο, το όριο είναι 1MB</string>
@@ -42,7 +40,6 @@
     <string name="note_exported_successfully">Η εξαγωγή \"%s\" ολοκληρώθηκε με επιτυχία</string>
     <string name="only_export_file_content">Εξαγωγή μόνο του περιεχομένου του τρέχοντος αρχείου
 \n(η αλλαγή της σημείωσης δεν θα επηρεάσει το αρχείο)</string>
-    <!-- Settings -->
     <string name="display_success_message">Εμφάνιση μηνυμάτων επιτυχούς αποθήκευσης</string>
     <string name="links_and_emails_clickable">Δυνατότητα επιλογής συνδέσμων και email</string>
     <string name="place_cursor_end">Τοποθέτηση δρομέα στο τέλος της σημείωσης</string>
@@ -61,7 +58,6 @@
     <string name="use_incognito_mode">Χρήση λειτουργίας πληκτ/γιου Incognito</string>
     <string name="move_done_checklist_items">Μετακίνηση ανεπιτυχών λίστας ελέγχου στην κορυφή</string>
     <string name="add_new_checklist_items_top">Προσθήκη νέων στοιχείων λίστας ελέγχου στην κορυφή</string>
-    <!-- Checklists -->
     <string name="checklist">Λίστα ελέγχου</string>
     <string name="checklists">Λίστες ελέγχου</string>
     <string name="add_new_checklist_item">Προσθήκη νέου στοιχείου λίστας ελέγχου</string>
@@ -69,16 +65,10 @@
     <string name="checklist_is_empty">Η λίστα ελέγχου είναι κενή</string>
     <string name="remove_done_items">Κατάργηση ολοκληρωμένων στοιχείων</string>
     <string name="add_to_the_top">Προσθήκη στην κορυφή</string>
-    <!-- Import / Export -->
     <string name="import_folder">Εισαγωγή φακέλου</string>
     <string name="export_notes">Εξαγωγή όλων των σημειώσεων</string>
     <string name="import_notes">Εισαγωγή σημειώσεων</string>
     <string name="import_notes_pro">Εισαγωγή σημειώσεων (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Πώς μπορώ να αλλάξω το χρώμα των γραφικών στοιχείων;</string>
     <string name="faq_1_text">Σε περίπτωση που έχετε μόνο 1 ενεργό Γραφικό στοιχείο, μπορείτε να το δημιουργήσετε εκ νέου ή να χρησιμοποιήσετε το κουμπί στις ρυθμίσεις της εφαρμογής για να το προσαρμόσετε. Αν έχετε πολλά ενεργά , το κουμπί στις ρυθμίσεις της εφαρμογής δεν θα είναι διαθέσιμο. Καθώς η εφαρμογή υποστηρίζει προσαρμογή χρώματος ανά Γραφικό στοιχείο, θα πρέπει να το δημιουργήσετε ξανά αυτό που θέλετε να προσαρμόσετε.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Notater</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Kan ikke dele tom tekst</string>
     <string name="new_note">Legg til nytt notat</string>
     <string name="no_title">Gi ditt notat et navn</string>
@@ -21,15 +20,11 @@
     <string name="text_note">Tekstnotat</string>
     <string name="lock_note">Lås notat</string>
     <string name="unlock_note">Lås opp notat</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Notatinnholdet er låst.</string>
     <string name="show_content">Vis innhold</string>
     <string name="locking_warning">ADVARSEL: Hvis du glemmer passordet til notatene, kan du ikke gjenopprette det eller få tilgang til notatenes innhold lenger.</string>
     <string name="new_text_note">Ny tekstnotat</string>
     <string name="new_checklist">Ny sjekkliste</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Åpne fil</string>
     <string name="export_as_file">Eksporter som fil</string>
     <string name="file_too_large">Filen er er større enn grensen på 1 MB</string>
@@ -42,7 +37,6 @@
     <string name="note_exported_successfully">Notat «%s»-eksporteres</string>
     <string name="only_export_file_content">Eksporter bare gjeldende filinnhold
 \n(hvis du endrer notatet, påvirkes ikke filen)</string>
-    <!-- Settings -->
     <string name="display_success_message">Vis meldinger om vellykket lagring</string>
     <string name="links_and_emails_clickable">Gjør lenker og e-poster klikkbare</string>
     <string name="place_cursor_end">Plasser pekeren på slutten av notatet</string>
@@ -61,24 +55,16 @@
     <string name="use_incognito_mode">Bruke inkognitomodus på tastaturer</string>
     <string name="move_done_checklist_items">Flytt utførte sjekklisteelementer til bunnen</string>
     <string name="add_new_checklist_items_top">Legg til nye sjekklisteelementer på toppen</string>
-    <!-- Checklists -->
     <string name="checklist">Sjekkliste</string>
     <string name="checklists">Sjekklister</string>
     <string name="add_new_checklist_item">Legg til nytt sjekklisteelement</string>
     <string name="add_new_checklist_items">Legg til nye sjekklisteelementer</string>
     <string name="checklist_is_empty">Sjekklisten er tom</string>
     <string name="remove_done_items">Fjern utførte elementer</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importer mappe</string>
     <string name="export_notes">Eksportere alle notater</string>
     <string name="import_notes">Importere notater</string>
     <string name="import_notes_pro">Importere notater (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Hvordan endrer jeg widgetfargen\?</string>
     <string name="faq_1_text">Hvis du bare har ett aktivt kontrollprogram, kan du enten opprette det på nytt eller bruke knappen i appinnstillingene for å tilpasse den. Hvis du har flere aktive kontrollprogrammer, vil ikke knappen i appinnstillingene være tilgjengelig. Siden appen støtter fargetilpasning per kontrollprogram, må du opprette kontrollprogrammet du vil tilpasse, på nytt.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>
