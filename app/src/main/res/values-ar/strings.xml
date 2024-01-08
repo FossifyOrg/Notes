@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">الملاحظات</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">لا يمكن مشاركة نص فارغ</string>
     <string name="new_note">إضافة ملاحظة</string>
     <string name="no_title">الرجاء تسمية الملاحظة</string>
@@ -19,7 +18,6 @@
     <string name="show_note_title">إظهار عنوان الملاحظة</string>
     <string name="new_note_type">نوع ملاحظة جديد:</string>
     <string name="text_note">ملاحظة نصية</string>
-    <string name="lock_note">Lock note</string>
     <string name="unlock_note">إلغاء تأمين الملاحظة</string>
     <string name="unlock_notes">إلغاء تأمين الملاحظة</string>
     <string name="found_locked_notes_info">الملاحظات التالية مقفلة. يمكنك إما إلغاء قفلها واحدة تلو الأخرى أو تخطي تصديرها.</string>
@@ -29,7 +27,6 @@
     <string name="new_text_note">ملاحظة نصية جديدة</string>
     <string name="new_checklist">قائمة مرجعية جديدة</string>
     <string name="cannot_load_over_internet">لا يمكن للتطبيق تحميل الملفات عبر الإنترنت</string>
-    <!-- File notes -->
     <string name="open_file">فتح الملف</string>
     <string name="export_as_file">تصدير كملف</string>
     <string name="file_too_large">ملف كبير جداً، الحد المسموح 1MB</string>
@@ -42,7 +39,6 @@
     <string name="note_exported_successfully">تم تصدير الملاحظة \"%s\" بنجاح</string>
     <string name="only_export_file_content">تصدير فقط محتوى الملف الحالي
 \n(تغيير الملاحظة لن يؤثر على الملف)</string>
-    <!-- Settings -->
     <string name="display_success_message">عرض حفظ رسائل النجاح</string>
     <string name="links_and_emails_clickable">جعل الروابط ورسائل البريد الإلكتروني قابلة للنقر</string>
     <string name="place_cursor_end">ضع المؤشر في نهاية الملاحظة</string>
@@ -61,24 +57,15 @@
     <string name="use_incognito_mode">استخدام وضع التصفح المتخفي للوحات المفاتيح</string>
     <string name="move_done_checklist_items">نقل عناصر قائمة التحقق المنجزة إلى الأسفل</string>
     <string name="add_new_checklist_items_top">إضافة عناصر قائمة اختيار جديدة في الأعلى</string>
-    <!-- Checklists -->
     <string name="checklist">قائمة تدقيق</string>
     <string name="checklists">قوائم</string>
     <string name="add_new_checklist_item">إضافة عنصر قائمة تدقيق جديد</string>
     <string name="add_new_checklist_items">إضافة عناصر قائمة تدقيق جديدة</string>
     <string name="checklist_is_empty">قائمة التدقيق فارغة</string>
     <string name="remove_done_items">إزالة العناصر التي تم إنجازها</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">مجلد الاستيراد</string>
     <string name="export_notes">تصدير الملاحظات</string>
-    <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">استيراد الملاحظات (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">كيف يمكنني تغيير لون القطع؟</string>
     <string name="faq_1_text">في حال كان لديك عنصر واجهة مستخدم نشط واحد فقط، يمكنك إما إعادة إنشائه، أو استخدام الزر في إعدادات التطبيق لتخصيصه. إذا كان لديك العديد من الحاجيات النشطة، لن يكون الزر الموجود في إعدادات التطبيق متاحا. بما أن التطبيق يدعم تخصيص الألوان لكل عنصر واجهة مستخدم ، سيكون عليك إعادة إنشاء القطعة التي تريد تخصيصها.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Jegyzetek</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Üres szöveget nem lehet megosztani</string>
     <string name="new_note">Új jegyzet hozzáadása</string>
     <string name="no_title">Adjon nevet a jegyzetnek</string>
@@ -21,15 +20,11 @@
     <string name="text_note">Szöveges jegyzet</string>
     <string name="lock_note">Jegyzet zárolása</string>
     <string name="unlock_note">Jegyzet feloldása</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">A jegyzet tartalma zárolva van.</string>
     <string name="show_content">Tartalom megjelenítése</string>
     <string name="locking_warning">FIGYELMEZTETÉS: Ha elfelejti a jegyzetek jelszavát, akkor többé nem fogja tudni helyreállítani vagy elérni a jegyzetek tartalmát.</string>
     <string name="new_text_note">Új szöveges jegyzet</string>
     <string name="new_checklist">Új ellenőrzőlista</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Fájl megnyitása</string>
     <string name="export_as_file">Exportálás fájlként</string>
     <string name="file_too_large">A fájl túl nagy, legfeljebb 1 MB-os lehet</string>
@@ -42,7 +37,6 @@
     <string name="note_exported_successfully">A(z) „%s” jegyzet sikeresen exportálva</string>
     <string name="only_export_file_content">Csak a jelenlegi fájltartalom exportálása
 \n(a jegyzet módosítása nem változtat a fájlon)</string>
-    <!-- Settings -->
     <string name="display_success_message">Sikeres mentési üzenetek megjelenítése</string>
     <string name="links_and_emails_clickable">Hivatkozások és e-mail-címek kattinthatóvá tétele</string>
     <string name="place_cursor_end">Kurzor a jegyzet végére helyezése</string>
@@ -61,24 +55,16 @@
     <string name="use_incognito_mode">A billentyűzetek inkognitó módjának használata</string>
     <string name="move_done_checklist_items">Kész ellenőrzőlista-elemek alulra helyezése</string>
     <string name="add_new_checklist_items_top">Új ellenőrzőlista-elemek felülre helyezése</string>
-    <!-- Checklists -->
     <string name="checklist">Ellenőrzőlista</string>
     <string name="checklists">Ellenőrzőlisták</string>
     <string name="add_new_checklist_item">Új ellenőrzőlista-elem hozzáadása</string>
     <string name="add_new_checklist_items">Új ellenőrzőlista-elemek hozzáadása</string>
     <string name="checklist_is_empty">Az ellenőrzőlista üres</string>
     <string name="remove_done_items">Kész elemek eltávolítása</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Mappa importálása</string>
     <string name="export_notes">Jegyzetek exportálása</string>
     <string name="import_notes">Jegyzetek importálása</string>
     <string name="import_notes_pro">Jegyzetek importálása (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Hogyan módosíthatom a modulok színét\?</string>
     <string name="faq_1_text">Ha csak 1 aktív modulja van, akkor vagy újra létrehozhatja, vagy használja az alkalmazásbeállításokban lévő gombot, hogy testreszabja. Ha több modulja van, akkor az alkalmazásbeállításokban nem lesz elérhető a gomb. Mivel az alkalmazás támogatja szín modulonkénti testreszabását, azért a módosítandó modult újra létre kell hoznia.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

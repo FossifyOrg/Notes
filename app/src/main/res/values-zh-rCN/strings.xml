@@ -30,7 +30,6 @@
     <string name="new_text_note">新建文本笔记</string>
     <string name="new_checklist">新建清单</string>
     <string name="cannot_load_over_internet">此应用无法通过互联网加载文件</string>
-    <!-- File notes -->
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>
     <string name="file_too_large">文件太大了, 上限为 1MB</string>
@@ -43,7 +42,6 @@
     <string name="note_exported_successfully">已成功导出笔记 \"%s\"</string>
     <string name="only_export_file_content">只导出当前文件内容
 \n(更改笔记将不会影响文件)</string>
-    <!-- Settings -->
     <string name="display_success_message">显示保存成功消息</string>
     <string name="links_and_emails_clickable">使链接和电子邮件可点击</string>
     <string name="place_cursor_end">将光标放在笔记的末尾</string>
@@ -62,24 +60,16 @@
     <string name="use_incognito_mode">对于键盘使用隐私模式</string>
     <string name="move_done_checklist_items">移动未完成的清单至顶端</string>
     <string name="add_new_checklist_items_top">在顶部添加新的清单项目</string>
-    <!-- Checklists -->
     <string name="checklist">清单</string>
     <string name="checklists">清单</string>
     <string name="add_new_checklist_item">添加一个新的清单项目</string>
     <string name="add_new_checklist_items">添加新的清单项目</string>
     <string name="checklist_is_empty">清单为空</string>
     <string name="remove_done_items">删除完成的项目</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">导入文件夹</string>
     <string name="export_notes">导出笔记</string>
     <string name="import_notes">导入笔记</string>
     <string name="import_notes_pro">导入笔记 (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">我如何更改小工具颜色？</string>
     <string name="faq_1_text">如果您仅用一个活动的小工具，您既可以重新创建它，或者使用应用程序设定的按钮来自定义它。如果您拥有多个活动的小工具，应用程序设定中的按钮将不可用。因为应用程序支持小工具分别自定义，您必须要重新创建小工具来自定义它们。</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

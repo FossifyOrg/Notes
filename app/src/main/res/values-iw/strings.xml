@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">הערות</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">לא ניתן לשתף טקסט ריק</string>
     <string name="new_note">הוסף הערה חדשה</string>
     <string name="no_title">נא לתת שם להערה שלך</string>
@@ -21,16 +20,11 @@
     <string name="text_note">פתק טקסט</string>
     <string name="lock_note">נעל פתק</string>
     <string name="unlock_note">בטל נעילת פתק</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">תוכן הפתקים נעול.</string>
     <string name="show_content">הראה תוכן</string>
     <string name="locking_warning">אזהרה: אם תשכח את הסיסמה של הפתקים, לא תוכל לשחזר אותה או לגשת לתוכן הפתקים יותר.</string>
     <string name="new_text_note">פתק טקסט חדש</string>
     <string name="new_checklist">רשימת בדיקה חדשה</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
-    <string name="open_file">Open file</string>
     <string name="export_as_file">ייצא כקובץ</string>
     <string name="file_too_large">הקובץ גדול מדי, המגבלה היא 1MB</string>
     <string name="only_import_file_content">ייבא רק את תוכן הקובץ
@@ -42,7 +36,6 @@
     <string name="note_exported_successfully">הפתק \"%s\" יוצא בהצלחה</string>
     <string name="only_export_file_content">ייצא רק את תוכן הקובץ הנוכחי
 \n (שינוי ההערה לא ישפיע על הקובץ)</string>
-    <!-- Settings -->
     <string name="display_success_message">הצג הודעות נשמר בהצלחה</string>
     <string name="links_and_emails_clickable">הפוך קישורים ומיילים לניתנים ללחיצה</string>
     <string name="place_cursor_end">מקם את הסמן לסוף הפתק</string>
@@ -61,24 +54,16 @@
     <string name="use_incognito_mode">השתמש במצב גלישה בסתר של מקלדות</string>
     <string name="move_done_checklist_items">העבר את פריטי רשימת הבדיקה שבוצעו לתחתית</string>
     <string name="add_new_checklist_items_top">הוסף פריטים חדשים ברשימת הבדיקה בראש</string>
-    <!-- Checklists -->
     <string name="checklist">רשימת תיוג</string>
     <string name="checklists">רשימות תיוגים</string>
     <string name="add_new_checklist_item">הוסף פריט רשימת תיוג חדש</string>
     <string name="add_new_checklist_items">הוסף פריטי רשימת בדיקה חדשים</string>
     <string name="checklist_is_empty">רשימת התיוגים ריקה</string>
     <string name="remove_done_items">הסר פריטים שבוצעו</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">ייבא תקיות</string>
     <string name="export_notes">ייצא את כל הפתקים</string>
     <string name="import_notes">ייבא פתקים</string>
     <string name="import_notes_pro">ייבא פתקים (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">כיצד אוכל לשנות את צבע הווידג\'טים\?</string>
     <string name="faq_1_text">במקרה שיש לך רק ווידג\'ט פעיל אחד, תוכל ליצור אותו מחדש או להשתמש בכפתור בהגדרות האפליקציה כדי להתאים אותו. אם יש לך מספר ווידג\'טים פעילים, הכפתור בהגדרות האפליקציה לא יהיה זמין. מכיוון שהאפליקציה תומכת בהתאמה אישית של צבע לכל ווידג\'ט, תצטרך ליצור מחדש את הווידג\'ט שברצונך להתאים אישית.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

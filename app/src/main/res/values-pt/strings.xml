@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Notas</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Não pode partilhar texto vazio</string>
     <string name="new_note">Adicionar uma nota</string>
     <string name="no_title">Introduza o nome da nota</string>
@@ -29,7 +28,6 @@
     <string name="new_text_note">Nova nota de texto</string>
     <string name="new_checklist">Nova lista</string>
     <string name="cannot_load_over_internet">A aplicação não consegue carregar ficheiros da internet</string>
-    <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
     <string name="file_too_large">Ficheiro demasiado grande, o limite é 1 MB</string>
@@ -42,7 +40,6 @@
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
     <string name="only_export_file_content">Exportar apenas o conteúdo do ficheiro atual
 \n(a alteração da nota não afeta o ficheiro)</string>
-    <!-- Settings -->
     <string name="display_success_message">Mostrar mensagem de gravação com sucesso</string>
     <string name="links_and_emails_clickable">Ativar toque em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Colocar cursor no final da nota</string>
@@ -61,24 +58,16 @@
     <string name="use_incognito_mode">Utilizar modo incógnito no teclado</string>
     <string name="move_done_checklist_items">Mover itens não concluídos para o fundo da lista de verificação</string>
     <string name="add_new_checklist_items_top">Adicionar novos itens ao topo da lista de verificação</string>
-    <!-- Checklists -->
     <string name="checklist">Lista de verificação</string>
     <string name="checklists">Listas de verificação</string>
     <string name="add_new_checklist_item">Adicionar item à lista de verificação</string>
     <string name="add_new_checklist_items">Adicionar itens à lista de verificação</string>
     <string name="checklist_is_empty">A lista está vazia</string>
     <string name="remove_done_items">Remover itens concluídos</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importar pasta</string>
     <string name="export_notes">Exportar notas</string>
     <string name="import_notes">Importar notas</string>
     <string name="import_notes_pro">Importar notas (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Posso alterar a cor do widget\?</string>
     <string name="faq_1_text">Se apenas tiver um widget ativo, pode recriar ou utilizar o botão nas definições para o personalizar. Se tiver vários widgets, este botão não estará disponível. Como cada um dos widgets pode ser personalizado, terá que os recriar sempre que os quiser personalizar.</string>
-    <!--
-        Não encontrou todas as cadeias a traduzir? Existem mais algumas em:
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

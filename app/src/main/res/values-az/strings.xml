@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Qeydlər</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Boş mətni paylaşmaq olmur</string>
     <string name="new_note">Yeni qeyd əlavə et</string>
     <string name="no_title">Qeydi adlandırın</string>
@@ -15,21 +14,6 @@
     <string name="create_new_note">Yeni qeyd yarat</string>
     <string name="add_to_note">Qeydə əlavə et</string>
     <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them\?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="show_note_title">Show note title</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Faylı Aç</string>
     <string name="export_as_file">Fayl kimi çıxar</string>
     <string name="file_too_large">Fayl çox böyükdür, limit 1mb\"dır</string>
@@ -42,14 +26,12 @@
     <string name="note_exported_successfully">\"%s\" qeydi uğurla çıxarıldı</string>
     <string name="only_export_file_content">Only export the current file content
 \n(changing the note will not affect the file)</string>
-    <!-- Settings -->
     <string name="display_success_message">Uğurlu saxlama mesajını göstər</string>
     <string name="links_and_emails_clickable">Keçidləri və e-poçtları toxuna bilən et</string>
     <string name="place_cursor_end">Kursoru qeydin sonunda yerləşdir</string>
     <string name="monospaced_font">Tək aralıqlı şrift işlət</string>
     <string name="show_keyboard">Başlanğıcda klaviaturanı göstər</string>
     <string name="show_word_count">Söz sayını göstər</string>
-    <string name="show_character_count">Show character count</string>
     <string name="alignment">Sıra</string>
     <string name="left">Sol</string>
     <string name="center">Mərkəz</string>
@@ -58,27 +40,6 @@
     <string name="show_note_picker">Başlanğıcda qeyd götürəni göstər</string>
     <string name="autosave_notes">Qeydləri avtomatik saxla</string>
     <string name="enable_line_wrap">Cız sarğısını göstər</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-    <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="checklists">Checklists</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
-    <string name="remove_done_items">Remove done items</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Qovluq daxil et</string>
-    <string name="export_notes">Export notes</string>
-    <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">How can I change the widgets color\?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
-</resources>
+    </resources>

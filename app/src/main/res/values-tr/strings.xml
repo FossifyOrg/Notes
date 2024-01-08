@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Notlar</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Boş metin paylaşılamaz</string>
     <string name="new_note">Yeni not ekle</string>
     <string name="no_title">Lütfen notunuzu adlandırın</string>
@@ -29,7 +28,6 @@
     <string name="new_text_note">Yeni metin notu</string>
     <string name="new_checklist">Yeni yapılacak listesi</string>
     <string name="cannot_load_over_internet">Uygulama internet üzerinden dosya yükleyemiyor</string>
-    <!-- File notes -->
     <string name="open_file">Dosya aç</string>
     <string name="export_as_file">Dosya olarak aktar</string>
     <string name="file_too_large">Dosya çok büyük, sınır 1MB</string>
@@ -42,7 +40,6 @@
     <string name="note_exported_successfully">\"%s\" notu başarıyla dışa aktarıldı</string>
     <string name="only_export_file_content">Yalnızca geçerli dosya içeriğini dışa aktar
 \n(notu değiştirmek dosyayı etkilemez)</string>
-    <!-- Settings -->
     <string name="display_success_message">Başarıyla kaydedildi mesajlarını görüntüle</string>
     <string name="links_and_emails_clickable">Bağlantıları ve e-postaları tıklanabilir yap</string>
     <string name="place_cursor_end">İmleci notun sonuna getir</string>
@@ -61,24 +58,16 @@
     <string name="use_incognito_mode">Klavyelerin Gizli modunu kullan</string>
     <string name="move_done_checklist_items">Tamamlanan yapılacak listesi ögelerini en alta taşı</string>
     <string name="add_new_checklist_items_top">Yeni yapılacak listesi ögelerini en üste taşı</string>
-    <!-- Checklists -->
     <string name="checklist">Yapılacak listesi</string>
     <string name="checklists">Yapılacak listeleri</string>
     <string name="add_new_checklist_item">Yeni bir yapılacak listesi ögesi ekle</string>
     <string name="add_new_checklist_items">Yeni yapılacak listesi ögeleri ekle</string>
     <string name="checklist_is_empty">Yapılacak listesi boş</string>
     <string name="remove_done_items">Tamamlanan ögeleri kaldır</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Klasörü içe aktar</string>
     <string name="export_notes">Notları dışa aktar</string>
     <string name="import_notes">Notları içe aktar</string>
     <string name="import_notes_pro">Notları içe aktar (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Widget rengini nasıl değiştirebilirim\?</string>
     <string name="faq_1_text">Yalnızca 1 etkin widget\'ınız varsa, yeniden oluşturabilir veya özelleştirmek için uygulama ayarlarındaki düğmeyi kullanabilirsiniz. Birden fazla etkin widget\'ınız varsa, uygulama ayarlarındaki düğme kullanılamaz. Uygulama, widget başına renk özelleştirmeyi desteklediğinden, özelleştirmek istediğiniz widget\'ı yeniden oluşturmanız gerekir.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

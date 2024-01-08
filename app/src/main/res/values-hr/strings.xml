@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Bilješke</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Nije moguće dijeliti prazan tekst</string>
     <string name="new_note">Dodaj novu bilješku</string>
     <string name="no_title">Zadaj ime za tvoju bilješku</string>
@@ -29,7 +28,6 @@
     <string name="new_text_note">Nova tekstualna bilješka</string>
     <string name="new_checklist">Novi popis zadataka</string>
     <string name="cannot_load_over_internet">Aplikacija ne može učitati datoteke putem interneta</string>
-    <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>
     <string name="export_as_file">Izvezi kao datoteku</string>
     <string name="file_too_large">Datoteka je prevelika, granica je 1 MB</string>
@@ -42,7 +40,6 @@
     <string name="note_exported_successfully">Bilješka „%s” uspješno izvezena</string>
     <string name="only_export_file_content">Izvezi samo aktualni sadržaj datoteke
 \n(mijenjanje bilješke neće utjecati na datoteku)</string>
-    <!-- Settings -->
     <string name="display_success_message">Prikaži poruke uspješnog spremanja</string>
     <string name="links_and_emails_clickable">Omogući pritiskanje poveznica i e-mail adresa</string>
     <string name="place_cursor_end">Postavi pokazivač na kraj bilješke</string>
@@ -61,24 +58,16 @@
     <string name="use_incognito_mode">Koristi anonimni način tipkovnica</string>
     <string name="move_done_checklist_items">Premjesti gotove stavke popisa na kraj</string>
     <string name="add_new_checklist_items_top">Dodaj nove stavke na vrh popisa</string>
-    <!-- Checklists -->
     <string name="checklist">Popis zadataka</string>
     <string name="checklists">Popisi zadataka</string>
     <string name="add_new_checklist_item">Dodaj novu stavku u popis zadataka</string>
     <string name="add_new_checklist_items">Dodaj novu stavku u popis zadataka</string>
     <string name="checklist_is_empty">Popis zadataka je prazan</string>
     <string name="remove_done_items">Ukloni gotove stavke</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Uvezi mapu</string>
     <string name="export_notes">Izvezi bilješke</string>
     <string name="import_notes">Uvezi bilješke</string>
     <string name="import_notes_pro">Uvezi bilješke (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Kako mogu promijeniti boju widgeta\?</string>
     <string name="faq_1_text">U slučaju da imaš samo jedan aktivan widget, možeš ga ponovno izraditi ili upotrijebiti gumb u postavkama aplikacije za njegovu prilagođavanje. Ako imaš više aktivnih widgeta, gumb u postavkama aplikacije neće biti dostupan. Budući da aplikacija podržava prilagođavanje boja po widgetu, morat ćeš ponovo izraditi widget koji želiš prilagoditi.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

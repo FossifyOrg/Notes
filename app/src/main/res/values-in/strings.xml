@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Catatan</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Tidak bisa membagikan teks kosong</string>
     <string name="new_note">Tambah catatan baru</string>
     <string name="no_title">Beri nama catatan anda</string>
@@ -19,7 +18,6 @@
     <string name="show_note_title">Tampilkan judul catatan</string>
     <string name="new_note_type">Tipe catatan baru:</string>
     <string name="text_note">Catatan teks</string>
-    <string name="lock_note">Lock note</string>
     <string name="unlock_note">Buka kunci kota</string>
     <string name="unlock_notes">Buka kunci catatan</string>
     <string name="found_locked_notes_info">Catatan ini terkunci. Kamu dapat membukanya satu per satu atau mengabaikannya.</string>
@@ -29,7 +27,6 @@
     <string name="new_text_note">Catatan teks baru</string>
     <string name="new_checklist">Daftar periksa baru</string>
     <string name="cannot_load_over_internet">Aplikasi tidak dapat membuka berkas dari internet</string>
-    <!-- File notes -->
     <string name="open_file">Buka berkas</string>
     <string name="export_as_file">Ekspor sebagai berkas</string>
     <string name="file_too_large">Berkas terlalu besar, batasnya adalah 1MB</string>
@@ -42,7 +39,6 @@
     <string name="note_exported_successfully">Catatan \"%s\" berhasil diekspor</string>
     <string name="only_export_file_content">Hanya ekspor konten berkas ini
 \n(mengubah catatan tidak akan berdampak pada berkas)</string>
-    <!-- Settings -->
     <string name="display_success_message">Tampilkan pesan jika berhasil disimpan</string>
     <string name="links_and_emails_clickable">Buat tautan dan email bisa diklik</string>
     <string name="place_cursor_end">Taruh kursor di akhir catatan</string>
@@ -61,24 +57,15 @@
     <string name="use_incognito_mode">Gunakan mode papan ketik incognito</string>
     <string name="move_done_checklist_items">Pindah checklist yang belum selesai ke urutan atas</string>
     <string name="add_new_checklist_items_top">Tambahkan item daftar periksa baru pada atas</string>
-    <!-- Checklists -->
     <string name="checklist">Daftar periksa</string>
     <string name="checklists">Daftar periksa</string>
     <string name="add_new_checklist_item">Tambah item checklist baru</string>
     <string name="add_new_checklist_items">Tambah item checklist baru</string>
     <string name="checklist_is_empty">Checklist kosong</string>
     <string name="remove_done_items">Hapus item yang sudah</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Impor folder</string>
     <string name="export_notes">Ekspor nota</string>
-    <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Impor catatan (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Bagaimana cara mengubah warna widget\?</string>
     <string name="faq_1_text">Jika anda hanya memiliki 1 widget aktif, anda bisa menambahkan ulang, atau gunakan tombol di dalam pengaturan aplikasi untuk mengubahnya. Jika anda memiliki banyak widget aktif, tombol di dalam pengaturan aplikasi tidak akan tersedia. Karena aplikasi mendukung penyesuaian warna per-widget, anda harus menghapus dan menambahkan ulang widget yang ingin anda ubah warnanya.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

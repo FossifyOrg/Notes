@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_launcher_name">Muistiinpanot</string>
-    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Tyhjää tekstiä ei voi jakaa</string>
     <string name="new_note">Lisää uusi muistiinpano</string>
     <string name="no_title">Nimeä muistiinpanosi</string>
@@ -21,15 +20,11 @@
     <string name="text_note">Tekstimuistiinpano</string>
     <string name="lock_note">Lukitse huomautus</string>
     <string name="unlock_note">Avaa muistiinpanon lukitus</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Muistiinpanon sisältö on lukittu.</string>
     <string name="show_content">Näytä sisältö</string>
     <string name="locking_warning">VAROITUS: Jos unohdat muistiinpanon salasanan, sitä ei ole mahdollista palauttaa etkä pääse enää käsiksi muistiinpanoon.</string>
     <string name="new_text_note">Uusi tekstimuistiinpano</string>
     <string name="new_checklist">Uusi tarkistuslista</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Avaa tiedosto</string>
     <string name="export_as_file">Vie tiedostona</string>
     <string name="file_too_large">Tiedosto on liian suuri, raja on 1 Mt</string>
@@ -42,7 +37,6 @@
     <string name="note_exported_successfully">Muistiinpano \"%s\" vietiin onnistuneesti</string>
     <string name="only_export_file_content">Vie vain nykyinen tiedostosisältö
 \n (muistiinpanon muuttaminen ei vaikuta tiedostoon)</string>
-    <!-- Settings -->
     <string name="display_success_message">Näytä tallennus onnistunut viestit</string>
     <string name="links_and_emails_clickable">Tee linkit ja sähköpostit klikattavaksi</string>
     <string name="place_cursor_end">Aseta kohdistin muistiinpanon loppuun</string>
@@ -61,24 +55,16 @@
     <string name="use_incognito_mode">Käytä näppäimistöjen Incognito-tilaa</string>
     <string name="move_done_checklist_items">Siirrä tekemättömät kohdat muistilistasta ylimmäksi</string>
     <string name="add_new_checklist_items_top">Lisää uusia merkattavia tehtäviä alkuun</string>
-    <!-- Checklists -->
     <string name="checklist">Muistilista</string>
     <string name="checklists">Merkattavat listat</string>
     <string name="add_new_checklist_item">Lisää uusi kohta muistilistaan</string>
     <string name="add_new_checklist_items">Lisää uusia kohtia muistilistaan</string>
     <string name="checklist_is_empty">Muistilista on tyhjä</string>
     <string name="remove_done_items">Poista tehdyt kohdat</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Tuo kansio</string>
     <string name="export_notes">Vie muistiinpanoja</string>
     <string name="import_notes">Tuo muistiinpanoja</string>
     <string name="import_notes_pro">Tuo muistiinpanoja (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Miten vaihdan pienoissovelluksen väriä\?</string>
     <string name="faq_1_text">Jos sinulla on vain yksi aktiivinen pienoissovellus, voit joko luoda sen uudelleen tai mukauttaa sitä sovelluksen asetukset-painikkeella. Jos sinulla on useita aktiivisia pienoissovelluksia, sovelluksessa oleva asetukset-painike ei ole käytettävissä. Koska sovellus tukee värien mukauttamista pienoissovellusta kohti, sinun on luotava uudelleen pienoissovellus, jonka haluat muokata.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>
