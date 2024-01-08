@@ -69,4 +69,8 @@
     <string name="import_notes_pro">Importar notas (Pro)</string>
     <string name="faq_1_title">¿Cómo puedo cambiar los colores del widget\?</string>
     <string name="faq_1_text">En caso de que solo tengas un widget activo, Puedes volverlo a crear, o usar el botón en los ajustes de la aplicación para personalziarlo. Si tienes múltiples widgets activos, el botón en los ajustes de la aplicación no estará disponible. Ya que la aplicación soporta personalización de color por widget, tendrás que volver a crear el widget tque quieres personalizar.</string>
+    <string name="add_to_the_top">Añadir a la parte superior</string>
+    <string name="import_notes">Importar notas</string>
+    <string name="widget_config">Gracias por utilizar Notas Fossify.
+\nPara más aplicaciones de Fossify, visita fossify.org.</string>
 </resources>
