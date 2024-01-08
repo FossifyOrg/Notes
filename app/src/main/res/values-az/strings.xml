@@ -13,7 +13,6 @@
     <string name="general_note">Ümumi qeyd</string>
     <string name="create_new_note">Yeni qeyd yarat</string>
     <string name="add_to_note">Qeydə əlavə et</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them\?</string>
     <string name="open_file">Faylı Aç</string>
     <string name="export_as_file">Fayl kimi çıxar</string>
     <string name="file_too_large">Fayl çox böyükdür, limit 1mb\"dır</string>
@@ -41,5 +40,4 @@
     <string name="autosave_notes">Qeydləri avtomatik saxla</string>
     <string name="enable_line_wrap">Cız sarğısını göstər</string>
     <string name="import_folder">Qovluq daxil et</string>
-    <string name="faq_1_title">How can I change the widgets color\?</string>
     </resources>

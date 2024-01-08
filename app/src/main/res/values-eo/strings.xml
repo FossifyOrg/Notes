@@ -9,7 +9,6 @@
     <string name="rename_note">Ŝanĝi la nomon de noto</string>
     <string name="general_note">Ĝenerala noto</string>
     <string name="create_new_note">Krei novan noton</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them\?</string>
     <string name="show_note_title">Montri titolo de noto</string>
     <string name="new_note_type">Speco de nova noto:</string>
     <string name="text_note">Teksta noto</string>
@@ -28,5 +27,4 @@
     <string name="left">Maldekstro</string>
     <string name="center">Centro</string>
     <string name="right">Dekstro</string>
-    <string name="faq_1_title">How can I change the widgets color\?</string>
     </resources>
