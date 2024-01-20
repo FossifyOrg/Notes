@@ -70,4 +70,5 @@
     <string name="import_notes_pro">Importar notas (Pro)</string>
     <string name="faq_1_title">Posso alterar a cor do widget\?</string>
     <string name="faq_1_text">Se apenas tiver um widget ativo, pode recriar ou utilizar o botão nas definições para o personalizar. Se tiver vários widgets, este botão não estará disponível. Como cada um dos widgets pode ser personalizado, terá que os recriar sempre que os quiser personalizar.</string>
+    <string name="add_to_the_top">Adicionar ao topo</string>
 </resources>
