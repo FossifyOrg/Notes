@@ -70,4 +70,7 @@
     <string name="import_notes_pro">Uvezi bilješke (Pro)</string>
     <string name="faq_1_title">Kako mogu promijeniti boju widgeta\?</string>
     <string name="faq_1_text">U slučaju da imaš samo jedan aktivan widget, možeš ga ponovno izraditi ili upotrijebiti gumb u postavkama aplikacije za njegovu prilagođavanje. Ako imaš više aktivnih widgeta, gumb u postavkama aplikacije neće biti dostupan. Budući da aplikacija podržava prilagođavanje boja po widgetu, morat ćeš ponovo izraditi widget koji želiš prilagoditi.</string>
+    <string name="widget_config">Hvala ti što koristiš Fossify bilješke.
+\nZa više Fossify aplikacija posjeti fossify.org.</string>
+    <string name="add_to_the_top">Dodaj na vrh popisa</string>
 </resources>
