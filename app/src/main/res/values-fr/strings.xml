@@ -72,4 +72,5 @@
     <string name="import_notes_pro">Importer des notes (Pro)</string>
     <string name="faq_1_title">Comment puis-je changer la couleur des widgets \?</string>
     <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser.</string>
+    <string name="app_launcher_name">Notes</string>
 </resources>

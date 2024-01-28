@@ -71,4 +71,6 @@
     <string name="import_notes_pro">Importera (Pro)</string>
     <string name="faq_1_title">Hur ändrar jag färgen på widgetarna\?</string>
     <string name="faq_1_text">Om du bara har 1 aktiv widget kan du antingen återskapa den eller använda knappen i appinställningarna för att anpassa den. Om du har flera aktiva widgetar är knappen i appinställningarna inte tillgänglig. Eftersom appen stöder färganpassning per widget måste du återskapa den widget som du vill anpassa.</string>
+    <string name="widget_config">Tack för att du använder Fossify Notes.
+\nFör fler appar från Fossify, besök fossify.org.</string>
 </resources>
