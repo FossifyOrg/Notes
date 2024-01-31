@@ -301,7 +301,7 @@ class SettingsActivity : SimpleActivity() {
     private fun setupNotesExport() {
         binding.settingsExportNotesHolder.setOnClickListener {
             ExportNotesDialog(this) { filename ->
-                saveDocument.launch(filename)
+                saveDocument.launch("$filename.json")
             }
         }
     }
