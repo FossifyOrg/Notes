@@ -67,4 +67,10 @@
     <string name="import_notes_pro">Jegyzetek importálása (Pro)</string>
     <string name="faq_1_title">Hogyan módosíthatom a modulok színét\?</string>
     <string name="faq_1_text">Ha csak 1 aktív modulja van, akkor vagy újra létrehozhatja, vagy használja az alkalmazásbeállításokban lévő gombot, hogy testreszabja. Ha több modulja van, akkor az alkalmazásbeállításokban nem lesz elérhető a gomb. Mivel az alkalmazás támogatja szín modulonkénti testreszabását, azért a módosítandó modult újra létre kell hoznia.</string>
+    <string name="cannot_load_over_internet">Az alkalmazás nem tud fájlokat betölteni az interneten keresztül</string>
+    <string name="add_to_the_top">Hozzáadás a legelejéhez</string>
+    <string name="widget_config">Köszönjük, hogy a Fossify Jegyzetek-et használja.
+\nA Fossify további alkalmazásaiért látogasson el a fossify.org weboldalra.</string>
+    <string name="unlock_notes">Jegyzetek feloldása</string>
+    <string name="found_locked_notes_info">A következő jegyzetek zárolva vannak. Feloldhatja őket egyenként is, vagy kihagyhatja az exportálásukat.</string>
 </resources>
