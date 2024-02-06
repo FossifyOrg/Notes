@@ -71,6 +71,6 @@
     <string name="import_folder">फ़ोल्डर आयात करें</string>
     <string name="export_notes">नोट निर्यात करें</string>
     <string name="import_notes">नोट आयात करें</string>
-    <string name="import_notes_pro">नोट आयात करें (प्रो)</string>
+    <string name="import_notes_pro">नोट आयात करें (Pro)</string>
     <string name="faq_1_title">मैं विजेट का रंग कैसे बदल सकता हूँ?</string>
 </resources>
