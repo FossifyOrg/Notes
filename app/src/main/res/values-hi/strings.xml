@@ -5,11 +5,11 @@
     <string name="delete_note_prompt_message">क्या आप वाकई नोट \"%s\" को हटाना चाहते हैं?</string>
     <string name="add_to_note">नोट में जोड़ें</string>
     <string name="note_shown_widget">विजेट में दिखाया गया नोट:</string>
-    <string name="file_too_large">फ़ाइल बहुत बड़ी है, सीमा 1एमबी है</string>
-    <string name="only_import_file_content">केवल फ़ाइल सामग्री आयात करें
-\n(फ़ाइल बदलने से नोट प्रभावित नहीं होगा)</string>
-    <string name="update_file_at_note">नोट अपडेट करते समय फ़ाइल को स्वयं अपडेट करें
-\n(यदि फ़ाइल हटा दी जाती है, या पथ बदल जाता है तो नोट हटा दिया जाता है)</string>
+    <string name="file_too_large">फाइल बहुत बड़ी है, सीमा 1एमबी है</string>
+    <string name="only_import_file_content">केवल फाइल सामग्री आयात करें
+\n(फाइल बदलने से नोट प्रभावित नहीं होगा)</string>
+    <string name="update_file_at_note">नोट अपडेट करते समय फाइल को स्वयं अपडेट करें
+\n(यदि फाइल हटा दी जाती है, या पथ बदल जाता है तो नोट हटा दिया जाता है)</string>
     <string name="note_exported_successfully">नोट \"%s\" सफलतापूर्वक निर्यात किया गया</string>
     <string name="add_new_checklist_items_top">शीर्ष पर नए चेकलिस्ट आइटम जोड़ें</string>
     <string name="add_new_checklist_items">नई चेकलिस्ट आइटम जोड़ें</string>
@@ -40,11 +40,11 @@
     <string name="new_text_note">नया टेक्स्ट नोट</string>
     <string name="new_checklist">नई चेकलिस्ट</string>
     <string name="cannot_load_over_internet">ऐप इंटरनेट पर फ़ाइलें लोड नहीं कर सकता</string>
-    <string name="export_as_file">फ़ाइल के रूप में निर्यात करें</string>
-    <string name="delete_file_itself">फ़ाइल \"%s\" भी हटाएं</string>
+    <string name="export_as_file">फाइल के रूप में निर्यात करें</string>
+    <string name="delete_file_itself">फाइल \"%s\" भी हटाएं</string>
     <string name="note_saved_successfully">नोट \"%s\" सफलतापूर्वक सहेजा गया</string>
-    <string name="only_export_file_content">केवल वर्तमान फ़ाइल सामग्री निर्यात करें
-\n(नोट बदलने से फ़ाइल पर कोई प्रभाव नहीं पड़ेगा)</string>
+    <string name="only_export_file_content">केवल वर्तमान फाइल सामग्री निर्यात करें
+\n(नोट बदलने से फाइल पर कोई प्रभाव नहीं पड़ेगा)</string>
     <string name="display_success_message">सहेजें सफलता संदेश प्रदर्शित करें</string>
     <string name="links_and_emails_clickable">लिंक और ईमेल को क्लिक करने योग्य बनाएं</string>
     <string name="place_cursor_end">कर्सर को नोट के अंत में रखें</string>
@@ -68,7 +68,7 @@
     <string name="checklist_is_empty">चेकलिस्ट खाली है</string>
     <string name="remove_done_items">पूर्ण किए गए आइटम हटाएँ</string>
     <string name="add_to_the_top">शीर्ष पर जोड़ें</string>
-    <string name="import_folder">फ़ोल्डर आयात करें</string>
+    <string name="import_folder">फोल्डर आयात करें</string>
     <string name="export_notes">नोट निर्यात करें</string>
     <string name="import_notes">नोट आयात करें</string>
     <string name="import_notes_pro">नोट आयात करें (Pro)</string>
