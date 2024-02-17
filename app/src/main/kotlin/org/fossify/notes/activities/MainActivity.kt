@@ -27,6 +27,7 @@ import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isGone
 import androidx.viewpager.widget.ViewPager
 import org.fossify.commons.dialogs.*
 import org.fossify.commons.extensions.*
@@ -83,6 +84,9 @@ class MainActivity : SimpleActivity() {
 
     private val binding by viewBinding(ActivityMainBinding::inflate)
 
+    private var mIsPasswordProtectionPending = false
+    private var mWasProtectionHandled = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
         super.onCreate(savedInstanceState)
@@ -121,6 +125,23 @@ class MainActivity : SimpleActivity() {
 
         checkAppOnSDCard()
         setupSearchButtons()
+
+        mIsPasswordProtectionPending = config.isAppPasswordProtectionOn
+
+        if (savedInstanceState == null) {
+            binding.viewPager.beGoneIf(mIsPasswordProtectionPending)
+            if (mIsPasswordProtectionPending && !mWasProtectionHandled) {
+                handleAppPasswordProtection {
+                    mWasProtectionHandled = it
+                    if (it) {
+                        mIsPasswordProtectionPending = false
+                        binding.viewPager.isGone = false
+                    } else {
+                        finish()
+                    }
+                }
+            }
+        }
     }
 
     override fun onResume() {
@@ -1069,7 +1090,19 @@ class MainActivity : SimpleActivity() {
 
     private fun displayDeleteNotePrompt() {
         DeleteNoteDialog(this, mCurrentNote) {
-            deleteNote(it, mCurrentNote)
+            if (config.isAppPasswordProtectionOn) {
+                handleAppPasswordProtection {
+                    mWasProtectionHandled = it
+                    if (it) {
+                        mIsPasswordProtectionPending = false
+                        deleteNote(it, mCurrentNote)
+                    }
+                }
+            }
+            else
+            {
+                deleteNote(it, mCurrentNote)
+            }
         }
     }
 
