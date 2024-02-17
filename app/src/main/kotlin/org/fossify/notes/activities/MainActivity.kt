@@ -1090,13 +1090,9 @@ class MainActivity : SimpleActivity() {
 
     private fun displayDeleteNotePrompt() {
         DeleteNoteDialog(this, mCurrentNote) {
-            if (config.isAppPasswordProtectionOn) {
-                handleAppPasswordProtection {
-                    mWasProtectionHandled = it
-                    if (it) {
-                        mIsPasswordProtectionPending = false
+            if (config.isDeletePasswordProtectionOn) {
+                handleDeletePasswordProtection {
                         deleteNote(it, mCurrentNote)
-                    }
                 }
             }
             else

@@ -65,6 +65,7 @@ class SettingsActivity : SimpleActivity() {
         setupEnableAutomaticBackups()
         setupManageAutomaticBackups()
         setupAppPasswordProtection()
+        setupNoteDeletionPasswordProtection()
         updateTextColors(binding.settingsNestedScrollview)
 
         arrayOf(
@@ -413,6 +414,28 @@ class SettingsActivity : SimpleActivity() {
 
                     if (config.isAppPasswordProtectionOn) {
                         val confirmationTextId = if (config.appProtectionType == PROTECTION_FINGERPRINT)
+                            org.fossify.commons.R.string.fingerprint_setup_successfully else org.fossify.commons.R.string.protection_setup_successfully
+                        ConfirmationDialog(this, "", confirmationTextId, org.fossify.commons.R.string.ok, 0) { }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setupNoteDeletionPasswordProtection() {
+        binding.settingsNoteDeletionPasswordProtection.isChecked = config.isDeletePasswordProtectionOn
+        binding.settingsNoteDeletionPasswordProtectionHolder.setOnClickListener {
+            val tabToShow = if (config.isDeletePasswordProtectionOn) config.deleteProtectionType else SHOW_ALL_TABS
+            SecurityDialog(this, config.deletePasswordHash, tabToShow) { hash, type, success ->
+                if (success) {
+                    val hasPasswordProtection = config.isDeletePasswordProtectionOn
+                    binding.settingsNoteDeletionPasswordProtection.isChecked = !hasPasswordProtection
+                    config.isDeletePasswordProtectionOn = !hasPasswordProtection
+                    config.deletePasswordHash = if (hasPasswordProtection) "" else hash
+                    config.deleteProtectionType = type
+
+                    if (config.isDeletePasswordProtectionOn) {
+                        val confirmationTextId = if (config.deleteProtectionType == PROTECTION_FINGERPRINT)
                             org.fossify.commons.R.string.fingerprint_setup_successfully else org.fossify.commons.R.string.protection_setup_successfully
                         ConfirmationDialog(this, "", confirmationTextId, org.fossify.commons.R.string.ok, 0) { }
                     }
