@@ -14,7 +14,7 @@
     <string name="create_new_note">Buat catatan baru</string>
     <string name="add_to_note">Tambahkan ke catatan</string>
     <string name="unsaved_changes_warning">Anda memiliki perubahan yang belum disimpan. Apa yang ingin anda lakukan\?</string>
-    <string name="note_shown_widget">Catatan yang ditampilkan di widget:</string>
+    <string name="note_shown_widget">Catatan yang ditampilkan pada widget:</string>
     <string name="show_note_title">Tampilkan judul catatan</string>
     <string name="new_note_type">Tipe catatan baru:</string>
     <string name="text_note">Catatan teks</string>
@@ -68,4 +68,9 @@
     <string name="import_notes_pro">Impor catatan (Pro)</string>
     <string name="faq_1_title">Bagaimana cara mengubah warna widget\?</string>
     <string name="faq_1_text">Jika anda hanya memiliki 1 widget aktif, anda bisa menambahkan ulang, atau gunakan tombol di dalam pengaturan aplikasi untuk mengubahnya. Jika anda memiliki banyak widget aktif, tombol di dalam pengaturan aplikasi tidak akan tersedia. Karena aplikasi mendukung penyesuaian warna per-widget, anda harus menghapus dan menambahkan ulang widget yang ingin anda ubah warnanya.</string>
+    <string name="lock_note">Kunci catatan</string>
+    <string name="import_notes">Impor catatan</string>
+    <string name="add_to_the_top">Sematkan ke bagian atas</string>
+    <string name="widget_config">Terima kasih telah menggunakan Fossify Notes.
+\nJika Anda tertarik dengan aplikasi karya Fossify lainnya, silakan kunjungi fossify.org.</string>
 </resources>
