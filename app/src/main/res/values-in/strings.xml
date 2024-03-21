@@ -27,7 +27,7 @@
     <string name="new_text_note">Catatan teks baru</string>
     <string name="new_checklist">Daftar periksa baru</string>
     <string name="cannot_load_over_internet">Aplikasi tidak dapat membuka berkas dari internet</string>
-    <string name="open_file">Buka berkas</string>
+    <string name="open_file">Buka file</string>
     <string name="export_as_file">Ekspor sebagai berkas</string>
     <string name="file_too_large">Berkas terlalu besar, batasnya adalah 1MB</string>
     <string name="only_import_file_content">Hanya impor konten berkas
@@ -71,6 +71,6 @@
     <string name="lock_note">Kunci catatan</string>
     <string name="import_notes">Impor catatan</string>
     <string name="add_to_the_top">Sematkan ke bagian atas</string>
-    <string name="widget_config">Terima kasih telah menggunakan Fossify Notes.
+    <string name="widget_config">Terima kasih telah menggunakan Catatan Fossify.
 \nJika Anda tertarik dengan aplikasi karya Fossify lainnya, silakan kunjungi fossify.org.</string>
 </resources>
