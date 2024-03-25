@@ -27,7 +27,6 @@ import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.isGone
 import androidx.viewpager.widget.ViewPager
 import org.fossify.commons.dialogs.*
 import org.fossify.commons.extensions.*
@@ -135,7 +134,7 @@ class MainActivity : SimpleActivity() {
                     mWasProtectionHandled = it
                     if (it) {
                         mIsPasswordProtectionPending = false
-                        binding.viewPager.isGone = false
+                        binding.viewPager.beVisible()
                     } else {
                         finish()
                     }
@@ -1092,11 +1091,9 @@ class MainActivity : SimpleActivity() {
         DeleteNoteDialog(this, mCurrentNote) {
             if (config.isDeletePasswordProtectionOn) {
                 handleDeletePasswordProtection {
-                        deleteNote(it, mCurrentNote)
+                    deleteNote(it, mCurrentNote)
                 }
-            }
-            else
-            {
+            } else {
                 deleteNote(it, mCurrentNote)
             }
         }
