@@ -73,4 +73,5 @@
     <string name="add_to_the_top">Adicionar ao topo</string>
     <string name="widget_config">Obrigado por utilizar Fossify Notes.
 \nPara conhecer as outras aplicações Fossify, aceda a fossify.org.</string>
+    <string name="password_protect_note_deletion">Proteger eliminação de notas com palavra-passe</string>
 </resources>
