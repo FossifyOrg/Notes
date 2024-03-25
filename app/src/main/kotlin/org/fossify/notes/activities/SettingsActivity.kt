@@ -10,7 +10,9 @@ import androidx.core.view.ViewCompat
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import org.fossify.commons.dialogs.ConfirmationDialog
 import org.fossify.commons.dialogs.RadioGroupDialog
+import org.fossify.commons.dialogs.SecurityDialog
 import org.fossify.commons.extensions.*
 import org.fossify.commons.helpers.*
 import org.fossify.commons.models.RadioItem
@@ -62,6 +64,8 @@ class SettingsActivity : SimpleActivity() {
         setupNotesImport()
         setupEnableAutomaticBackups()
         setupManageAutomaticBackups()
+        setupAppPasswordProtection()
+        setupNoteDeletionPasswordProtection()
         updateTextColors(binding.settingsNestedScrollview)
 
         arrayOf(
@@ -394,5 +398,49 @@ class SettingsActivity : SimpleActivity() {
         config.autoBackup = enable
         binding.settingsEnableAutomaticBackups.isChecked = enable
         binding.settingsManageAutomaticBackupsHolder.beVisibleIf(enable)
+    }
+
+    private fun setupAppPasswordProtection() {
+        binding.settingsAppPasswordProtection.isChecked = config.isAppPasswordProtectionOn
+        binding.settingsAppPasswordProtectionHolder.setOnClickListener {
+            val tabToShow = if (config.isAppPasswordProtectionOn) config.appProtectionType else SHOW_ALL_TABS
+            SecurityDialog(this, config.appPasswordHash, tabToShow) { hash, type, success ->
+                if (success) {
+                    val hasPasswordProtection = config.isAppPasswordProtectionOn
+                    binding.settingsAppPasswordProtection.isChecked = !hasPasswordProtection
+                    config.isAppPasswordProtectionOn = !hasPasswordProtection
+                    config.appPasswordHash = if (hasPasswordProtection) "" else hash
+                    config.appProtectionType = type
+
+                    if (config.isAppPasswordProtectionOn) {
+                        val confirmationTextId = if (config.appProtectionType == PROTECTION_FINGERPRINT)
+                            org.fossify.commons.R.string.fingerprint_setup_successfully else org.fossify.commons.R.string.protection_setup_successfully
+                        ConfirmationDialog(this, "", confirmationTextId, org.fossify.commons.R.string.ok, 0) { }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setupNoteDeletionPasswordProtection() {
+        binding.settingsNoteDeletionPasswordProtection.isChecked = config.isDeletePasswordProtectionOn
+        binding.settingsNoteDeletionPasswordProtectionHolder.setOnClickListener {
+            val tabToShow = if (config.isDeletePasswordProtectionOn) config.deleteProtectionType else SHOW_ALL_TABS
+            SecurityDialog(this, config.deletePasswordHash, tabToShow) { hash, type, success ->
+                if (success) {
+                    val hasPasswordProtection = config.isDeletePasswordProtectionOn
+                    binding.settingsNoteDeletionPasswordProtection.isChecked = !hasPasswordProtection
+                    config.isDeletePasswordProtectionOn = !hasPasswordProtection
+                    config.deletePasswordHash = if (hasPasswordProtection) "" else hash
+                    config.deleteProtectionType = type
+
+                    if (config.isDeletePasswordProtectionOn) {
+                        val confirmationTextId = if (config.deleteProtectionType == PROTECTION_FINGERPRINT)
+                            org.fossify.commons.R.string.fingerprint_setup_successfully else org.fossify.commons.R.string.protection_setup_successfully
+                        ConfirmationDialog(this, "", confirmationTextId, org.fossify.commons.R.string.ok, 0) { }
+                    }
+                }
+            }
+        }
     }
 }

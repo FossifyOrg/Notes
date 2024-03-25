@@ -60,6 +60,7 @@
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
     <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="password_protect_note_deletion">Password protect note deletion</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
