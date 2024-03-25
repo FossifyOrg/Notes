@@ -73,4 +73,5 @@
     <string name="add_to_the_top">Sematkan ke bagian atas</string>
     <string name="widget_config">Terima kasih telah menggunakan Catatan Fossify.
 \nJika Anda tertarik dengan aplikasi karya Fossify lainnya, silakan kunjungi fossify.org.</string>
+    <string name="password_protect_note_deletion">Lindungi penghapusan catatan dengan kata sandi</string>
 </resources>
