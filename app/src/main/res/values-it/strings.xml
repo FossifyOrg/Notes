@@ -73,4 +73,5 @@
     <string name="faq_1_text">Se hai un solo widget attivo, puoi ricrearlo oppure usare il pulsante nelle impostazioni dell\'app per personalizzaro. Se hai più di un widget, il pulsante nelle impostazioni dell\'app non sarà disponibile. Dato che l\'app supporta la personalizzazione dei colori per ogni widget, dovrai ricreare il widget che vuoi personalizzare.</string>
     <string name="lock_note">Blocca nota</string>
     <string name="add_to_the_top">Aggiungi in cima</string>
+    <string name="password_protect_note_deletion">Proteggi con password l\'eliminazione delle note</string>
 </resources>
