@@ -73,4 +73,5 @@
 \nA Fossify további alkalmazásaiért látogasson el a fossify.org weboldalra.</string>
     <string name="unlock_notes">Jegyzetek feloldása</string>
     <string name="found_locked_notes_info">A következő jegyzetek zárolva vannak. Feloldhatja őket egyenként is, vagy kihagyhatja az exportálásukat.</string>
+    <string name="password_protect_note_deletion">Jelszóval védett jegyzettörlés</string>
 </resources>
