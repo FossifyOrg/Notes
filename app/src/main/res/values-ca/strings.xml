@@ -68,9 +68,10 @@
     <string name="import_notes">Importa notes</string>
     <string name="import_notes_pro">Importa notes (Pro)</string>
     <string name="faq_1_title">Com puc canviar el color dels ginys\?</string>
-    <string name="faq_1_text">En cas que només tingueu 1 giny actiu, podeu tornar-lo a crear o utilitzar el botó de configuració de l\'aplicació per personalitzar-lo. Si teniu diversos ginys actius, el botó de configuració de l\'aplicació no estarà disponible. Com que l\'aplicació admet la personalització del color per giny, haureu de tornar a crear el giny que vulgueu personalitzar.</string>
+    <string name="faq_1_text">En cas que només tingueu 1 giny actiu, podeu tornar-lo a crear o utilitzar el botó de configuració de l\'aplicació per a personalitzar-lo. Si teniu diversos ginys actius, el botó de configuració de l\'aplicació no estarà disponible. Com que l\'aplicació admet la personalització del color per giny, haureu de tornar a crear el giny que vulgueu personalitzar.</string>
     <string name="add_to_the_top">Afegeix a la part superior</string>
     <string name="app_launcher_name">Notes</string>
     <string name="widget_config">Gràcies per utilitzar Fossify Notes.
 \nVisiteu fossify.org per a més aplicacions de Fossify.</string>
+    <string name="password_protect_note_deletion">Protegeix amb contrasenya la supressió de notes</string>
 </resources>
