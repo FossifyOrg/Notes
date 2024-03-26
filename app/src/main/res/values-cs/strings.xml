@@ -73,4 +73,5 @@
     <string name="widget_config">Děkujeme za používání aplikace Fossify Notes.
 \nPro další aplikace od Fossify navštivte fossify.org.</string>
     <string name="add_to_the_top">Přidat nahoru</string>
+    <string name="password_protect_note_deletion">Odstranění ochrany poznámky heslem</string>
 </resources>

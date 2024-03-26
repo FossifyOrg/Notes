@@ -67,4 +67,10 @@
     <string name="import_notes_pro">Importaţi note (Pro)</string>
     <string name="faq_1_title">Cum pot schimba culoarea widget-urilor\?</string>
     <string name="faq_1_text">În cazul în care aveți doar un singur widget activ, îl puteți fie recrea, fie puteți utiliza butonul din setările aplicației pentru a-l personaliza. În cazul în care aveți mai multe widgeturi active, butonul din setările aplicației nu va fi disponibil. Deoarece aplicația acceptă personalizarea culorilor pentru fiecare widget în parte, va trebui să recreați widgetul pe care doriți să îl personalizați.</string>
+    <string name="unlock_notes">Deblochează notițele</string>
+    <string name="add_to_the_top">Adaugă la începutul listei</string>
+    <string name="found_locked_notes_info">Următoarele notițe sunt blocate. Le poți debloca una câte una sau poți sări peste a le exporta.</string>
+    <string name="widget_config">Vă mulțumim pentru că folosiți Fossify Notes.
+\nPentru mai multe aplicații de la Fossify, vă rugăm vizitați fossify.org.</string>
+    <string name="cannot_load_over_internet">Aplicația nu poate incârca fișiere pe internet.</string>
 </resources>
