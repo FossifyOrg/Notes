@@ -19,12 +19,20 @@
         android:src="@drawable/ic_lock_vector"
         android:visibility="gone" />
 
-    <org.fossify.commons.views.MyTextView
-        android:id="@+id/open_note_item_title"
+    <ImageView
+        android:id="@+id/open_note_item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:src="@drawable/ic_attach_file_vector" />
+
+    <org.fossify.commons.views.MyTextView
+        android:id="@+id/open_note_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/open_note_item_icon"
         android:ellipsize="end"
         android:lines="1"
         android:textSize="@dimen/big_text_size"
