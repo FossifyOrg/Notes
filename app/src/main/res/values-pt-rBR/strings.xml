@@ -39,7 +39,7 @@
     <string name="note_saved_successfully">Nota \"%s\" salva com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
     <string name="only_export_file_content">Exportar apenas o conteúdo atual do arquivo
-\n(alterar a nota não afetará o arquivo)</string>
+\n(alterando a nota não afetará o arquivo)</string>
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Coloque o cursor no final da nota</string>
@@ -73,4 +73,5 @@
     <string name="widget_config">Obrigado por utilizar o Bloco de Notas Fossify.
 \nPara conhecer os outros aplicativos Fossify, por favor visite fossify.org.</string>
     <string name="import_notes">Importar notas</string>
+    <string name="password_protect_note_deletion">Proteger a eliminação de notas com senha</string>
 </resources>
