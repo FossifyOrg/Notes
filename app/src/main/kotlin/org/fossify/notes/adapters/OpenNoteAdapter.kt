@@ -14,7 +14,9 @@ import org.fossify.commons.adapters.MyRecyclerViewAdapter
 import org.fossify.commons.extensions.*
 import org.fossify.commons.helpers.LOWER_ALPHA_INT
 import org.fossify.commons.helpers.SORT_BY_CUSTOM
+import org.fossify.commons.helpers.isOreoPlus
 import org.fossify.commons.views.MyRecyclerView
+import org.fossify.notes.R
 import org.fossify.notes.databinding.OpenNoteItemBinding
 import org.fossify.notes.extensions.config
 import org.fossify.notes.models.ChecklistItem
@@ -80,8 +82,16 @@ class OpenNoteAdapter(
             openNoteItemIcon.apply {
                 beVisibleIf(note.path.isNotEmpty())
                 applyColorFilter(textColor)
+                if (isOreoPlus()) {
+                    tooltipText = context.getString(R.string.this_note_is_linked)
+                }
+
                 setOnClickListener {
-                    activity.toast(note.path)
+                    if (isOreoPlus()) {
+                        performLongClick()
+                    } else {
+                        activity.toast(R.string.this_note_is_linked)
+                    }
                 }
             }
         }
