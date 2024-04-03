@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
-    <string name="app_launcher_name">Notes</string>
-    <string name="widget_config">Gràcies per utilitzar Simple Notes.
-\nPer obtenir més aplicacions Simples, visiteu SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">No es pot compartir un text buit</string>
-    <string name="simple_note">Nota senzilla</string>
     <string name="new_note">Afegeix una nota nova</string>
     <string name="no_title">Si us plau, anomeneu la vostra nota</string>
     <string name="title_taken">Ja existeix una nota amb aquest títol</string>
@@ -32,7 +27,6 @@
     <string name="new_text_note">Nota de text nova</string>
     <string name="new_checklist">Llista de comprovació nova</string>
     <string name="cannot_load_over_internet">L\'aplicació no pot carregar fitxers per Internet</string>
-    <!-- File notes -->
     <string name="open_file">Obre un fitxer</string>
     <string name="export_as_file">Exporta com a fitxer</string>
     <string name="file_too_large">El fitxer és massa gran, el límit és d\'1 MB</string>
@@ -45,7 +39,6 @@
     <string name="note_exported_successfully">La nota «%s» s\'ha exportat correctament</string>
     <string name="only_export_file_content">Exporta només el contingut del fitxer actual
 \n(canviar la nota no afectarà el fitxer)</string>
-    <!-- Settings -->
     <string name="display_success_message">Mostra els missatges de desament correcte</string>
     <string name="links_and_emails_clickable">Fes que els enllaços i correus electrònics s\'hi pugui fer clic</string>
     <string name="place_cursor_end">Col·loca el cursor al final de la nota</string>
@@ -64,24 +57,16 @@
     <string name="use_incognito_mode">Utilitza el mode d\'incògnit dels teclats</string>
     <string name="move_done_checklist_items">Mou els elements fets de la llista de comprovació a la part inferior</string>
     <string name="add_new_checklist_items_top">Afegeix els elements nous de la llista de comprovació a la part superior</string>
-    <!-- Checklists -->
     <string name="checklist">Llista de comprovació</string>
     <string name="checklists">Llistes de comprovació</string>
     <string name="add_new_checklist_item">Afegeix un element nou de la llista de comprovació</string>
     <string name="add_new_checklist_items">Afegeix elements nous de la llista de comprovació</string>
     <string name="checklist_is_empty">La llista de comprovació és buida</string>
     <string name="remove_done_items">Elimina els elements fets</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importa una carpeta</string>
     <string name="export_notes">Exporta notes</string>
     <string name="import_notes">Importa notes</string>
     <string name="import_notes_pro">Importa notes (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Com puc canviar el color dels ginys\?</string>
     <string name="faq_1_text">En cas que només tingueu 1 giny actiu, podeu tornar-lo a crear o utilitzar el botó de configuració de l\'aplicació per personalitzar-lo. Si teniu diversos ginys actius, el botó de configuració de l\'aplicació no estarà disponible. Com que l\'aplicació admet la personalització del color per giny, haureu de tornar a crear el giny que vulgueu personalitzar.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

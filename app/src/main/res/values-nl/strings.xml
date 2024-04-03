@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Eenvoudige Notities</string>
     <string name="app_launcher_name">Notities</string>
-    <string name="widget_config">Kijk op SimpleMobileTools.com voor meer eenvoudig te gebruiken apps.</string>
     <string name="cannot_share_empty_text">Kan geen lege notitie delen</string>
-    <string name="simple_note">Eenvoudige Notitie</string>
     <string name="new_note">Nieuwe notitie</string>
     <string name="no_title">Geef de notitie een naam</string>
     <string name="title_taken">Notitie met deze naam bestaat reeds</string>
@@ -31,7 +28,6 @@
     <string name="new_text_note">Nieuwe notitie</string>
     <string name="new_checklist">Nieuwe lijst</string>
     <string name="cannot_load_over_internet">Deze app kan geen bestanden laden via het internet</string>
-    <!-- File notes -->
     <string name="open_file">Bestand openen</string>
     <string name="export_as_file">Als bestand exporteren</string>
     <string name="file_too_large">Bestand is te groot: limiet is 1MB</string>
@@ -44,7 +40,6 @@
     <string name="note_exported_successfully">Notitie \"%s\" geëxporteerd</string>
     <string name="only_export_file_content">Alleen de huidige bestandsinhoud exporteren
 \n(wijzigingen in de notitie zullen niet in het bestand doorgevoerd worden)</string>
-    <!-- Settings -->
     <string name="display_success_message">Bevestigingen tonen</string>
     <string name="links_and_emails_clickable">Links en e-mailadressen aanklikbaar maken</string>
     <string name="place_cursor_end">Cursor aan het einde van de notitie plaatsen</string>
@@ -63,7 +58,6 @@
     <string name="use_incognito_mode">Incognito-modus van toetsenbord gebruiken</string>
     <string name="move_done_checklist_items">Afgewerkte items naar onderen verplaatsen</string>
     <string name="add_new_checklist_items_top">Nieuwe items boven aan de lijst toevoegen</string>
-    <!-- Checklists -->
     <string name="checklist">Lijst</string>
     <string name="checklists">Lijsten</string>
     <string name="add_new_checklist_item">Item toevoegen</string>
@@ -71,16 +65,11 @@
     <string name="checklist_is_empty">De lijst is leeg</string>
     <string name="remove_done_items">Afgeronde items wissen</string>
     <string name="add_to_the_top">Bovenaan toevoegen</string>
-    <!-- Import / Export -->
     <string name="import_folder">Map importeren</string>
     <string name="export_notes">Notities exporteren</string>
     <string name="import_notes">Notities importeren</string>
     <string name="import_notes_pro">Notities importeren (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Hoe verander ik de kleuren van de widgets\?</string>
     <string name="faq_1_text">Gebruik de optie in de instellingen van de app om de kleuren aan te passen, of maak de widget opnieuw aan. Indien er meerdere widgets van deze app actief zijn, zal deze optie niet beschikbaar zijn. De kleuren zijn dan alleen aan te passen door de widget opnieuw aan te maken.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
+    <string name="widget_config">Kijk op fossify.org voor meer eenvoudig te gebruiken apps.</string>
 </resources>

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lihtne märkmik</string>
     <string name="app_launcher_name">Märkmik</string>
-    <string name="widget_config">Täname et kasutad Lihtsat märkmikku.
-\nTeisi rakendusi meie Lihtsate tarvikute seeriast leiad SimpleMobileTools.com saidist.</string>
     <string name="cannot_share_empty_text">Tühja sisu ei saa jagada</string>
-    <string name="simple_note">Lihtne märge</string>
     <string name="new_note">Lisa uus märge</string>
     <string name="no_title">Palun pane oma märkele nimi</string>
     <string name="title_taken">Sellise nimega märge on juba olemas</string>
@@ -32,7 +28,6 @@
     <string name="new_text_note">Uus tekstimärge</string>
     <string name="new_checklist">Uus tööde loend</string>
     <string name="cannot_load_over_internet">See rakendus ei saa laadida faile internetist</string>
-    <!-- File notes -->
     <string name="open_file">Ava fail</string>
     <string name="export_as_file">Ekspordi failina</string>
     <string name="file_too_large">Faili suurus ületab lubatud 1MB piiri</string>
@@ -45,7 +40,6 @@
     <string name="note_exported_successfully">„%s“ märkme eksportimine õnnestus</string>
     <string name="only_export_file_content">Ekspordi vaid praeguse faili sisu
 \n(märkme muutmine ei mõjuta faili)</string>
-    <!-- Settings -->
     <string name="display_success_message">Näita teateid salvestamise õnnestumise kohta</string>
     <string name="links_and_emails_clickable">Tee lingid ja e-posti aadressid klikatavaks</string>
     <string name="place_cursor_end">Aseta kursor märkme lõppu</string>
@@ -64,7 +58,6 @@
     <string name="use_incognito_mode">Kasuta klaviatuuride inkognito-režiimi</string>
     <string name="move_done_checklist_items">Tööde loendis liiguta täidetud ülesanded loendi lõppu</string>
     <string name="add_new_checklist_items_top">Lisa uued kirjed tööde loendi algusesse</string>
-    <!-- Checklists -->
     <string name="checklist">Tööde loend</string>
     <string name="checklists">Tööde loendid</string>
     <string name="add_new_checklist_item">Lisa tööde loendisse uus kirje</string>
@@ -72,16 +65,12 @@
     <string name="checklist_is_empty">Tööde loend on tühi</string>
     <string name="remove_done_items">Kustuta tehtuks märgitud kirjed</string>
     <string name="add_to_the_top">Lisa ülaossa</string>
-    <!-- Import / Export -->
     <string name="import_folder">Impordi kaust</string>
     <string name="export_notes">Ekspordi märkmed</string>
     <string name="import_notes">Impordi märkmed</string>
     <string name="import_notes_pro">Impordi märkmed (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Kuidas ma saan muuta vidinate värvi\?</string>
     <string name="faq_1_text">Kui sa kasutad vaid üht vidinat, siis kas saad ta uuesti luua või kasutada rakenduse seadistusi värvide kohandamiseks. Kui sul on pidevas kasutuses mitu vidinat, siis rakenduste seadistuste nupp ei toimi. Kuna rakendus võimaldab eri vidinatele määrata erinevaid värve, siis sa pead muudetava vidina uuesti looma.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
+    <string name="widget_config">Täname, et kasutad Fossify Märkmikku.
+\nTeavet kõikide Fossify rakenduste kohta leiad fossify.org saidist.</string>
 </resources>

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jednoduché poznámky</string>
     <string name="app_launcher_name">Poznámky</string>
-    <string name="widget_config">Děkujeme za používání Jednoduchých poznámek.
-\nPro více jednoduchých aplikací, prosím, navštivte SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nelze sdílet prázdný text</string>
-    <string name="simple_note">Jednoduchá poznámka</string>
     <string name="new_note">Přidat novou poznámku</string>
     <string name="no_title">Prosím, pojmenujte poznámku</string>
     <string name="title_taken">Poznámka s tímto názvem již existuje</string>
@@ -32,7 +28,6 @@
     <string name="new_text_note">Nová textová poznámka</string>
     <string name="new_checklist">Nový seznam položek</string>
     <string name="cannot_load_over_internet">Tato aplikace nemůže načítat soubory přes internet</string>
-    <!-- File notes -->
     <string name="open_file">Otevřít soubor</string>
     <string name="export_as_file">Exportovat jako soubor</string>
     <string name="file_too_large">Soubor je příliš velký, limit je 1MB</string>
@@ -45,7 +40,6 @@
     <string name="note_exported_successfully">Poznámka „%s“ byla úspěšně exportována</string>
     <string name="only_export_file_content">Pouze exportovat současný obsah souboru
 \n(úprava poznámky nebude mít vliv na soubor)</string>
-    <!-- Settings -->
     <string name="display_success_message">Zobrazit zprávu o úspěšném uložení poznámky</string>
     <string name="links_and_emails_clickable">Dělat odkazy a e-maily kliknutelnými</string>
     <string name="place_cursor_end">Umístit kurzor na konec poznámky</string>
@@ -64,24 +58,19 @@
     <string name="use_incognito_mode">Použít „inkognito mód“ klávesnic</string>
     <string name="move_done_checklist_items">Přesunout splněné položky seznamu dospodu</string>
     <string name="add_new_checklist_items_top">Přidávat nové položky seznamu nahoru</string>
-    <!-- Checklists -->
     <string name="checklist">Seznam položek</string>
     <string name="checklists">Seznamy položek</string>
     <string name="add_new_checklist_item">Přidat do seznamu novou položku</string>
     <string name="add_new_checklist_items">Přidat do seznamu nové položky</string>
     <string name="checklist_is_empty">Seznam položek je prázdný</string>
     <string name="remove_done_items">Odstranit splněné položky seznamu</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importovat složku</string>
     <string name="export_notes">Exportovat poznámky</string>
     <string name="import_notes">Importovat poznámky</string>
     <string name="import_notes_pro">Importovat poznámky (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Jak mohu změnit barvu widgetů\?</string>
     <string name="faq_1_text">V případě, že máte pouze 1 aktivní widget, můžete jej buď znovu vytvořit, nebo použít tlačítko v nastavení aplikace na změnu barvy. Pokud máte widgetů víc, tlačítko v nastavení aplikace zmizí. Protože aplikace podporuje různé barvy pro každý widget, budete muset znovu vytvořit ten widget, jehož barvy chcete změnit.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
+    <string name="widget_config">Děkujeme za používání aplikace Fossify Notes.
+\nPro další aplikace od Fossify navštivte fossify.org.</string>
+    <string name="add_to_the_top">Přidat nahoru</string>
 </resources>

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Једноставне белешке</string>
     <string name="app_launcher_name">Напомене</string>
-    <string name="widget_config">Хвала вам што користите Једноставне белешке.\nЗа једноставније апликације посетите SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Не можете да делите празан текст</string>
-    <string name="simple_note">Симпле Нотес</string>
     <string name="new_note">Додајте нову белешку</string>
     <string name="no_title">Молимо да наведете своју белешку</string>
     <string name="title_taken">Белешка са тим насловом већ постоји</string>
@@ -23,15 +20,11 @@
     <string name="text_note">Текст напомене</string>
     <string name="lock_note">Закључај белешку</string>
     <string name="unlock_note">Откључај белешку</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Садржај белешки је закључан.</string>
     <string name="show_content">Прикажи садржај</string>
     <string name="locking_warning">УПОЗОРЕЊЕ: Ако заборавите лозинку за белешке, више нећете моћи да је повратите нити да приступите садржају белешки.</string>
     <string name="new_text_note">Нова текстуална белешка</string>
     <string name="new_checklist">Нова контролна листа</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Отворена датотека</string>
     <string name="export_as_file">Извези као датотеку</string>
     <string name="file_too_large">Датотека је превелика, ограничење је 1 МБ</string>
@@ -41,7 +34,6 @@
     <string name="note_saved_successfully">Белешке \"%s\" су успешно сачуване</string>
     <string name="note_exported_successfully">Белешке \"%s\" успешно извезено</string>
     <string name="only_export_file_content">Извезите само тренутни садржај датотеке\n(промена белешке неће утицати на датотеку)</string>
-    <!-- Settings -->
     <string name="display_success_message">Прикажите поруке о успеху чувања</string>
     <string name="links_and_emails_clickable">Учините линкове и е-поруке на које се може кликнути</string>
     <string name="place_cursor_end">Поставите курсор на крај белешке</string>
@@ -60,20 +52,16 @@
     <string name="use_incognito_mode">Користите анонимни режим тастатура</string>
     <string name="move_done_checklist_items">Померите готове ставке контролне листе на дно</string>
     <string name="add_new_checklist_items_top">Додајте нове ставке контролне листе на врх</string>
-    <!-- Checklists -->
     <string name="checklist">Контролна листа</string>
     <string name="checklists">Контролне листе</string>
     <string name="add_new_checklist_item">Додајте нову ставку контролне листе</string>
     <string name="add_new_checklist_items">Додајте нове ставке контролне листе</string>
     <string name="checklist_is_empty">Контролна листа је празна</string>
     <string name="remove_done_items">Уклоните готове ставке</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Увоз фолдера</string>
     <string name="export_notes">Извези све белешке</string>
     <string name="import_notes">Увезите белешке</string>
     <string name="import_notes_pro">Увезите белешке (Про)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Како могу да променим боју виџета\?</string>
     <string name="faq_1_text">У случају да имате само 1 активан виџет, можете га поново креирати или користити дугме у подешавањима апликације да бисте га прилагодили. Ако имате више активних виџета, дугме у подешавањима апликације неће бити доступно. Пошто апликација подржава прилагођавање боја по виџету, мораћете поново да креирате виџет који желите да прилагодите.</string>
 </resources>

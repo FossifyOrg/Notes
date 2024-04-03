@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Простые заметки</string>
     <string name="app_launcher_name">Заметки</string>
-    <string name="widget_config">Благодарим вас за использование \"Простых заметок\".
-\nБольше простых приложений вы можете найти на SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Нельзя поделиться пустым текстом</string>
-    <string name="simple_note">Простая заметка</string>
     <string name="new_note">Добавить новую заметку</string>
     <string name="no_title">Пожалуйста, назовите заметку</string>
     <string name="title_taken">Заметка с таким названием уже существует</string>
@@ -32,7 +28,6 @@
     <string name="new_text_note">Новая заметка</string>
     <string name="new_checklist">Новый список</string>
     <string name="cannot_load_over_internet">Приложение не может загружать файлы через интернет</string>
-    <!-- File notes -->
     <string name="open_file">Открыть файл</string>
     <string name="export_as_file">Экспортировать в файл</string>
     <string name="file_too_large">Файл слишком большой, лимит 1 МБ</string>
@@ -45,7 +40,6 @@
     <string name="note_exported_successfully">Заметка \"%s\" экспортирована</string>
     <string name="only_export_file_content">Экспортировать только текущее содержимое файла
 \n(изменение заметки не затронет файл)</string>
-    <!-- Settings -->
     <string name="display_success_message">Уведомлять об успешном сохранении файла</string>
     <string name="links_and_emails_clickable">Активные ссылки и адреса электронной почты</string>
     <string name="place_cursor_end">Помещать курсор в конец заметки</string>
@@ -64,7 +58,6 @@
     <string name="use_incognito_mode">Использовать режим инкогнито для клавиатур</string>
     <string name="move_done_checklist_items">Перемещать выполненные позиции в конец списка</string>
     <string name="add_new_checklist_items_top">Добавлять новые позиции в начало списка</string>
-    <!-- Checklists -->
     <string name="checklist">Список</string>
     <string name="checklists">Списки</string>
     <string name="add_new_checklist_item">Добавить позицию в список</string>
@@ -72,16 +65,12 @@
     <string name="checklist_is_empty">Список пуст</string>
     <string name="remove_done_items">Удалить выполненные позиции</string>
     <string name="add_to_the_top">Добавить в начало</string>
-    <!-- Import / Export -->
     <string name="import_folder">Импортировать папку</string>
     <string name="export_notes">Экспортировать заметки</string>
     <string name="import_notes">Импортировать заметки</string>
     <string name="import_notes_pro">Импортировать заметки (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Как я могу изменить цвет виджета\?</string>
     <string name="faq_1_text">Если у вас только 1 активный виджет, вы можете либо пересоздать его, либо использовать кнопку в настройках приложения. Если у вас несколько активных виджетов, кнопка в настройках будет недоступна. Поскольку приложение поддерживает настройку цвета для каждого виджета, вам придётся пересоздать виджет, который вы хотите настроить.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
+    <string name="widget_config">Благодарим вас за использование Fossify Заметок.
+\nБольше приложений от Fossify можно найти на fossify.org.</string>
 </resources>

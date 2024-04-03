@@ -1,4 +1,4 @@
-# Simple Notes
+# Fossify Notes
 <img alt="Logo" src="graphics/icon.webp" width="120" />
 
 ★ Need to take a quick note to make a shopping list, reminder for an address, or a startup idea? Then look no further as this is the simple organizer tool you've been looking for : Simple Notes: To-do list organizer and planner! The best of note taking apps and sticky notes free for android mobile phones. No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping list for groceries, to-do list for your daily agenda and easier note-taking to make setting up meetings a walk in the park  ★ 

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
-    <string name="widget_config">Thank you for using Simple Notes.\nFor more simple apps please visit SimpleMobileTools.com.</string>
+    <string name="widget_config">Thank you for using Fossify Notes.\nFor more apps from Fossify, please visit fossify.org.</string>
     <string name="cannot_share_empty_text">Cannot share empty text</string>
-    <string name="simple_note">Simple Note</string>
     <string name="new_note">Add a new note</string>
     <string name="no_title">Please name your note</string>
     <string name="title_taken">A note with that title already exists</string>
@@ -62,6 +60,7 @@
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
     <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="password_protect_note_deletion">Password protect note deletion</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>

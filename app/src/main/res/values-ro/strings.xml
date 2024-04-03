@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Notițe simple</string>
     <string name="app_launcher_name">Notițe</string>
-    <string name="widget_config">Vă mulțumim că ați folosit Notițe simple.
-\nPentru mai multe aplicații simple, vă rugăm să vizitați SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nu se poate distribui text gol</string>
-    <string name="simple_note">Notiță simplă</string>
     <string name="new_note">Adăugați o nouă notă</string>
     <string name="no_title">Vă rugăm să denumiți notița dumneavoastră</string>
     <string name="title_taken">O notiță cu acest titlu există deja</string>
@@ -24,15 +20,11 @@
     <string name="text_note">Notiță text</string>
     <string name="lock_note">Blocaţi notița</string>
     <string name="unlock_note">Deblocaţi notița</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Conținutul notiței este blocat.</string>
     <string name="show_content">Afișați conținutul</string>
     <string name="locking_warning">ATENȚIE: Dacă uitați parola notițelor, nu o veți mai putea recupera și nici nu veți mai putea accesa conținutul notițele.</string>
     <string name="new_text_note">Noua notița de text</string>
     <string name="new_checklist">O nouă listă de verificare</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Deschideți fișierul</string>
     <string name="export_as_file">Exportați ca fișier</string>
     <string name="file_too_large">Fișier prea mare, limita este de 1MB</string>
@@ -45,7 +37,6 @@
     <string name="note_exported_successfully">Notița \"%s\" a fost exportată cu succes</string>
     <string name="only_export_file_content">Exportați numai conținutul curent al fișierului
 \n(modificarea notiței nu va afecta fișierul)</string>
-    <!-- Settings -->
     <string name="display_success_message">Afișaţi mesajele de salvare cu succes</string>
     <string name="links_and_emails_clickable">Faceți link-urile și e-mailurile accesibile</string>
     <string name="place_cursor_end">Așezați cursorul la sfârșitul notiței</string>
@@ -64,24 +55,16 @@
     <string name="use_incognito_mode">Utilizați modul Incognito al tastaturilor</string>
     <string name="move_done_checklist_items">Mutați elementele realizate din lista de verificare în partea de jos</string>
     <string name="add_new_checklist_items_top">Adăugați noi elemente ale listei de verificare în partea de sus</string>
-    <!-- Checklists -->
     <string name="checklist">Listă de verificare</string>
     <string name="checklists">Liste de verificare</string>
     <string name="add_new_checklist_item">Adăugați un nou element în lista de verificare</string>
     <string name="add_new_checklist_items">Adăugați noi elemente în lista de verificare</string>
     <string name="checklist_is_empty">Lista de verificare este goală</string>
     <string name="remove_done_items">Elimină elementele realizate</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importare dosar</string>
     <string name="export_notes">Exportați toate notițele</string>
     <string name="import_notes">Importaţi notițele</string>
     <string name="import_notes_pro">Importaţi note (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Cum pot schimba culoarea widget-urilor\?</string>
     <string name="faq_1_text">În cazul în care aveți doar un singur widget activ, îl puteți fie recrea, fie puteți utiliza butonul din setările aplicației pentru a-l personaliza. În cazul în care aveți mai multe widgeturi active, butonul din setările aplicației nu va fi disponibil. Deoarece aplicația acceptă personalizarea culorilor pentru fiecare widget în parte, va trebui să recreați widgetul pe care doriți să îl personalizați.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

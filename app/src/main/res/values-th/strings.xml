@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">โน็ตแบบเรียบง่าย</string>
     <string name="app_launcher_name">โน้ต</string>
-    <string name="widget_config">ขอบคุณที่ใช้โน็ตแบบเรียบง่าย
-\nสำหรับแอปแบบเรียบง่ายอื่นๆโปรดไปที่ SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">ไม่สามารถแชร์ข้อความที่ว่างเปล่าได้</string>
-    <string name="simple_note">โน็ตแบบเรียบง่าย</string>
     <string name="new_note">เพิ่มโน็ตใหม่</string>
     <string name="no_title">โปรดตั้งชื่อโน็ตของคุณ</string>
     <string name="title_taken">โน็ตในชื่อนั้นมีอยู่แล้ว</string>
@@ -24,15 +20,11 @@
     <string name="text_note">โน็ตข้อความ</string>
     <string name="lock_note">ล็อกโน็ต</string>
     <string name="unlock_note">ปลดล็อกโน็ต</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">ข้อมูลในโน็ตถูกล็อก</string>
     <string name="show_content">แสดงข้อมูล</string>
     <string name="locking_warning">คำเตือน: ถ้าคุณลืมรหัสผ่านของโน็ต คุณจะไม่สามารถกู้คืนหรือเข้าถึงโน็ตตัวนั้นได้อีกต่อไป</string>
     <string name="new_text_note">เพิ่มโน็ตข้อความใหม่</string>
     <string name="new_checklist">เพิ่มรายการตรวจสอบใหม่</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">เปิดไฟล์</string>
     <string name="export_as_file">ส่งออกเป็นไฟล์</string>
     <string name="file_too_large">ไฟล์ใหญ่เกิน จำกัดอยู่ 1 เมกะไบต์</string>
@@ -45,7 +37,6 @@
     <string name="note_exported_successfully">โน็ต \"%s\" ส่งออกสำเร็จ</string>
     <string name="only_export_file_content">เอาข้อมูลในไฟล์ส่งออกเท่านั้น
 \n(เปลี่ยนโน็ตจะไม่ส่งผลกับไฟล์)</string>
-    <!-- Settings -->
     <string name="display_success_message">แสดงข้อความให้เห็นว่าบันทึกเรียบร้อย</string>
     <string name="links_and_emails_clickable">ทำให้ลิงค์หรืออีเมล์กดเข้าได้</string>
     <string name="place_cursor_end">เอาเคอร์เซอร์ไว้ที่ท้ายสุดของโน็ต</string>
@@ -64,24 +55,16 @@
     <string name="use_incognito_mode">ใช้คีย์บอร์ดในโหมดไม่ระบุตัวตน</string>
     <string name="move_done_checklist_items">ย้ายรายการตรวจสอบที่เรียบร้อยไปไว้ด้านล่าง</string>
     <string name="add_new_checklist_items_top">เพิ่มรายการตรวจสอบใหม่ไว้ด้านบน</string>
-    <!-- Checklists -->
     <string name="checklist">รายการตรวจสอบ</string>
     <string name="checklists">รายการตรวจสอบ</string>
     <string name="add_new_checklist_item">เพิ่มรายการตรวจสอบใหม่</string>
     <string name="add_new_checklist_items">เพิ่มรายการตรวจสอบใหม่</string>
     <string name="checklist_is_empty">รายการตรวจนั้นว่างเปล่า</string>
     <string name="remove_done_items">ลบของที่เรียบร้อยแล้ว</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">เอาโฟลเดอร์เข้า</string>
     <string name="export_notes">ส่งออกโน็ตทุกตัว</string>
     <string name="import_notes">นำเข้าโน็ตทุกตัว</string>
     <string name="import_notes_pro">นำเข้าโน็ต (โปร)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">เปลี่ยนสีวิดเจ็ตอย่างไร\?</string>
     <string name="faq_1_text">ในกรณีที่คุณมีวิดเจ็ตตัวเดียว คุณสามารถสร้างใหม่ได้ หรือ ใช้ปุ่มในการตั้งค่าของแอปเพื่อตกแต่งมัน ถ้าคุณมีวิดเจ็ตหลายตัว ปุ่มในการตั้งค่าของแอปจะไม่มีอยู่ เพราะว่าแอปสนับสนุนการตกแต่งสีในแต่ละวิดเจ็ต คุณจะต้องสร้างวิดเจ็ตที่ต้องการใหม่เพื่อตกแต่ง</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Anteckningar</string>
-    <string name="widget_config">Tack för att du använder Simple Notes.
-\nDu hittar fler enkla appar på simplemobiletools.com.</string>
     <string name="cannot_share_empty_text">Det går inte att dela en tom anteckning</string>
-    <string name="simple_note">Enkel anteckning</string>
     <string name="new_note">Ny anteckning</string>
     <string name="no_title">Namnge din anteckning</string>
     <string name="title_taken">Det finns redan en anteckning med samma titel</string>
@@ -32,7 +28,6 @@
     <string name="new_text_note">Ny textanteckning</string>
     <string name="new_checklist">Ny checklista</string>
     <string name="cannot_load_over_internet">Appen kan inte läsa in filer på internet</string>
-    <!-- File notes -->
     <string name="open_file">Öppna fil</string>
     <string name="export_as_file">Exportera</string>
     <string name="file_too_large">Filen är för stor, gränsen är 1MB</string>
@@ -45,7 +40,6 @@
     <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats</string>
     <string name="only_export_file_content">Exportera endast det aktuella filinnehållet
 \n(att ändra anteckningen påverkar inte filen)</string>
-    <!-- Settings -->
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
     <string name="links_and_emails_clickable">Gör länkar och e-postadresser tryckbara</string>
     <string name="place_cursor_end">Placera markören vid slutet av anteckningen</string>
@@ -64,7 +58,6 @@
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
     <string name="move_done_checklist_items">Flytta slutförda checklisteobjekt längst ned</string>
     <string name="add_new_checklist_items_top">Lägg till nya checklisteobjekt överst</string>
-    <!-- Checklists -->
     <string name="checklist">Checklista</string>
     <string name="checklists">Checklistor</string>
     <string name="add_new_checklist_item">Lägg till ett nytt checklisteobjekt</string>
@@ -72,16 +65,12 @@
     <string name="checklist_is_empty">Checklistan är tom</string>
     <string name="remove_done_items">Ta bort slutförda</string>
     <string name="add_to_the_top">Lägg till överst</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importera mapp</string>
     <string name="export_notes">Exportera anteckningar</string>
     <string name="import_notes">Importera</string>
     <string name="import_notes_pro">Importera (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Hur ändrar jag färgen på widgetarna\?</string>
     <string name="faq_1_text">Om du bara har 1 aktiv widget kan du antingen återskapa den eller använda knappen i appinställningarna för att anpassa den. Om du har flera aktiva widgetar är knappen i appinställningarna inte tillgänglig. Eftersom appen stöder färganpassning per widget måste du återskapa den widget som du vill anpassa.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
+    <string name="widget_config">Tack för att du använder Fossify Notes.
+\nFör fler appar från Fossify, besök fossify.org.</string>
 </resources>

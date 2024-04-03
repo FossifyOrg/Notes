@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Noter</string>
     <string name="app_launcher_name">Noter</string>
-    <string name="widget_config">Tak for at du har valgt Simple Noter.
-\nDu finder flere Simple Apps på siden SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Kan ikke dele tom tekst</string>
-    <string name="simple_note">Simpel Note</string>
     <string name="new_note">Tilføj en ny note</string>
     <string name="no_title">Navngiv din note</string>
     <string name="title_taken">Dette navn bruges allerede til en anden note</string>
@@ -31,8 +27,6 @@
     <string name="locking_warning">ADVARSEL: Hvis du glemmer noternes adgangskode, kan du ikke gendanne den eller få adgang til noternes indhold længere.</string>
     <string name="new_text_note">Ny tekstnote</string>
     <string name="new_checklist">Ny tjekliste</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Åbn fil</string>
     <string name="export_as_file">Eksporter som fil</string>
     <string name="file_too_large">Filen er for stor, den må højst fylde 1MB</string>
@@ -45,7 +39,6 @@
     <string name="note_exported_successfully">Noten \"%s\" er eksporteret</string>
     <string name="only_export_file_content">Eksporter kun filens indhold
 \n(ændring af noten påvirker ikke filen</string>
-    <!-- Settings -->
     <string name="display_success_message">Vis en meddelelse når en fil er gemt</string>
     <string name="links_and_emails_clickable">Gør links og mailadresser klikbare</string>
     <string name="place_cursor_end">Placer markøren i slutningen af noten</string>
@@ -64,7 +57,6 @@
     <string name="use_incognito_mode">Anvend inkognito-tilstand til tastatur</string>
     <string name="move_done_checklist_items">Flyt udførte tjeklistepunkter til bunden</string>
     <string name="add_new_checklist_items_top">Tilføj nye tjeklistepunkter øverst</string>
-    <!-- Checklists -->
     <string name="checklist">Tjekliste</string>
     <string name="checklists">Tjeklister</string>
     <string name="add_new_checklist_item">Føj et nyt punkt til tjeklisten</string>
@@ -72,16 +64,10 @@
     <string name="checklist_is_empty">Tjeklisten er tom</string>
     <string name="remove_done_items">Fjern udførte elementer</string>
     <string name="add_to_the_top">Føj til toppen</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importer mappe</string>
     <string name="export_notes">Eksporter alle noter</string>
     <string name="import_notes">Importer noter</string>
     <string name="import_notes_pro">Importer noter (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Hvordan kan jeg ændre widget\'ens farve\?</string>
     <string name="faq_1_text">Hvis du kun har en aktiv widget, kan du enten genskabe den eller bruge knappen i appindstillingerne til at tilpasse den. Hvis du har flere aktive widgets, er knappen i appindstillingerne ikke tilgængelig. Da appen understøtter farvetilpasning pr. widget, skal du genskabe den widget, som du vil tilpasse.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

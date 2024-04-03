@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Proste notatki</string>
     <string name="app_launcher_name">Notatki</string>
-    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Proste notatki.
-\nWięcej prostych aplikacji można znaleźć na SimpleMobileTools.com.</string>
+    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Fossify Notes.
+\nWięcej aplikacji od Fossify można znaleźć na fossify.org.</string>
     <string name="cannot_share_empty_text">Nie można udostępnić pustego tekstu</string>
-    <string name="simple_note">Prosta notatka</string>
     <string name="new_note">Dodaj nową notatkę</string>
     <string name="no_title">Nazwij swoją notatkę</string>
     <string name="title_taken">Notatka o tym tytule już istnieje</string>
@@ -32,7 +30,6 @@
     <string name="new_text_note">Nowa notatka tekstowa</string>
     <string name="new_checklist">Nowa lista kontrolna</string>
     <string name="cannot_load_over_internet">Aplikacja nie może załadować plików przez Internet</string>
-    <!-- File notes -->
     <string name="open_file">Otwórz plik</string>
     <string name="export_as_file">Eksportuj jako plik</string>
     <string name="file_too_large">Plik za duży, limit to 1 MB</string>
@@ -45,7 +42,6 @@
     <string name="note_exported_successfully">Notatka „%s” została wyeksportowana</string>
     <string name="only_export_file_content">Wyeksportuj tylko bieżącą zawartość pliku
 \n(zmiana notatki nie wpłynie na plik)</string>
-    <!-- Settings -->
     <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisie</string>
     <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy</string>
     <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
@@ -64,7 +60,6 @@
     <string name="use_incognito_mode">Używaj trybu incognito klawiatury</string>
     <string name="move_done_checklist_items">Przesuwaj na dół wykonane elementy listy kontrolnej</string>
     <string name="add_new_checklist_items_top">Dodawaj na górze nowe elementy listy kontrolnej</string>
-    <!-- Checklists -->
     <string name="checklist">Lista kontrolna</string>
     <string name="checklists">Listy kontrolne</string>
     <string name="add_new_checklist_item">Dodaj nowy element listy kontrolnej</string>
@@ -72,16 +67,10 @@
     <string name="checklist_is_empty">Lista kontrolna jest pusta</string>
     <string name="remove_done_items">Usuń wykonane elementy</string>
     <string name="add_to_the_top">Dodaj na górze</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importuj folder</string>
     <string name="export_notes">Eksportuj notatki</string>
     <string name="import_notes">Importuj notatki</string>
     <string name="import_notes_pro">Importuj notatki (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Jak mogę zmienić kolor widżetów\?</string>
     <string name="faq_1_text">Jeśli masz tylko 1 aktywny widżet, możesz go odtworzyć lub użyć przycisku w ustawieniach aplikacji, aby go dostosować. Jeśli masz wiele aktywnych widżetów, przycisk w ustawieniach aplikacji nie będzie dostępny. Ponieważ aplikacja obsługuje dostosowywanie kolorów dla poszczególnych widżetów, konieczne będzie ponowne utworzenie widżetu, który chcesz dostosować.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

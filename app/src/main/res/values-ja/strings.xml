@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simpleメモ</string>
     <string name="app_launcher_name">メモ</string>
-    <string name="widget_config">シンプルメモのご利用ありがとうございます。
-\n他のシンプルアプリは SimpleMobileTools.com をご覧ください。</string>
     <string name="cannot_share_empty_text">空のテキストは共有できません</string>
-    <string name="simple_note">シンプル メモ</string>
     <string name="new_note">新しいメモを追加</string>
     <string name="no_title">メモに名前をつけてください</string>
     <string name="title_taken">そのタイトルのメモはすでに存在します</string>
@@ -24,15 +20,11 @@
     <string name="text_note">テキストメモ</string>
     <string name="lock_note">メモをロック</string>
     <string name="unlock_note">メモのロックを解除</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">メモの内容がロックされています。</string>
     <string name="show_content">内容を表示</string>
     <string name="locking_warning">警告：メモのパスワードを忘れた場合、そのパスワードを復元したり、メモの内容にアクセスしたりすることはできなくなります。</string>
     <string name="new_text_note">新しいテキストメモ</string>
     <string name="new_checklist">新しいチェックリスト</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">ファイルを開く</string>
     <string name="export_as_file">ファイルとしてエクスポート</string>
     <string name="file_too_large">ファイルが大きすぎます (最大:1MBまで)</string>
@@ -45,7 +37,6 @@
     <string name="note_exported_successfully">メモ \"%s\" は正常にエクスポートされました</string>
     <string name="only_export_file_content">現在のファイルの内容のみエクスポートする
 \n(メモを編集してもファイルには影響しません)</string>
-    <!-- Settings -->
     <string name="display_success_message">正常保存時にメッセージを表示する</string>
     <string name="links_and_emails_clickable">URLとメールアドレスのリンクを有効にする</string>
     <string name="place_cursor_end">メモの最後にカーソルを移動する</string>
@@ -64,7 +55,6 @@
     <string name="use_incognito_mode">キーボードのシークレットモードを使用する</string>
     <string name="move_done_checklist_items">チェックリストの未完了リストを上に移動</string>
     <string name="add_new_checklist_items_top">新しいチェックリスト項目を上部に追加</string>
-    <!-- Checklists -->
     <string name="checklist">チェックリスト</string>
     <string name="checklists">チェックリスト</string>
     <string name="add_new_checklist_item">新しいチェックリスト項目を追加</string>
@@ -72,16 +62,10 @@
     <string name="checklist_is_empty">チェックリストが空です</string>
     <string name="remove_done_items">完了した項目を削除</string>
     <string name="add_to_the_top">上部に追加</string>
-    <!-- Import / Export -->
     <string name="import_folder">フォルダからインポート</string>
     <string name="export_notes">メモをすべてエクスポート</string>
     <string name="import_notes">メモをインポート</string>
     <string name="import_notes_pro">メモをインポート (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">ウィジェットの色はどうやって変更出来ますか？</string>
     <string name="faq_1_text">アクティブなウィジェットが一つしかない場合、ウィジェットを再作成するか、アプリ設定内のボタンを押してカスタマイズ出来ます。アクティブなウィジェットが複数ある場合、アプリ設定内のボタンは使用出来ません。アプリはウィジェットごとの色のカスタマイズをサポートしているので、カスタマイズしたいウィジェットは再作成する必要があります。</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

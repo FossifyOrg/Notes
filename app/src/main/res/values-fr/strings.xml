@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Notes simples</string>
-    <string name="app_launcher_name">Notes</string>
-    <string name="widget_config">Merci d\'utiliser Notes simples.
-\nPour plus d\'applications simples, merci de visiter SimpleMobileTools.com.</string>
+    <string name="widget_config">Merci d\'utiliser Fossify Notes.
+\nPour plus d\'applications de Fossify, veuillez visiter fossify.org.</string>
     <string name="cannot_share_empty_text">Impossible de partager un texte vide</string>
-    <string name="simple_note">Note simple</string>
     <string name="new_note">Ajouter une nouvelle note</string>
     <string name="no_title">Veuillez nommer votre note</string>
     <string name="title_taken">Une note avec le même titre existe déjà</string>
@@ -32,7 +29,6 @@
     <string name="new_text_note">Nouvelle note textuelle</string>
     <string name="new_checklist">Nouvelle liste de contrôle</string>
     <string name="cannot_load_over_internet">L\'application ne peut pas charger de fichiers depuis internet</string>
-    <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>
     <string name="file_too_large">Fichier trop volumineux, la limite est de 1 Mo</string>
@@ -45,7 +41,6 @@
     <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
     <string name="only_export_file_content">Exporter seulement le contenu du fichier
 \n(changer le fichier n\'affectera pas la note)</string>
-    <!-- Settings -->
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
     <string name="links_and_emails_clickable">Rendre les liens et les courriels cliquables</string>
     <string name="place_cursor_end">Placez le curseur à la fin de la note</string>
@@ -64,7 +59,6 @@
     <string name="use_incognito_mode">Utiliser le mode incognito du claviers</string>
     <string name="move_done_checklist_items">Déplacer les éléments de liste de contrôle inachevés en-bas</string>
     <string name="add_new_checklist_items_top">Ajouter un élément de liste de contrôle en-haut</string>
-    <!-- Checklists -->
     <string name="checklist">Liste de contrôle</string>
     <string name="checklists">Listes de contrôle</string>
     <string name="add_new_checklist_item">Ajouter un nouvel élément</string>
@@ -72,16 +66,11 @@
     <string name="checklist_is_empty">La liste de contrôle est vide</string>
     <string name="remove_done_items">Supprimer les éléments cochés</string>
     <string name="add_to_the_top">Ajouter en haut de la liste</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importer depuis un dossier</string>
     <string name="export_notes">Exporter les notes</string>
     <string name="import_notes">Importer des notes</string>
     <string name="import_notes_pro">Importer des notes (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Comment puis-je changer la couleur des widgets \?</string>
     <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
+    <string name="app_launcher_name">Notes</string>
 </resources>

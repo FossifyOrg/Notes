@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Schlichte Notizen</string>
     <string name="app_launcher_name">Notizen</string>
-    <string name="widget_config">Vielen Dank, dass du Simple Notes benutzt.
-\nWeitere einfache Apps findest du auf SimpleMobileTools.com.</string>
+    <string name="widget_config">Danke für die Verwendung von Fossify Notes.
+\nFür weitere Apps von Fossify besuche fossify.org.</string>
     <string name="cannot_share_empty_text">Eine leere Notiz kann nicht geteilt werden</string>
-    <string name="simple_note">Einfache Notiz</string>
     <string name="new_note">Neue Notiz hinzufügen</string>
     <string name="no_title">Bitte benenne deine Notiz</string>
     <string name="title_taken">Es existiert bereits eine Notiz mit diesem Namen</string>
@@ -28,11 +26,10 @@
     <string name="found_locked_notes_info">Die folgenden Notizen sind gesperrt. Du kannst sie entweder einzeln entsperren oder den Export überspringen.</string>
     <string name="note_content_locked">Der Inhalt der Notizen ist gesperrt.</string>
     <string name="show_content">Inhalt anzeigen</string>
-    <string name="locking_warning">ACHTUNG: Wenn du das Kennwort für die Notizen vergisst, kannst du sie nicht mehr wiederherstellen oder auf den Inhalt der Notizen zugreifen.</string>
+    <string name="locking_warning">ACHTUNG: Wenn du das Passwort für die Notizen vergisst, kannst du sie nicht mehr wiederherstellen oder auf den Inhalt der Notizen zugreifen.</string>
     <string name="new_text_note">Neue Textnotiz</string>
     <string name="new_checklist">Neue Checkliste</string>
     <string name="cannot_load_over_internet">Die App kann keine Dateien über das Internet laden</string>
-    <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
     <string name="export_as_file">Als Datei exportieren</string>
     <string name="file_too_large">Die Datei ist zu groß, die Grenze liegt bei 1 MB</string>
@@ -45,7 +42,6 @@
     <string name="note_exported_successfully">Notiz „%s“ erfolgreich exportiert</string>
     <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren
 \n(Das Verändern der Notiz wird die Datei nicht beeinflussen)</string>
-    <!-- Settings -->
     <string name="display_success_message">Bei erfolgreichem Speichern Benachrichtigung anzeigen</string>
     <string name="links_and_emails_clickable">Links und E-Mail-Adressen anklickbar</string>
     <string name="place_cursor_end">Cursor an das Ende der Notiz setzen</string>
@@ -64,7 +60,6 @@
     <string name="use_incognito_mode">Inkognitomodus von Tastaturen verwenden</string>
     <string name="move_done_checklist_items">Erledigte Checklistenpunkte ans Ende verschieben</string>
     <string name="add_new_checklist_items_top">Neue Checklistenpunkte am Anfang hinzufügen</string>
-    <!-- Checklists -->
     <string name="checklist">Checkliste</string>
     <string name="checklists">Checklisten</string>
     <string name="add_new_checklist_item">Einen neuen Checklistenpunkt hinzufügen</string>
@@ -72,16 +67,10 @@
     <string name="checklist_is_empty">Die Checkliste ist leer</string>
     <string name="remove_done_items">Erledigte Punkte entfernen</string>
     <string name="add_to_the_top">Zum Anfang hinzufügen</string>
-    <!-- Import / Export -->
     <string name="import_folder">Ordner importieren</string>
     <string name="export_notes">Notizen exportieren</string>
     <string name="import_notes">Notizen importieren</string>
     <string name="import_notes_pro">Notizen importieren (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Wie kann ich die Farbe der Widgets ändern\?</string>
     <string name="faq_1_text">Wenn nur ein Widget aktiv ist, kann die Farbe über die Einstellungen unter dem Punkt Widgets angepasst werden, ansonsten muss es neu erstellt werden.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

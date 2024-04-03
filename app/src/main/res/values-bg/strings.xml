@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Обикновени Бележки</string>
     <string name="app_launcher_name">Бележки</string>
-    <string name="widget_config">Благодарим, че използвате Обикновени Бележки.
-\nЗа още обикновени приложения посетете SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Не може да се споделя празен текст</string>
-    <string name="simple_note">Обикновени Бележки</string>
     <string name="new_note">Добави нова бележка</string>
     <string name="no_title">Моля, наречете бележката си</string>
     <string name="title_taken">Бележка с това заглавие вече съществува</string>
@@ -32,7 +28,6 @@
     <string name="new_text_note">Нова текстова бележка</string>
     <string name="new_checklist">Нов контролен списък</string>
     <string name="cannot_load_over_internet">Приложението не може да зарежда файлове през интернет</string>
-    <!-- File notes -->
     <string name="open_file">Отвори файл</string>
     <string name="export_as_file">Експортиране като файл</string>
     <string name="file_too_large">Файлът е твърде голям, ограничението е 1MB</string>
@@ -45,7 +40,6 @@
     <string name="note_exported_successfully">Забележка: \"%s\" експортира успешно</string>
     <string name="only_export_file_content">Експортирайте само текущото съдържание на файла
 \n(промяната на бележката няма да се отрази на файла)</string>
-    <!-- Settings -->
     <string name="display_success_message">Показване на съобщения за успешно записване</string>
     <string name="links_and_emails_clickable">Направете връзките и имейлите кликаеми</string>
     <string name="place_cursor_end">Поставете курсора до края на бележката</string>
@@ -64,24 +58,16 @@
     <string name="use_incognito_mode">Използване на режим \"Инкогнито\" на клавиатурите</string>
     <string name="move_done_checklist_items">Преместване на готовите елементи от контролния списък в долната част</string>
     <string name="add_new_checklist_items_top">Добавяне на нови елементи от контролния списък в горната част</string>
-    <!-- Checklists -->
     <string name="checklist">Контролен списък</string>
     <string name="checklists">Контролни списъци</string>
     <string name="add_new_checklist_item">Добавяне на нов елемент от контролния списък</string>
     <string name="add_new_checklist_items">Добавяне на нови елементи към контролен списък</string>
     <string name="checklist_is_empty">Контролният списък е празен</string>
     <string name="remove_done_items">Премахване на готови елементи</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Папка за импортиране</string>
     <string name="export_notes">Експортиране на бележките</string>
     <string name="import_notes">Бележки за внос</string>
     <string name="import_notes_pro">Бележки за внос (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Как мога да променя цвета на приспособлението\?</string>
     <string name="faq_1_text">В случай че имате само 1 активна джаджа, можете да я създадете отново или да използвате бутона в настройките на приложението за персонализирането ѝ. Ако имате няколко активни уиджета, бутонът в настройките на приложението няма да бъде достъпен. Тъй като приложението поддържа персонализиране на цвета за всяка джаджа, ще трябва да пресъздадете джаджата, която искате да персонализирате.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

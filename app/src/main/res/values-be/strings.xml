@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Нататкі</string>
-    <string name="widget_config">Дзякуй за выкарыстанне Simple Notes. 
-\nДля атрымання больш простых праграм наведайце SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Немагчыма абагуліць пусты тэкст</string>
-    <string name="simple_note">Простая нататка</string>
     <string name="new_note">Дадаць новую нататку</string>
     <string name="no_title">Назавіце нататку</string>
     <string name="title_taken">Нататка з такой назвай ужо існуе</string>
@@ -31,8 +27,6 @@
     <string name="locking_warning">ПАПЯРЭДЖАННЕ: Калі вы забудзеце пароль, вы больш не зможаце аднавіць яго альбо атрымаць доступ да змесціва нататак.</string>
     <string name="new_text_note">Новая тэкставая нататка</string>
     <string name="new_checklist">Новы кантрольны спіс</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Адкрыць файл</string>
     <string name="export_as_file">Экспарт у файл</string>
     <string name="file_too_large">Файл занадта вялікі, абмежаванне складае 1 МБ</string>
@@ -45,7 +39,6 @@
     <string name="note_exported_successfully">Нататка \"%s\" паспяхова экспартавана</string>
     <string name="only_export_file_content">Экспартаваць толькі бягучае змесціва файла 
 \n(змена нататкі не паўплывае на файл)</string>
-    <!-- Settings -->
     <string name="display_success_message">Паказаць паведамленні аб паспяховым захаванні</string>
     <string name="links_and_emails_clickable">Рабіць спасылкі і адрасы электроннай пошты націскальнымі</string>
     <string name="place_cursor_end">Змяшчаць курсор у канец нататкі</string>
@@ -64,24 +57,16 @@
     <string name="use_incognito_mode">Выкарыстоўваць рэжым інкогніта для клавіятуры</string>
     <string name="move_done_checklist_items">Перамяшчаць выкананыя пункты ў канец кантрольнага спіса</string>
     <string name="add_new_checklist_items_top">Дадаваць новыя пункты ў пачатак кантрольнага спіса</string>
-    <!-- Checklists -->
     <string name="checklist">Кантрольны спіс</string>
     <string name="checklists">Кантрольныя спісы</string>
     <string name="add_new_checklist_item">Дадаць пункт у кантрольны спіс</string>
     <string name="add_new_checklist_items">Дадаць пункты ў кантрольны спіс</string>
     <string name="checklist_is_empty">Кантрольны спіс пусты</string>
     <string name="remove_done_items">Выдаліць выкананыя пункты</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Імпартаваць папку</string>
     <string name="export_notes">Экспартаваць нататкі</string>
     <string name="import_notes">Імпартаваць нататкі</string>
     <string name="import_notes_pro">Імпартаваць нататкі (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Як змяніць колер віджэта\?</string>
     <string name="faq_1_text">Калі ў вас ёсць толькі 1 Актыўны віджэт, вы можаце альбо ўзнавіць яго зноўку, альбо выкарыстоўваць кнопку ў наладах прыкладання для яго Налады. Калі ў вас некалькі актыўных віджэтаў, кнопка ў наладах прыкладання будзе недаступная. Паколькі прыкладанне падтрымлівае наладу колеру для кожнага фішкі, вам прыйдзецца ўзнавіць віджэт, які вы хочаце наладзіць.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
 </resources>

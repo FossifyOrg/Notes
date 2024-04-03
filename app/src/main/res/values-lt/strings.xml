@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Paprasti užrašai</string>
     <string name="app_launcher_name">Užrašai</string>
-    <string name="widget_config">Ačiū, jog naudojate Simple Notes.
-\nDaugiau paprastų programų rasite SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Negalima dalintis tuščiu įrašu</string>
-    <string name="simple_note">Paprastas užrašas</string>
     <string name="new_note">Pridėti naują įrašą</string>
     <string name="no_title">Įrašo pavadinimas</string>
     <string name="title_taken">Įrašas tokiu pavadinimu jau egzistuoja</string>
@@ -19,20 +15,10 @@
     <string name="add_to_note">Papildyti įrašą</string>
     <string name="unsaved_changes_warning">Turite neišsaugotų pakeitimų. Ką norite su jais daryti\?</string>
     <string name="note_shown_widget">Užrašas rodomas skydelyje:</string>
-    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Naujo užrašo tipas:</string>
     <string name="text_note">Tekstinis užrašas</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Pastabų turinys yra užrakintas.</string>
-    <string name="show_content">Show content</string>
     <string name="locking_warning">ĮSPĖJIMAS: jei pamiršite užrašų slaptažodį, nebegalėsite jo atkurti ar pasiekti užrašų turinio.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
-    <!-- File notes -->
     <string name="open_file">Atverti bylą</string>
     <string name="export_as_file">Kurti kopiją</string>
     <string name="file_too_large">Failas per didelis, didžiausias leistinas dydis yra 1MB</string>
@@ -45,14 +31,12 @@
     <string name="note_exported_successfully">Pastaba \"%s sėkmingai eksportuota</string>
     <string name="only_export_file_content">Only export the current file content
 \n(changing the note will not affect the file)</string>
-    <!-- Settings -->
     <string name="display_success_message">Rodyti sėkmingo išsaugojimo pranešimus</string>
     <string name="links_and_emails_clickable">Veiksnios nuorodos ir elektroninio pašto adresai</string>
     <string name="place_cursor_end">Perkelti žymeklį į įrašo pabaigą</string>
     <string name="monospaced_font">Pakeisti šrifto stilių</string>
     <string name="show_keyboard">Rodyti klaviatūrą paleidžiant</string>
     <string name="show_word_count">Rodyti žodžių skaičių</string>
-    <string name="show_character_count">Show character count</string>
     <string name="alignment">Įtrauka</string>
     <string name="left">Kairėje</string>
     <string name="center">Centre</string>
@@ -61,27 +45,10 @@
     <string name="show_note_picker">Rodyti užrašų parinkiklį pajungus programėlę</string>
     <string name="autosave_notes">Automatiškai išsaugoti užrašus</string>
     <string name="enable_line_wrap">naudoti eilutės perkėlimą</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-    <!-- Checklists -->
     <string name="checklist">Kontrolinis sąrašas</string>
-    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Pridėti naują kontrolinio sąrašo objektą</string>
     <string name="add_new_checklist_items">Pridėti naujus kontrolinio sąrašo objektus</string>
     <string name="checklist_is_empty">Kontrolinis sąršas tuščias</string>
-    <string name="remove_done_items">Remove done items</string>
-    <string name="add_to_the_top">Add to the top</string>
-    <!-- Import / Export -->
     <string name="import_folder">Importuoti aplanką</string>
-    <string name="export_notes">Export notes</string>
-    <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
-    <!-- FAQ -->
     <string name="faq_1_title">Kaip pakeisti valdiklių spalvą\?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
-    <!--
-        Haven't found some strings? There's more at
-        https://github.com/FossifyOrg/Commons/tree/master/commons/src/main/res
-    -->
-</resources>
+    </resources>
