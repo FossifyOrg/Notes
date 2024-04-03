@@ -11,13 +11,12 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.fossify.commons.activities.BaseSimpleActivity
 import org.fossify.commons.adapters.MyRecyclerViewAdapter
-import org.fossify.commons.extensions.beGoneIf
-import org.fossify.commons.extensions.beVisibleIf
-import org.fossify.commons.extensions.getColoredDrawableWithColor
-import org.fossify.commons.extensions.isBlackAndWhiteTheme
+import org.fossify.commons.extensions.*
 import org.fossify.commons.helpers.LOWER_ALPHA_INT
 import org.fossify.commons.helpers.SORT_BY_CUSTOM
+import org.fossify.commons.helpers.isOreoPlus
 import org.fossify.commons.views.MyRecyclerView
+import org.fossify.notes.R
 import org.fossify.notes.databinding.OpenNoteItemBinding
 import org.fossify.notes.extensions.config
 import org.fossify.notes.models.ChecklistItem
@@ -25,8 +24,10 @@ import org.fossify.notes.models.Note
 import org.fossify.notes.models.NoteType
 
 class OpenNoteAdapter(
-    activity: BaseSimpleActivity, var items: List<Note>,
-    recyclerView: MyRecyclerView, itemClick: (Any) -> Unit
+    activity: BaseSimpleActivity,
+    var items: List<Note>,
+    recyclerView: MyRecyclerView,
+    itemClick: (Any) -> Unit,
 ) : MyRecyclerViewAdapter(activity, recyclerView, itemClick) {
     override fun getActionMenuId() = 0
 
@@ -52,9 +53,10 @@ class OpenNoteAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-        holder.bindView(item, true, false) { itemView, layoutPosition ->
+        holder.bindView(item, allowSingleClick = true, allowLongClick = false) { itemView, _ ->
             setupView(itemView, item)
         }
+
         bindViewHolder(holder)
     }
 
@@ -67,6 +69,7 @@ class OpenNoteAdapter(
                 text = note.title
                 setTextColor(properPrimaryColor)
             }
+
             val formattedText = note.getFormattedValue(root.context)
             openNoteItemText.beGoneIf(formattedText.isNullOrBlank() || note.isLocked())
             iconLock.beVisibleIf(note.isLocked())
@@ -74,6 +77,22 @@ class OpenNoteAdapter(
             openNoteItemText.apply {
                 text = formattedText
                 setTextColor(textColor)
+            }
+
+            openNoteItemIcon.apply {
+                beVisibleIf(note.path.isNotEmpty())
+                applyColorFilter(textColor)
+                if (isOreoPlus()) {
+                    tooltipText = context.getString(R.string.this_note_is_linked)
+                }
+
+                setOnClickListener {
+                    if (isOreoPlus()) {
+                        performLongClick()
+                    } else {
+                        activity.toast(R.string.this_note_is_linked)
+                    }
+                }
             }
         }
     }
@@ -87,11 +106,13 @@ class OpenNoteAdapter(
             } else {
                 Color.BLACK
             }
+
             val cardBackground = if (context.config.isUsingSystemTheme) {
                 org.fossify.commons.R.drawable.dialog_you_background
             } else {
                 org.fossify.commons.R.drawable.dialog_bg
             }
+
             background =
                 activity.resources.getColoredDrawableWithColor(cardBackground, cardBackgroundColor, LOWER_ALPHA_INT)
         }
@@ -118,6 +139,7 @@ class OpenNoteAdapter(
                         it
                     }
                 }
+
                 val linePrefix = "• "
                 val stringifiedItems = items.joinToString(separator = System.lineSeparator()) {
                     "${linePrefix}${it.title}"
@@ -133,6 +155,7 @@ class OpenNoteAdapter(
                     currentPos += item.title.length
                     currentPos += System.lineSeparator().length
                 }
+
                 formattedText
             }
         }

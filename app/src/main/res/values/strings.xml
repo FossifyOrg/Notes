@@ -40,6 +40,7 @@
     <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
     <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
     <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="this_note_is_linked">This note is linked with a local file.</string>
 
     <!-- Settings -->
     <string name="display_success_message">Display save success messages</string>
