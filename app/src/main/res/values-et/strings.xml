@@ -74,4 +74,5 @@
     <string name="widget_config">Täname, et kasutad Fossify Märkmikku.
 \nTeavet kõikide Fossify rakenduste kohta leiad fossify.org saidist.</string>
     <string name="password_protect_note_deletion">Kaitse märkme kustutamist salasõnaga</string>
+    <string name="this_note_is_linked">See märge viitab kohalikule failile.</string>
 </resources>
