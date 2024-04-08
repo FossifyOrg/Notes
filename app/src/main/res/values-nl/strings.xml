@@ -72,4 +72,6 @@
     <string name="faq_1_title">Hoe verander ik de kleuren van de widgets\?</string>
     <string name="faq_1_text">Gebruik de optie in de instellingen van de app om de kleuren aan te passen, of maak de widget opnieuw aan. Indien er meerdere widgets van deze app actief zijn, zal deze optie niet beschikbaar zijn. De kleuren zijn dan alleen aan te passen door de widget opnieuw aan te maken.</string>
     <string name="widget_config">Kijk op fossify.org voor meer eenvoudig te gebruiken apps.</string>
+    <string name="password_protect_note_deletion">Wachtwoordbeveiliging voor het verwijderen van notities</string>
+    <string name="this_note_is_linked">Deze notities is gekoppeld aan een lokaal bestand.</string>
 </resources>

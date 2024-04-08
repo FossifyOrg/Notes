@@ -1,2 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="cannot_share_empty_text">खाली पाठ साझा नहीं किया जा सकता</string>
+    <string name="no_title">कृपया अपने नोट को नाम दें</string>
+    <string name="delete_note_prompt_message">क्या आप वाकई नोट \"%s\" को हटाना चाहते हैं?</string>
+    <string name="add_to_note">नोट में जोड़ें</string>
+    <string name="note_shown_widget">विजेट में दिखाया गया नोट:</string>
+    <string name="file_too_large">फाइल बहुत बड़ी है, सीमा 1एमबी है</string>
+    <string name="only_import_file_content">केवल फाइल सामग्री आयात करें
+\n(फाइल बदलने से नोट प्रभावित नहीं होगा)</string>
+    <string name="update_file_at_note">नोट अपडेट करते समय फाइल को स्वयं अपडेट करें
+\n(यदि फाइल हटा दी जाती है, या पथ बदल जाता है तो नोट हटा दिया जाता है)</string>
+    <string name="note_exported_successfully">नोट \"%s\" सफलतापूर्वक निर्यात किया गया</string>
+    <string name="add_new_checklist_items_top">शीर्ष पर नए चेकलिस्ट आइटम जोड़ें</string>
+    <string name="add_new_checklist_items">नई चेकलिस्ट आइटम जोड़ें</string>
+    <string name="faq_1_text">यदि आपके पास केवल 1 सक्रिय विजेट है, तो आप या तो इसे फिर से बना सकते हैं, या इसे अनुकूलित करने के लिए ऐप सेटिंग्स में बटन का उपयोग कर सकते हैं। यदि आपके पास एकाधिक सक्रिय विजेट हैं, तो ऐप सेटिंग में बटन उपलब्ध नहीं होगा। चूंकि ऐप प्रति-विजेट रंग अनुकूलन का समर्थन करता है, इसलिए आपको उस विजेट को फिर से बनाना होगा जिसे आप अनुकूलित करना चाहते हैं।</string>
+    <string name="app_launcher_name">नोट्स</string>
+    <string name="widget_config">Fossify Notes का उपयोग करने के लिए धन्यवाद।
+\nFossify के अधिक ऐप्स के लिए, कृपया fossify.org पर जाएँ।</string>
+    <string name="new_note">एक नया नोट जोड़ें</string>
+    <string name="title_taken">उस शीर्षक वाला एक नोट पहले से मौजूद है</string>
+    <string name="open_note">नोट खोलें</string>
+    <string name="delete_note">नोट हटाएँ</string>
+    <string name="pick_a_note">एक नोट चुनें</string>
+    <string name="rename_note">नोट का नाम बदलें</string>
+    <string name="general_note">सामान्य नोट</string>
+    <string name="create_new_note">एक नया नोट बनाएं</string>
+    <string name="unsaved_changes_warning">आपके कुछ परिवर्तन सहेजे नहीं गए हैं. आप उनके साथ क्या करना चाहते हैं?</string>
+    <string name="show_note_title">नोट शीर्षक दिखाएँ</string>
+    <string name="new_note_type">नये नोट का प्रकार:</string>
+    <string name="text_note">टेक्स्ट नोट</string>
+    <string name="lock_note">नोट लॉक करें</string>
+    <string name="unlock_note">नोट अनलॉक करें</string>
+    <string name="unlock_notes">नोट अनलॉक करें</string>
+    <string name="found_locked_notes_info">निम्नलिखित नोट लॉक हैं. आप या तो उन्हें एक-एक करके अनलॉक कर सकते हैं या उन्हें निर्यात करना छोड़ सकते हैं।</string>
+    <string name="open_file">फाइल खोलें</string>
+    <string name="note_content_locked">नोट्स की सामग्री लॉक है।</string>
+    <string name="show_content">सामग्री दिखाएँ</string>
+    <string name="locking_warning">चेतावनी: यदि आप नोट्स का पासवर्ड भूल जाते हैं, तो आप इसे पुनर्प्राप्त नहीं कर पाएंगे या नोट्स की सामग्री तक नहीं पहुंच पाएंगे।</string>
+    <string name="new_text_note">नया टेक्स्ट नोट</string>
+    <string name="new_checklist">नई चेकलिस्ट</string>
+    <string name="cannot_load_over_internet">ऐप इंटरनेट पर फ़ाइलें लोड नहीं कर सकता</string>
+    <string name="export_as_file">फाइल के रूप में निर्यात करें</string>
+    <string name="delete_file_itself">फाइल \"%s\" भी हटाएं</string>
+    <string name="note_saved_successfully">नोट \"%s\" सफलतापूर्वक सहेजा गया</string>
+    <string name="only_export_file_content">केवल वर्तमान फाइल सामग्री निर्यात करें
+\n(नोट बदलने से फाइल पर कोई प्रभाव नहीं पड़ेगा)</string>
+    <string name="display_success_message">सहेजें सफलता संदेश प्रदर्शित करें</string>
+    <string name="links_and_emails_clickable">लिंक और ईमेल को क्लिक करने योग्य बनाएं</string>
+    <string name="place_cursor_end">कर्सर को नोट के अंत में रखें</string>
+    <string name="monospaced_font">मोनोस्पेस्ड फ़ॉन्ट का प्रयोग करें</string>
+    <string name="show_keyboard">स्टार्टअप पर कीबोर्ड दिखाएं</string>
+    <string name="show_word_count">शब्द संख्या दिखाएँ</string>
+    <string name="show_character_count">वर्ण संख्या दिखाएँ</string>
+    <string name="alignment">संरेखण</string>
+    <string name="left">बाएं</string>
+    <string name="center">केंद्र</string>
+    <string name="right">दायां</string>
+    <string name="widget_note">विजेट में प्रयुक्त नोट</string>
+    <string name="show_note_picker">स्टार्टअप पर नोट पिकर दिखाएं</string>
+    <string name="autosave_notes">नोट स्वत: सहेजें</string>
+    <string name="enable_line_wrap">लाइन रैप सक्षम करें</string>
+    <string name="use_incognito_mode">कीबोर्ड के गुप्त मोड का उपयोग करें</string>
+    <string name="move_done_checklist_items">पूर्ण चेकलिस्ट आइटम को नीचे ले जाएँ</string>
+    <string name="checklist">चेकलिस्ट</string>
+    <string name="checklists">चेकलिस्ट</string>
+    <string name="add_new_checklist_item">एक नया चेकलिस्ट आइटम जोड़ें</string>
+    <string name="checklist_is_empty">चेकलिस्ट खाली है</string>
+    <string name="remove_done_items">पूर्ण किए गए आइटम हटाएँ</string>
+    <string name="add_to_the_top">शीर्ष पर जोड़ें</string>
+    <string name="import_folder">फोल्डर आयात करें</string>
+    <string name="export_notes">नोट निर्यात करें</string>
+    <string name="import_notes">नोट आयात करें</string>
+    <string name="import_notes_pro">नोट आयात करें (Pro)</string>
+    <string name="faq_1_title">मैं विजेट का रंग कैसे बदल सकता हूँ?</string>
+    <string name="password_protect_note_deletion">नोट हटाने के लिए पासवर्ड रखें</string>
+    <string name="this_note_is_linked">यह नोट एक स्थानीय फाइल से जुड़ा हुआ है।</string>
+</resources>

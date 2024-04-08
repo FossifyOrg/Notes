@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_launcher_name">Notas</string>
+    <string name="app_launcher_name">Bloco de Notas Fossify</string>
     <string name="cannot_share_empty_text">Não é possível compartilhar textos vazios</string>
     <string name="new_note">Adicionar uma nota</string>
     <string name="no_title">Por favor, dê um nome à sua nota</string>
@@ -19,7 +19,7 @@
     <string name="new_note_type">Novo tipo de nota:</string>
     <string name="text_note">Anotações</string>
     <string name="lock_note">Bloquear anotação</string>
-    <string name="unlock_note">Desbloquear anotação</string>
+    <string name="unlock_note">Desbloquear nota</string>
     <string name="unlock_notes">Desbloquear notas</string>
     <string name="found_locked_notes_info">As notas a seguir estão bloqueadas. Você pode desbloqueá-las uma a uma ou pular a exportação.</string>
     <string name="note_content_locked">O conteúdo da nota está bloqueado.</string>
@@ -39,7 +39,7 @@
     <string name="note_saved_successfully">Nota \"%s\" salva com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
     <string name="only_export_file_content">Exportar apenas o conteúdo atual do arquivo
-\n(alterar a nota não afetará o arquivo)</string>
+\n(alterando a nota não afetará o arquivo)</string>
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Coloque o cursor no final da nota</string>
@@ -69,4 +69,9 @@
     <string name="import_notes_pro">Importar notas (Pro)</string>
     <string name="faq_1_title">Como mudar a cor dos widgets\?</string>
     <string name="faq_1_text">Caso você possua apenas 1 widget ativo, você poderá recriá-lo, ou usar o botão nas configurações do aplicativo para personalizá-lo. Caso você possua vários widgets ativos, o botão nas configurações do aplicativo não estará disponível. Como o aplicativo suporta personalização de cores por widget, você terá que recriar o widget que deseja personalizar.</string>
+    <string name="add_to_the_top">Adicionar para o topo</string>
+    <string name="widget_config">Obrigado por utilizar o Bloco de Notas Fossify.
+\nPara conhecer os outros aplicativos Fossify, por favor visite fossify.org.</string>
+    <string name="import_notes">Importar notas</string>
+    <string name="password_protect_note_deletion">Proteger a eliminação de notas com senha</string>
 </resources>
