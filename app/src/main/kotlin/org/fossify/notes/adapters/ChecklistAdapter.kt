@@ -1,5 +1,6 @@
 package org.fossify.notes.adapters
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.graphics.drawable.Drawable
 import android.util.TypedValue
@@ -31,10 +32,13 @@ import org.fossify.notes.models.ChecklistItem
 import java.util.Collections
 
 class ChecklistAdapter(
-    activity: BaseSimpleActivity, var items: MutableList<ChecklistItem>, val listener: ChecklistItemsListener?,
-    recyclerView: MyRecyclerView, val showIcons: Boolean, itemClick: (Any) -> Unit
-) :
-    MyRecyclerViewAdapter(activity, recyclerView, itemClick), ItemTouchHelperContract {
+    activity: BaseSimpleActivity,
+    var items: MutableList<ChecklistItem>,
+    val listener: ChecklistItemsListener?,
+    recyclerView: MyRecyclerView,
+    val showIcons: Boolean,
+    itemClick: (Any) -> Unit,
+) : MyRecyclerViewAdapter(activity, recyclerView, itemClick), ItemTouchHelperContract {
 
     private lateinit var crossDrawable: Drawable
     private lateinit var checkDrawable: Drawable
@@ -78,9 +82,15 @@ class ChecklistAdapter(
 
     override fun getItemKeyPosition(key: Int) = items.indexOfFirst { it.id == key }
 
-    override fun onActionModeCreated() {}
+    @SuppressLint("NotifyDataSetChanged")
+    override fun onActionModeCreated() {
+        notifyDataSetChanged()
+    }
 
-    override fun onActionModeDestroyed() {}
+    @SuppressLint("NotifyDataSetChanged")
+    override fun onActionModeDestroyed() {
+        notifyDataSetChanged()
+    }
 
     override fun prepareActionMode(menu: Menu) {
         val selectedItems = getSelectedItems()
@@ -97,9 +107,10 @@ class ChecklistAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-        holder.bindView(item, true, true) { itemView, layoutPosition ->
+        holder.bindView(item, allowSingleClick = true, allowLongClick = true) { itemView, _ ->
             setupView(itemView, item, holder)
         }
+
         bindViewHolder(holder)
     }
 
