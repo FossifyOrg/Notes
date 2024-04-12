@@ -9,26 +9,41 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="@drawable/selector"
-    android:paddingEnd="@dimen/normal_margin">
+    android:minHeight="@dimen/checklist_height"
+    android:paddingStart="@dimen/normal_margin"
+    android:paddingEnd="@dimen/small_margin">
+
+    <org.fossify.commons.views.MyAppCompatCheckbox
+        android:id="@+id/checklist_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tiny_margin"
+        android:background="@null"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <org.fossify.commons.views.MyTextView
         android:id="@+id/checklist_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/activity_margin"
         android:textSize="@dimen/bigger_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/checklist_image"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/checklist_cross"
+        app:layout_constraintStart_toEndOf="@id/checklist_checkbox"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Butter" />
+        tools:text="Apples 🍎" />
 
     <ImageView
-        android:id="@+id/checklist_image"
+        android:id="@+id/checklist_cross"
         android:layout_width="@dimen/checklist_image_size"
         android:layout_height="@dimen/checklist_image_size"
-        android:paddingTop="@dimen/normal_margin"
-        android:paddingBottom="@dimen/normal_margin"
+        android:background="?selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/delete"
+        android:focusable="true"
+        android:padding="@dimen/normal_margin"
         android:src="@drawable/ic_cross_vector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/checklist_drag_handle"
@@ -38,8 +53,8 @@
         android:id="@+id/checklist_drag_handle"
         android:layout_width="@dimen/checklist_image_size"
         android:layout_height="@dimen/checklist_image_size"
-        android:paddingTop="@dimen/normal_margin"
-        android:paddingBottom="@dimen/normal_margin"
+        android:contentDescription="@string/move"
+        android:padding="@dimen/normal_margin"
         android:src="@drawable/ic_drag_handle_vector"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"

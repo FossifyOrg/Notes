@@ -1,5 +1,6 @@
 <resources>
-    <dimen name="checklist_image_size">56dp</dimen>
+    <dimen name="checklist_height">56dp</dimen>
+    <dimen name="checklist_image_size">48dp</dimen>
     <dimen name="grid_note_item_width">150dp</dimen>
     <dimen name="grid_note_item_max_height">150dp</dimen>
     <dimen name="max_open_note_popup_height">500dp</dimen>
