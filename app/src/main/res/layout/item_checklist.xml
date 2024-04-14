@@ -28,13 +28,12 @@
         android:id="@+id/checklist_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingStart="0dp"
-        android:paddingEnd="@dimen/activity_margin"
         android:textSize="@dimen/bigger_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/checklist_drag_handle"
         app:layout_constraintStart_toEndOf="@id/checklist_checkbox"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="@dimen/normal_margin"
         tools:text="Apples 🍎" />
 
     <ImageView
