@@ -1,1 +1,0 @@
-Widget de liste avec un carnet de notes, liste de contrôle, liste de courses
