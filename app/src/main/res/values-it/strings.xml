@@ -31,7 +31,7 @@
     <string name="cannot_load_over_internet">L\'applicazione non riesce a caricare i file su Internet</string>
     <string name="open_file">Apri file</string>
     <string name="export_as_file">Esporta come file</string>
-    <string name="file_too_large">File troppo grande, il limite è 1 MB</string>
+    <string name="file_too_large">File troppo grande, il limite è 1MB</string>
     <string name="only_import_file_content">Importa solo il contenuto del file
 \n(modificare il file non influenzerà la nota)</string>
     <string name="update_file_at_note">Aggiorna il file quando si aggiorna una nota
@@ -73,4 +73,6 @@
     <string name="faq_1_text">Se hai un solo widget attivo, puoi ricrearlo oppure usare il pulsante nelle impostazioni dell\'app per personalizzaro. Se hai più di un widget, il pulsante nelle impostazioni dell\'app non sarà disponibile. Dato che l\'app supporta la personalizzazione dei colori per ogni widget, dovrai ricreare il widget che vuoi personalizzare.</string>
     <string name="lock_note">Blocca nota</string>
     <string name="add_to_the_top">Aggiungi in cima</string>
+    <string name="password_protect_note_deletion">Proteggi con password l\'eliminazione delle note</string>
+    <string name="this_note_is_linked">Questa nota è collegata a un file locale.</string>
 </resources>
