@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_launcher_name">Bloco de Notas Fossify</string>
+    <string name="app_launcher_name">Bloco de Notas</string>
     <string name="cannot_share_empty_text">Não é possível compartilhar textos vazios</string>
     <string name="new_note">Adicionar uma nota</string>
     <string name="no_title">Por favor, dê um nome à sua nota</string>
@@ -70,8 +70,8 @@
     <string name="faq_1_title">Como mudar a cor dos widgets\?</string>
     <string name="faq_1_text">Caso você possua apenas 1 widget ativo, você poderá recriá-lo, ou usar o botão nas configurações do aplicativo para personalizá-lo. Caso você possua vários widgets ativos, o botão nas configurações do aplicativo não estará disponível. Como o aplicativo suporta personalização de cores por widget, você terá que recriar o widget que deseja personalizar.</string>
     <string name="add_to_the_top">Adicionar para o topo</string>
-    <string name="widget_config">Obrigado por utilizar o Bloco de Notas Fossify.
-\nPara conhecer os outros aplicativos Fossify, por favor visite fossify.org.</string>
+    <string name="widget_config">Obrigado por utilizar o Bloco de Notas do Fossify.
+\nPara outros aplicativos do Fossify, visite fossify.org.</string>
     <string name="import_notes">Importar notas</string>
     <string name="password_protect_note_deletion">Proteger a eliminação de notas com senha</string>
 </resources>
