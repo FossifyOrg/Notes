@@ -1,5 +1,6 @@
 package org.fossify.notes.activities
 
+import android.app.AlarmManager
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -11,11 +12,13 @@ import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.fossify.commons.dialogs.ConfirmationDialog
+import org.fossify.commons.dialogs.PermissionRequiredDialog
 import org.fossify.commons.dialogs.RadioGroupDialog
 import org.fossify.commons.dialogs.SecurityDialog
 import org.fossify.commons.extensions.*
 import org.fossify.commons.helpers.*
 import org.fossify.commons.models.RadioItem
+import org.fossify.notes.BuildConfig
 import org.fossify.notes.R
 import org.fossify.notes.databinding.ActivitySettingsBinding
 import org.fossify.notes.dialogs.ExportNotesDialog
@@ -368,13 +371,15 @@ class SettingsActivity : SimpleActivity() {
         binding.settingsEnableAutomaticBackupsHolder.setOnClickListener {
             val wasBackupDisabled = !config.autoBackup
             if (wasBackupDisabled) {
-                ManageAutoBackupsDialog(
-                    activity = this,
-                    onSuccess = {
-                        enableOrDisableAutomaticBackups(true)
-                        scheduleNextAutomaticBackup()
-                    }
-                )
+                maybeRequestExactAlarmPermission {
+                    ManageAutoBackupsDialog(
+                        activity = this,
+                        onSuccess = {
+                            enableOrDisableAutomaticBackups(true)
+                            scheduleNextAutomaticBackup()
+                        }
+                    )
+                }
             } else {
                 cancelScheduledAutomaticBackup()
                 enableOrDisableAutomaticBackups(false)
@@ -398,6 +403,25 @@ class SettingsActivity : SimpleActivity() {
         config.autoBackup = enable
         binding.settingsEnableAutomaticBackups.isChecked = enable
         binding.settingsManageAutomaticBackupsHolder.beVisibleIf(enable)
+    }
+
+    private fun maybeRequestExactAlarmPermission(callback: () -> Unit = {}) {
+        if (isSPlus()) {
+            val alarmManager: AlarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+            if (alarmManager.canScheduleExactAlarms()) {
+                callback()
+            } else {
+                PermissionRequiredDialog(
+                    activity = this,
+                    textId = R.string.allow_alarm_automatic_backups,
+                    positiveActionCallback = {
+                        openRequestExactAlarmSettings(BuildConfig.APPLICATION_ID)
+                    },
+                )
+            }
+        } else {
+            callback()
+        }
     }
 
     private fun setupAppPasswordProtection() {
