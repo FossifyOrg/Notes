@@ -205,8 +205,6 @@ class ChecklistAdapter(
                 }
             }
 
-            checklistCross.applyColorFilter(textColor)
-            checklistCross.beVisibleIf(showIcons && selectedKeys.isEmpty())
             checklistCheckbox.isChecked = checklistItem.isDone
             checklistHolder.isSelected = isSelected
 

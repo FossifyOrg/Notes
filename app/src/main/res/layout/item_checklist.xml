@@ -28,26 +28,14 @@
         android:id="@+id/checklist_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/activity_margin"
         android:textSize="@dimen/bigger_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/checklist_cross"
+        app:layout_constraintEnd_toStartOf="@+id/checklist_drag_handle"
         app:layout_constraintStart_toEndOf="@id/checklist_checkbox"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Apples 🍎" />
-
-    <ImageView
-        android:id="@+id/checklist_cross"
-        android:layout_width="@dimen/checklist_image_size"
-        android:layout_height="@dimen/checklist_image_size"
-        android:background="?selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:contentDescription="@string/delete"
-        android:focusable="true"
-        android:padding="@dimen/normal_margin"
-        android:src="@drawable/ic_cross_vector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/checklist_drag_handle"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/checklist_drag_handle"
