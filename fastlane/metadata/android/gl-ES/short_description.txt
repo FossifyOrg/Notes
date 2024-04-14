@@ -1,1 +1,0 @@
-Un widget para tomar notas, listas de tarefas, para ir mercar, etc.
