@@ -75,4 +75,5 @@
     <string name="add_to_the_top">添加到顶部</string>
     <string name="password_protect_note_deletion">密码保护笔记删除</string>
     <string name="this_note_is_linked">此笔记和一个本地文件关联。</string>
+    <string name="allow_alarm_automatic_backups">要自动备份笔记，请授予应用规划精确闹铃的权限。</string>
 </resources>
