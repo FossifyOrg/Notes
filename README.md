@@ -1,6 +1,8 @@
 # Fossify Notes
 <img alt="Logo" src="graphics/icon.webp" width="120" />
 
+<a href="https://apt.izzysoft.de/fdroid/index/apk/org.fossify.notes"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height=80/></a>
+
 Introducing Fossify Notes – your ultimate tool for effortless note-taking, organization, and planning. Simplify your life with this intuitive organizer designed to streamline your tasks and ideas effortlessly.
 
 **🗒️ SIMPLE NOTE-TAKING:**  
