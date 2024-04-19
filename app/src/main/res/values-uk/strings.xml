@@ -75,4 +75,5 @@
 \nЩоб знайти більше застосунків від Fossify, відвідайте fossify.org.</string>
     <string name="password_protect_note_deletion">Пароль захищає нотатку від видалення</string>
     <string name="this_note_is_linked">Ця примітка пов\'язана з локальним файлом.</string>
+    <string name="allow_alarm_automatic_backups">Для автоматичного резервного копіювання нотаток, будь ласка, надайте застосунку дозвіл на планування точних будильників.</string>
 </resources>
