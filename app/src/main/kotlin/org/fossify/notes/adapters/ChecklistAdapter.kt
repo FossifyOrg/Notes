@@ -116,9 +116,11 @@ class ChecklistAdapter(
         RenameChecklistItemDialog(activity, item.title) {
             val position = getSelectedItemPositions().first()
             item.title = it
-            listener?.saveChecklist()
             notifyItemChanged(position)
             finishActMode()
+            listener?.saveChecklist {
+                listener.refreshItems()
+            }
         }
     }
 
