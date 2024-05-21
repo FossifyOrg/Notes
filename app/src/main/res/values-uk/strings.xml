@@ -7,7 +7,7 @@
     <string name="title_taken">Нотатка з таким ім\'ям вже існує</string>
     <string name="open_note">Відкрити нотатку</string>
     <string name="delete_note">Видалити нотатку</string>
-    <string name="delete_note_prompt_message">Ви впевнені, що хочете видалити нотатку \"%s\"\?</string>
+    <string name="delete_note_prompt_message">Ви впевнені, що хочете видалити нотатку «%s»?</string>
     <string name="pick_a_note">Оберіть нотатку</string>
     <string name="rename_note">Перейменуйте нотатку</string>
     <string name="general_note">Звичайна нотатка</string>
@@ -35,9 +35,9 @@
 \n(зміна файлу не змінить нотатку)</string>
     <string name="update_file_at_note">Оновлювати вміст файлу при оновленні нотатки
 \n(нотатку буде видалено, якщо буде видалено файл або зміниться його розташування)</string>
-    <string name="delete_file_itself">Також видалити файл \"%s\"</string>
-    <string name="note_saved_successfully">Нотатка \"%s\" успішно збережена</string>
-    <string name="note_exported_successfully">Нотатка \"%s\" успішно експортована</string>
+    <string name="delete_file_itself">Також видалити файл «%s»</string>
+    <string name="note_saved_successfully">Нотатка «%s» успішно збережена</string>
+    <string name="note_exported_successfully">Нотатка «%s» успішно експортована</string>
     <string name="only_export_file_content">Експортувати лише поточний вміст файлу
 \n(зміна нотатки не вплине на файл)</string>
     <string name="display_success_message">Повідомляти, що файл успішно збережено</string>
