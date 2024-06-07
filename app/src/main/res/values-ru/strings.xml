@@ -75,4 +75,5 @@
 \nБольше приложений от Fossify можно найти на fossify.org.</string>
     <string name="password_protect_note_deletion">Удалять заметки, защищённые паролем</string>
     <string name="this_note_is_linked">Эта заметка связана с локальным файлом.</string>
+    <string name="allow_alarm_automatic_backups">Для автоматического резервного копирования заметок предоставьте приложению разрешение на установку будильников.</string>
 </resources>

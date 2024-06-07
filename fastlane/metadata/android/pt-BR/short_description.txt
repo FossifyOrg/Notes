@@ -1,0 +1,1 @@
+Widget de lista de tarefas com um organizador de caderno, o que foi feito, e uma lista simples de compras

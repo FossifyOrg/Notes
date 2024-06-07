@@ -1,0 +1,1 @@
+Widget seznamu úkolů s organizací, zaškrtávací pole, jednoduchý nákupní seznam

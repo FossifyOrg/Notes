@@ -75,4 +75,5 @@
 \nJika Anda tertarik dengan aplikasi karya Fossify lainnya, silakan kunjungi fossify.org.</string>
     <string name="password_protect_note_deletion">Lindungi penghapusan catatan dengan kata sandi</string>
     <string name="this_note_is_linked">Catatan ini ditautan dengan berkas lokal.</string>
+    <string name="allow_alarm_automatic_backups">Untuk mencadangkan catatan secara otomatis, silakan memberikan perizinan kepada aplikasi untuk menjadwalkan alarm tepat.</string>
 </resources>

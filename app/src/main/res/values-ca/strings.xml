@@ -75,4 +75,5 @@
 \nVisiteu fossify.org per a més aplicacions de Fossify.</string>
     <string name="password_protect_note_deletion">Protegeix amb contrasenya la supressió de notes</string>
     <string name="this_note_is_linked">Aquesta nota està enllaçada a un fitxer local.</string>
+    <string name="allow_alarm_automatic_backups">Per a fer còpies de seguretat de les notes automàticament, concediu permís a l\'aplicació per a planificar alarmes exactes.</string>
 </resources>

@@ -75,4 +75,5 @@
     <string name="add_to_the_top">Přidat nahoru</string>
     <string name="password_protect_note_deletion">Odstranění ochrany poznámky heslem</string>
     <string name="this_note_is_linked">Tato poznámka je propojená s místním souborem.</string>
+    <string name="allow_alarm_automatic_backups">Pro automatické zálohování poznámek prosím udělte aplikaci oprávnění k plánování přesných budíků.</string>
 </resources>

@@ -1,0 +1,26 @@
+Představujeme Poznámky Fossify – váš ultimátní nástroj pro jednoduchý záznam poznámek, organizaci a plánování. Zjednodušte svůj život naším intuitivním organizérem navrženým pro zefektivnění vašich úkolů a nápadů.
+
+🗒️ JEDNODUCHÉ POZNÁMKY:
+Poznámky Fossify vám umožní rychle zapsat nákupní seznamy, adresní připomínky nebo skvělé nápady na startupy jedním klepnutím. Řekněte sbohem nepořádku a přivítejte efektivní tvorbu poznámek. Bez složitých nastavení.
+
+📋 VÝJIMEČNÁ ORGANIZACE:
+S aplikací Poznámky Fossify snadno udržíte přehled o svých povinnostech díky jednoduchému organizéru a barevnému widgetu pro poznámky. Už nikdy nezapomenete důležité informace nebo nákupní seznamy – vše máte po ruce.
+
+💾 AUTOMATICKÉ UKLÁDÁNÍ:
+Zapomeňte na ztrátu vaší práce. Aplikace Poznámky Fossify automaticky ukládá vaše úpravy, čímž zajistí, že vaše změny se nikdy neztratí. Jednoduše vytvářejte neomezený počet nezávislých poznámek.
+
+🖼️ UPRAVITELNÝ WIDGET:
+Přistupujte ke svým seznamům a spravujte své úkoly na seznamu rychle pomocí upravitelného widgetu aplikace Poznámky Fossify. Užívejte si plynulou organizaci na cestách jedním klepnutím.
+
+🚫 BEZ REKLAM A ZAMĚŘENO NA SOUKROMÍ:
+Užívejte si bezproblémovou práci s aplikací Poznámky Fossify – neobsahuje žádné reklamy nebo zbytečná oprávnění. Poznámky Fossify fungují offline bez povolení k internetu, čímž zajistí stabilní a bezpečné prostředí pro vaše poznámky.
+
+🔓 SVOBODA OTEVŘENÉHO ZDROJE:
+Aplikace Poznámky Fossify je plně open-source, nabízí upravitelné barvy a poskytuje transparentnost a flexibilitu pro uživatele. Zažijte svobodu přizpůsobení a klid s komunitně vyvíjeným řešením pro poznámky.
+
+Zažijte jednoduchost a efektivitu tvorby poznámek s Fossify Notes. Stáhněte si aplikaci nyní a odemkněte sílu organizovaného myšlení.
+
+Prozkoumejte další aplikace Fossify: https://www.fossify.org
+Otevřený zdrojový kód: https://www.github.com/FossifyOrg
+Připojte se ke komunitě na Redditu: https://www.reddit.com/r/Fossify
+Připojte se k Telegramu: https://t.me/Fossify

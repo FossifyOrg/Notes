@@ -75,4 +75,5 @@
 \nPara más aplicaciones de Fossify, visita fossify.org.</string>
     <string name="password_protect_note_deletion">Proteger con contraseña la eliminación de notas</string>
     <string name="this_note_is_linked">Esta nota está vinculada a un archivo local.</string>
+    <string name="allow_alarm_automatic_backups">Para hacer una copia de seguridad automática de las notas, autoriza a la aplicación a programar alarmas exactas.</string>
 </resources>

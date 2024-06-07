@@ -75,4 +75,5 @@
     <string name="add_to_the_top">Aggiungi in cima</string>
     <string name="password_protect_note_deletion">Proteggi con password l\'eliminazione delle note</string>
     <string name="this_note_is_linked">Questa nota è collegata a un file locale.</string>
+    <string name="allow_alarm_automatic_backups">Per eseguire il backup automatico delle note, concedi all\'app l\'autorizzazione a programmare sveglie precise.</string>
 </resources>

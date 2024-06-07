@@ -75,4 +75,5 @@
     <string name="faq_1_title">मैं विजेट का रंग कैसे बदल सकता हूँ?</string>
     <string name="password_protect_note_deletion">नोट हटाने के लिए पासवर्ड रखें</string>
     <string name="this_note_is_linked">यह नोट एक स्थानीय फाइल से जुड़ा हुआ है।</string>
+    <string name="allow_alarm_automatic_backups">स्वचालित रूप से नोट्स का बैकअप लेने के लिए, कृपया ऐप को सटीक अलार्म अनुसूचित करने की अनुमति दें।</string>
 </resources>
