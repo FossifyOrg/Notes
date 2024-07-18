@@ -185,6 +185,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
             saveNote(items.indexOfFirst { it.id == clickedNote.id })
             context?.updateWidgets()
+            refreshItems()
         }.apply {
             binding.checklistList.adapter = this
         }
