@@ -116,9 +116,6 @@ class MainActivity : SimpleActivity() {
         checkIntents(intent)
 
         storeStateVariables()
-        if (config.showNotePicker && savedInstanceState == null && hasNoIntent) {
-            displayOpenNoteDialog()
-        }
 
         wasInit = true
 
@@ -127,6 +124,10 @@ class MainActivity : SimpleActivity() {
 
         mIsPasswordProtectionPending = config.isAppPasswordProtectionOn
 
+        if (config.showNotePicker && savedInstanceState == null && hasNoIntent && !mIsPasswordProtectionPending) {
+            displayOpenNoteDialog()
+        }
+
         if (savedInstanceState == null) {
             binding.viewPager.beGoneIf(mIsPasswordProtectionPending)
             if (mIsPasswordProtectionPending && !mWasProtectionHandled) {
@@ -134,6 +135,9 @@ class MainActivity : SimpleActivity() {
                     mWasProtectionHandled = it
                     if (it) {
                         mIsPasswordProtectionPending = false
+                        if (config.showNotePicker && savedInstanceState == null && hasNoIntent) {
+                            displayOpenNoteDialog()
+                        }
                         binding.viewPager.beVisible()
                     } else {
                         finish()
