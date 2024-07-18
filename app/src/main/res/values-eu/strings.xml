@@ -1,4 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="open_file">Ireki fitxategia</string>
+    <string name="this_note_is_linked">Ohar hau fitxategi lokal batekin estekatuta dago.</string>
+    <string name="show_note_picker">Erakutsi oharren hautatzailea abiaraztean</string>
+    <string name="import_notes">Inportatu oharrak</string>
+    <string name="widget_config">Eskerrik asko Fossify Oharrak erabiltzeagatik.
+\nFossify-ren aplikazio gehiago lortzeko, bisitatu fossify.org.</string>
+    <string name="cannot_share_empty_text">Ezin da partekatu ohar huts bat</string>
+    <string name="new_note">Gehitu ohar berri bat</string>
+    <string name="no_title">Mesedez, izendatu zure oharra</string>
+    <string name="open_note">Ireki oharra</string>
+    <string name="note_shown_widget">Trepetan agertzen den oharra:</string>
+    <string name="new_note_type">Ohar mota berria:</string>
+    <string name="text_note">Testu oharra</string>
+    <string name="lock_note">Blokeatu oharra</string>
+    <string name="note_content_locked">Oharraren edukia blokeatuta dago.</string>
+    <string name="show_content">Erakutsi edukia</string>
+    <string name="locking_warning">KONTUZ: oharraren pasahitza ahazten baduzu, ezingo duzu berreskuratu edo oharraren edukia atzitu.</string>
+    <string name="new_text_note">Testu ohar berria</string>
+    <string name="new_checklist">Kontrol-zerrenda berria</string>
+    <string name="cannot_load_over_internet">Aplikazioak ezin ditu fitxategiak kargatu Interneten</string>
+    <string name="export_as_file">Esportatu fitxategi gisa</string>
+    <string name="file_too_large">Fitxategi handiegia, muga 1MB da</string>
+    <string name="monospaced_font">Erabili tarte bakarreko letra-tipoa</string>
+    <string name="show_word_count">Erakutsi hitz kopurua</string>
+    <string name="autosave_notes">Oharrak automatikoki gordetzea</string>
+    <string name="add_to_the_top">Gehitu goiko aldean</string>
+    <string name="password_protect_note_deletion">Pasahitzez babestu oharrak ezabatzea</string>
+    <string name="checklists">Kontrol-zerrendak</string>
+    <string name="add_new_checklist_item">Gehitu elementu berri bat kontrol-zerrendan</string>
+    <string name="remove_done_items">Kendu burututako elementuak</string>
+    <string name="add_new_checklist_items">Gehitu elementu berriak kontrol-zerrendan</string>
+    <string name="checklist_is_empty">Kontrol-zerrenda hutsik dago</string>
+    <string name="import_folder">Inportatu karpeta</string>
+    <string name="export_notes">Esportatu oharrak</string>
+    <string name="faq_1_title">Nola alda dezaket trepetaren kolorea?</string>
+    <string name="checklist">Kontrol-zerrenda</string>
+    <string name="allow_alarm_automatic_backups">Oharren babeskopiak automatikoki egiteko, eman aplikazioari alarma zehatzak programatzeko baimena.</string>
+    <string name="only_import_file_content">Fitxategiaren edukia soilik inportatu
+\n(fitxategia aldatzeak ez dio oharrari eragingo)</string>
+    <string name="note_saved_successfully">\"%s\" oharra behar bezala gorde da</string>
+    <string name="app_launcher_name">Oharrak</string>
+    <string name="left">Eskerrean</string>
+    <string name="title_taken">Dagoeneko badago izen hori duen ohar bat</string>
+    <string name="unsaved_changes_warning">Gorde gabeko aldaketa batzuk dituzu. Zer egin nahi duzu haiekin?</string>
+    <string name="show_note_title">Erakutsi oharraren izenburua</string>
+    <string name="unlock_note">Desblokeatu oharra</string>
+    <string name="unlock_notes">Desblokeatu oharrak</string>
+    <string name="delete_note">Ezabatu oharra</string>
+    <string name="found_locked_notes_info">Hurrengo oharrak blokeatuta daude. Banan-banan desblokea ditzakezu edo esportatzea saihets dezakezu.</string>
+    <string name="delete_note_prompt_message">Ziur \"%s\" oharra ezabatu nahi duzula?</string>
+    <string name="pick_a_note">Aukeratu ohar bat</string>
+    <string name="rename_note">Berrizendatu oharra</string>
+    <string name="general_note">Ohar orokorra</string>
+    <string name="create_new_note">Sortu ohar berri bat</string>
+    <string name="add_to_note">Gehitu oharrari</string>
+    <string name="widget_note">Trepetan erabilitako oharra</string>
+    <string name="use_incognito_mode">Erabili teklatuen ezkutuko modua</string>
+    <string name="enable_line_wrap">Gaitu lerroaren doitzea</string>
+    <string name="move_done_checklist_items">Eraman kontrol zerrendako burututako elementuak beheko aldera</string>
+    <string name="add_new_checklist_items_top">Gehitu zerrendako elementu berriak goiko aldean</string>
+    <string name="import_notes_pro">Inportatu oharrak (Pro)</string>
+    <string name="faq_1_text">Trepeta aktibo bakarra baduzu, berriro sor dezakezu edo pertsonalizatzeko aplikazioaren ezarpenetako botoia erabil dezakezu. Hainbat trepeta aktibo badituzu, aplikazioaren ezarpenetako botoia ez da erabilgarri egongo. Aplikazioak trepeta bakoitzeko kolore pertsonalizatzea onartzen duenez, pertsonalizatu nahi duzun trepeta birsortu beharko duzu.</string>
+    <string name="update_file_at_note">Eguneratu fitxategia oharra eguneratzean
+\n(oharra ezabatzen da fitxategia ezabatzen bada edo fitxategi-bidea aldatzen bada)</string>
+    <string name="note_exported_successfully">\"%s\" oharra behar bezala esportatu da</string>
+    <string name="only_export_file_content">Esportatu fitxategiaren uneko edukia soilik
+\n(oharra aldatzeak ez dio fitxategiari eragingo)</string>
+    <string name="delete_file_itself">Ezabatu \"%s\" fitxategia ere</string>
+    <string name="display_success_message">Bistaratu behar bezala gordetze mezuak</string>
+    <string name="links_and_emails_clickable">Egin estekak eta helbide elektronikoak klikagarriak</string>
+    <string name="place_cursor_end">Jarri kurtsorea oharraren amaieran</string>
+    <string name="right">Eskuinean</string>
+    <string name="show_keyboard">Erakutsi teklatua abiaraztean</string>
+    <string name="show_character_count">Erakutsi karaktere kopurua</string>
+    <string name="alignment">Lerrokatzea</string>
+    <string name="center">Erdian</string>
 </resources>

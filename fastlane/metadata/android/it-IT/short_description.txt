@@ -1,0 +1,1 @@
+Widget per lista di cose da fare con organizer per note, checklist, spesa

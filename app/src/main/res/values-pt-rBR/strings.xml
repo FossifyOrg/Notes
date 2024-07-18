@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_launcher_name">Bloco de Notas</string>
+    <string name="app_launcher_name">Notas</string>
     <string name="cannot_share_empty_text">Não é possível compartilhar textos vazios</string>
     <string name="new_note">Adicionar uma nota</string>
     <string name="no_title">Por favor, dê um nome à sua nota</string>
@@ -74,4 +74,6 @@
 \nPara outros aplicativos do Fossify, visite fossify.org.</string>
     <string name="import_notes">Importar notas</string>
     <string name="password_protect_note_deletion">Proteger a eliminação de notas com senha</string>
+    <string name="this_note_is_linked">Essa nota é conectada a um arquivo local.</string>
+    <string name="allow_alarm_automatic_backups">Para fazer backup das notas automaticamente, conceda a permissão do app para agendar alarmes exatos.</string>
 </resources>

@@ -75,4 +75,5 @@
     <string name="faq_1_text">Yalnızca 1 etkin widget\'ınız varsa, yeniden oluşturabilir veya özelleştirmek için uygulama ayarlarındaki düğmeyi kullanabilirsiniz. Birden fazla etkin widget\'ınız varsa, uygulama ayarlarındaki düğme kullanılamaz. Uygulama, widget başına renk özelleştirmeyi desteklediğinden, özelleştirmek istediğiniz widget\'ı yeniden oluşturmanız gerekir.</string>
     <string name="password_protect_note_deletion">Not silmeyi parola ile koru</string>
     <string name="this_note_is_linked">Bu not yerel bir dosya ile bağlantılı.</string>
+    <string name="allow_alarm_automatic_backups">Notları otomatik olarak yedeklemek için, lütfen uygulamaya tam alarmları zamanlama izni verin.</string>
 </resources>
