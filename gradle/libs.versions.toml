@@ -1,18 +1,18 @@
 [versions]
 #jetbrains
-kotlin = "1.9.22"
+kotlin = "1.9.24"
 #KSP
-kotlinxSerializationJson = "1.5.1"
-ksp = "1.9.22-1.0.17"
+kotlinxSerializationJson = "1.6.3"
+ksp = "1.9.24-1.0.20"
 #AndroidX
 androidx-constraintlayout = "2.1.4"
 androidx-documentfile = "1.0.1"
 #Room
 room = "2.6.1"
 #Fossify
-commons = "88a349fe1d"
+commons = "4c2d362fe3"
 #Gradle
-gradlePlugins-agp = "8.3.2"
+gradlePlugins-agp = "8.5.0"
 #build
 app-build-compileSDKVersion = "34"
 app-build-targetSDK = "34"
