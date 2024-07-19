@@ -12,25 +12,25 @@ import org.fossify.commons.extensions.*
 import org.fossify.commons.helpers.SORT_BY_CUSTOM
 import org.fossify.commons.helpers.ensureBackgroundThread
 import org.fossify.notes.activities.SimpleActivity
-import org.fossify.notes.adapters.ChecklistAdapter
+import org.fossify.notes.adapters.TasksAdapter
 import org.fossify.notes.databinding.FragmentChecklistBinding
 import org.fossify.notes.dialogs.NewChecklistItemDialog
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.NOTE_ID
 import org.fossify.notes.helpers.NotesHelper
-import org.fossify.notes.interfaces.ChecklistItemsListener
-import org.fossify.notes.models.ChecklistItem
+import org.fossify.notes.interfaces.TasksActionListener
 import org.fossify.notes.models.Note
+import org.fossify.notes.models.Task
 import java.io.File
 
-class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
+class TasksFragment : NoteFragment(), TasksActionListener {
 
     private var noteId = 0L
 
     private lateinit var binding: FragmentChecklistBinding
 
-    var items = mutableListOf<ChecklistItem>()
+    var tasks = mutableListOf<Task>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentChecklistBinding.inflate(inflater, container, false)
@@ -50,7 +50,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         if (menuVisible) {
             activity?.hideKeyboard()
         } else if (::binding.isInitialized) {
-            (binding.checklistList.adapter as? ChecklistAdapter)?.finishActMode()
+            (binding.checklistList.adapter as? TasksAdapter)?.finishActMode()
         }
     }
 
@@ -60,13 +60,13 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 note = storedNote
 
                 try {
-                    val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-                    items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.getNoteStoredValue(requireActivity()), checklistItemType) ?: ArrayList(1)
+                    val taskType = object : TypeToken<List<Task>>() {}.type
+                    tasks = Gson().fromJson<ArrayList<Task>>(storedNote.getNoteStoredValue(requireActivity()), taskType) ?: ArrayList(1)
 
-                    items = items.toMutableList() as ArrayList<ChecklistItem>
+                    tasks = tasks.toMutableList() as ArrayList<Task>
                     val sorting = config?.sorting ?: 0
                     if (sorting and SORT_BY_CUSTOM == 0 && config?.moveDoneChecklistItems == true) {
-                        items.sortBy { it.isDone }
+                        tasks.sortBy { it.isDone }
                     }
 
                     setupFragment()
@@ -78,11 +78,11 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun migrateCheckListOnFailure(note: Note) {
-        items.clear()
+        tasks.clear()
 
         note.getNoteStoredValue(requireActivity())?.split("\n")?.map { it.trim() }?.filter { it.isNotBlank() }?.forEachIndexed { index, value ->
-            items.add(
-                ChecklistItem(
+            tasks.add(
+                Task(
                     id = index,
                     title = value,
                     isDone = false
@@ -90,7 +90,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             )
         }
 
-        saveChecklist(items)
+        saveTasks(tasks)
     }
 
     private fun setupFragment() {
@@ -114,7 +114,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
             setOnClickListener {
                 showNewItemDialog()
-                (binding.checklistList.adapter as? ChecklistAdapter)?.finishActMode()
+                (binding.checklistList.adapter as? TasksAdapter)?.finishActMode()
             }
         }
 
@@ -142,20 +142,20 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun showNewItemDialog() {
         NewChecklistItemDialog(activity as SimpleActivity) { titles ->
-            var currentMaxId = items.maxByOrNull { item -> item.id }?.id ?: 0
-            val newItems = ArrayList<ChecklistItem>()
+            var currentMaxId = tasks.maxByOrNull { item -> item.id }?.id ?: 0
+            val newItems = ArrayList<Task>()
 
             titles.forEach { title ->
                 title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
-                    newItems.add(ChecklistItem(currentMaxId + 1, System.currentTimeMillis(), row, false))
+                    newItems.add(Task(currentMaxId + 1, System.currentTimeMillis(), row, false))
                     currentMaxId++
                 }
             }
 
             if (config?.addNewChecklistItemsTop == true) {
-                items.addAll(0, newItems)
+                tasks.addAll(0, newItems)
             } else {
-                items.addAll(newItems)
+                tasks.addAll(newItems)
             }
 
             saveNote()
@@ -165,33 +165,33 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun setupAdapter() {
         updateUIVisibility()
-        ChecklistItem.sorting = requireContext().config.sorting
-        if (ChecklistItem.sorting and SORT_BY_CUSTOM == 0) {
-            items.sort()
+        Task.sorting = requireContext().config.sorting
+        if (Task.sorting and SORT_BY_CUSTOM == 0) {
+            tasks.sort()
             if (context?.config?.moveDoneChecklistItems == true) {
-                items.sortBy { it.isDone }
+                tasks.sortBy { it.isDone }
             }
         }
 
-        var checklistAdapter = binding.checklistList.adapter as? ChecklistAdapter
-        if (checklistAdapter == null) {
-            checklistAdapter = ChecklistAdapter(
+        var tasksAdapter = binding.checklistList.adapter as? TasksAdapter
+        if (tasksAdapter == null) {
+            tasksAdapter = TasksAdapter(
                 activity = activity as SimpleActivity,
                 listener = this,
                 recyclerView = binding.checklistList,
                 itemClick = ::toggleCompletion
             )
-            binding.checklistList.adapter = checklistAdapter
+            binding.checklistList.adapter = tasksAdapter
         }
 
-        checklistAdapter.submitList(items.toList())
+        tasksAdapter.submitList(tasks.toList())
     }
 
     private fun toggleCompletion(any: Any) {
-        val item = any as ChecklistItem
-        val index = items.indexOf(item)
+        val item = any as Task
+        val index = tasks.indexOf(item)
         if (index != -1) {
-            items[index] = item.copy(isDone = !item.isDone)
+            tasks[index] = item.copy(isDone = !item.isDone)
             saveNote {
                 loadNoteById(noteId)
             }
@@ -212,7 +212,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         }
 
         if (note != null) {
-            note!!.value = getChecklistItems()
+            note!!.value = getTasks()
 
             ensureBackgroundThread {
                 saveNoteValue(note!!, note!!.value)
@@ -223,23 +223,23 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     fun removeDoneItems() {
-        items = items.filter { !it.isDone }.toMutableList() as ArrayList<ChecklistItem>
+        tasks = tasks.filter { !it.isDone }.toMutableList() as ArrayList<Task>
         saveNote()
         setupAdapter()
     }
 
     private fun updateUIVisibility() {
         binding.apply {
-            fragmentPlaceholder.beVisibleIf(items.isEmpty())
-            fragmentPlaceholder2.beVisibleIf(items.isEmpty())
-            checklistList.beVisibleIf(items.isNotEmpty())
+            fragmentPlaceholder.beVisibleIf(tasks.isEmpty())
+            fragmentPlaceholder2.beVisibleIf(tasks.isEmpty())
+            checklistList.beVisibleIf(tasks.isNotEmpty())
         }
     }
 
-    fun getChecklistItems() = Gson().toJson(items)
+    fun getTasks() = Gson().toJson(tasks)
 
-    override fun saveChecklist(updatedItems: List<ChecklistItem>, callback: () -> Unit) {
-        items = updatedItems.toMutableList()
+    override fun saveTasks(updatedTasks: List<Task>, callback: () -> Unit) {
+        tasks = updatedTasks.toMutableList()
         saveNote(callback = callback)
     }
 

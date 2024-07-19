@@ -12,7 +12,7 @@ import java.io.File
 /**
  * Represents a note.
  *
- * @property value The content of the note. Could be plain text or [ChecklistItem]
+ * @property value The content of the note. Could be plain text or [Task]
  * @property type The type of the note. Should be one of the [NoteType] enum entries.
  */
 @Serializable

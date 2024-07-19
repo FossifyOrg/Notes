@@ -18,9 +18,9 @@ import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.getPercentageFontSize
 import org.fossify.notes.extensions.notesDB
 import org.fossify.notes.helpers.*
-import org.fossify.notes.models.ChecklistItem
 import org.fossify.notes.models.Note
 import org.fossify.notes.models.NoteType
+import org.fossify.notes.models.Task
 
 class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
     private val textIds = arrayOf(
@@ -33,7 +33,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
     )
     private var widgetTextColor = DEFAULT_WIDGET_TEXT_COLOR
     private var note: Note? = null
-    private var checklistItems = mutableListOf<ChecklistItem>()
+    private var tasks = mutableListOf<Task>()
 
     override fun getViewAt(position: Int): RemoteViews {
         val noteId = intent.getLongExtra(NOTE_ID, 0L)
@@ -46,7 +46,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         val textSize = context.getPercentageFontSize() / context.resources.displayMetrics.density
         if (note!!.type == NoteType.TYPE_CHECKLIST) {
             remoteView = RemoteViews(context.packageName, R.layout.item_checklist_widget).apply {
-                val checklistItem = checklistItems.getOrNull(position) ?: return@apply
+                val checklistItem = tasks.getOrNull(position) ?: return@apply
                 val widgetNewTextColor = if (checklistItem.isDone) widgetTextColor.adjustAlpha(DONE_CHECKLIST_ITEM_ALPHA) else widgetTextColor
                 val paintFlags = if (checklistItem.isDone) Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG else Paint.ANTI_ALIAS_FLAG
 
@@ -125,15 +125,15 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         val noteId = intent.getLongExtra(NOTE_ID, 0L)
         note = context.notesDB.getNoteWithId(noteId)
         if (note?.type == NoteType.TYPE_CHECKLIST) {
-            checklistItems = note!!.getNoteStoredValue(context)?.ifEmpty { "[]" }?.let { Json.decodeFromString(it) } ?: mutableListOf()
+            tasks = note!!.getNoteStoredValue(context)?.ifEmpty { "[]" }?.let { Json.decodeFromString(it) } ?: mutableListOf()
 
             // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
-            checklistItems = checklistItems.toMutableList() as ArrayList<ChecklistItem>
+            tasks = tasks.toMutableList() as ArrayList<Task>
             val sorting = context.config.sorting
             if (sorting and SORT_BY_CUSTOM == 0) {
-                checklistItems.sort()
+                tasks.sort()
                 if (context.config.moveDoneChecklistItems) {
-                    checklistItems.sortBy { it.isDone }
+                    tasks.sortBy { it.isDone }
                 }
             }
         }
@@ -143,7 +143,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
 
     override fun getCount(): Int {
         return if (note?.type == NoteType.TYPE_CHECKLIST) {
-            checklistItems.size
+            tasks.size
         } else {
             1
         }

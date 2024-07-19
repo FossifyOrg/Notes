@@ -19,9 +19,9 @@ import org.fossify.commons.views.MyRecyclerView
 import org.fossify.notes.R
 import org.fossify.notes.databinding.OpenNoteItemBinding
 import org.fossify.notes.extensions.config
-import org.fossify.notes.models.ChecklistItem
 import org.fossify.notes.models.Note
 import org.fossify.notes.models.NoteType
+import org.fossify.notes.models.Task
 
 class OpenNoteAdapter(
     activity: BaseSimpleActivity,
@@ -122,12 +122,12 @@ class OpenNoteAdapter(
         return when (type) {
             NoteType.TYPE_TEXT -> getNoteStoredValue(context)
             NoteType.TYPE_CHECKLIST -> {
-                val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-                var items = Gson().fromJson<List<ChecklistItem>>(getNoteStoredValue(context), checklistItemType) ?: listOf()
+                val taskType = object : TypeToken<List<Task>>() {}.type
+                var items = Gson().fromJson<List<Task>>(getNoteStoredValue(context), taskType) ?: listOf()
                 items = items.let {
                     val sorting = context.config.sorting
-                    ChecklistItem.sorting = sorting
-                    if (ChecklistItem.sorting and SORT_BY_CUSTOM == 0) {
+                    Task.sorting = sorting
+                    if (Task.sorting and SORT_BY_CUSTOM == 0) {
                         it.sorted().let {
                             if (context.config.moveDoneChecklistItems) {
                                 it.sortedBy { it.isDone }

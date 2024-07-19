@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import org.fossify.commons.extensions.showErrorToast
-import org.fossify.notes.fragments.ChecklistFragment
 import org.fossify.notes.fragments.NoteFragment
+import org.fossify.notes.fragments.TasksFragment
 import org.fossify.notes.fragments.TextFragment
 import org.fossify.notes.helpers.NOTE_ID
 import org.fossify.notes.models.Note
@@ -30,7 +30,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
             return fragments[position]!!
         }
 
-        val fragment = if (note.type == NoteType.TYPE_TEXT) TextFragment() else ChecklistFragment()
+        val fragment = if (note.type == NoteType.TYPE_TEXT) TextFragment() else TasksFragment()
         fragment.arguments = bundle
         fragments[position] = fragment
         return fragment
@@ -63,9 +63,9 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun saveAllFragmentTexts() = fragments.values.forEach { (it as? TextFragment)?.saveText(false) }
 
-    fun getNoteChecklistRawItems(position: Int) = (fragments[position] as? ChecklistFragment)?.items
+    fun getNoteChecklistRawItems(position: Int) = (fragments[position] as? TasksFragment)?.tasks
 
-    fun getNoteChecklistItems(position: Int) = (fragments[position] as? ChecklistFragment)?.getChecklistItems()
+    fun getNoteChecklistItems(position: Int) = (fragments[position] as? TasksFragment)?.getTasks()
 
     fun undo(position: Int) = (fragments[position] as? TextFragment)?.undo()
 
@@ -91,10 +91,10 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
     }
 
     fun removeDoneCheckListItems(position: Int) {
-        (fragments[position] as? ChecklistFragment)?.removeDoneItems()
+        (fragments[position] as? TasksFragment)?.removeDoneItems()
     }
 
     fun refreshChecklist(position: Int) {
-        (fragments[position] as? ChecklistFragment)?.refreshItems()
+        (fragments[position] as? TasksFragment)?.refreshItems()
     }
 }

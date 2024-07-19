@@ -20,15 +20,15 @@ import org.fossify.commons.helpers.PROTECTION_NONE
 import org.fossify.commons.helpers.ensureBackgroundThread
 import org.fossify.commons.models.RadioItem
 import org.fossify.notes.R
-import org.fossify.notes.adapters.ChecklistAdapter
+import org.fossify.notes.adapters.TasksAdapter
 import org.fossify.notes.databinding.WidgetConfigBinding
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.getPercentageFontSize
 import org.fossify.notes.extensions.widgetsDB
 import org.fossify.notes.helpers.*
-import org.fossify.notes.models.ChecklistItem
 import org.fossify.notes.models.Note
 import org.fossify.notes.models.NoteType
+import org.fossify.notes.models.Task
 import org.fossify.notes.models.Widget
 
 class WidgetConfigureActivity : SimpleActivity() {
@@ -159,19 +159,19 @@ class WidgetConfigureActivity : SimpleActivity() {
         binding.notesPickerValue.text = note.title
         binding.textNoteViewTitle.text = note.title
         if (note.type == NoteType.TYPE_CHECKLIST) {
-            val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-            val items = Gson().fromJson<ArrayList<ChecklistItem>>(note.value, checklistItemType) ?: ArrayList(1)
+            val taskType = object : TypeToken<List<Task>>() {}.type
+            val items = Gson().fromJson<ArrayList<Task>>(note.value, taskType) ?: ArrayList(1)
             items.apply {
                 if (isEmpty()) {
-                    add(ChecklistItem(0, System.currentTimeMillis(), "Milk", true))
-                    add(ChecklistItem(1, System.currentTimeMillis(), "Butter", true))
-                    add(ChecklistItem(2, System.currentTimeMillis(), "Salt", false))
-                    add(ChecklistItem(3, System.currentTimeMillis(), "Water", false))
-                    add(ChecklistItem(4, System.currentTimeMillis(), "Meat", true))
+                    add(Task(0, System.currentTimeMillis(), "Milk", true))
+                    add(Task(1, System.currentTimeMillis(), "Butter", true))
+                    add(Task(2, System.currentTimeMillis(), "Salt", false))
+                    add(Task(3, System.currentTimeMillis(), "Water", false))
+                    add(Task(4, System.currentTimeMillis(), "Meat", true))
                 }
             }
 
-            ChecklistAdapter(this, null, binding.checklistNoteView).apply {
+            TasksAdapter(this, null, binding.checklistNoteView).apply {
                 updateTextColor(mTextColor)
                 binding.checklistNoteView.adapter = this
                 submitList(items.toList())
@@ -244,7 +244,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun updateTextColor() {
         binding.textNoteView.setTextColor(mTextColor)
         binding.textNoteViewTitle.setTextColor(mTextColor)
-        (binding.checklistNoteView.adapter as? ChecklistAdapter)?.updateTextColor(mTextColor)
+        (binding.checklistNoteView.adapter as? TasksAdapter)?.updateTextColor(mTextColor)
         binding.configTextColor.setFillWithStroke(mTextColor, mTextColor)
         binding.configSave.setTextColor(getProperPrimaryColor().getContrastColor())
     }

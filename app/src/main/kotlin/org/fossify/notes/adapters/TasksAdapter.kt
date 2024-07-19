@@ -23,21 +23,21 @@ import org.fossify.commons.interfaces.StartReorderDragListener
 import org.fossify.commons.views.MyRecyclerView
 import org.fossify.notes.R
 import org.fossify.notes.databinding.ItemChecklistBinding
-import org.fossify.notes.dialogs.RenameChecklistItemDialog
+import org.fossify.notes.dialogs.EditTaskDialog
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.getPercentageFontSize
 import org.fossify.notes.helpers.DONE_CHECKLIST_ITEM_ALPHA
-import org.fossify.notes.interfaces.ChecklistItemsListener
-import org.fossify.notes.models.ChecklistItem
+import org.fossify.notes.interfaces.TasksActionListener
+import org.fossify.notes.models.Task
 import java.util.Collections
 
-class ChecklistAdapter(
+class TasksAdapter(
     activity: BaseSimpleActivity,
-    val listener: ChecklistItemsListener?,
+    val listener: TasksActionListener?,
     recyclerView: MyRecyclerView,
     itemClick: (Any) -> Unit = {},
-) : MyRecyclerViewListAdapter<ChecklistItem>(
-    activity = activity, recyclerView = recyclerView, diffUtil = ChecklistItemDiffUtil(), itemClick = itemClick
+) : MyRecyclerViewListAdapter<Task>(
+    activity = activity, recyclerView = recyclerView, diffUtil = TaskDiffCallback(), itemClick = itemClick
 ), ItemTouchHelperContract {
 
     private var touchHelper: ItemTouchHelper? = null
@@ -111,72 +111,72 @@ class ChecklistAdapter(
     }
 
     private fun renameChecklistItem() {
-        val item = getSelectedItems().first()
-        RenameChecklistItemDialog(activity, item.title) { title ->
-            val items = currentList.toMutableList()
-            items[getSelectedItemPositions().first()] = item.copy(title = title)
-            saveChecklist(items)
+        val task = getSelectedItems().first()
+        EditTaskDialog(activity, task.title) { title ->
+            val tasks = currentList.toMutableList()
+            tasks[getSelectedItemPositions().first()] = task.copy(title = title)
+            saveTasks(tasks)
             finishActMode()
         }
     }
 
     private fun deleteSelection() {
-        val items = currentList.toMutableList()
-        val itemsToRemove = ArrayList<ChecklistItem>(selectedKeys.size)
+        val tasks = currentList.toMutableList()
+        val tasksToRemove = ArrayList<Task>(selectedKeys.size)
         selectedKeys.forEach { key ->
-            val position = items.indexOfFirst { it.id == key }
+            val position = tasks.indexOfFirst { it.id == key }
             if (position != -1) {
                 val favorite = getItemWithKey(key)
                 if (favorite != null) {
-                    itemsToRemove.add(favorite)
+                    tasksToRemove.add(favorite)
                 }
             }
         }
 
-        items.removeAll(itemsToRemove.toSet())
-        saveChecklist(items)
+        tasks.removeAll(tasksToRemove.toSet())
+        saveTasks(tasks)
     }
 
     private fun moveSelectedItemsToTop() {
         activity.config.sorting = SORT_BY_CUSTOM
-        val items = currentList.toMutableList()
-        selectedKeys.reversed().forEach { checklistId ->
-            val position = items.indexOfFirst { it.id == checklistId }
-            val tempItem = items[position]
-            items.removeAt(position)
-            items.add(0, tempItem)
+        val tasks = currentList.toMutableList()
+        selectedKeys.reversed().forEach { id ->
+            val position = tasks.indexOfFirst { it.id == id }
+            val tempItem = tasks[position]
+            tasks.removeAt(position)
+            tasks.add(0, tempItem)
         }
 
-        saveChecklist(items)
+        saveTasks(tasks)
     }
 
     private fun moveSelectedItemsToBottom() {
         activity.config.sorting = SORT_BY_CUSTOM
-        val items = currentList.toMutableList()
-        selectedKeys.forEach { checklistId ->
-            val position = items.indexOfFirst { it.id == checklistId }
-            val tempItem = items[position]
-            items.removeAt(position)
-            items.add(items.size, tempItem)
+        val tasks = currentList.toMutableList()
+        selectedKeys.forEach { id ->
+            val position = tasks.indexOfFirst { it.id == id }
+            val tempItem = tasks[position]
+            tasks.removeAt(position)
+            tasks.add(tasks.size, tempItem)
         }
 
-        saveChecklist(items)
+        saveTasks(tasks)
     }
 
-    private fun getItemWithKey(key: Int): ChecklistItem? = currentList.firstOrNull { it.id == key }
+    private fun getItemWithKey(key: Int): Task? = currentList.firstOrNull { it.id == key }
 
     private fun getSelectedItems() = currentList.filter { selectedKeys.contains(it.id) }.toMutableList()
 
-    private fun setupView(view: View, checklistItem: ChecklistItem, holder: ViewHolder) {
-        val isSelected = selectedKeys.contains(checklistItem.id)
+    private fun setupView(view: View, task: Task, holder: ViewHolder) {
+        val isSelected = selectedKeys.contains(task.id)
         ItemChecklistBinding.bind(view).apply {
             checklistTitle.apply {
-                text = checklistItem.title
+                text = task.title
                 setTextColor(textColor)
                 setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
                 gravity = context.config.getTextGravity()
 
-                if (checklistItem.isDone) {
+                if (task.isDone) {
                     paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                     alpha = DONE_CHECKLIST_ITEM_ALPHA
                 } else {
@@ -185,7 +185,7 @@ class ChecklistAdapter(
                 }
             }
 
-            checklistCheckbox.isChecked = checklistItem.isDone
+            checklistCheckbox.isChecked = task.isDone
             checklistHolder.isSelected = isSelected
 
             checklistDragHandle.beVisibleIf(selectedKeys.isNotEmpty())
@@ -201,42 +201,42 @@ class ChecklistAdapter(
 
     override fun onRowMoved(fromPosition: Int, toPosition: Int) {
         activity.config.sorting = SORT_BY_CUSTOM
-        val items = currentList.toMutableList()
+        val tasks = currentList.toMutableList()
         if (fromPosition < toPosition) {
             for (i in fromPosition until toPosition) {
-                Collections.swap(items, i, i + 1)
+                Collections.swap(tasks, i, i + 1)
             }
         } else {
             for (i in fromPosition downTo toPosition + 1) {
-                Collections.swap(items, i, i - 1)
+                Collections.swap(tasks, i, i - 1)
             }
         }
 
-        saveChecklist(items)
+        saveTasks(tasks)
     }
 
     override fun onRowSelected(myViewHolder: MyRecyclerViewAdapter.ViewHolder?) {}
 
     override fun onRowClear(myViewHolder: MyRecyclerViewAdapter.ViewHolder?) {
-        saveChecklist(currentList.toList())
+        saveTasks(currentList.toList())
     }
 
-    private fun saveChecklist(items: List<ChecklistItem>) {
-        listener?.saveChecklist(items) {
+    private fun saveTasks(tasks: List<Task>) {
+        listener?.saveTasks(tasks) {
             listener.refreshItems()
         }
     }
 }
 
-private class ChecklistItemDiffUtil : DiffUtil.ItemCallback<ChecklistItem>() {
+private class TaskDiffCallback : DiffUtil.ItemCallback<Task>() {
     override fun areItemsTheSame(
-        oldItem: ChecklistItem,
-        newItem: ChecklistItem
+        oldItem: Task,
+        newItem: Task
     ) = oldItem.id == newItem.id
 
     override fun areContentsTheSame(
-        oldItem: ChecklistItem,
-        newItem: ChecklistItem
+        oldItem: Task,
+        newItem: Task
     ) = oldItem.id == newItem.id
         && oldItem.isDone == newItem.isDone
         && oldItem.title == newItem.title
