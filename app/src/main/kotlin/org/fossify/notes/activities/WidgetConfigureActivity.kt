@@ -171,10 +171,12 @@ class WidgetConfigureActivity : SimpleActivity() {
                 }
             }
 
-            ChecklistAdapter(this, items, null, binding.checklistNoteView, false) {}.apply {
+            ChecklistAdapter(this, null, binding.checklistNoteView).apply {
                 updateTextColor(mTextColor)
                 binding.checklistNoteView.adapter = this
+                submitList(items.toList())
             }
+
             binding.textNoteView.beGone()
             binding.checklistNoteView.beVisible()
         } else {

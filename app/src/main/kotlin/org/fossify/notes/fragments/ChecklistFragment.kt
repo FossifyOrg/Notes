@@ -63,8 +63,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                     val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
                     items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.getNoteStoredValue(requireActivity()), checklistItemType) ?: ArrayList(1)
 
-                    // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
-                    items = items.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>
+                    items = items.toMutableList() as ArrayList<ChecklistItem>
                     val sorting = config?.sorting ?: 0
                     if (sorting and SORT_BY_CUSTOM == 0 && config?.moveDoneChecklistItems == true) {
                         items.sortBy { it.isDone }
@@ -91,7 +90,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             )
         }
 
-        saveChecklist()
+        saveChecklist(items)
     }
 
     private fun setupFragment() {
@@ -173,25 +172,33 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 items.sortBy { it.isDone }
             }
         }
-        ChecklistAdapter(
-            activity = activity as SimpleActivity,
-            items = items,
-            listener = this,
-            recyclerView = binding.checklistList,
-            showIcons = true
-        ) { item ->
-            val clickedNote = item as ChecklistItem
-            clickedNote.isDone = !clickedNote.isDone
 
-            saveNote(items.indexOfFirst { it.id == clickedNote.id })
-            context?.updateWidgets()
-            refreshItems()
-        }.apply {
-            binding.checklistList.adapter = this
+        var checklistAdapter = binding.checklistList.adapter as? ChecklistAdapter
+        if (checklistAdapter == null) {
+            checklistAdapter = ChecklistAdapter(
+                activity = activity as SimpleActivity,
+                listener = this,
+                recyclerView = binding.checklistList,
+                itemClick = ::toggleCompletion
+            )
+            binding.checklistList.adapter = checklistAdapter
+        }
+
+        checklistAdapter.submitList(items.toList())
+    }
+
+    private fun toggleCompletion(any: Any) {
+        val item = any as ChecklistItem
+        val index = items.indexOf(item)
+        if (index != -1) {
+            items[index] = item.copy(isDone = !item.isDone)
+            saveNote {
+                loadNoteById(noteId)
+            }
         }
     }
 
-    private fun saveNote(refreshIndex: Int = -1, callback: () -> Unit = {}) {
+    private fun saveNote(callback: () -> Unit = {}) {
         if (note == null) {
             return
         }
@@ -205,12 +212,6 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         }
 
         if (note != null) {
-            if (refreshIndex != -1) {
-                binding.checklistList.post {
-                    binding.checklistList.adapter?.notifyItemChanged(refreshIndex)
-                }
-            }
-
             note!!.value = getChecklistItems()
 
             ensureBackgroundThread {
@@ -237,7 +238,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     fun getChecklistItems() = Gson().toJson(items)
 
-    override fun saveChecklist(callback: () -> Unit) {
+    override fun saveChecklist(updatedItems: List<ChecklistItem>, callback: () -> Unit) {
+        items = updatedItems.toMutableList()
         saveNote(callback = callback)
     }
 

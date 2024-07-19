@@ -128,11 +128,11 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
             checklistItems = note!!.getNoteStoredValue(context)?.ifEmpty { "[]" }?.let { Json.decodeFromString(it) } ?: mutableListOf()
 
             // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
-            checklistItems = checklistItems.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>
+            checklistItems = checklistItems.toMutableList() as ArrayList<ChecklistItem>
             val sorting = context.config.sorting
             if (sorting and SORT_BY_CUSTOM == 0) {
                 checklistItems.sort()
-                if (context.config?.moveDoneChecklistItems == true) {
+                if (context.config.moveDoneChecklistItems) {
                     checklistItems.sortBy { it.isDone }
                 }
             }

@@ -124,7 +124,7 @@ class OpenNoteAdapter(
             NoteType.TYPE_CHECKLIST -> {
                 val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
                 var items = Gson().fromJson<List<ChecklistItem>>(getNoteStoredValue(context), checklistItemType) ?: listOf()
-                items = items.filter { it.title != null }.let {
+                items = items.let {
                     val sorting = context.config.sorting
                     ChecklistItem.sorting = sorting
                     if (ChecklistItem.sorting and SORT_BY_CUSTOM == 0) {

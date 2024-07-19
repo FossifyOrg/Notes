@@ -9,8 +9,8 @@ import org.fossify.notes.helpers.CollatorBasedComparator
 data class ChecklistItem(
     val id: Int,
     val dateCreated: Long = 0L,
-    var title: String,
-    var isDone: Boolean
+    val title: String,
+    val isDone: Boolean
 ) : Comparable<ChecklistItem> {
 
     companion object {
