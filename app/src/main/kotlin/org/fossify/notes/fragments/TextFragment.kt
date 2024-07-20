@@ -32,6 +32,7 @@ import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.MyMovementMethod
 import org.fossify.notes.helpers.NOTE_ID
 import org.fossify.notes.helpers.NotesHelper
+import org.fossify.notes.models.Note
 import org.fossify.notes.models.TextHistory
 import org.fossify.notes.models.TextHistoryItem
 import java.io.File
@@ -224,7 +225,7 @@ class TextFragment : NoteFragment() {
 
     fun getNotesView() = noteEditText
 
-    fun saveText(force: Boolean) {
+    fun saveText(force: Boolean, callback: ((note: Note) -> Unit)? = null) {
         if (note == null) {
             return
         }
@@ -241,7 +242,7 @@ class TextFragment : NoteFragment() {
         val oldText = note!!.getNoteStoredValue(requireContext())
         if (newText != null && (newText != oldText || force)) {
             note!!.value = newText
-            saveNoteValue(note!!, newText)
+            saveNoteValue(note!!, newText, callback)
             requireContext().updateWidgets()
         }
     }

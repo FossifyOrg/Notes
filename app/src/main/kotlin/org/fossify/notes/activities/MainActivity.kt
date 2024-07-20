@@ -233,7 +233,9 @@ class MainActivity : SimpleActivity() {
     private fun setupOptionsMenu() {
         binding.mainToolbar.setOnMenuItemClickListener { menuItem ->
             if (config.autosaveNotes && menuItem.itemId != R.id.undo && menuItem.itemId != R.id.redo) {
-                saveCurrentNote(false)
+                saveCurrentNote(false) {
+                    mCurrentNote = it
+                }
             }
 
             val fragment = getCurrentFragment()
@@ -1084,8 +1086,8 @@ class MainActivity : SimpleActivity() {
 
     private fun addTextToCurrentNote(text: String) = getPagerAdapter().appendText(binding.viewPager.currentItem, text)
 
-    private fun saveCurrentNote(force: Boolean) {
-        getPagerAdapter().saveCurrentNote(binding.viewPager.currentItem, force)
+    private fun saveCurrentNote(force: Boolean, callback: ((note: Note) -> Unit)? = null) {
+        getPagerAdapter().saveCurrentNote(binding.viewPager.currentItem, force, callback)
         if (mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
             mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(binding.viewPager.currentItem) ?: ""
         }

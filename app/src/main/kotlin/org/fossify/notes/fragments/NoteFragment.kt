@@ -34,15 +34,18 @@ abstract class NoteFragment : Fragment() {
         }
     }
 
-    protected fun saveNoteValue(note: Note, content: String?) {
+    protected fun saveNoteValue(note: Note, content: String?, callback: ((note: Note) -> Unit)? = null) {
         if (note.path.isEmpty()) {
             NotesHelper(requireActivity()).insertOrUpdateNote(note) {
                 (activity as? MainActivity)?.noteSavedSuccessfully(note.title)
+                callback?.invoke(note)
             }
         } else {
             if (content != null) {
                 val displaySuccess = activity?.config?.displaySuccess ?: false
-                (activity as? MainActivity)?.tryExportNoteValueToFile(note.path, note.title, content, displaySuccess)
+                (activity as? MainActivity)?.tryExportNoteValueToFile(note.path, note.title, content, displaySuccess) {
+                    callback?.invoke(note)
+                }
             }
         }
     }
