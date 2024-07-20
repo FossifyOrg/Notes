@@ -154,8 +154,8 @@ class MainActivity : SimpleActivity() {
             initViewPager()
         }
 
-        NotesHelper(this).getNotes { lastestNotes ->
-            if (mNotes.size != lastestNotes.size) {
+        NotesHelper(this).getNotes { latestNotes ->
+            if (mNotes.size != latestNotes.size) {
                 initViewPager()
             }
         }
