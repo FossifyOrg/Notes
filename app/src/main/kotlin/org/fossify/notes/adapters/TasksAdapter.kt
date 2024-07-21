@@ -188,7 +188,13 @@ class TasksAdapter(
 
     private fun setupCompletedTasks(view: View, completedTasks: CompletedTasks) {
         ItemCheckedTasksBinding.bind(view).apply {
-            numCheckedItems.text = activity.getString(R.string.num_checked_items, completedTasks.tasks.size)
+            numCheckedItems.apply {
+                text = activity.getString(R.string.num_checked_items, completedTasks.tasks.size)
+                setTextColor(textColor)
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
+            }
+
+            expandCollapseIcon.applyColorFilter(textColor)
             expandCollapseIcon.setImageResource(
                 if (completedTasks.expanded) {
                     org.fossify.commons.R.drawable.ic_chevron_up_vector
