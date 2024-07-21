@@ -1,0 +1,3 @@
+* Added collapsible checked items section at the bottom
+* Minor bug fixes and improvements
+* Added new translations
