@@ -57,7 +57,7 @@
     <string name="add_new_checklist_item">چیک‌لِسٹ وچ نواں حصہ پایو</string>
     <string name="add_new_checklist_items">چیک‌لِسٹ وچ نویں حصے پایو</string>
     <string name="checklist_is_empty">چیک‌لِسٹ وچ نوٹ کوئی نہیں</string>
-    <string name="remove_done_items">کیٹیاں ائیٹماں نوں ہٹاؤ</string>
+    <string name="delete_checked_items">کیٹیاں ائیٹماں نوں ہٹاؤ</string>
     <string name="import_folder">فولڈر ایمپورٹ کرو</string>
     <string name="export_notes">سارے نوٹ ایکسپورٹ کرو</string>
     <string name="import_notes">نوٹ ایمپورٹ کرو</string>

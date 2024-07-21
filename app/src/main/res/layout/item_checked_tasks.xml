@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/checked_items_holder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/selector"
+    android:minHeight="@dimen/checklist_height">
+
+    <include
+        android:id="@+id/divider"
+        layout="@layout/divider" />
+
+    <ImageView
+        android:id="@+id/expand_collapse_icon"
+        android:layout_width="@dimen/normal_icon_size"
+        android:layout_height="@dimen/normal_icon_size"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/tiny_margin"
+        android:background="@null"
+        android:clickable="false"
+        android:importantForAccessibility="no"
+        android:padding="@dimen/medium_margin"
+        android:src="@drawable/ic_chevron_down_vector"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <org.fossify.commons.views.MyTextView
+        android:id="@+id/num_checked_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:textSize="@dimen/bigger_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/expand_collapse_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="7 checked items" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -76,7 +76,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(lastCreatedNoteType) = prefs.edit().putInt(LAST_CREATED_NOTE_TYPE, lastCreatedNoteType).apply()
 
     var moveDoneChecklistItems: Boolean
-        get() = prefs.getBoolean(MOVE_DONE_CHECKLIST_ITEMS, false)
+        get() = prefs.getBoolean(MOVE_DONE_CHECKLIST_ITEMS, true)
         set(moveDoneChecklistItems) = prefs.edit().putBoolean(MOVE_DONE_CHECKLIST_ITEMS, moveDoneChecklistItems).apply()
 
     fun getTextGravity() = when (gravity) {

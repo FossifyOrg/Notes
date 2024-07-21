@@ -60,7 +60,7 @@
     <string name="add_new_checklist_item">Dodaj nov element na seznam</string>
     <string name="add_new_checklist_items">Dodaj nove elemente na seznam</string>
     <string name="checklist_is_empty">Seznam je prazen</string>
-    <string name="remove_done_items">Odstrani opravljene elemente</string>
+    <string name="delete_checked_items">Odstrani opravljene elemente</string>
     <string name="import_folder">Uvozi mapo</string>
     <string name="export_notes">Izvozi zapiske</string>
     <string name="import_notes">Uvozi zapiske</string>

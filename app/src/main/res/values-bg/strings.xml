@@ -63,7 +63,7 @@
     <string name="add_new_checklist_item">Добавяне на нов елемент от контролния списък</string>
     <string name="add_new_checklist_items">Добавяне на нови елементи към контролен списък</string>
     <string name="checklist_is_empty">Контролният списък е празен</string>
-    <string name="remove_done_items">Премахване на готови елементи</string>
+    <string name="delete_checked_items">Премахване на готови елементи</string>
     <string name="import_folder">Папка за импортиране</string>
     <string name="export_notes">Експортиране на бележките</string>
     <string name="import_notes">Бележки за внос</string>

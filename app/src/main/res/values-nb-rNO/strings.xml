@@ -60,7 +60,7 @@
     <string name="add_new_checklist_item">Legg til nytt sjekklisteelement</string>
     <string name="add_new_checklist_items">Legg til nye sjekklisteelementer</string>
     <string name="checklist_is_empty">Sjekklisten er tom</string>
-    <string name="remove_done_items">Fjern utførte elementer</string>
+    <string name="delete_checked_items">Fjern utførte elementer</string>
     <string name="import_folder">Importer mappe</string>
     <string name="export_notes">Eksportere alle notater</string>
     <string name="import_notes">Importere notater</string>

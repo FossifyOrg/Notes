@@ -93,10 +93,10 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
     }
 
     fun removeDoneCheckListItems(position: Int) {
-        (fragments[position] as? TasksFragment)?.removeDoneItems()
+        (fragments[position] as? TasksFragment)?.removeCheckedItems()
     }
 
     fun refreshChecklist(position: Int) {
-        (fragments[position] as? TasksFragment)?.refreshItems()
+        (fragments[position] as? TasksFragment)?.saveAndReload()
     }
 }

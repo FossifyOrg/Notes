@@ -29,7 +29,7 @@
     <string name="password_protect_note_deletion">Pasahitzez babestu oharrak ezabatzea</string>
     <string name="checklists">Kontrol-zerrendak</string>
     <string name="add_new_checklist_item">Gehitu elementu berri bat kontrol-zerrendan</string>
-    <string name="remove_done_items">Kendu burututako elementuak</string>
+    <string name="delete_checked_items">Kendu burututako elementuak</string>
     <string name="add_new_checklist_items">Gehitu elementu berriak kontrol-zerrendan</string>
     <string name="checklist_is_empty">Kontrol-zerrenda hutsik dago</string>
     <string name="import_folder">Inportatu karpeta</string>

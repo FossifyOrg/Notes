@@ -60,7 +60,7 @@
     <string name="add_new_checklist_item">เพิ่มรายการตรวจสอบใหม่</string>
     <string name="add_new_checklist_items">เพิ่มรายการตรวจสอบใหม่</string>
     <string name="checklist_is_empty">รายการตรวจนั้นว่างเปล่า</string>
-    <string name="remove_done_items">ลบของที่เรียบร้อยแล้ว</string>
+    <string name="delete_checked_items">ลบของที่เรียบร้อยแล้ว</string>
     <string name="import_folder">เอาโฟลเดอร์เข้า</string>
     <string name="export_notes">ส่งออกโน็ตทุกตัว</string>
     <string name="import_notes">นำเข้าโน็ตทุกตัว</string>

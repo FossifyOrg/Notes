@@ -14,19 +14,23 @@ import org.fossify.commons.helpers.ensureBackgroundThread
 import org.fossify.notes.activities.SimpleActivity
 import org.fossify.notes.adapters.TasksAdapter
 import org.fossify.notes.databinding.FragmentChecklistBinding
+import org.fossify.notes.dialogs.EditTaskDialog
 import org.fossify.notes.dialogs.NewChecklistItemDialog
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.NOTE_ID
 import org.fossify.notes.helpers.NotesHelper
 import org.fossify.notes.interfaces.TasksActionListener
+import org.fossify.notes.models.CompletedTasks
 import org.fossify.notes.models.Note
+import org.fossify.notes.models.NoteItem
 import org.fossify.notes.models.Task
 import java.io.File
 
 class TasksFragment : NoteFragment(), TasksActionListener {
 
     private var noteId = 0L
+    private var expanded = false
 
     private lateinit var binding: FragmentChecklistBinding
 
@@ -62,13 +66,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
                 try {
                     val taskType = object : TypeToken<List<Task>>() {}.type
                     tasks = Gson().fromJson<ArrayList<Task>>(storedNote.getNoteStoredValue(requireActivity()), taskType) ?: ArrayList(1)
-
                     tasks = tasks.toMutableList() as ArrayList<Task>
-                    val sorting = config?.sorting ?: 0
-                    if (sorting and SORT_BY_CUSTOM == 0 && config?.moveDoneChecklistItems == true) {
-                        tasks.sortBy { it.isDone }
-                    }
-
                     setupFragment()
                 } catch (e: Exception) {
                     migrateCheckListOnFailure(storedNote)
@@ -90,7 +88,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
             )
         }
 
-        saveTasks(tasks)
+        saveAndReload()
     }
 
     private fun setupFragment() {
@@ -163,37 +161,67 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         }
     }
 
+    private fun prepareTaskItems(): List<NoteItem> {
+        return if (config?.moveDoneChecklistItems == true) {
+            mutableListOf<NoteItem>().apply {
+                val (checked, unchecked) = tasks.partition { it.isDone }
+                this += unchecked
+                if (checked.isNotEmpty()) {
+                    if (unchecked.isEmpty()) {
+                        expanded = true
+                    }
+
+                    this += CompletedTasks(tasks = checked, expanded = expanded)
+                    if (expanded) {
+                        this += checked
+                    }
+                } else {
+                    expanded = false
+                }
+            }
+        } else {
+            tasks.toList()
+        }
+    }
+
+    private fun getTasksAdapter(): TasksAdapter {
+        var adapter = binding.checklistList.adapter as? TasksAdapter
+        if (adapter == null) {
+            adapter = TasksAdapter(
+                activity = activity as SimpleActivity,
+                listener = this,
+                recyclerView = binding.checklistList,
+                itemClick = ::itemClicked
+            )
+            binding.checklistList.adapter = adapter
+        }
+
+        return adapter
+    }
+
     private fun setupAdapter() {
         updateUIVisibility()
         Task.sorting = requireContext().config.sorting
         if (Task.sorting and SORT_BY_CUSTOM == 0) {
             tasks.sort()
-            if (context?.config?.moveDoneChecklistItems == true) {
-                tasks.sortBy { it.isDone }
-            }
         }
 
-        var tasksAdapter = binding.checklistList.adapter as? TasksAdapter
-        if (tasksAdapter == null) {
-            tasksAdapter = TasksAdapter(
-                activity = activity as SimpleActivity,
-                listener = this,
-                recyclerView = binding.checklistList,
-                itemClick = ::toggleCompletion
-            )
-            binding.checklistList.adapter = tasksAdapter
-        }
-
-        tasksAdapter.submitList(tasks.toList())
+        getTasksAdapter().submitList(prepareTaskItems())
     }
 
-    private fun toggleCompletion(any: Any) {
-        val item = any as Task
-        val index = tasks.indexOf(item)
-        if (index != -1) {
-            tasks[index] = item.copy(isDone = !item.isDone)
-            saveNote {
-                loadNoteById(noteId)
+    private fun itemClicked(item: Any) {
+        when (item) {
+            is Task -> {
+                val index = tasks.indexOf(item)
+                if (index != -1) {
+                    tasks[index] = item.copy(isDone = !item.isDone)
+                    saveAndReload()
+                }
+            }
+
+            is CompletedTasks -> {
+                expanded = !expanded
+                setupAdapter()
             }
         }
     }
@@ -222,8 +250,8 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         }
     }
 
-    fun removeDoneItems() {
-        tasks = tasks.filter { !it.isDone }.toMutableList() as ArrayList<Task>
+    fun removeCheckedItems() {
+        tasks = tasks.filter { !it.isDone }.toMutableList()
         saveNote()
         setupAdapter()
     }
@@ -238,14 +266,57 @@ class TasksFragment : NoteFragment(), TasksActionListener {
 
     fun getTasks() = Gson().toJson(tasks)
 
-    override fun saveTasks(updatedTasks: List<Task>, callback: () -> Unit) {
-        tasks = updatedTasks.toMutableList()
-        saveNote(callback = callback)
+    override fun editTask(task: Task, callback: () -> Unit) {
+        EditTaskDialog(activity as SimpleActivity, task.title) { title ->
+            val editedTask = task.copy(title = title)
+            val index = tasks.indexOf(task)
+            tasks[index] = editedTask
+            saveAndReload()
+            callback()
+        }
     }
 
-    override fun refreshItems() {
-        loadNoteById(noteId)
+    override fun deleteTasks(tasksToDelete: List<Task>) {
+        tasks.removeAll(tasksToDelete)
+        saveAndReload()
+    }
+
+    override fun moveTask(fromPosition: Int, toPosition: Int) {
+        activity?.config?.sorting = SORT_BY_CUSTOM
+        if (fromPosition < toPosition) {
+            for (i in fromPosition until toPosition) {
+                tasks.swap(i, i + 1)
+            }
+        } else {
+            for (i in fromPosition downTo toPosition + 1) {
+                tasks.swap(i, i - 1)
+            }
+        }
+
+        saveNote()
         setupAdapter()
+    }
+
+    override fun moveTasksToTop(taskIds: List<Int>) = moveTasks(taskIds.reversed(), targetPosition = 0)
+
+    override fun moveTasksToBottom(taskIds: List<Int>) = moveTasks(taskIds, targetPosition = tasks.lastIndex)
+
+    private fun moveTasks(taskIds: List<Int>, targetPosition: Int) {
+        activity?.config?.sorting = SORT_BY_CUSTOM
+        taskIds.forEach { id ->
+            val position = tasks.indexOfFirst { it.id == id }
+            if (position != -1) {
+                tasks.move(position, targetPosition)
+            }
+        }
+
+        saveAndReload()
+    }
+
+    override fun saveAndReload() {
+        saveNote {
+            loadNoteById(noteId)
+        }
     }
 
     private fun FragmentChecklistBinding.toCommonBinding(): CommonNoteBinding = this.let {

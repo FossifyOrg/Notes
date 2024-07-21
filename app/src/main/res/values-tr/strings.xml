@@ -65,7 +65,7 @@
     <string name="add_new_checklist_item">Yeni bir yapılacak listesi ögesi ekle</string>
     <string name="add_new_checklist_items">Yeni yapılacak listesi ögeleri ekle</string>
     <string name="checklist_is_empty">Yapılacak listesi boş</string>
-    <string name="remove_done_items">Tamamlanan ögeleri kaldır</string>
+    <string name="delete_checked_items">Tamamlanan ögeleri kaldır</string>
     <string name="add_to_the_top">En üste ekle</string>
     <string name="import_folder">Klasörü içe aktar</string>
     <string name="export_notes">Notları dışa aktar</string>

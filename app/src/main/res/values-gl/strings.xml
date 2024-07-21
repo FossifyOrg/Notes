@@ -61,7 +61,7 @@
     <string name="add_new_checklist_item">Engadir un elemento a unha nova lista de verificación</string>
     <string name="add_new_checklist_items">Engadir elementos a unha nova lista de verificación</string>
     <string name="checklist_is_empty">A lista de verificación está baleira</string>
-    <string name="remove_done_items">Elimina os elementos feitos</string>
+    <string name="delete_checked_items">Elimina os elementos feitos</string>
     <string name="import_folder">Importar cartafoles</string>
     <string name="export_notes">Exportar notas</string>
     <string name="import_notes_pro">Importar notas (Pro)</string>

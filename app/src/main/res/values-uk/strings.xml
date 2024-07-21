@@ -63,7 +63,7 @@
     <string name="add_new_checklist_item">Додати нову позицію у списку</string>
     <string name="add_new_checklist_items">Додати нові позиції у списку</string>
     <string name="checklist_is_empty">Список порожній</string>
-    <string name="remove_done_items">Вилучати виконані позиції</string>
+    <string name="delete_checked_items">Вилучати виконані позиції</string>
     <string name="add_to_the_top">Додати вгорі</string>
     <string name="import_folder">Імпортувати теку</string>
     <string name="export_notes">Експортувати нотатки</string>

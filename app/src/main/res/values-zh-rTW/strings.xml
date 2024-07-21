@@ -55,7 +55,7 @@
     <string name="add_new_checklist_item">新增新的核對清單項目</string>
     <string name="add_new_checklist_items">新增新的核對清單項目</string>
     <string name="checklist_is_empty">核對清單為空白</string>
-    <string name="remove_done_items">移除已完成的項目</string>
+    <string name="delete_checked_items">移除已完成的項目</string>
     <string name="import_folder">匯入資料夾</string>
     <string name="export_notes">匯出筆記</string>
     <string name="faq_1_title">要怎麼變更小工具的顏色？</string>

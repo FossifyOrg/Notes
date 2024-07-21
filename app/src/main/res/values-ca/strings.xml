@@ -62,7 +62,7 @@
     <string name="add_new_checklist_item">Afegeix un element nou de la llista de comprovació</string>
     <string name="add_new_checklist_items">Afegeix elements nous de la llista de comprovació</string>
     <string name="checklist_is_empty">La llista de comprovació és buida</string>
-    <string name="remove_done_items">Elimina els elements fets</string>
+    <string name="delete_checked_items">Elimina els elements fets</string>
     <string name="import_folder">Importa una carpeta</string>
     <string name="export_notes">Exporta notes</string>
     <string name="import_notes">Importa notes</string>

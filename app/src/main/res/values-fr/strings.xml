@@ -64,7 +64,7 @@
     <string name="add_new_checklist_item">Ajouter un nouvel élément</string>
     <string name="add_new_checklist_items">Ajouter de nouveaux éléments</string>
     <string name="checklist_is_empty">La liste de contrôle est vide</string>
-    <string name="remove_done_items">Supprimer les éléments cochés</string>
+    <string name="delete_checked_items">Supprimer les éléments cochés</string>
     <string name="add_to_the_top">Ajouter en haut de la liste</string>
     <string name="import_folder">Importer depuis un dossier</string>
     <string name="export_notes">Exporter les notes</string>

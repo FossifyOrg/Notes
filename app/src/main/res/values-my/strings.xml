@@ -59,7 +59,7 @@
     <string name="add_new_checklist_item">အမှန်ခြစ် စာရင်းအသစ်</string>
     <string name="add_new_checklist_items">အမှတ်ခြစ် စာရင်းအသစ်များ</string>
     <string name="checklist_is_empty">အမှန်ခြစ် စာရင်း မှာဘာမှမရှိပါ</string>
-    <string name="remove_done_items">ပြီးသွား​သောအရာများကို ဖယ်ရှားပါ</string>
+    <string name="delete_checked_items">ပြီးသွား​သောအရာများကို ဖယ်ရှားပါ</string>
     <string name="add_to_the_top">အ​ပေါ်ဆုံးကို ပို့ပါ</string>
     <string name="import_folder">ဖိုဒါကို သွင်းမည်</string>
     <string name="export_notes">မှတ်စုများကိုထုတ်မည်</string>

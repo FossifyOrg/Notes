@@ -63,7 +63,7 @@
     <string name="add_new_checklist_item">Lägg till ett nytt checklisteobjekt</string>
     <string name="add_new_checklist_items">Lägg till nya checklisteobjekt</string>
     <string name="checklist_is_empty">Checklistan är tom</string>
-    <string name="remove_done_items">Ta bort slutförda</string>
+    <string name="delete_checked_items">Ta bort slutförda</string>
     <string name="add_to_the_top">Lägg till överst</string>
     <string name="import_folder">Importera mapp</string>
     <string name="export_notes">Exportera anteckningar</string>

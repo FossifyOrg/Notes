@@ -38,7 +38,7 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/remove_done_items"
-        android:title="@string/remove_done_items"
+        android:title="@string/delete_checked_items"
         app:showAsAction="never" />
     <item
         android:id="@+id/sort_checklist"

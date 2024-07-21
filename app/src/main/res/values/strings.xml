@@ -60,7 +60,7 @@
     <string name="autosave_notes">Autosave notes</string>
     <string name="enable_line_wrap">Enable line wrap</string>
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
+    <string name="move_done_checklist_items">Move checked items to the bottom</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
     <string name="password_protect_note_deletion">Password protect note deletion</string>
 
@@ -70,8 +70,9 @@
     <string name="add_new_checklist_item">Add a new checklist item</string>
     <string name="add_new_checklist_items">Add new checklist items</string>
     <string name="checklist_is_empty">The checklist is empty</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="delete_checked_items">Delete checked items</string>
     <string name="add_to_the_top">Add to the top</string>
+    <string name="num_checked_items">%d checked items</string>
 
     <!-- Import / Export -->
     <string name="import_folder">Import folder</string>

@@ -60,7 +60,7 @@
     <string name="add_new_checklist_item">Adăugați un nou element în lista de verificare</string>
     <string name="add_new_checklist_items">Adăugați noi elemente în lista de verificare</string>
     <string name="checklist_is_empty">Lista de verificare este goală</string>
-    <string name="remove_done_items">Elimină elementele realizate</string>
+    <string name="delete_checked_items">Elimină elementele realizate</string>
     <string name="import_folder">Importare dosar</string>
     <string name="export_notes">Exportați toate notițele</string>
     <string name="import_notes">Importaţi notițele</string>

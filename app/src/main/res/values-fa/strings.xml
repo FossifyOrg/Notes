@@ -56,7 +56,7 @@
     <string name="add_new_checklist_item">افزودن یک مورد به فهرست نشان‌دار</string>
     <string name="add_new_checklist_items">افزودن موارد به فهرست نشان‌دار</string>
     <string name="checklist_is_empty">فهرست نشان‌دار خالی است</string>
-    <string name="remove_done_items">پاک کردن موارد انجام شده</string>
+    <string name="delete_checked_items">پاک کردن موارد انجام شده</string>
     <string name="import_folder">درون‌ریزی پوشه</string>
     <string name="faq_1_title">چگونه میتوانم رنگ ابزارک‌ها را تغییر دهم؟</string>
     <string name="faq_1_text">در این مثال شما فقط یک ابزارک فعال دارید، شما همچنین می‌توانید آن را دوباره بسازید، یا از دکمه درون تنظیمات آن را سفارشی‌سازی کنید. اگر شما چندین ابزارک فعال دارید، دکمه درون تنظیمات در دسترس نخواهد بود. همچنان برنامه از سفارشی‌سازی رنگ برای هر ابزارک پشتیبانی میکند، شما خواهید توانست با ساخت دوبارهٔ ابزارک آن را سفارشی‌سازی کنید.</string>

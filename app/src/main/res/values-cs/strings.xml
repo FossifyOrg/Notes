@@ -63,7 +63,7 @@
     <string name="add_new_checklist_item">Přidat do seznamu novou položku</string>
     <string name="add_new_checklist_items">Přidat do seznamu nové položky</string>
     <string name="checklist_is_empty">Seznam položek je prázdný</string>
-    <string name="remove_done_items">Odstranit splněné položky seznamu</string>
+    <string name="delete_checked_items">Odstranit splněné položky seznamu</string>
     <string name="import_folder">Importovat složku</string>
     <string name="export_notes">Exportovat poznámky</string>
     <string name="import_notes">Importovat poznámky</string>

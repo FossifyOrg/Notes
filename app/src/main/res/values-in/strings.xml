@@ -62,7 +62,7 @@
     <string name="add_new_checklist_item">Tambah item checklist baru</string>
     <string name="add_new_checklist_items">Tambah item checklist baru</string>
     <string name="checklist_is_empty">Checklist kosong</string>
-    <string name="remove_done_items">Hapus item yang sudah</string>
+    <string name="delete_checked_items">Hapus item yang sudah</string>
     <string name="import_folder">Impor folder</string>
     <string name="export_notes">Ekspor nota</string>
     <string name="import_notes_pro">Impor catatan (Pro)</string>

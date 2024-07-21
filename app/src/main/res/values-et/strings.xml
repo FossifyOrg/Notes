@@ -63,7 +63,7 @@
     <string name="add_new_checklist_item">Lisa tööde loendisse uus kirje</string>
     <string name="add_new_checklist_items">Lisa tööde loendisse uued kirjed</string>
     <string name="checklist_is_empty">Tööde loend on tühi</string>
-    <string name="remove_done_items">Kustuta tehtuks märgitud kirjed</string>
+    <string name="delete_checked_items">Kustuta tehtuks märgitud kirjed</string>
     <string name="add_to_the_top">Lisa ülaossa</string>
     <string name="import_folder">Impordi kaust</string>
     <string name="export_notes">Ekspordi märkmed</string>

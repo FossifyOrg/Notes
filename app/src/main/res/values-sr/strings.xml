@@ -57,7 +57,7 @@
     <string name="add_new_checklist_item">Додајте нову ставку контролне листе</string>
     <string name="add_new_checklist_items">Додајте нове ставке контролне листе</string>
     <string name="checklist_is_empty">Контролна листа је празна</string>
-    <string name="remove_done_items">Уклоните готове ставке</string>
+    <string name="delete_checked_items">Уклоните готове ставке</string>
     <string name="import_folder">Увоз фолдера</string>
     <string name="export_notes">Извези све белешке</string>
     <string name="import_notes">Увезите белешке</string>

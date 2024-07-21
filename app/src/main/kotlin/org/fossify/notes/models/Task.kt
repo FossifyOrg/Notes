@@ -5,13 +5,15 @@ import org.fossify.commons.helpers.SORT_BY_TITLE
 import org.fossify.commons.helpers.SORT_DESCENDING
 import org.fossify.notes.helpers.CollatorBasedComparator
 
+sealed class NoteItem
+
 @Serializable
 data class Task(
     val id: Int,
     val dateCreated: Long = 0L,
     val title: String,
     val isDone: Boolean
-) : Comparable<Task> {
+) : NoteItem(), Comparable<Task> {
 
     companion object {
         var sorting = 0
@@ -30,3 +32,11 @@ data class Task(
         return result
     }
 }
+
+data class CompletedTasks(
+    val tasks: List<Task>,
+    val expanded: Boolean
+) : NoteItem() {
+    val id = -42
+}
+

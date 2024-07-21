@@ -33,12 +33,10 @@ class SortChecklistDialog(private val activity: SimpleActivity, private val call
 
     private fun setupSortRadio() {
         val fieldRadio = binding.sortingDialogRadioSorting
-        fieldRadio.setOnCheckedChangeListener { group, checkedId ->
+        fieldRadio.setOnCheckedChangeListener { _, checkedId ->
             val isCustomSorting = checkedId == binding.sortingDialogRadioCustom.id
             binding.sortingDialogRadioOrder.beGoneIf(isCustomSorting)
             binding.sortingDialogOrderDivider.beGoneIf(isCustomSorting)
-            binding.moveUndoneChecklistItemsDivider.beGoneIf(isCustomSorting)
-            binding.settingsMoveUndoneChecklistItemsHolder.beGoneIf(isCustomSorting)
         }
 
         var fieldBtn = binding.sortingDialogRadioTitle

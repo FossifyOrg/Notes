@@ -62,7 +62,7 @@
     <string name="add_new_checklist_item">Дадаць пункт у кантрольны спіс</string>
     <string name="add_new_checklist_items">Дадаць пункты ў кантрольны спіс</string>
     <string name="checklist_is_empty">Кантрольны спіс пусты</string>
-    <string name="remove_done_items">Выдаліць выкананыя пункты</string>
+    <string name="delete_checked_items">Выдаліць выкананыя пункты</string>
     <string name="import_folder">Імпартаваць папку</string>
     <string name="export_notes">Экспартаваць нататкі</string>
     <string name="import_notes">Імпартаваць нататкі</string>

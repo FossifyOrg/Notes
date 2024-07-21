@@ -60,7 +60,7 @@
     <string name="add_new_checklist_item">Új ellenőrzőlista-elem hozzáadása</string>
     <string name="add_new_checklist_items">Új ellenőrzőlista-elemek hozzáadása</string>
     <string name="checklist_is_empty">Az ellenőrzőlista üres</string>
-    <string name="remove_done_items">Kész elemek eltávolítása</string>
+    <string name="delete_checked_items">Kész elemek eltávolítása</string>
     <string name="import_folder">Mappa importálása</string>
     <string name="export_notes">Jegyzetek exportálása</string>
     <string name="import_notes">Jegyzetek importálása</string>

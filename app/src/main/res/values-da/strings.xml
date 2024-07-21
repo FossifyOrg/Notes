@@ -62,7 +62,7 @@
     <string name="add_new_checklist_item">Føj et nyt punkt til tjeklisten</string>
     <string name="add_new_checklist_items">Føj nye punkter til tjeklisten</string>
     <string name="checklist_is_empty">Tjeklisten er tom</string>
-    <string name="remove_done_items">Fjern udførte elementer</string>
+    <string name="delete_checked_items">Fjern udførte elementer</string>
     <string name="add_to_the_top">Føj til toppen</string>
     <string name="import_folder">Importer mappe</string>
     <string name="export_notes">Eksporter alle noter</string>

@@ -66,7 +66,7 @@
     <string name="checklists">चेकलिस्ट</string>
     <string name="add_new_checklist_item">एक नया चेकलिस्ट आइटम जोड़ें</string>
     <string name="checklist_is_empty">चेकलिस्ट खाली है</string>
-    <string name="remove_done_items">पूर्ण किए गए आइटम हटाएँ</string>
+    <string name="delete_checked_items">पूर्ण किए गए आइटम हटाएँ</string>
     <string name="add_to_the_top">शीर्ष पर जोड़ें</string>
     <string name="import_folder">फोल्डर आयात करें</string>
     <string name="export_notes">नोट निर्यात करें</string>

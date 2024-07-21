@@ -64,7 +64,7 @@
     <string name="add_new_checklist_item">Aggiungi un nuovo elemento</string>
     <string name="add_new_checklist_items">Aggiungi nuovi elementi</string>
     <string name="checklist_is_empty">La scaletta è vuota</string>
-    <string name="remove_done_items">Rimuovi gli elementi finiti</string>
+    <string name="delete_checked_items">Rimuovi gli elementi finiti</string>
     <string name="import_folder">Importa cartella</string>
     <string name="export_notes">Esporta note</string>
     <string name="import_notes">Importa note</string>

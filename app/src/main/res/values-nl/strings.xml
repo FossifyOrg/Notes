@@ -63,7 +63,7 @@
     <string name="add_new_checklist_item">Item toevoegen</string>
     <string name="add_new_checklist_items">Items toevoegen</string>
     <string name="checklist_is_empty">De lijst is leeg</string>
-    <string name="remove_done_items">Afgeronde items wissen</string>
+    <string name="delete_checked_items">Afgeronde items wissen</string>
     <string name="add_to_the_top">Bovenaan toevoegen</string>
     <string name="import_folder">Map importeren</string>
     <string name="export_notes">Notities exporteren</string>

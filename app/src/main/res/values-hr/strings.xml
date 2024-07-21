@@ -63,7 +63,7 @@
     <string name="add_new_checklist_item">Dodaj novu stavku u popis zadataka</string>
     <string name="add_new_checklist_items">Dodaj novu stavku u popis zadataka</string>
     <string name="checklist_is_empty">Popis zadataka je prazan</string>
-    <string name="remove_done_items">Ukloni gotove stavke</string>
+    <string name="delete_checked_items">Ukloni gotove stavke</string>
     <string name="import_folder">Uvezi mapu</string>
     <string name="export_notes">Izvezi bilješke</string>
     <string name="import_notes">Uvezi bilješke</string>
