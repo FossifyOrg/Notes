@@ -58,7 +58,7 @@
     <string name="autosave_notes">自动保存笔记</string>
     <string name="enable_line_wrap">启用行折叠</string>
     <string name="use_incognito_mode">使用隐私模式键盘</string>
-    <string name="move_done_checklist_items">移动未完成的清单至顶端</string>
+    <string name="move_done_checklist_items">移动勾选的条目到底部</string>
     <string name="add_new_checklist_items_top">在顶部添加新清单项</string>
     <string name="checklist">清单</string>
     <string name="checklists">清单</string>
@@ -76,4 +76,5 @@
     <string name="password_protect_note_deletion">密码保护笔记删除</string>
     <string name="this_note_is_linked">此笔记和一个本地文件关联。</string>
     <string name="allow_alarm_automatic_backups">要自动备份笔记，请授予应用设置精确闹钟的权限。</string>
+    <string name="num_checked_items">%d 个勾选的条目</string>
 </resources>
