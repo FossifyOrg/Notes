@@ -56,7 +56,7 @@
     <string name="autosave_notes">Автозбереження нотаток</string>
     <string name="enable_line_wrap">Продовжувати друк з нового рядка</string>
     <string name="use_incognito_mode">Використовувати режим Приватності в клавіатурі</string>
-    <string name="move_done_checklist_items">Поміщати виконані позиції в кінець списку</string>
+    <string name="move_done_checklist_items">Перемістити відмічені елементи вниз</string>
     <string name="add_new_checklist_items_top">Додавати нові елементи на початку списку</string>
     <string name="checklist">Список</string>
     <string name="checklists">Списки</string>
@@ -76,4 +76,10 @@
     <string name="password_protect_note_deletion">Пароль захищає нотатку від видалення</string>
     <string name="this_note_is_linked">Ця примітка пов\'язана з локальним файлом.</string>
     <string name="allow_alarm_automatic_backups">Для автоматичного резервного копіювання нотаток, будь ласка, надайте застосунку дозвіл на планування точних будильників.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d відмічений елемент</item>
+        <item quantity="few">%d відмічених елементи</item>
+        <item quantity="many">%d відмічених елементів</item>
+        <item quantity="other">%d відмічених елементів</item>
+    </plurals>
 </resources>
