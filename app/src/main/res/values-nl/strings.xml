@@ -56,14 +56,14 @@
     <string name="autosave_notes">Notities automatisch opslaan</string>
     <string name="enable_line_wrap">Automatische terugloop inschakelen</string>
     <string name="use_incognito_mode">Incognito-modus van toetsenbord gebruiken</string>
-    <string name="move_done_checklist_items">Afgewerkte items naar onderen verplaatsen</string>
+    <string name="move_done_checklist_items">Afgevinkte items naar onderen verplaatsen</string>
     <string name="add_new_checklist_items_top">Nieuwe items boven aan de lijst toevoegen</string>
     <string name="checklist">Lijst</string>
     <string name="checklists">Lijsten</string>
     <string name="add_new_checklist_item">Item toevoegen</string>
     <string name="add_new_checklist_items">Items toevoegen</string>
     <string name="checklist_is_empty">De lijst is leeg</string>
-    <string name="delete_checked_items">Afgeronde items wissen</string>
+    <string name="delete_checked_items">Afgevinkte items wissen</string>
     <string name="add_to_the_top">Bovenaan toevoegen</string>
     <string name="import_folder">Map importeren</string>
     <string name="export_notes">Notities exporteren</string>
@@ -75,4 +75,8 @@
     <string name="password_protect_note_deletion">Wachtwoordbeveiliging voor het verwijderen van notities</string>
     <string name="this_note_is_linked">Deze notities is gekoppeld aan een lokaal bestand.</string>
     <string name="allow_alarm_automatic_backups">Om automatisch een back-up te maken van notities moet de app toestemming krijgen om precieze alarmen in te plannen.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d geselecteerd item</item>
+        <item quantity="other">%d geselecteerde items</item>
+    </plurals>
 </resources>
