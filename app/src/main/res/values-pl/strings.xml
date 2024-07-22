@@ -58,15 +58,21 @@
     <string name="autosave_notes">Automatyczne zapisywanie notatek</string>
     <string name="enable_line_wrap">Włącz zawijanie linii</string>
     <string name="use_incognito_mode">Używaj trybu incognito klawiatury</string>
-    <string name="move_done_checklist_items">Przesuwaj na dół wykonane elementy listy kontrolnej</string>
+    <string name="move_done_checklist_items">Przesuwaj na dół odhaczone elementy</string>
     <string name="add_new_checklist_items_top">Dodawaj na górze nowe elementy listy kontrolnej</string>
     <string name="checklist">Lista kontrolna</string>
     <string name="checklists">Listy kontrolne</string>
     <string name="add_new_checklist_item">Dodaj nowy element listy kontrolnej</string>
     <string name="add_new_checklist_items">Dodaj nowe elementy listy kontrolnej</string>
     <string name="checklist_is_empty">Lista kontrolna jest pusta</string>
-    <string name="delete_checked_items">Usuń wykonane elementy</string>
+    <string name="delete_checked_items">Usuń odhaczone elementy</string>
     <string name="add_to_the_top">Dodaj na górze</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d odhaczony element</item>
+        <item quantity="few">%d odhaczone elementy</item>
+        <item quantity="many">%d odhaczonych elementów</item>
+        <item quantity="other">%d odhaczonych elementów</item>
+    </plurals>    
     <string name="import_folder">Importuj folder</string>
     <string name="export_notes">Eksportuj notatki</string>
     <string name="import_notes">Importuj notatki</string>

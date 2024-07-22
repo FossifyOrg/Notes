@@ -189,7 +189,7 @@ class TasksAdapter(
     private fun setupCompletedTasks(view: View, completedTasks: CompletedTasks) {
         ItemCheckedTasksBinding.bind(view).apply {
             numCheckedItems.apply {
-                text = activity.getString(R.string.num_checked_items, completedTasks.tasks.size)
+                text = resources.getQuantityString(R.plurals.num_checked_items, completedTasks.tasks.size, completedTasks.tasks.size)
                 setTextColor(textColor)
                 setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
             }

@@ -72,7 +72,10 @@
     <string name="checklist_is_empty">The checklist is empty</string>
     <string name="delete_checked_items">Delete checked items</string>
     <string name="add_to_the_top">Add to the top</string>
-    <string name="num_checked_items">%d checked items</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d checked item</item>
+        <item quantity="other">%d checked items</item>
+    </plurals>
 
     <!-- Import / Export -->
     <string name="import_folder">Import folder</string>
