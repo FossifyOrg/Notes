@@ -77,7 +77,7 @@ class TasksAdapter(
 
     override fun getItemId(position: Int) = getItemKey(getItem(position)).toLong()
 
-    override fun getSelectableItemCount() = getSelectedItems().size
+    override fun getSelectableItemCount() = currentList.filterIsInstance<Task>().size
 
     override fun getIsItemSelectable(position: Int) = getItem(position) is Task
 
