@@ -58,14 +58,14 @@
     <string name="autosave_notes">Notizen automatisch speichern</string>
     <string name="enable_line_wrap">Zeilenumbruch aktivieren</string>
     <string name="use_incognito_mode">Inkognitomodus von Tastaturen verwenden</string>
-    <string name="move_done_checklist_items">Erledigte Checklistenpunkte ans Ende verschieben</string>
-    <string name="add_new_checklist_items_top">Neue Checklistenpunkte am Anfang hinzufügen</string>
+    <string name="move_done_checklist_items">Erledigte Einträge ans Ende verschieben</string>
+    <string name="add_new_checklist_items_top">Neue Checklisteneinträge am Anfang hinzufügen</string>
     <string name="checklist">Checkliste</string>
     <string name="checklists">Checklisten</string>
-    <string name="add_new_checklist_item">Einen neuen Checklistenpunkt hinzufügen</string>
-    <string name="add_new_checklist_items">Neue Checklistenpunkte hinzufügen</string>
+    <string name="add_new_checklist_item">Einen neuen Checklisteneintrag hinzufügen</string>
+    <string name="add_new_checklist_items">Neue Checklisteneinträge hinzufügen</string>
     <string name="checklist_is_empty">Die Checkliste ist leer</string>
-    <string name="delete_checked_items">Erledigte Punkte entfernen</string>
+    <string name="delete_checked_items">Erledigte Einträge entfernen</string>
     <string name="add_to_the_top">Zum Anfang hinzufügen</string>
     <string name="import_folder">Ordner importieren</string>
     <string name="export_notes">Notizen exportieren</string>
@@ -76,4 +76,8 @@
     <string name="this_note_is_linked">Diese Notiz ist mit einer lokalen Datei verknüpft.</string>
     <string name="password_protect_note_deletion">Löschen von Notizen durch Passwort schützen</string>
     <string name="allow_alarm_automatic_backups">Um Notizen automatisch zu sichern, musst du der App die Berechtigung erteilen, genaue Alarme zu planen.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d erledigter Eintrag</item>
+        <item quantity="other">%d erledigte Einträge</item>
+    </plurals>
 </resources>
