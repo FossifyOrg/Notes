@@ -57,7 +57,7 @@
     <string name="autosave_notes">Salva automaticamente le note</string>
     <string name="enable_line_wrap">Abilita a capo automatico</string>
     <string name="use_incognito_mode">Usa la modalità incognito per le tastiere</string>
-    <string name="move_done_checklist_items">Sposta gli elementi non spuntati in cima</string>
+    <string name="move_done_checklist_items">Sposta gli elementi spuntati in fondo</string>
     <string name="add_new_checklist_items_top">Aggiungi nuove voci della lista di controllo in alto</string>
     <string name="checklist">Scaletta</string>
     <string name="checklists">Liste di controllo</string>
@@ -76,4 +76,9 @@
     <string name="password_protect_note_deletion">Proteggi con password l\'eliminazione delle note</string>
     <string name="this_note_is_linked">Questa nota è collegata a un file locale.</string>
     <string name="allow_alarm_automatic_backups">Per eseguire il backup automatico delle note, concedi all\'app l\'autorizzazione a programmare sveglie precise.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d elemento spuntato</item>
+        <item quantity="many">%d elementi spuntati</item>
+        <item quantity="other">%d elementi spuntati</item>
+    </plurals>
 </resources>
