@@ -61,7 +61,7 @@
     <string name="autosave_notes">नोट स्वत: सहेजें</string>
     <string name="enable_line_wrap">लाइन रैप सक्षम करें</string>
     <string name="use_incognito_mode">कीबोर्ड के गुप्त मोड का उपयोग करें</string>
-    <string name="move_done_checklist_items">पूर्ण चेकलिस्ट आइटम को नीचे ले जाएँ</string>
+    <string name="move_done_checklist_items">चेक किए गए आइटम को नीचे ले जाएं</string>
     <string name="checklist">चेकलिस्ट</string>
     <string name="checklists">चेकलिस्ट</string>
     <string name="add_new_checklist_item">एक नया चेकलिस्ट आइटम जोड़ें</string>
@@ -76,4 +76,8 @@
     <string name="password_protect_note_deletion">नोट हटाने के लिए पासवर्ड रखें</string>
     <string name="this_note_is_linked">यह नोट एक स्थानीय फाइल से जुड़ा हुआ है।</string>
     <string name="allow_alarm_automatic_backups">स्वचालित रूप से नोट्स का बैकअप लेने के लिए, कृपया ऐप को सटीक अलार्म अनुसूचित करने की अनुमति दें।</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d चेक किया गया आइटम</item>
+        <item quantity="other">%d चेक किए गए आइटम</item>
+    </plurals>
 </resources>
