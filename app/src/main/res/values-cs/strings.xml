@@ -56,7 +56,7 @@
     <string name="autosave_notes">Automaticky ukládat poznámky</string>
     <string name="enable_line_wrap">Povolit zalamování řádků</string>
     <string name="use_incognito_mode">Použít „inkognito mód“ klávesnic</string>
-    <string name="move_done_checklist_items">Přesunout splněné položky seznamu dospodu</string>
+    <string name="move_done_checklist_items">Přesunout zaškrtnuté položky dospodu</string>
     <string name="add_new_checklist_items_top">Přidávat nové položky seznamu nahoru</string>
     <string name="checklist">Seznam položek</string>
     <string name="checklists">Seznamy položek</string>
@@ -76,4 +76,5 @@
     <string name="password_protect_note_deletion">Odstranění ochrany poznámky heslem</string>
     <string name="this_note_is_linked">Tato poznámka je propojená s místním souborem.</string>
     <string name="allow_alarm_automatic_backups">Pro automatické zálohování poznámek prosím udělte aplikaci oprávnění k plánování přesných budíků.</string>
+    <string name="num_checked_items">%d zaškrtnutých položek</string>
 </resources>

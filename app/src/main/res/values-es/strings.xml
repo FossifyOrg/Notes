@@ -56,7 +56,7 @@
     <string name="autosave_notes">Guardado automático de notas</string>
     <string name="enable_line_wrap">Activar ajuste de línea</string>
     <string name="use_incognito_mode">Usar modo incógnito de los teclados</string>
-    <string name="move_done_checklist_items">Mover ítems completados al final de la lista</string>
+    <string name="move_done_checklist_items">Mueva los elementos marcados hacia la parte inferior</string>
     <string name="add_new_checklist_items_top">Añade nuevos elementos a la parte superior de la lista de control</string>
     <string name="checklist">Lista</string>
     <string name="checklists">Listas de control</string>
@@ -76,4 +76,9 @@
     <string name="password_protect_note_deletion">Proteger con contraseña la eliminación de notas</string>
     <string name="this_note_is_linked">Esta nota está vinculada a un archivo local.</string>
     <string name="allow_alarm_automatic_backups">Para hacer una copia de seguridad automática de las notas, autoriza a la aplicación a programar alarmas exactas.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d elemento verificado</item>
+        <item quantity="many">%d elementos verificados</item>
+        <item quantity="other">%d elementos verificados</item>
+    </plurals>
 </resources>
