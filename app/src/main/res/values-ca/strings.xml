@@ -55,7 +55,7 @@
     <string name="autosave_notes">Desa automàticament les notes</string>
     <string name="enable_line_wrap">Activa l\'ajustament de línia</string>
     <string name="use_incognito_mode">Utilitza el mode d\'incògnit dels teclats</string>
-    <string name="move_done_checklist_items">Mou els elements fets de la llista de comprovació a la part inferior</string>
+    <string name="move_done_checklist_items">Mou els elements marcats a la part inferior</string>
     <string name="add_new_checklist_items_top">Afegeix els elements nous de la llista de comprovació a la part superior</string>
     <string name="checklist">Llista de comprovació</string>
     <string name="checklists">Llistes de comprovació</string>
@@ -76,4 +76,9 @@
     <string name="password_protect_note_deletion">Protegeix amb contrasenya la supressió de notes</string>
     <string name="this_note_is_linked">Aquesta nota està enllaçada a un fitxer local.</string>
     <string name="allow_alarm_automatic_backups">Per a fer còpies de seguretat de les notes automàticament, concediu permís a l\'aplicació per a planificar alarmes exactes.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d element marcat</item>
+        <item quantity="many">%d elements marcats</item>
+        <item quantity="other">%d elements marcats</item>
+    </plurals>
 </resources>
