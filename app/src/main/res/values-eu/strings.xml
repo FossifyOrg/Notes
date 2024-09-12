@@ -58,7 +58,7 @@
     <string name="widget_note">Trepetan erabilitako oharra</string>
     <string name="use_incognito_mode">Erabili teklatuen ezkutuko modua</string>
     <string name="enable_line_wrap">Gaitu lerroaren doitzea</string>
-    <string name="move_done_checklist_items">Eraman kontrol zerrendako burututako elementuak beheko aldera</string>
+    <string name="move_done_checklist_items">Eraman markatutako elementuak beheko aldera</string>
     <string name="add_new_checklist_items_top">Gehitu zerrendako elementu berriak goiko aldean</string>
     <string name="import_notes_pro">Inportatu oharrak (Pro)</string>
     <string name="faq_1_text">Trepeta aktibo bakarra baduzu, berriro sor dezakezu edo pertsonalizatzeko aplikazioaren ezarpenetako botoia erabil dezakezu. Hainbat trepeta aktibo badituzu, aplikazioaren ezarpenetako botoia ez da erabilgarri egongo. Aplikazioak trepeta bakoitzeko kolore pertsonalizatzea onartzen duenez, pertsonalizatu nahi duzun trepeta birsortu beharko duzu.</string>
@@ -76,4 +76,8 @@
     <string name="show_character_count">Erakutsi karaktere kopurua</string>
     <string name="alignment">Lerrokatzea</string>
     <string name="center">Erdian</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">markatutako elementu %d</item>
+        <item quantity="other">markatutako %d elementu</item>
+    </plurals>
 </resources>
