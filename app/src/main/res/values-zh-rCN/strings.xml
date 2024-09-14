@@ -3,10 +3,10 @@
     <string name="app_launcher_name">笔记</string>
     <string name="widget_config">感谢您使用 Fossify 笔记。
 \n访问 fossify.org 了解更多 Fossify 应用。</string>
-    <string name="cannot_share_empty_text">无法分享空内容</string>
+    <string name="cannot_share_empty_text">无法分享空白文本</string>
     <string name="new_note">添加新笔记</string>
-    <string name="no_title">请提供笔记名字</string>
-    <string name="title_taken">笔记的标题已经存在</string>
+    <string name="no_title">请为你的笔记命名</string>
+    <string name="title_taken">已有相同标题的笔记</string>
     <string name="open_note">打开笔记</string>
     <string name="delete_note">删除笔记</string>
     <string name="delete_note_prompt_message">确定删除笔记\"%s\"吗？</string>
@@ -15,7 +15,7 @@
     <string name="general_note">一般笔记</string>
     <string name="create_new_note">创建一个新的笔记</string>
     <string name="add_to_note">添加到笔记</string>
-    <string name="unsaved_changes_warning">您有未保存的更改。您对此想如何操作呢？</string>
+    <string name="unsaved_changes_warning">您有未保存的更改。您想如何处理？</string>
     <string name="note_shown_widget">小工具中显示的笔记:</string>
     <string name="show_note_title">显示笔记标题</string>
     <string name="new_note_type">新笔记类型:</string>
@@ -56,9 +56,9 @@
     <string name="widget_note">小部件中使用的笔记</string>
     <string name="show_note_picker">在启动时显示笔记选择器</string>
     <string name="autosave_notes">自动保存笔记</string>
-    <string name="enable_line_wrap">启用行折叠</string>
+    <string name="enable_line_wrap">自动换行</string>
     <string name="use_incognito_mode">使用隐私模式键盘</string>
-    <string name="move_done_checklist_items">移动勾选的条目到底部</string>
+    <string name="move_done_checklist_items">将标记为完成的项目移至底部</string>
     <string name="add_new_checklist_items_top">在顶部添加新清单项</string>
     <string name="checklist">清单</string>
     <string name="checklists">清单</string>
