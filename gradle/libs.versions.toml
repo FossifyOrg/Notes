@@ -4,6 +4,8 @@ kotlin = "1.9.24"
 #KSP
 kotlinxSerializationJson = "1.6.3"
 ksp = "1.9.24-1.0.20"
+#Detekt
+detekt = "1.23.3"
 #AndroidX
 androidx-constraintlayout = "2.1.4"
 androidx-documentfile = "1.0.1"
@@ -45,3 +47,4 @@ android = { id = "com.android.application", version.ref = "gradlePlugins-agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
