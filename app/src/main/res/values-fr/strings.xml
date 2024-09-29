@@ -66,6 +66,10 @@
     <string name="checklist_is_empty">La liste de contrôle est vide</string>
     <string name="delete_checked_items">Supprimer les éléments cochés</string>
     <string name="add_to_the_top">Ajouter en haut de la liste</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d item coché</item>
+        <item quantity="other">%d items cochés</item>
+    </plurals>
     <string name="import_folder">Importer depuis un dossier</string>
     <string name="export_notes">Exporter les notes</string>
     <string name="import_notes">Importer des notes</string>
