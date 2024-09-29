@@ -1,0 +1,3 @@
+* Přidána sbalitelná sekce zaškrtnutých položek v dolní části obrazovky
+* Menší opravy chyb a vylepšení
+* Přidány nové překlady
