@@ -53,7 +53,7 @@
     <string name="autosave_notes">Salvare automată a notițelor</string>
     <string name="enable_line_wrap">Activați înfășurarea liniilor</string>
     <string name="use_incognito_mode">Utilizați modul Incognito al tastaturilor</string>
-    <string name="move_done_checklist_items">Mutați elementele realizate din lista de verificare în partea de jos</string>
+    <string name="move_done_checklist_items">Mutați elementele bifate in partea de jos</string>
     <string name="add_new_checklist_items_top">Adăugați noi elemente ale listei de verificare în partea de sus</string>
     <string name="checklist">Listă de verificare</string>
     <string name="checklists">Liste de verificare</string>
@@ -73,4 +73,11 @@
     <string name="widget_config">Vă mulțumim pentru că folosiți Fossify Notes.
 \nPentru mai multe aplicații de la Fossify, vă rugăm vizitați fossify.org.</string>
     <string name="cannot_load_over_internet">Aplicația nu poate incârca fișiere pe internet.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d element bifat</item>
+        <item quantity="few">%d elemente bifate</item>
+        <item quantity="other">%d elemente bifate</item>
+    </plurals>
+    <string name="password_protect_note_deletion">Protejează prin parolă ștergerea notițelor</string>
+    <string name="this_note_is_linked">Această notiță este legată de un fișier local.</string>
 </resources>

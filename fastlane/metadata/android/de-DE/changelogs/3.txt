@@ -1,0 +1,3 @@
+* Zusammenklappbarer Abschnitt für erledigte Einträge am unteren Rand hinzugefügt
+* Kleinere Fehlerkorrekturen und Verbesserungen
+* Neue Übersetzungen hinzugefügt

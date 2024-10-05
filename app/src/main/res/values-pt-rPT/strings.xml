@@ -1,2 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="open_file">Abrir ficheiro</string>
+    <string name="this_note_is_linked">Esta nota está associada a um ficheiro local.</string>
+    <string name="monospaced_font">Usar letra mono-espaçada</string>
+    <string name="alignment">Alinhamento</string>
+    <string name="left">Esquerda</string>
+    <string name="center">Centro</string>
+    <string name="right">Direita</string>
+    <string name="checklist_is_empty">A lista está vazia</string>
+    <string name="delete_checked_items">Remover itens concluídos</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d item assinalado</item>
+        <item quantity="many">%d itens assinalados</item>
+        <item quantity="other"></item>
+    </plurals>
+    <string name="app_launcher_name">Notas</string>
+    <string name="widget_config">Obrigado por utilizar Fossify Notes.
+\nPara conhecer as outras aplicações Fossify, aceda a fossify.org.</string>
+    <string name="cannot_share_empty_text">Não pode partilhar texto vazio</string>
+    <string name="new_note">Adicionar uma nota</string>
+    <string name="no_title">Introduza o nome da nota</string>
+    <string name="title_taken">Já existe uma nota com este nome</string>
+    <string name="open_note">Abrir nota</string>
+    <string name="delete_note">Apagar nota</string>
+    <string name="delete_note_prompt_message">Pretende mesmo apagar a nota \"%s\"?</string>
+    <string name="pick_a_note">Selecione uma nota</string>
+    <string name="rename_note">Renomear nota</string>
+    <string name="general_note">Nota genérica</string>
+    <string name="create_new_note">Criar uma nota</string>
+    <string name="show_note_title">Mostrar título da nota</string>
+    <string name="new_note_type">Tipo da nova nota:</string>
+    <string name="text_note">Nota de texto</string>
+    <string name="lock_note">Bloquear nota</string>
+    <string name="unlock_note">Desbloquear nota</string>
+    <string name="unlock_notes">Desbloquear notas</string>
+    <string name="note_content_locked">O conteúdo da nota está bloqueado.</string>
+    <string name="show_content">Mostrar conteúdo</string>
+    <string name="locking_warning">AVISO: se esquecer a palavra-passe, não conseguirá aceder à nota nem recuperar o seu conteúdo.</string>
+    <string name="new_text_note">Nova nota de texto</string>
+    <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
+    <string name="file_too_large">Ficheiro demasiado grande, o limite é 1 MB</string>
+    <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro
+\n(se alterar o ficheiro, a nota fica intacta)</string>
+    <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota
+\n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>
+    <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
+    <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
+    <string name="only_export_file_content">Exportar apenas o conteúdo do ficheiro atual
+\n(a alteração da nota não afeta o ficheiro)</string>
+    <string name="widget_note">Nota utilizada no widget</string>
+    <string name="show_note_picker">Mostrar seletor de notas ao iniciar</string>
+    <string name="autosave_notes">Guardar nota automaticamente</string>
+    <string name="enable_line_wrap">Ativar quebra de linha</string>
+    <string name="use_incognito_mode">Utilizar modo incógnito no teclado</string>
+    <string name="move_done_checklist_items">Mover itens assinalados para o fundo</string>
+    <string name="password_protect_note_deletion">Proteger eliminação de notas com palavra-passe</string>
+    <string name="add_new_checklist_item">Adicionar item à lista de verificação</string>
+    <string name="add_to_the_top">Adicionar ao topo</string>
+    <string name="import_folder">Importar pasta</string>
+    <string name="import_notes">Importar notas</string>
+    <string name="import_notes_pro">Importar notas (Pro)</string>
+    <string name="faq_1_title">Posso alterar a cor do widget?</string>
+    <string name="add_to_note">Adicionar a uma nota</string>
+    <string name="unsaved_changes_warning">Existem alterações não guardadas. O que pretende fazer?</string>
+    <string name="note_shown_widget">Nota mostrada no widget:</string>
+    <string name="found_locked_notes_info">As notas seguintes estão bloqueadas. Pode desbloquear as notas individualmente ou ignorar a exportação.</string>
+    <string name="new_checklist">Nova lista</string>
+    <string name="cannot_load_over_internet">A aplicação não consegue carregar ficheiros da internet</string>
+    <string name="export_as_file">Exportar como ficheiro</string>
+    <string name="display_success_message">Mostrar mensagem de gravação com sucesso</string>
+    <string name="links_and_emails_clickable">Ativar toque em ligações e endereços de e-mail</string>
+    <string name="place_cursor_end">Colocar cursor no final da nota</string>
+    <string name="show_keyboard">Mostrar teclado ao inciar</string>
+    <string name="show_word_count">Mostrar número de palavras</string>
+    <string name="show_character_count">Mostrar número de caracteres</string>
+    <string name="checklists">Listas de verificação</string>
+    <string name="add_new_checklist_items">Adicionar itens à lista de verificação</string>
+    <string name="export_notes">Exportar notas</string>
+    <string name="faq_1_text">Se apenas tiver um widget ativo, pode recriar ou utilizar o botão nas definições para o personalizar. Se tiver vários widgets, este botão não estará disponível. Como cada um dos widgets pode ser personalizado, terá que os recriar sempre que os quiser personalizar.</string>
+    <string name="allow_alarm_automatic_backups">Para criar backups automaticamente, conceda a permissão necessária para criar agendamento de alarmes.</string>
+    <string name="add_new_checklist_items_top">Adicionar novos itens ao topo da lista de verificação</string>
+    <string name="checklist">Lista de verificação</string>
+</resources>

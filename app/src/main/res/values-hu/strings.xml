@@ -76,4 +76,8 @@
     <string name="password_protect_note_deletion">Jelszóval védett jegyzettörlés</string>
     <string name="this_note_is_linked">Ez a jegyzet egy helyi fájlhoz kapcsolódik.</string>
     <string name="allow_alarm_automatic_backups">A jegyzetek automatikus mentéséhez adja meg az alkalmazásnak az engedélyt a pontos riasztások ütemezésére.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d kész elem</item>
+        <item quantity="other">%d kész elemek</item>
+    </plurals>
 </resources>

@@ -36,7 +36,7 @@
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras
 \n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
-    <string name="note_saved_successfully">Anteckning \"%s\" sparades framgångsrikt</string>
+    <string name="note_saved_successfully">Anteckningen \"%s\" har sparats</string>
     <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats</string>
     <string name="only_export_file_content">Exportera endast det aktuella filinnehållet
 \n(att ändra anteckningen påverkar inte filen)</string>
@@ -56,14 +56,14 @@
     <string name="autosave_notes">Spara anteckningar automatiskt</string>
     <string name="enable_line_wrap">Aktivera radbrytning</string>
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
-    <string name="move_done_checklist_items">Flytta slutförda checklisteobjekt längst ned</string>
+    <string name="move_done_checklist_items">Flytta markerade objekt längst ned</string>
     <string name="add_new_checklist_items_top">Lägg till nya checklisteobjekt överst</string>
     <string name="checklist">Checklista</string>
     <string name="checklists">Checklistor</string>
     <string name="add_new_checklist_item">Lägg till ett nytt checklisteobjekt</string>
     <string name="add_new_checklist_items">Lägg till nya checklisteobjekt</string>
     <string name="checklist_is_empty">Checklistan är tom</string>
-    <string name="delete_checked_items">Ta bort slutförda</string>
+    <string name="delete_checked_items">Ta bort markerade objekt</string>
     <string name="add_to_the_top">Lägg till överst</string>
     <string name="import_folder">Importera mapp</string>
     <string name="export_notes">Exportera anteckningar</string>
@@ -73,4 +73,11 @@
     <string name="faq_1_text">Om du bara har 1 aktiv widget kan du antingen återskapa den eller använda knappen i appinställningarna för att anpassa den. Om du har flera aktiva widgetar är knappen i appinställningarna inte tillgänglig. Eftersom appen stöder färganpassning per widget måste du återskapa den widget som du vill anpassa.</string>
     <string name="widget_config">Tack för att du använder Fossify Notes.
 \nFör fler appar från Fossify, besök fossify.org.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d markerat objekt</item>
+        <item quantity="other">%d markerade objekt</item>
+    </plurals>
+    <string name="this_note_is_linked">Den här anteckningen är länkad till en lokal fil.</string>
+    <string name="password_protect_note_deletion">Lösenordsskydda borttagning av anteckningar</string>
+    <string name="allow_alarm_automatic_backups">Ge appen behörighet att schemalägga exakta alarm om du vill säkerhetskopiera anteckningar automatiskt.</string>
 </resources>

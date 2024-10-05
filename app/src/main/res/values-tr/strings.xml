@@ -58,7 +58,7 @@
     <string name="autosave_notes">Notları otomatik kaydet</string>
     <string name="enable_line_wrap">Sözcük kaydırmayı etkinleştir</string>
     <string name="use_incognito_mode">Klavyelerin Gizli modunu kullan</string>
-    <string name="move_done_checklist_items">Tamamlanan yapılacak listesi ögelerini en alta taşı</string>
+    <string name="move_done_checklist_items">Tamamlanan ögeleri en alta taşı</string>
     <string name="add_new_checklist_items_top">Yeni yapılacak listesi ögelerini en üste taşı</string>
     <string name="checklist">Yapılacak listesi</string>
     <string name="checklists">Yapılacak listeleri</string>
@@ -76,4 +76,8 @@
     <string name="password_protect_note_deletion">Not silmeyi parola ile koru</string>
     <string name="this_note_is_linked">Bu not yerel bir dosya ile bağlantılı.</string>
     <string name="allow_alarm_automatic_backups">Notları otomatik olarak yedeklemek için, lütfen uygulamaya tam alarmları zamanlama izni verin.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d tamamlanan öge</item>
+        <item quantity="other">%d tamamlanan öge</item>
+    </plurals>
 </resources>

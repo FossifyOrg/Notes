@@ -56,7 +56,7 @@
     <string name="autosave_notes">Salvesta märkmed automaatselt</string>
     <string name="enable_line_wrap">Kasuta ridade murdmist</string>
     <string name="use_incognito_mode">Kasuta klaviatuuride inkognito-režiimi</string>
-    <string name="move_done_checklist_items">Tööde loendis liiguta täidetud ülesanded loendi lõppu</string>
+    <string name="move_done_checklist_items">Liiguta märgitud kirjed loendi lõppu</string>
     <string name="add_new_checklist_items_top">Lisa uued kirjed tööde loendi algusesse</string>
     <string name="checklist">Tööde loend</string>
     <string name="checklists">Tööde loendid</string>
@@ -76,4 +76,8 @@
     <string name="password_protect_note_deletion">Kaitse märkme kustutamist salasõnaga</string>
     <string name="this_note_is_linked">See märge viitab kohalikule failile.</string>
     <string name="allow_alarm_automatic_backups">Kui soovid märkmetest teha varukoopiaid, siis palun anna süsteemi seadistusest rakendusele õigused tegevuste ajastamiseks.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d märgitud kirje</item>
+        <item quantity="other">%d märgitud kirjet</item>
+    </plurals>
 </resources>

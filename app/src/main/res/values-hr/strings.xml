@@ -56,7 +56,7 @@
     <string name="autosave_notes">Automatski spremi bilješke</string>
     <string name="enable_line_wrap">Aktiviraj prijelom teksta</string>
     <string name="use_incognito_mode">Koristi anonimni način tipkovnica</string>
-    <string name="move_done_checklist_items">Premjesti gotove stavke popisa na kraj</string>
+    <string name="move_done_checklist_items">Premjesti pregledane stavke na kraj</string>
     <string name="add_new_checklist_items_top">Dodaj nove stavke na vrh popisa</string>
     <string name="checklist">Popis zadataka</string>
     <string name="checklists">Popisi zadataka</string>
@@ -73,4 +73,12 @@
     <string name="widget_config">Hvala ti što koristiš Fossify bilješke.
 \nZa više Fossify aplikacija posjeti fossify.org.</string>
     <string name="add_to_the_top">Dodaj na vrh popisa</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d provjerena stavka</item>
+        <item quantity="few">%d provjerene stavke</item>
+        <item quantity="other">%d provjerenih stavki</item>
+    </plurals>
+    <string name="password_protect_note_deletion">Zaštiti brisanje bilješke lozinkom</string>
+    <string name="allow_alarm_automatic_backups">Za automatsko sigurnosno kopiranje bilješki dozvoli aplikaciji da zakaže točne alarme.</string>
+    <string name="this_note_is_linked">Ova je bilješka povezana s jednom lokalnom datotekom.</string>
 </resources>

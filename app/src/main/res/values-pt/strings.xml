@@ -56,7 +56,7 @@
     <string name="autosave_notes">Guardar nota automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
     <string name="use_incognito_mode">Utilizar modo incógnito no teclado</string>
-    <string name="move_done_checklist_items">Mover itens não concluídos para o fundo da lista de verificação</string>
+    <string name="move_done_checklist_items">Mover itens assinalados para o fundo</string>
     <string name="add_new_checklist_items_top">Adicionar novos itens ao topo da lista de verificação</string>
     <string name="checklist">Lista de verificação</string>
     <string name="checklists">Listas de verificação</string>
@@ -74,4 +74,11 @@
     <string name="widget_config">Obrigado por utilizar Fossify Notes.
 \nPara conhecer as outras aplicações Fossify, aceda a fossify.org.</string>
     <string name="password_protect_note_deletion">Proteger eliminação de notas com palavra-passe</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d item assinalado</item>
+        <item quantity="many">%d itens assinalados</item>
+        <item quantity="other">%d itens assinalados</item>
+    </plurals>
+    <string name="allow_alarm_automatic_backups">Para criar backups automaticamente, conceda a permissão necessária para criar agendamento de alarmes.</string>
+    <string name="this_note_is_linked">Esta nota está associada a um ficheiro local.</string>
 </resources>
