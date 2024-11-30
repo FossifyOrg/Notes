@@ -129,7 +129,7 @@ class OpenNoteAdapter(
                     Task.sorting = sorting
                     if (Task.sorting and SORT_BY_CUSTOM == 0) {
                         it.sorted().let {
-                            if (context.config.moveDoneChecklistItems) {
+                            if (context.config.getMoveDoneChecklistItems(null)) {
                                 it.sortedBy { it.isDone }
                             } else {
                                 it
