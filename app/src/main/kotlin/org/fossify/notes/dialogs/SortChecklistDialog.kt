@@ -14,7 +14,11 @@ import org.fossify.notes.databinding.DialogSortChecklistBinding
 import org.fossify.notes.extensions.config
 import org.fossify.notes.helpers.SORT_MOVE_DONE_ITEMS
 
-class SortChecklistDialog(private val activity: SimpleActivity, private val noteId: Long?, private val callback: () -> Unit) {
+class SortChecklistDialog(
+    private val activity: SimpleActivity,
+    private val noteId: Long?,
+    private val callback: () -> Unit
+) {
     private val binding = DialogSortChecklistBinding.inflate(activity.layoutInflater)
     private val view = binding.root
     private val config = activity.config

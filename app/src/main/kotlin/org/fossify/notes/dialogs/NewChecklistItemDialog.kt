@@ -14,7 +14,11 @@ import org.fossify.notes.databinding.DialogNewChecklistItemBinding
 import org.fossify.notes.databinding.ItemAddChecklistBinding
 import org.fossify.notes.extensions.config
 
-class NewChecklistItemDialog(val activity: Activity, private val noteId: Long, callback: (titles: ArrayList<String>) -> Unit) {
+class NewChecklistItemDialog(
+    val activity: Activity,
+    private val noteId: Long,
+    callback: (titles: ArrayList<String>) -> Unit
+) {
     private val titles = mutableListOf<AppCompatEditText>()
     private val binding = DialogNewChecklistItemBinding.inflate(activity.layoutInflater)
     private val view = binding.root
