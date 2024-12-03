@@ -55,7 +55,7 @@
     <string name="autosave_notes">Otomatis simpan catatan</string>
     <string name="enable_line_wrap">Aktifkan baris berlibat</string>
     <string name="use_incognito_mode">Gunakan mode papan ketik incognito</string>
-    <string name="move_done_checklist_items">Pindah checklist yang belum selesai ke urutan atas</string>
+    <string name="move_done_checklist_items">Pindah item tercentang ke bawah</string>
     <string name="add_new_checklist_items_top">Tambahkan item daftar periksa baru pada atas</string>
     <string name="checklist">Daftar periksa</string>
     <string name="checklists">Daftar periksa</string>
@@ -76,4 +76,7 @@
     <string name="password_protect_note_deletion">Lindungi penghapusan catatan dengan kata sandi</string>
     <string name="this_note_is_linked">Catatan ini ditautan dengan berkas lokal.</string>
     <string name="allow_alarm_automatic_backups">Untuk mencadangkan catatan secara otomatis, silakan memberikan perizinan kepada aplikasi untuk menjadwalkan alarm tepat.</string>
+    <plurals name="num_checked_items">
+        <item quantity="other">%d item tercentang</item>
+    </plurals>
 </resources>
