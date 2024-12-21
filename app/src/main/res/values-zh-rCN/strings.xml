@@ -16,7 +16,7 @@
     <string name="create_new_note">创建一个新的笔记</string>
     <string name="add_to_note">添加到笔记</string>
     <string name="unsaved_changes_warning">您有未保存的更改。您想如何处理？</string>
-    <string name="note_shown_widget">小工具中显示的笔记:</string>
+    <string name="note_shown_widget">微件中显示的笔记：</string>
     <string name="show_note_title">显示笔记标题</string>
     <string name="new_note_type">新笔记类型:</string>
     <string name="text_note">文本笔记</string>
@@ -53,7 +53,7 @@
     <string name="left">左对齐</string>
     <string name="center">居中对齐</string>
     <string name="right">右对齐</string>
-    <string name="widget_note">小部件中使用的笔记</string>
+    <string name="widget_note">微件中使用的笔记</string>
     <string name="show_note_picker">在启动时显示笔记选择器</string>
     <string name="autosave_notes">自动保存笔记</string>
     <string name="enable_line_wrap">自动换行</string>
@@ -70,8 +70,8 @@
     <string name="export_notes">导出笔记</string>
     <string name="import_notes">导入笔记</string>
     <string name="import_notes_pro">导入笔记 (Pro)</string>
-    <string name="faq_1_title">我如何更改小工具颜色？</string>
-    <string name="faq_1_text">如果您仅用一个活动的小部件，您可以重新创建它，或者使用应用设置中的按钮进行自定义。如果您有多个活动的小部件，应用设置中的按钮将不可用。因为应用支持单独自定义每个小工具的颜色，您必须要重新创建小部件来自定义它们。</string>
+    <string name="faq_1_title">如何更改微件颜色？</string>
+    <string name="faq_1_text">如果您仅有一个活动微件，您可以重新创建它，或者使用应用设置中的按钮进行自定义。如果您有多个活动微件，应用设置中的按钮将不可用。因为应用支持单独自定义每个微件的颜色，您必须要重新创建微件来自定义它们。</string>
     <string name="add_to_the_top">添加到顶部</string>
     <string name="password_protect_note_deletion">密码保护笔记删除</string>
     <string name="this_note_is_linked">此笔记和一个本地文件关联。</string>
