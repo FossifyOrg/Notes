@@ -250,6 +250,7 @@ class MainActivity : SimpleActivity() {
                 R.id.share -> fragment?.handleUnlocking { shareText() }
                 R.id.cab_create_shortcut -> createShortcut()
                 R.id.lock_note -> lockNote()
+                //R.id.read_only -> readOnly
                 R.id.unlock_note -> unlockNote()
                 R.id.open_file -> tryOpenFile()
                 R.id.import_folder -> openFolder()
