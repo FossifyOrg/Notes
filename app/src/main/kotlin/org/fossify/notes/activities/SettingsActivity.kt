@@ -32,6 +32,14 @@ import kotlin.system.exitProcess
 
 class SettingsActivity : SimpleActivity() {
     private val notesFileType = "application/json"
+    private val notesImportFileTypes = buildList {
+        add("application/json")
+        if (!isQPlus()) {
+            // Workaround for https://github.com/FossifyOrg/Notes/issues/34
+            add("application/octet-stream")
+        }
+    }
+
     private val binding by viewBinding(ActivitySettingsBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,12 +97,13 @@ class SettingsActivity : SimpleActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-        if (uri != null) {
-            toast(org.fossify.commons.R.string.importing)
-            importNotes(uri)
+    private val getContent =
+        registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+            if (uri != null) {
+                toast(org.fossify.commons.R.string.importing)
+                importNotes(uri)
+            }
         }
-    }
 
     private val saveDocument = registerForActivityResult(ActivityResultContracts.CreateDocument(notesFileType)) { uri ->
         if (uri != null) {
@@ -315,7 +324,7 @@ class SettingsActivity : SimpleActivity() {
 
     private fun setupNotesImport() {
         binding.settingsImportNotesHolder.setOnClickListener {
-            getContent.launch(notesFileType)
+            getContent.launch(notesImportFileTypes.toTypedArray())
         }
     }
 
