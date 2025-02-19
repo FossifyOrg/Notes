@@ -16,15 +16,64 @@
     <string name="unlock_note">Malŝlosi noton</string>
     <string name="show_content">Montri enhavon</string>
     <string name="open_file">Malfermi dosieron</string>
-    <string name="only_import_file_content">Only import the file content
-\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note
-\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="only_export_file_content">Only export the current file content
-\n(changing the note will not affect the file)</string>
+    <string name="only_import_file_content">Nur importi la enhavon de la dosiero\n(ŝanĝi la dosieron ne afektos la noton)</string>
+    <string name="update_file_at_note">Ĝisdatigi la dosieron mem samtempe kun la noto\n(la noto estos forigita se la dosiero estas forigita, aŭ se la vojo ŝanĝiĝas)</string>
+    <string name="only_export_file_content">Nur eksporti la aktualan enhavon de la dosiero\n(ŝanĝi la noton ne afektos la dosieron)</string>
     <string name="show_word_count">Montri nombron de vortoj</string>
     <string name="show_character_count">Montri nombron de skribsignoj</string>
     <string name="left">Maldekstro</string>
     <string name="center">Centro</string>
     <string name="right">Dekstro</string>
-    </resources>
+    <string name="import_folder">Importi dosierujon</string>
+    <string name="export_notes">Eksporti notojn</string>
+    <string name="delete_checked_items">Forigi ŝaltitajn elementojn</string>
+    <string name="import_notes">Importi notojn</string>
+    <string name="faq_1_text">Se vi nur havas unu aktivan fenestraĵon, vi povas aŭ rekrei ĝin aŭ uzi la butonon en la aplikaĵaj agordoj por tajlori ĝin. Se vi havas plurajn aktivajn fenestraĵojn, la butono en la aplikaĵaj agordoj ne disponeblos. Ĉar la aplikaĵo subtenas apartan tajloradon de koloroj de fenestraĵoj, vi devos rekrei la fenestraĵon kiun vi volas tajlori.</string>
+    <string name="note_shown_widget">Noto montrita en la fenestraĵo:</string>
+    <string name="cannot_share_empty_text">Ne eblas kunhavigi malplenan tekston</string>
+    <string name="add_to_note">Aldoni al noto</string>
+    <string name="note_content_locked">La enhavo de la noto estas malŝlosita.</string>
+    <string name="locking_warning">ATENTU: Se vi forgesas la pasvorton de la noto, vi ne povos restaŭri ĝin nek atingi ĝian enhavon.</string>
+    <string name="delete_file_itself">Ankaŭ forigi la dosieron \"%s\"</string>
+    <string name="password_protect_note_deletion">Protekti forigon de notoj per pasvorto</string>
+    <string name="widget_config">Dankon pro uzi Fossify Notojn.\nPor pli da aplikaĵoj de Fossify, bonvolu viziti fossify.org.</string>
+    <string name="no_title">Bonvolu nomi vian noton</string>
+    <string name="title_taken">Jam ekzistas noto kun tiu titolo</string>
+    <string name="unlock_notes">Malŝlosi notojn</string>
+    <string name="found_locked_notes_info">La sekvaj notoj estas ŝlositaj. Vi povas aŭ malŝlosi ilin unuope, aŭ salti eksporti ilin.</string>
+    <string name="new_text_note">Nova teksta noto</string>
+    <string name="new_checklist">Nova kontrololisto</string>
+    <string name="cannot_load_over_internet">La aplikaĵo ne kapablas ŝargi dosierojn interrete</string>
+    <string name="alignment">Ĝisrandigo</string>
+    <string name="faq_1_title">Kiel mi povas ŝanĝi la koloron de la fenestraĵo?</string>
+    <string name="import_notes_pro">Importi notojn (Pro)</string>
+    <string name="unsaved_changes_warning">Estas nekonservitaj ŝanĝoj. Kion vi volas fari kun ili?</string>
+    <string name="place_cursor_end">Movi la kursoron al la fino de la noto</string>
+    <string name="monospaced_font">Uzi egallarĝan tiparon</string>
+    <string name="show_keyboard">Montri klavaron je startigo</string>
+    <string name="widget_note">Noto uzata en la fenestraĵo</string>
+    <string name="show_note_picker">Montri elektilon de notoj je startigo</string>
+    <string name="autosave_notes">Aŭtomate konservi notojn</string>
+    <string name="enable_line_wrap">Ŝalti linifaldon</string>
+    <string name="allow_alarm_automatic_backups">Por aŭtomate savkopii notojn, bonvolu koncedi al la aplikaĵo permeson de plani precizajn alarmojn.</string>
+    <string name="export_as_file">Eksporti kiel dosiero</string>
+    <string name="file_too_large">Dosiero tro grandas, la limo estas 1 MB</string>
+    <string name="this_note_is_linked">Tiu ĉi noto estas ligita al loka dosiero.</string>
+    <string name="display_success_message">Montri mesaĝon post sukcese konservi</string>
+    <string name="links_and_emails_clickable">Alklakebligi ligilojn kaj retpoŝtadresojn</string>
+    <string name="use_incognito_mode">Uzi privatan reĝimon de klavaroj</string>
+    <string name="move_done_checklist_items">Movi ŝaltitajn elementoj suben</string>
+    <string name="add_new_checklist_items_top">Aldoni novajn elementojn de kontrololisto supre</string>
+    <string name="checklist">Kontrololisto</string>
+    <string name="checklists">Kontrololistoj</string>
+    <string name="add_new_checklist_item">Aldoni novan elementon de kontrololisto</string>
+    <string name="add_new_checklist_items">Aldoni novajn elementojn de kontrololisto</string>
+    <string name="checklist_is_empty">La kontrololisto malplenas</string>
+    <string name="add_to_the_top">Aldoni supre</string>
+    <string name="note_saved_successfully">La noto \"%s\" estis sukcese konservita</string>
+    <string name="note_exported_successfully">La noto \"%s\" estis sukcese eksportita</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d elemento ŝaltita</item>
+        <item quantity="other">%d elementoj ŝaltitaj</item>
+    </plurals>
+</resources>

@@ -9,16 +9,16 @@
     <string name="title_taken">已有相同标题的笔记</string>
     <string name="open_note">打开笔记</string>
     <string name="delete_note">删除笔记</string>
-    <string name="delete_note_prompt_message">确定删除笔记\"%s\"吗？</string>
+    <string name="delete_note_prompt_message">是否确定要删除笔记“%s”？</string>
     <string name="pick_a_note">选择一个笔记</string>
     <string name="rename_note">重命名笔记</string>
     <string name="general_note">一般笔记</string>
-    <string name="create_new_note">创建一个新的笔记</string>
+    <string name="create_new_note">创建新笔记</string>
     <string name="add_to_note">添加到笔记</string>
     <string name="unsaved_changes_warning">您有未保存的更改。您想如何处理？</string>
     <string name="note_shown_widget">微件中显示的笔记：</string>
     <string name="show_note_title">显示笔记标题</string>
-    <string name="new_note_type">新笔记类型:</string>
+    <string name="new_note_type">新笔记类型：</string>
     <string name="text_note">文本笔记</string>
     <string name="lock_note">锁定笔记</string>
     <string name="unlock_note">解锁笔记</string>
@@ -37,9 +37,9 @@
 \n(改变文件不会影响笔记)</string>
     <string name="update_file_at_note">更新笔记时也更新文件本身
 \n(如果文件被删除或路径更改，笔记将被删除)</string>
-    <string name="delete_file_itself">同时删除文件 \"%s\"</string>
-    <string name="note_saved_successfully">已成功保存笔记 \"%s\"</string>
-    <string name="note_exported_successfully">已成功导出笔记 \"%s\"</string>
+    <string name="delete_file_itself">同时删除文件“%s”</string>
+    <string name="note_saved_successfully">笔记“%s”已成功保存</string>
+    <string name="note_exported_successfully">笔记“%s”已成功导出</string>
     <string name="only_export_file_content">只导出当前文件内容
 \n(更改笔记将不会影响文件)</string>
     <string name="display_success_message">显示保存成功消息</string>
