@@ -20,6 +20,7 @@ import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
 import android.view.MenuItem
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
@@ -43,6 +44,7 @@ import org.fossify.notes.databases.NotesDatabase
 import org.fossify.notes.databinding.ActivityMainBinding
 import org.fossify.notes.dialogs.*
 import org.fossify.notes.extensions.*
+import org.fossify.notes.fragments.NoteFragment
 import org.fossify.notes.fragments.TextFragment
 import org.fossify.notes.helpers.*
 import org.fossify.notes.models.Note
@@ -91,6 +93,18 @@ class MainActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
+
+        mCurrentNote = Note(
+            id = null,
+            title = "",
+            value = "",
+            type = NoteType.TYPE_TEXT,
+            path = "",
+            protectionType = PROTECTION_NONE,
+            protectionHash = "",
+            isReadOnly = false
+        )
+        
         setupOptionsMenu()
         refreshMenuItems()
 
@@ -225,6 +239,9 @@ class MainActivity : SimpleActivity() {
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
+
+            findItem(R.id.read_only).isVisible = !mCurrentNote.isReadOnly
+            findItem(R.id.unlock_read_only).isVisible = mCurrentNote.isReadOnly
         }
 
         binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
@@ -250,8 +267,9 @@ class MainActivity : SimpleActivity() {
                 R.id.share -> fragment?.handleUnlocking { shareText() }
                 R.id.cab_create_shortcut -> createShortcut()
                 R.id.lock_note -> lockNote()
-                //R.id.read_only -> readOnly
                 R.id.unlock_note -> unlockNote()
+                R.id.read_only -> toggleReadOnly()
+                R.id.unlock_read_only -> toggleReadOnly()
                 R.id.open_file -> tryOpenFile()
                 R.id.import_folder -> openFolder()
                 R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
@@ -474,6 +492,7 @@ class MainActivity : SimpleActivity() {
                     mCurrentNote = mNotes[it]
                     config.currentNoteId = mCurrentNote.id!!
                     refreshMenuItems()
+                    checkReadOnlyState()
                 }
             }
 
@@ -481,6 +500,14 @@ class MainActivity : SimpleActivity() {
                 hideKeyboard()
             }
             refreshMenuItems()
+        }
+    }
+
+    private fun checkReadOnlyState() {
+        getCurrentFragment()?.apply {
+            if (this is TextFragment) {
+                (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
+            }
         }
     }
 
@@ -1310,6 +1337,19 @@ class MainActivity : SimpleActivity() {
         SortChecklistDialog(this) {
             getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
+        }
+    }
+
+    private fun toggleReadOnly() {
+        mCurrentNote.isReadOnly = !mCurrentNote.isReadOnly
+        NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+            refreshMenuItems()
+            getCurrentFragment()?.apply {
+                (this as? NoteFragment)?.updateLockedViews(mCurrentNote)
+                if (this is TextFragment) {
+                    (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
+                }
+            }
         }
     }
 }

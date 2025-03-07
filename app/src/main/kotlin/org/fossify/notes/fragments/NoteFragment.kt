@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import org.fossify.commons.extensions.*
 import org.fossify.commons.helpers.PROTECTION_NONE
+import org.fossify.notes.R
 import org.fossify.notes.activities.MainActivity
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.getPercentageFontSize
@@ -16,6 +17,16 @@ import org.fossify.notes.models.Note
 abstract class NoteFragment : Fragment() {
     protected var note: Note? = null
     var shouldShowLockedContent = false
+
+    fun updateLockedViews(note: Note) {
+        setupLockedViews(object : CommonNoteBinding {
+            override val root: View get() = view!!
+            override val noteLockedLayout: View get() = view!!.findViewById(R.id.note_locked_layout)
+            override val noteLockedImage: ImageView get() = view!!.findViewById(R.id.note_locked_image)
+            override val noteLockedLabel: TextView get() = view!!.findViewById(R.id.note_locked_label)
+            override val noteLockedShow: TextView get() = view!!.findViewById(R.id.note_locked_show)
+        }, note)
+    }
 
     protected fun setupLockedViews(binding: CommonNoteBinding, note: Note) {
         binding.apply {

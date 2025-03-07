@@ -24,7 +24,12 @@
     <item
         android:id="@+id/read_only"
         android:icon="@drawable/ic_visibility_vector"
-        android:title="@string/visibility"
+        android:title="@string/read_only"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/unlock_read_only"
+        android:icon="@drawable/ic_visibility_off_vector"
+        android:title="@string/read_only_disable"
         app:showAsAction="always" />
     <item
         android:id="@+id/undo"
