@@ -93,17 +93,6 @@ class MainActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
-
-        mCurrentNote = Note(
-            id = null,
-            title = "",
-            value = "",
-            type = NoteType.TYPE_TEXT,
-            path = "",
-            protectionType = PROTECTION_NONE,
-            protectionHash = "",
-            isReadOnly = false
-        )
         
         setupOptionsMenu()
         refreshMenuItems()
@@ -240,8 +229,8 @@ class MainActivity : SimpleActivity() {
             saveNoteButton!!.isVisible =
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
 
-            findItem(R.id.read_only).isVisible = !mCurrentNote.isReadOnly
-            findItem(R.id.unlock_read_only).isVisible = mCurrentNote.isReadOnly
+            findItem(R.id.read_only).isVisible = (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly)
+            findItem(R.id.unlock_read_only).isVisible = (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly)
         }
 
         binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
@@ -1345,7 +1334,7 @@ class MainActivity : SimpleActivity() {
         NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
             refreshMenuItems()
             getCurrentFragment()?.apply {
-                (this as? NoteFragment)?.updateLockedViews(mCurrentNote)
+                (this as? NoteFragment)?.updateReadOnlyViews(mCurrentNote)
                 if (this is TextFragment) {
                     (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
                 }

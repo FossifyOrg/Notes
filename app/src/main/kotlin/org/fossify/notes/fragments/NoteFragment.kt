@@ -18,14 +18,16 @@ abstract class NoteFragment : Fragment() {
     protected var note: Note? = null
     var shouldShowLockedContent = false
 
-    fun updateLockedViews(note: Note) {
-        setupLockedViews(object : CommonNoteBinding {
-            override val root: View get() = view!!
-            override val noteLockedLayout: View get() = view!!.findViewById(R.id.note_locked_layout)
-            override val noteLockedImage: ImageView get() = view!!.findViewById(R.id.note_locked_image)
-            override val noteLockedLabel: TextView get() = view!!.findViewById(R.id.note_locked_label)
-            override val noteLockedShow: TextView get() = view!!.findViewById(R.id.note_locked_show)
-        }, note)
+    fun updateReadOnlyViews(note: Note) {
+        val rootView = view ?: return
+        val binding = object : CommonNoteBinding {
+            override val root: View get() = rootView
+            override val noteLockedLayout: View get() = rootView.findViewById(R.id.note_locked_layout)
+            override val noteLockedImage: ImageView get() = rootView.findViewById(R.id.note_locked_image)
+            override val noteLockedLabel: TextView get() = rootView.findViewById(R.id.note_locked_label)
+            override val noteLockedShow: TextView get() = rootView.findViewById(R.id.note_locked_show)
+        }
+        setupLockedViews(binding, note)
     }
 
     protected fun setupLockedViews(binding: CommonNoteBinding, note: Note) {
