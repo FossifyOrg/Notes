@@ -15,16 +15,58 @@ import org.fossify.commons.dialogs.ConfirmationDialog
 import org.fossify.commons.dialogs.PermissionRequiredDialog
 import org.fossify.commons.dialogs.RadioGroupDialog
 import org.fossify.commons.dialogs.SecurityDialog
-import org.fossify.commons.extensions.*
-import org.fossify.commons.helpers.*
+import org.fossify.commons.extensions.beGone
+import org.fossify.commons.extensions.beVisible
+import org.fossify.commons.extensions.beVisibleIf
+import org.fossify.commons.extensions.getProperPrimaryColor
+import org.fossify.commons.extensions.openRequestExactAlarmSettings
+import org.fossify.commons.extensions.showErrorToast
+import org.fossify.commons.extensions.toast
+import org.fossify.commons.extensions.updateTextColors
+import org.fossify.commons.extensions.viewBinding
+import org.fossify.commons.helpers.IS_CUSTOMIZING_COLORS
+import org.fossify.commons.helpers.NavigationIcon
+import org.fossify.commons.helpers.PROTECTION_FINGERPRINT
+import org.fossify.commons.helpers.SHOW_ALL_TABS
+import org.fossify.commons.helpers.ensureBackgroundThread
+import org.fossify.commons.helpers.isOreoPlus
+import org.fossify.commons.helpers.isQPlus
+import org.fossify.commons.helpers.isRPlus
+import org.fossify.commons.helpers.isSPlus
+import org.fossify.commons.helpers.isTiramisuPlus
 import org.fossify.commons.models.RadioItem
 import org.fossify.notes.BuildConfig
 import org.fossify.notes.R
 import org.fossify.notes.databinding.ActivitySettingsBinding
 import org.fossify.notes.dialogs.ExportNotesDialog
 import org.fossify.notes.dialogs.ManageAutoBackupsDialog
-import org.fossify.notes.extensions.*
-import org.fossify.notes.helpers.*
+import org.fossify.notes.extensions.cancelScheduledAutomaticBackup
+import org.fossify.notes.extensions.config
+import org.fossify.notes.extensions.requestUnlockNotes
+import org.fossify.notes.extensions.scheduleNextAutomaticBackup
+import org.fossify.notes.extensions.updateWidgets
+import org.fossify.notes.extensions.widgetsDB
+import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_BG_COLOR
+import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_ID
+import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_KEY_ID
+import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_NOTE_ID
+import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_SHOW_TITLE
+import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_TEXT_COLOR
+import org.fossify.notes.helpers.FONT_SIZE_100_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_125_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_150_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_175_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_200_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_250_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_300_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_50_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_60_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_75_PERCENT
+import org.fossify.notes.helpers.FONT_SIZE_90_PERCENT
+import org.fossify.notes.helpers.GRAVITY_CENTER
+import org.fossify.notes.helpers.GRAVITY_END
+import org.fossify.notes.helpers.GRAVITY_START
+import org.fossify.notes.helpers.NotesHelper
 import org.fossify.notes.models.Note
 import org.fossify.notes.models.Widget
 import java.util.Locale
@@ -47,7 +89,12 @@ class SettingsActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        updateMaterialActivityViews(binding.settingsCoordinator, binding.settingsHolder, useTransparentNavigation = true, useTopSearchMenu = false)
+        updateMaterialActivityViews(
+            mainCoordinatorLayout = binding.settingsCoordinator,
+            nestedView = binding.settingsHolder,
+            useTransparentNavigation = true,
+            useTopSearchMenu = false
+        )
         setupMaterialScrollListener(binding.settingsNestedScrollview, binding.settingsToolbar)
     }
 
@@ -105,18 +152,19 @@ class SettingsActivity : SimpleActivity() {
             }
         }
 
-    private val saveDocument = registerForActivityResult(ActivityResultContracts.CreateDocument(notesFileType)) { uri ->
-        if (uri != null) {
-            toast(org.fossify.commons.R.string.exporting)
-            NotesHelper(this).getNotes { notes ->
-                requestUnlockNotes(notes) { unlockedNotes ->
-                    val notLockedNotes = notes.filterNot { it.isLocked() }
-                    val notesToExport = unlockedNotes + notLockedNotes
-                    exportNotes(notesToExport, uri)
+    private val saveDocument =
+        registerForActivityResult(ActivityResultContracts.CreateDocument(notesFileType)) { uri ->
+            if (uri != null) {
+                toast(org.fossify.commons.R.string.exporting)
+                NotesHelper(this).getNotes { notes ->
+                    requestUnlockNotes(notes) { unlockedNotes ->
+                        val notLockedNotes = notes.filterNot { it.isLocked() }
+                        val notesToExport = unlockedNotes + notLockedNotes
+                        exportNotes(notesToExport, uri)
+                    }
                 }
             }
         }
-    }
 
     private fun setupCustomizeColors() {
         binding.settingsColorCustomizationHolder.setOnClickListener {
@@ -136,9 +184,13 @@ class SettingsActivity : SimpleActivity() {
 
     private fun setupLanguage() {
         binding.settingsLanguage.text = Locale.getDefault().displayLanguage
-        binding.settingsLanguageHolder.beVisibleIf(isTiramisuPlus())
-        binding.settingsLanguageHolder.setOnClickListener {
-            launchChangeAppLanguageIntent()
+        if (isTiramisuPlus()) {
+            binding.settingsLanguageHolder.beVisible()
+            binding.settingsLanguageHolder.setOnClickListener {
+                launchChangeAppLanguageIntent()
+            }
+        } else {
+            binding.settingsLanguageHolder.beGone()
         }
     }
 
@@ -241,7 +293,9 @@ class SettingsActivity : SimpleActivity() {
     private fun setupGravity() {
         binding.settingsGravity.text = getGravityText()
         binding.settingsGravityHolder.setOnClickListener {
-            val items = listOf(GRAVITY_START, GRAVITY_CENTER, GRAVITY_END).map { RadioItem(it, getGravityOptionLabel(it)) }
+            val items = listOf(GRAVITY_START, GRAVITY_CENTER, GRAVITY_END).map {
+                RadioItem(it, getGravityOptionLabel(it))
+            }
             RadioGroupDialog(this@SettingsActivity, ArrayList(items), config.gravity) {
                 config.gravity = it as Int
                 binding.settingsGravity.text = getGravityText()
@@ -251,13 +305,15 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun getGravityOptionLabel(gravity: Int): String {
-        val leftToRightDirection = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR
+        val leftToRightDirection = TextUtilsCompat
+            .getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR
         val leftRightLabels = listOf(R.string.left, R.string.right)
         val startEndLabels = if (leftToRightDirection) {
             leftRightLabels
         } else {
             leftRightLabels.reversed()
         }
+
         return getString(
             when (gravity) {
                 GRAVITY_START -> startEndLabels.first()
@@ -436,8 +492,17 @@ class SettingsActivity : SimpleActivity() {
     private fun setupAppPasswordProtection() {
         binding.settingsAppPasswordProtection.isChecked = config.isAppPasswordProtectionOn
         binding.settingsAppPasswordProtectionHolder.setOnClickListener {
-            val tabToShow = if (config.isAppPasswordProtectionOn) config.appProtectionType else SHOW_ALL_TABS
-            SecurityDialog(this, config.appPasswordHash, tabToShow) { hash, type, success ->
+            val tabToShow = if (config.isAppPasswordProtectionOn) {
+                config.appProtectionType
+            } else {
+                SHOW_ALL_TABS
+            }
+
+            SecurityDialog(
+                activity = this,
+                requiredHash = config.appPasswordHash,
+                showTabIndex = tabToShow
+            ) { hash, type, success ->
                 if (success) {
                     val hasPasswordProtection = config.isAppPasswordProtectionOn
                     binding.settingsAppPasswordProtection.isChecked = !hasPasswordProtection
@@ -446,9 +511,20 @@ class SettingsActivity : SimpleActivity() {
                     config.appProtectionType = type
 
                     if (config.isAppPasswordProtectionOn) {
-                        val confirmationTextId = if (config.appProtectionType == PROTECTION_FINGERPRINT)
-                            org.fossify.commons.R.string.fingerprint_setup_successfully else org.fossify.commons.R.string.protection_setup_successfully
-                        ConfirmationDialog(this, "", confirmationTextId, org.fossify.commons.R.string.ok, 0) { }
+                        val confirmationTextId =
+                            if (config.appProtectionType == PROTECTION_FINGERPRINT) {
+                                org.fossify.commons.R.string.fingerprint_setup_successfully
+                            } else {
+                                org.fossify.commons.R.string.protection_setup_successfully
+                            }
+
+                        ConfirmationDialog(
+                            activity = this,
+                            message = "",
+                            messageId = confirmationTextId,
+                            positive = org.fossify.commons.R.string.ok,
+                            negative = 0
+                        ) { }
                     }
                 }
             }
@@ -456,21 +532,44 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupNoteDeletionPasswordProtection() {
-        binding.settingsNoteDeletionPasswordProtection.isChecked = config.isDeletePasswordProtectionOn
+        binding.settingsNoteDeletionPasswordProtection.isChecked =
+            config.isDeletePasswordProtectionOn
+
         binding.settingsNoteDeletionPasswordProtectionHolder.setOnClickListener {
-            val tabToShow = if (config.isDeletePasswordProtectionOn) config.deleteProtectionType else SHOW_ALL_TABS
-            SecurityDialog(this, config.deletePasswordHash, tabToShow) { hash, type, success ->
+            val tabToShow = if (config.isDeletePasswordProtectionOn) {
+                config.deleteProtectionType
+            } else {
+                SHOW_ALL_TABS
+            }
+
+            SecurityDialog(
+                activity = this,
+                requiredHash = config.deletePasswordHash,
+                showTabIndex = tabToShow
+            ) { hash, type, success ->
                 if (success) {
                     val hasPasswordProtection = config.isDeletePasswordProtectionOn
-                    binding.settingsNoteDeletionPasswordProtection.isChecked = !hasPasswordProtection
+                    binding.settingsNoteDeletionPasswordProtection.isChecked =
+                        !hasPasswordProtection
                     config.isDeletePasswordProtectionOn = !hasPasswordProtection
                     config.deletePasswordHash = if (hasPasswordProtection) "" else hash
                     config.deleteProtectionType = type
 
                     if (config.isDeletePasswordProtectionOn) {
-                        val confirmationTextId = if (config.deleteProtectionType == PROTECTION_FINGERPRINT)
-                            org.fossify.commons.R.string.fingerprint_setup_successfully else org.fossify.commons.R.string.protection_setup_successfully
-                        ConfirmationDialog(this, "", confirmationTextId, org.fossify.commons.R.string.ok, 0) { }
+                        val confirmationTextId =
+                            if (config.deleteProtectionType == PROTECTION_FINGERPRINT) {
+                                org.fossify.commons.R.string.fingerprint_setup_successfully
+                            } else {
+                                org.fossify.commons.R.string.protection_setup_successfully
+                            }
+
+                        ConfirmationDialog(
+                            activity = this,
+                            message = "",
+                            messageId = confirmationTextId,
+                            positive = org.fossify.commons.R.string.ok,
+                            negative = 0
+                        ) { }
                     }
                 }
             }
