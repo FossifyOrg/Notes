@@ -869,17 +869,16 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun checkUri(uri: Uri, onChecksPassed: () -> Unit) {
-        val inputStream = try {
-            contentResolver.openInputStream(uri) ?: return
+        try {
+            contentResolver.openInputStream(uri)?.use { inputStream ->
+                if (inputStream.available() > 1000 * 1000) {
+                    toast(R.string.file_too_large)
+                } else {
+                    onChecksPassed()
+                }
+            } ?: return
         } catch (e: Exception) {
             showErrorToast(e)
-            return
-        }
-
-        if (inputStream.available() > 1000 * 1000) {
-            toast(R.string.file_too_large)
-        } else {
-            onChecksPassed()
         }
     }
 
