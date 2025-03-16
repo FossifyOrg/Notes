@@ -473,27 +473,29 @@ class MainActivity : SimpleActivity() {
                         val file = File(realPath)
                         handleUri(Uri.fromFile(file))
                     } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
-                        val newTextNote = Note(
-                            null,
-                            getCurrentFormattedDateTime(),
-                            "",
-                            NoteType.TYPE_TEXT,
-                            "",
-                            PROTECTION_NONE,
-                            ""
+                        addNewNote(
+                            Note(
+                                id = null,
+                                title = getCurrentFormattedDateTime(),
+                                value = "",
+                                type = NoteType.TYPE_TEXT,
+                                path = "",
+                                protectionType = PROTECTION_NONE,
+                                protectionHash = ""
+                            )
                         )
-                        addNewNote(newTextNote)
                     } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
-                        val newChecklist = Note(
-                            null,
-                            getCurrentFormattedDateTime(),
-                            "",
-                            NoteType.TYPE_CHECKLIST,
-                            "",
-                            PROTECTION_NONE,
-                            ""
+                        addNewNote(
+                            Note(
+                                id = null,
+                                title = getCurrentFormattedDateTime(),
+                                value = "",
+                                type = NoteType.TYPE_CHECKLIST,
+                                path = "",
+                                protectionType = PROTECTION_NONE,
+                                protectionHash = ""
+                            )
                         )
-                        addNewNote(newChecklist)
                     } else {
                         handleUri(data!!)
                     }
@@ -829,13 +831,13 @@ class MainActivity : SimpleActivity() {
                     if (checklistItems != null) {
                         val title = it.absolutePath.getFilenameFromPath().substringBeforeLast('.')
                         val note = Note(
-                            null,
-                            title,
-                            fileText,
-                            NoteType.TYPE_CHECKLIST,
-                            "",
-                            PROTECTION_NONE,
-                            ""
+                            id = null,
+                            title = title,
+                            value = fileText,
+                            type = NoteType.TYPE_CHECKLIST,
+                            path = "",
+                            protectionType = PROTECTION_NONE,
+                            protectionHash = ""
                         )
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
@@ -946,7 +948,16 @@ class MainActivity : SimpleActivity() {
 
         val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST else NoteType.TYPE_TEXT
         if (!canSyncNoteWithFile) {
-            val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
+            val note = Note(
+                id = null,
+                title = noteTitle,
+                value = content,
+                type = noteType,
+                path = "",
+                protectionType = PROTECTION_NONE,
+                protectionHash = ""
+            )
+
             displayNewNoteDialog(note.value, title = noteTitle, "")
         } else {
             val items = arrayListOf(
@@ -957,7 +968,15 @@ class MainActivity : SimpleActivity() {
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == IMPORT_FILE_SYNC
                 val path = if (syncFile) uri.toString() else ""
-                val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
+                val note = Note(
+                    id = null,
+                    title = noteTitle,
+                    value = content,
+                    type = noteType,
+                    path = "",
+                    protectionType = PROTECTION_NONE,
+                    protectionHash = ""
+                )
                 displayNewNoteDialog(note.value, title = noteTitle, path)
             }
         }
@@ -971,16 +990,24 @@ class MainActivity : SimpleActivity() {
                 val checklistItems = fileText.parseChecklistItems()
                 val note = if (checklistItems != null) {
                     Note(
-                        null,
-                        title.substringBeforeLast('.'),
-                        fileText,
-                        NoteType.TYPE_CHECKLIST,
-                        "",
-                        PROTECTION_NONE,
-                        ""
+                        id = null,
+                        title = title.substringBeforeLast('.'),
+                        value = fileText,
+                        type = NoteType.TYPE_CHECKLIST,
+                        path = "",
+                        protectionType = PROTECTION_NONE,
+                        protectionHash = ""
                     )
                 } else {
-                    Note(null, title, "", NoteType.TYPE_TEXT, path, PROTECTION_NONE, "")
+                    Note(
+                        id = null,
+                        title = title,
+                        value = "",
+                        type = NoteType.TYPE_TEXT,
+                        path = path,
+                        protectionType = PROTECTION_NONE,
+                        protectionHash = ""
+                    )
                 }
 
                 if (mNotes.any { it.title.equals(note.title, true) }) {
