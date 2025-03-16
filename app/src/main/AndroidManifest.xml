@@ -19,7 +19,7 @@
     </queries>
 
     <application
-        android:name=".App"
+        android:name="org.fossify.commons.FossifyApp"
         android:allowBackup="true"
         android:appCategory="productivity"
         android:icon="@mipmap/ic_launcher"
