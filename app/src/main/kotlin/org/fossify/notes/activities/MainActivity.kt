@@ -3,8 +3,12 @@ package org.fossify.notes.activities
 import android.accounts.NetworkErrorException
 import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.content.Intent.FLAG_ACTIVITY_NO_HISTORY
+import android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION
+import android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.graphics.drawable.Icon
@@ -372,15 +376,17 @@ class MainActivity : SimpleActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
-        if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
-            importUri(resultData.data!!)
-        } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null && mNotes.isNotEmpty()) {
-            val takeFlags =
-                Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-            applicationContext.contentResolver.takePersistableUriPermission(
-                resultData.data!!, takeFlags
-            )
-            showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
+        if (resultCode != RESULT_OK || resultData?.data == null) return
+
+        val dataUri = resultData.data!!
+        when (requestCode) {
+            PICK_OPEN_FILE_INTENT -> importUri(dataUri)
+            PICK_EXPORT_FILE_INTENT -> if (mNotes.isNotEmpty()) {
+                applicationContext.contentResolver.takePersistableUriPermission(
+                    dataUri, FLAG_GRANT_READ_URI_PERMISSION or FLAG_GRANT_WRITE_URI_PERMISSION
+                )
+                showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
+            }
         }
     }
 
@@ -402,7 +408,7 @@ class MainActivity : SimpleActivity() {
             try {
                 shortcutManager.dynamicShortcuts = listOf(newTextNote, newChecklist)
                 config.lastHandledShortcutColor = appIconColor
-            } catch (ignored: Exception) {
+            } catch (_: Exception) {
             }
         }
     }
@@ -694,10 +700,8 @@ class MainActivity : SimpleActivity() {
         return getNoteIndexWithId(noteIdToOpen)
     }
 
-    private fun currentNotesView() = if (binding.viewPager == null) {
-        null
-    } else {
-        mAdapter?.getCurrentNotesView(binding.viewPager.currentItem)
+    private fun currentNotesView(): MyEditText? {
+        return mAdapter?.getCurrentNotesView(binding.viewPager.currentItem)
     }
 
     private fun displayRenameDialog() {
@@ -932,8 +936,7 @@ class MainActivity : SimpleActivity() {
             true
         } else {
             try {
-                val takeFlags =
-                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                val takeFlags = FLAG_GRANT_READ_URI_PERMISSION or FLAG_GRANT_WRITE_URI_PERMISSION
                 applicationContext.contentResolver.takePersistableUriPermission(uri, takeFlags)
                 true
             } catch (e: Exception) {
@@ -1216,7 +1219,7 @@ class MainActivity : SimpleActivity() {
         val jobName = mCurrentNote.title
         val printAdapter = webView.createPrintDocumentAdapter(jobName)
 
-        (getSystemService(Context.PRINT_SERVICE) as? PrintManager)?.apply {
+        (getSystemService(PRINT_SERVICE) as? PrintManager)?.apply {
             try {
                 print(jobName, printAdapter, PrintAttributes.Builder().build())
             } catch (e: IllegalStateException) {
@@ -1361,8 +1364,12 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun shareText() {
-        val text =
-            if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) {
+            getCurrentNoteText()
+        } else {
+            mCurrentNote.value
+        }
+
         if (text.isNullOrEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
@@ -1393,7 +1400,7 @@ class MainActivity : SimpleActivity() {
             intent.action = Intent.ACTION_VIEW
             intent.putExtra(OPEN_NOTE_ID, note.id)
             intent.flags =
-                intent.flags or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_HISTORY
+                intent.flags or FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NO_HISTORY
 
             val shortcut = ShortcutInfo.Builder(this, note.hashCode().toString())
                 .setShortLabel(mCurrentNote.title)
