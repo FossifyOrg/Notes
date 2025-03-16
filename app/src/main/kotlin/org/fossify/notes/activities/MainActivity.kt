@@ -83,9 +83,6 @@ class MainActivity : SimpleActivity() {
 
     private val binding by viewBinding(ActivityMainBinding::inflate)
 
-    private var mIsPasswordProtectionPending = false
-    private var mWasProtectionHandled = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
         super.onCreate(savedInstanceState)
@@ -116,35 +113,14 @@ class MainActivity : SimpleActivity() {
         checkIntents(intent)
 
         storeStateVariables()
+        if (config.showNotePicker && savedInstanceState == null && hasNoIntent) {
+            displayOpenNoteDialog()
+        }
 
         wasInit = true
 
         checkAppOnSDCard()
         setupSearchButtons()
-
-        mIsPasswordProtectionPending = config.isAppPasswordProtectionOn
-
-        if (config.showNotePicker && savedInstanceState == null && hasNoIntent && !mIsPasswordProtectionPending) {
-            displayOpenNoteDialog()
-        }
-
-        if (savedInstanceState == null) {
-            binding.viewPager.beGoneIf(mIsPasswordProtectionPending)
-            if (mIsPasswordProtectionPending && !mWasProtectionHandled) {
-                handleAppPasswordProtection {
-                    mWasProtectionHandled = it
-                    if (it) {
-                        mIsPasswordProtectionPending = false
-                        if (config.showNotePicker && savedInstanceState == null && hasNoIntent) {
-                            displayOpenNoteDialog()
-                        }
-                        binding.viewPager.beVisible()
-                    } else {
-                        finish()
-                    }
-                }
-            }
-        }
     }
 
     override fun onResume() {
@@ -299,11 +275,13 @@ class MainActivity : SimpleActivity() {
                 if (it) {
                     mAdapter?.saveAllFragmentTexts()
                 }
+                appLockManager.lock()
                 super.onBackPressed()
             }
         } else if (isSearchActive) {
             closeSearch()
         } else {
+            appLockManager.lock()
             super.onBackPressed()
         }
     }
