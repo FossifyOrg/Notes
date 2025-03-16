@@ -52,7 +52,7 @@
     <string name="autosave_notes">שמירה אוטומטית של פתקים</string>
     <string name="enable_line_wrap">אפשר גלישת שורה</string>
     <string name="use_incognito_mode">השתמש במצב גלישה בסתר של מקלדות</string>
-    <string name="move_done_checklist_items">העבר את פריטי רשימת הבדיקה שבוצעו לתחתית</string>
+    <string name="move_done_checklist_items">העבר פריטים מסומנים לתחתית</string>
     <string name="add_new_checklist_items_top">הוסף פריטים חדשים ברשימת הבדיקה בראש</string>
     <string name="checklist">רשימת תיוג</string>
     <string name="checklists">רשימות תיוגים</string>
@@ -69,4 +69,15 @@
     <string name="open_file">פתח קובץ</string>
     <string name="widget_config">תודה על השימוש ב- Fossify Notes.\nלאפליקציות נוספות מ- Fossify, בקר בכתובת fossify.org.</string>
     <string name="unlock_notes">בטל נעילת הערות</string>
+    <string name="this_note_is_linked">הערה זו מקושרת לקובץ מקומי.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d פריט מסומן</item>
+        <item quantity="two">%d פריטים מסומנים</item>
+        <item quantity="other">%d פריטים מסומנים</item>
+    </plurals>
+    <string name="found_locked_notes_info">ההערות הבאות נעולות. אתה יכול לבטל את הנעילה שלהם אחד לאחד או לדלג על הייצוא שלהם.</string>
+    <string name="cannot_load_over_internet">האפליקציה לא יכולה לטעון קבצים דרך האינטרנט</string>
+    <string name="password_protect_note_deletion">מחיקת הערות מוגנות באמצעות סיסמה</string>
+    <string name="allow_alarm_automatic_backups">כדי לגבות הערות באופן אוטומטי, אנא הענק לאפליקציה הרשאה לתזמן התראות מדויקות.</string>
+    <string name="add_to_the_top">הוסף למעלה</string>
 </resources>
