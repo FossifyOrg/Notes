@@ -1334,7 +1334,6 @@ class MainActivity : SimpleActivity() {
         NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
             refreshMenuItems()
             getCurrentFragment()?.apply {
-                (this as? NoteFragment)?.updateReadOnlyViews(mCurrentNote)
                 if (this is TextFragment) {
                     (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
                 }
