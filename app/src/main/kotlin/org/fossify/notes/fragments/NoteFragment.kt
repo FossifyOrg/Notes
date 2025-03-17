@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import org.fossify.commons.extensions.*
 import org.fossify.commons.helpers.PROTECTION_NONE
-import org.fossify.notes.R
 import org.fossify.notes.activities.MainActivity
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.getPercentageFontSize
