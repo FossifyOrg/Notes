@@ -764,40 +764,49 @@ class MainActivity : SimpleActivity() {
 
         val faqItems = arrayListOf(
             FAQItem(
-                org.fossify.commons.R.string.faq_1_title_commons,
-                org.fossify.commons.R.string.faq_1_text_commons
+                title = org.fossify.commons.R.string.faq_1_title_commons,
+                text = org.fossify.commons.R.string.faq_1_text_commons
             ),
-            FAQItem(R.string.faq_1_title, R.string.faq_1_text)
+            FAQItem(
+                title = R.string.faq_1_title,
+                text = R.string.faq_1_text
+            )
         )
 
         if (!resources.getBoolean(org.fossify.commons.R.bool.hide_google_relations)) {
             faqItems.add(
                 FAQItem(
-                    org.fossify.commons.R.string.faq_2_title_commons,
-                    org.fossify.commons.R.string.faq_2_text_commons
+                    title = org.fossify.commons.R.string.faq_2_title_commons,
+                    text = org.fossify.commons.R.string.faq_2_text_commons
                 )
             )
             faqItems.add(
                 FAQItem(
-                    org.fossify.commons.R.string.faq_6_title_commons,
-                    org.fossify.commons.R.string.faq_6_text_commons
+                    title = org.fossify.commons.R.string.faq_6_title_commons,
+                    text = org.fossify.commons.R.string.faq_6_text_commons
                 )
             )
             faqItems.add(
                 FAQItem(
-                    org.fossify.commons.R.string.faq_7_title_commons,
-                    org.fossify.commons.R.string.faq_7_text_commons
+                    title = org.fossify.commons.R.string.faq_7_title_commons,
+                    text = org.fossify.commons.R.string.faq_7_text_commons
                 )
             )
             faqItems.add(
                 FAQItem(
-                    org.fossify.commons.R.string.faq_10_title_commons,
-                    org.fossify.commons.R.string.faq_10_text_commons
+                    title = org.fossify.commons.R.string.faq_10_title_commons,
+                    text = org.fossify.commons.R.string.faq_10_text_commons
                 )
             )
         }
 
-        startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
+        startAboutActivity(
+            appNameId = R.string.app_name,
+            licenseMask = licenses,
+            versionName = BuildConfig.VERSION_NAME,
+            faqItems = faqItems,
+            showFAQBeforeMail = true
+        )
     }
 
     private fun tryOpenFile() {
@@ -852,7 +861,11 @@ class MainActivity : SimpleActivity() {
                     } else {
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
-                                displayNewNoteDialog(it.value, title = it.title, it.path)
+                                displayNewNoteDialog(
+                                    value = it.value,
+                                    title = it.title,
+                                    path = it.path
+                                )
                             }
                         }
                     }
@@ -861,7 +874,11 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun checkFile(path: String, checkTitle: Boolean, onChecksPassed: (file: File) -> Unit) {
+    private fun checkFile(
+        path: String,
+        checkTitle: Boolean,
+        onChecksPassed: (file: File) -> Unit,
+    ) {
         val file = File(path)
         if (path.isMediaFile()) {
             toast(org.fossify.commons.R.string.invalid_file_format)
@@ -977,7 +994,7 @@ class MainActivity : SimpleActivity() {
                     protectionType = PROTECTION_NONE,
                     protectionHash = ""
                 )
-                displayNewNoteDialog(note.value, title = noteTitle, path)
+                displayNewNoteDialog(value = note.value, title = noteTitle, path = path)
             }
         }
     }
@@ -1078,14 +1095,23 @@ class MainActivity : SimpleActivity() {
 
     private fun exportAsFile() {
         ExportFileDialog(this, mCurrentNote) {
-            val textToExport =
-                if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+            val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT) {
+                getCurrentNoteText()
+            } else {
+                mCurrentNote.value
+            }
+
             if (textToExport == null || textToExport.isEmpty()) {
                 toast(org.fossify.commons.R.string.unknown_error_occurred)
             } else if (mCurrentNote.type == NoteType.TYPE_TEXT) {
                 showExportFilePickUpdateDialog(it, textToExport)
             } else {
-                tryExportNoteValueToFile(it, mCurrentNote.title, textToExport, true)
+                tryExportNoteValueToFile(
+                    path = it,
+                    title = mCurrentNote.title,
+                    content = textToExport,
+                    showSuccessToasts = true
+                )
             }
         }
     }
@@ -1099,10 +1125,10 @@ class MainActivity : SimpleActivity() {
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
             tryExportNoteValueToFile(
-                exportPath,
-                mCurrentNote.title,
-                textToExport,
-                true
+                path = exportPath,
+                title = mCurrentNote.title,
+                content = textToExport,
+                showSuccessToasts = true
             ) { exportedSuccessfully ->
                 if (exportedSuccessfully) {
                     if (syncFile) {
@@ -1114,9 +1140,9 @@ class MainActivity : SimpleActivity() {
                     }
 
                     getPagerAdapter().updateCurrentNoteData(
-                        binding.viewPager.currentItem,
-                        mCurrentNote.path,
-                        mCurrentNote.value
+                        position = binding.viewPager.currentItem,
+                        path = mCurrentNote.path,
+                        value = mCurrentNote.value
                     )
                     NotesHelper(this).insertOrUpdateNote(mCurrentNote)
                 }
@@ -1132,7 +1158,13 @@ class MainActivity : SimpleActivity() {
         callback: ((success: Boolean) -> Unit)? = null,
     ) {
         if (path.startsWith("content://")) {
-            exportNoteValueToUri(path.toUri(), title, content, showSuccessToasts, callback)
+            exportNoteValueToUri(
+                uri = path.toUri(),
+                title = title,
+                content = content,
+                showSuccessToasts = showSuccessToasts,
+                callback = callback
+            )
         } else {
             handlePermission(PERMISSION_WRITE_STORAGE) {
                 if (it) {
@@ -1257,8 +1289,9 @@ class MainActivity : SimpleActivity() {
 
     private fun getPagerAdapter() = binding.viewPager.adapter as NotesPagerAdapter
 
-    private fun getCurrentNoteText() =
-        getPagerAdapter().getCurrentNoteViewText(binding.viewPager.currentItem)
+    private fun getCurrentNoteText(): String? {
+        return getPagerAdapter().getCurrentNoteViewText(binding.viewPager.currentItem)
+    }
 
     private fun getCurrentNoteValue(): String {
         return if (mCurrentNote.type == NoteType.TYPE_TEXT) {
@@ -1280,14 +1313,15 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun addTextToCurrentNote(text: String) =
+    private fun addTextToCurrentNote(text: String) {
         getPagerAdapter().appendText(binding.viewPager.currentItem, text)
+    }
 
     private fun saveCurrentNote(force: Boolean, callback: ((note: Note) -> Unit)? = null) {
         getPagerAdapter().saveCurrentNote(binding.viewPager.currentItem, force, callback)
         if (mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
-            mCurrentNote.value =
-                getPagerAdapter().getNoteChecklistItems(binding.viewPager.currentItem) ?: ""
+            mCurrentNote.value = getPagerAdapter()
+                .getNoteChecklistItems(binding.viewPager.currentItem) ?: ""
         }
     }
 
@@ -1441,11 +1475,11 @@ class MainActivity : SimpleActivity() {
 
     private fun lockNote() {
         ConfirmationDialog(
-            this,
-            "",
-            R.string.locking_warning,
-            org.fossify.commons.R.string.ok,
-            org.fossify.commons.R.string.cancel
+            activity = this,
+            message = "",
+            messageId = R.string.locking_warning,
+            positive = org.fossify.commons.R.string.ok,
+            negative = org.fossify.commons.R.string.cancel
         ) {
             SecurityDialog(this, "", SHOW_ALL_TABS) { hash, type, success ->
                 if (success) {
