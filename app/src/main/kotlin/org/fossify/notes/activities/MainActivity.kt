@@ -20,7 +20,6 @@ import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
 import android.view.MenuItem
-import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
@@ -93,7 +92,7 @@ class MainActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
-        
+
         setupOptionsMenu()
         refreshMenuItems()
 
@@ -230,7 +229,8 @@ class MainActivity : SimpleActivity() {
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
 
             findItem(R.id.read_only).isVisible = (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
-            findItem(R.id.unlock_read_only).isVisible = (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
+            findItem(R.id.unlock_read_only).isVisible =
+                (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
         }
 
         binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
