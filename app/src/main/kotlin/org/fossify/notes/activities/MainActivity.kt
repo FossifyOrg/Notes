@@ -282,6 +282,10 @@ class MainActivity : SimpleActivity() {
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
+
+            findItem(R.id.read_only).isVisible = (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
+            findItem(R.id.unlock_read_only).isVisible =
+                (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
         }
 
         binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
@@ -308,6 +312,8 @@ class MainActivity : SimpleActivity() {
                 R.id.cab_create_shortcut -> createShortcut()
                 R.id.lock_note -> lockNote()
                 R.id.unlock_note -> unlockNote()
+                R.id.read_only -> toggleReadOnly()
+                R.id.unlock_read_only -> toggleReadOnly()
                 R.id.open_file -> tryOpenFile()
                 R.id.import_folder -> openFolder()
                 R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
@@ -566,6 +572,7 @@ class MainActivity : SimpleActivity() {
                     mCurrentNote = mNotes[it]
                     config.currentNoteId = mCurrentNote.id!!
                     refreshMenuItems()
+                    checkReadOnlyState()
                 }
             }
 
@@ -1555,6 +1562,26 @@ class MainActivity : SimpleActivity() {
         SortChecklistDialog(this) {
             getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
+        }
+    }
+
+    private fun checkReadOnlyState() {
+        getCurrentFragment()?.apply {
+            if (this is TextFragment) {
+                (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
+            }
+        }
+    }
+
+    private fun toggleReadOnly() {
+        mCurrentNote.isReadOnly = !mCurrentNote.isReadOnly
+        NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+            refreshMenuItems()
+            getCurrentFragment()?.apply {
+                if (this is TextFragment) {
+                    (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
+                }
+            }
         }
     }
 }
