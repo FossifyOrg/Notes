@@ -2,10 +2,13 @@ package org.fossify.notes.activities
 
 import android.accounts.NetworkErrorException
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.content.Intent.FLAG_ACTIVITY_NO_HISTORY
+import android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION
+import android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.graphics.drawable.Icon
@@ -27,10 +30,62 @@ import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.net.toUri
 import androidx.viewpager.widget.ViewPager
-import org.fossify.commons.dialogs.*
-import org.fossify.commons.extensions.*
-import org.fossify.commons.helpers.*
+import org.fossify.commons.dialogs.ConfirmationAdvancedDialog
+import org.fossify.commons.dialogs.ConfirmationDialog
+import org.fossify.commons.dialogs.FilePickerDialog
+import org.fossify.commons.dialogs.RadioGroupDialog
+import org.fossify.commons.dialogs.SecurityDialog
+import org.fossify.commons.extensions.appLaunched
+import org.fossify.commons.extensions.appLockManager
+import org.fossify.commons.extensions.applyColorFilter
+import org.fossify.commons.extensions.baseConfig
+import org.fossify.commons.extensions.beVisibleIf
+import org.fossify.commons.extensions.checkWhatsNew
+import org.fossify.commons.extensions.clearBackgroundSpans
+import org.fossify.commons.extensions.convertToBitmap
+import org.fossify.commons.extensions.deleteFile
+import org.fossify.commons.extensions.fadeIn
+import org.fossify.commons.extensions.fadeOut
+import org.fossify.commons.extensions.getContrastColor
+import org.fossify.commons.extensions.getCurrentFormattedDateTime
+import org.fossify.commons.extensions.getDocumentFile
+import org.fossify.commons.extensions.getFilenameFromContentUri
+import org.fossify.commons.extensions.getFilenameFromPath
+import org.fossify.commons.extensions.getProperBackgroundColor
+import org.fossify.commons.extensions.getProperPrimaryColor
+import org.fossify.commons.extensions.getProperStatusBarColor
+import org.fossify.commons.extensions.getRealPathFromURI
+import org.fossify.commons.extensions.handleDeletePasswordProtection
+import org.fossify.commons.extensions.hasPermission
+import org.fossify.commons.extensions.hideKeyboard
+import org.fossify.commons.extensions.highlightText
+import org.fossify.commons.extensions.isMediaFile
+import org.fossify.commons.extensions.launchMoreAppsFromUsIntent
+import org.fossify.commons.extensions.needsStupidWritePermissions
+import org.fossify.commons.extensions.onGlobalLayout
+import org.fossify.commons.extensions.onPageChangeListener
+import org.fossify.commons.extensions.onTextChangeListener
+import org.fossify.commons.extensions.performSecurityCheck
+import org.fossify.commons.extensions.searchMatches
+import org.fossify.commons.extensions.shortcutManager
+import org.fossify.commons.extensions.showErrorToast
+import org.fossify.commons.extensions.showKeyboard
+import org.fossify.commons.extensions.toast
+import org.fossify.commons.extensions.updateTextColors
+import org.fossify.commons.extensions.value
+import org.fossify.commons.extensions.viewBinding
+import org.fossify.commons.helpers.LICENSE_RTL
+import org.fossify.commons.helpers.PERMISSION_READ_STORAGE
+import org.fossify.commons.helpers.PERMISSION_WRITE_STORAGE
+import org.fossify.commons.helpers.PROTECTION_NONE
+import org.fossify.commons.helpers.REAL_FILE_PATH
+import org.fossify.commons.helpers.SHOW_ALL_TABS
+import org.fossify.commons.helpers.ensureBackgroundThread
+import org.fossify.commons.helpers.isNougatMR1Plus
+import org.fossify.commons.helpers.isQPlus
 import org.fossify.commons.models.FAQItem
 import org.fossify.commons.models.FileDirItem
 import org.fossify.commons.models.RadioItem
@@ -41,15 +96,33 @@ import org.fossify.notes.R
 import org.fossify.notes.adapters.NotesPagerAdapter
 import org.fossify.notes.databases.NotesDatabase
 import org.fossify.notes.databinding.ActivityMainBinding
-import org.fossify.notes.dialogs.*
-import org.fossify.notes.extensions.*
+import org.fossify.notes.dialogs.DeleteNoteDialog
+import org.fossify.notes.dialogs.ExportFileDialog
+import org.fossify.notes.dialogs.ImportFolderDialog
+import org.fossify.notes.dialogs.NewNoteDialog
+import org.fossify.notes.dialogs.OpenFileDialog
+import org.fossify.notes.dialogs.OpenNoteDialog
+import org.fossify.notes.dialogs.RenameNoteDialog
+import org.fossify.notes.dialogs.SortChecklistDialog
+import org.fossify.notes.extensions.config
+import org.fossify.notes.extensions.getPercentageFontSize
+import org.fossify.notes.extensions.notesDB
+import org.fossify.notes.extensions.parseChecklistItems
+import org.fossify.notes.extensions.updateWidgets
+import org.fossify.notes.extensions.widgetsDB
 import org.fossify.notes.fragments.TextFragment
-import org.fossify.notes.helpers.*
+import org.fossify.notes.helpers.MIME_TEXT_PLAIN
+import org.fossify.notes.helpers.MyMovementMethod
+import org.fossify.notes.helpers.NEW_CHECKLIST
+import org.fossify.notes.helpers.NEW_TEXT_NOTE
+import org.fossify.notes.helpers.NotesHelper
+import org.fossify.notes.helpers.OPEN_NOTE_ID
+import org.fossify.notes.helpers.SHORTCUT_NEW_CHECKLIST
+import org.fossify.notes.helpers.SHORTCUT_NEW_TEXT_NOTE
 import org.fossify.notes.models.Note
 import org.fossify.notes.models.NoteType
 import java.io.File
 import java.nio.charset.Charset
-import java.util.Arrays
 
 class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
@@ -83,9 +156,6 @@ class MainActivity : SimpleActivity() {
 
     private val binding by viewBinding(ActivityMainBinding::inflate)
 
-    private var mIsPasswordProtectionPending = false
-    private var mWasProtectionHandled = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
         super.onCreate(savedInstanceState)
@@ -94,7 +164,12 @@ class MainActivity : SimpleActivity() {
         setupOptionsMenu()
         refreshMenuItems()
 
-        updateMaterialActivityViews(binding.mainCoordinator, null, useTransparentNavigation = false, useTopSearchMenu = false)
+        updateMaterialActivityViews(
+            mainCoordinatorLayout = binding.mainCoordinator,
+            nestedView = null,
+            useTransparentNavigation = false,
+            useTopSearchMenu = false
+        )
 
         searchQueryET = findViewById(org.fossify.commons.R.id.search_query)
         searchPrevBtn = findViewById(org.fossify.commons.R.id.search_previous)
@@ -116,35 +191,14 @@ class MainActivity : SimpleActivity() {
         checkIntents(intent)
 
         storeStateVariables()
+        if (config.showNotePicker && savedInstanceState == null && hasNoIntent) {
+            displayOpenNoteDialog()
+        }
 
         wasInit = true
 
         checkAppOnSDCard()
         setupSearchButtons()
-
-        mIsPasswordProtectionPending = config.isAppPasswordProtectionOn
-
-        if (config.showNotePicker && savedInstanceState == null && hasNoIntent && !mIsPasswordProtectionPending) {
-            displayOpenNoteDialog()
-        }
-
-        if (savedInstanceState == null) {
-            binding.viewPager.beGoneIf(mIsPasswordProtectionPending)
-            if (mIsPasswordProtectionPending && !mWasProtectionHandled) {
-                handleAppPasswordProtection {
-                    mWasProtectionHandled = it
-                    if (it) {
-                        mIsPasswordProtectionPending = false
-                        if (config.showNotePicker && savedInstanceState == null && hasNoIntent) {
-                            displayOpenNoteDialog()
-                        }
-                        binding.viewPager.beVisible()
-                    } else {
-                        finish()
-                    }
-                }
-            }
-        }
     }
 
     override fun onResume() {
@@ -218,9 +272,12 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
             findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
             findItem(R.id.import_folder).isVisible = !isQPlus()
-            findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && !mCurrentNote.isLocked())
-            findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
-            findItem(R.id.more_apps_from_us).isVisible = !resources.getBoolean(org.fossify.commons.R.bool.hide_google_relations)
+            findItem(R.id.lock_note).isVisible =
+                mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && !mCurrentNote.isLocked())
+            findItem(R.id.unlock_note).isVisible =
+                mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
+            findItem(R.id.more_apps_from_us).isVisible =
+                !resources.getBoolean(org.fossify.commons.R.bool.hide_google_relations)
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
@@ -296,20 +353,22 @@ class MainActivity : SimpleActivity() {
     override fun onBackPressed() {
         if (!config.autosaveNotes && mAdapter?.anyHasUnsavedChanges() == true) {
             ConfirmationAdvancedDialog(
-                this,
-                "",
-                R.string.unsaved_changes_warning,
-                org.fossify.commons.R.string.save,
-                org.fossify.commons.R.string.discard
+                activity = this,
+                message = "",
+                messageId = R.string.unsaved_changes_warning,
+                positive = org.fossify.commons.R.string.save,
+                negative = org.fossify.commons.R.string.discard
             ) {
                 if (it) {
                     mAdapter?.saveAllFragmentTexts()
                 }
+                appLockManager.lock()
                 super.onBackPressed()
             }
         } else if (isSearchActive) {
             closeSearch()
         } else {
+            appLockManager.lock()
             super.onBackPressed()
         }
     }
@@ -323,16 +382,27 @@ class MainActivity : SimpleActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
-        if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
-            importUri(resultData.data!!)
-        } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null && mNotes.isNotEmpty()) {
-            val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-            applicationContext.contentResolver.takePersistableUriPermission(resultData.data!!, takeFlags)
-            showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
+        if (resultCode != RESULT_OK || resultData?.data == null) return
+
+        val dataUri = resultData.data!!
+        when (requestCode) {
+            PICK_OPEN_FILE_INTENT -> importUri(dataUri)
+            PICK_EXPORT_FILE_INTENT -> if (mNotes.isNotEmpty()) {
+                applicationContext.contentResolver.takePersistableUriPermission(
+                    dataUri, FLAG_GRANT_READ_URI_PERMISSION or FLAG_GRANT_WRITE_URI_PERMISSION
+                )
+                showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
+            }
         }
     }
 
-    private fun isCurrentItemChecklist() = if (::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST else false
+    private fun isCurrentItemChecklist(): Boolean {
+        return if (::mCurrentNote.isInitialized) {
+            mCurrentNote.type == NoteType.TYPE_CHECKLIST
+        } else {
+            false
+        }
+    }
 
     @SuppressLint("NewApi")
     private fun checkShortcuts() {
@@ -342,9 +412,9 @@ class MainActivity : SimpleActivity() {
             val newChecklist = getNewChecklistShortcut(appIconColor)
 
             try {
-                shortcutManager.dynamicShortcuts = Arrays.asList(newTextNote, newChecklist)
+                shortcutManager.dynamicShortcuts = listOf(newTextNote, newChecklist)
                 config.lastHandledShortcutColor = appIconColor
-            } catch (ignored: Exception) {
+            } catch (_: Exception) {
             }
         }
     }
@@ -353,8 +423,12 @@ class MainActivity : SimpleActivity() {
     private fun getNewTextNoteShortcut(appIconColor: Int): ShortcutInfo {
         val shortLabel = getString(R.string.text_note)
         val longLabel = getString(R.string.new_text_note)
-        val drawable = resources.getDrawable(org.fossify.commons.R.drawable.shortcut_plus)
-        (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
+        val drawable = AppCompatResources.getDrawable(
+            this, org.fossify.commons.R.drawable.shortcut_plus
+        )
+
+        (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background)
+            .applyColorFilter(appIconColor)
         val bmp = drawable.convertToBitmap()
 
         val intent = Intent(this, MainActivity::class.java)
@@ -372,8 +446,9 @@ class MainActivity : SimpleActivity() {
     private fun getNewChecklistShortcut(appIconColor: Int): ShortcutInfo {
         val shortLabel = getString(R.string.checklist)
         val longLabel = getString(R.string.new_checklist)
-        val drawable = resources.getDrawable(R.drawable.shortcut_check)
-        (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
+        val drawable = AppCompatResources.getDrawable(this, R.drawable.shortcut_check)
+        (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background)
+            .applyColorFilter(appIconColor)
         val bmp = drawable.convertToBitmap()
 
         val intent = Intent(this, MainActivity::class.java)
@@ -404,11 +479,29 @@ class MainActivity : SimpleActivity() {
                         val file = File(realPath)
                         handleUri(Uri.fromFile(file))
                     } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
-                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT, "", PROTECTION_NONE, "")
-                        addNewNote(newTextNote)
+                        addNewNote(
+                            Note(
+                                id = null,
+                                title = getCurrentFormattedDateTime(),
+                                value = "",
+                                type = NoteType.TYPE_TEXT,
+                                path = "",
+                                protectionType = PROTECTION_NONE,
+                                protectionHash = ""
+                            )
+                        )
                     } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
-                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
-                        addNewNote(newChecklist)
+                        addNewNote(
+                            Note(
+                                id = null,
+                                title = getCurrentFormattedDateTime(),
+                                value = "",
+                                type = NoteType.TYPE_CHECKLIST,
+                                path = "",
+                                protectionType = PROTECTION_NONE,
+                                protectionHash = ""
+                            )
+                        )
                     } else {
                         handleUri(data!!)
                     }
@@ -611,14 +704,13 @@ class MainActivity : SimpleActivity() {
 
     private fun getWantedNoteIndex(wantedNoteId: Long?): Int {
         intent.removeExtra(OPEN_NOTE_ID)
-        val noteIdToOpen = if (wantedNoteId == null || wantedNoteId == -1L) config.currentNoteId else wantedNoteId
+        val noteIdToOpen =
+            if (wantedNoteId == null || wantedNoteId == -1L) config.currentNoteId else wantedNoteId
         return getNoteIndexWithId(noteIdToOpen)
     }
 
-    private fun currentNotesView() = if (binding.viewPager == null) {
-        null
-    } else {
-        mAdapter?.getCurrentNotesView(binding.viewPager.currentItem)
+    private fun currentNotesView(): MyEditText? {
+        return mAdapter?.getCurrentNotesView(binding.viewPager.currentItem)
     }
 
     private fun displayRenameDialog() {
@@ -642,7 +734,12 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun displayNewNoteDialog(value: String = "", title: String? = null, path: String = "", setChecklistAsDefault: Boolean = false) {
+    private fun displayNewNoteDialog(
+        value: String = "",
+        title: String? = null,
+        path: String = "",
+        setChecklistAsDefault: Boolean = false,
+    ) {
         NewNoteDialog(this, title, setChecklistAsDefault) {
             it.value = value
             it.path = path
@@ -673,18 +770,50 @@ class MainActivity : SimpleActivity() {
         val licenses = LICENSE_RTL
 
         val faqItems = arrayListOf(
-            FAQItem(org.fossify.commons.R.string.faq_1_title_commons, org.fossify.commons.R.string.faq_1_text_commons),
-            FAQItem(R.string.faq_1_title, R.string.faq_1_text)
+            FAQItem(
+                title = org.fossify.commons.R.string.faq_1_title_commons,
+                text = org.fossify.commons.R.string.faq_1_text_commons
+            ),
+            FAQItem(
+                title = R.string.faq_1_title,
+                text = R.string.faq_1_text
+            )
         )
 
         if (!resources.getBoolean(org.fossify.commons.R.bool.hide_google_relations)) {
-            faqItems.add(FAQItem(org.fossify.commons.R.string.faq_2_title_commons, org.fossify.commons.R.string.faq_2_text_commons))
-            faqItems.add(FAQItem(org.fossify.commons.R.string.faq_6_title_commons, org.fossify.commons.R.string.faq_6_text_commons))
-            faqItems.add(FAQItem(org.fossify.commons.R.string.faq_7_title_commons, org.fossify.commons.R.string.faq_7_text_commons))
-            faqItems.add(FAQItem(org.fossify.commons.R.string.faq_10_title_commons, org.fossify.commons.R.string.faq_10_text_commons))
+            faqItems.add(
+                FAQItem(
+                    title = org.fossify.commons.R.string.faq_2_title_commons,
+                    text = org.fossify.commons.R.string.faq_2_text_commons
+                )
+            )
+            faqItems.add(
+                FAQItem(
+                    title = org.fossify.commons.R.string.faq_6_title_commons,
+                    text = org.fossify.commons.R.string.faq_6_text_commons
+                )
+            )
+            faqItems.add(
+                FAQItem(
+                    title = org.fossify.commons.R.string.faq_7_title_commons,
+                    text = org.fossify.commons.R.string.faq_7_text_commons
+                )
+            )
+            faqItems.add(
+                FAQItem(
+                    title = org.fossify.commons.R.string.faq_10_title_commons,
+                    text = org.fossify.commons.R.string.faq_10_text_commons
+                )
+            )
         }
 
-        startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
+        startAboutActivity(
+            appNameId = R.string.app_name,
+            licenseMask = licenses,
+            versionName = BuildConfig.VERSION_NAME,
+            faqItems = faqItems,
+            showFAQBeforeMail = true
+        )
     }
 
     private fun tryOpenFile() {
@@ -717,16 +846,33 @@ class MainActivity : SimpleActivity() {
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
                         val title = it.absolutePath.getFilenameFromPath().substringBeforeLast('.')
-                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
+                        val note = Note(
+                            id = null,
+                            title = title,
+                            value = fileText,
+                            type = NoteType.TYPE_CHECKLIST,
+                            path = "",
+                            protectionType = PROTECTION_NONE,
+                            protectionHash = ""
+                        )
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
-                                displayNewNoteDialog(note.value, title = it.title, it.path, setChecklistAsDefault = true)
+                                displayNewNoteDialog(
+                                    note.value,
+                                    title = it.title,
+                                    it.path,
+                                    setChecklistAsDefault = true
+                                )
                             }
                         }
                     } else {
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
-                                displayNewNoteDialog(it.value, title = it.title, it.path)
+                                displayNewNoteDialog(
+                                    value = it.value,
+                                    title = it.title,
+                                    path = it.path
+                                )
                             }
                         }
                     }
@@ -735,7 +881,11 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun checkFile(path: String, checkTitle: Boolean, onChecksPassed: (file: File) -> Unit) {
+    private fun checkFile(
+        path: String,
+        checkTitle: Boolean,
+        onChecksPassed: (file: File) -> Unit,
+    ) {
         val file = File(path)
         if (path.isMediaFile()) {
             toast(org.fossify.commons.R.string.invalid_file_format)
@@ -749,17 +899,16 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun checkUri(uri: Uri, onChecksPassed: () -> Unit) {
-        val inputStream = try {
-            contentResolver.openInputStream(uri) ?: return
+        try {
+            contentResolver.openInputStream(uri)?.use { inputStream ->
+                if (inputStream.available() > 1000 * 1000) {
+                    toast(R.string.file_too_large)
+                } else {
+                    onChecksPassed()
+                }
+            } ?: return
         } catch (e: Exception) {
             showErrorToast(e)
-            return
-        }
-
-        if (inputStream.available() > 1000 * 1000) {
-            toast(R.string.file_too_large)
-        } else {
-            onChecksPassed()
         }
     }
 
@@ -797,7 +946,9 @@ class MainActivity : SimpleActivity() {
     private fun addNoteFromUri(uri: Uri, filename: String? = null) {
         val noteTitle = when {
             filename?.isEmpty() == false -> filename
-            uri.toString().startsWith("content://") -> getFilenameFromContentUri(uri) ?: getNewNoteTitle()
+            uri.toString().startsWith("content://") -> getFilenameFromContentUri(uri)
+                ?: getNewNoteTitle()
+
             else -> getNewNoteTitle()
         }
 
@@ -811,7 +962,7 @@ class MainActivity : SimpleActivity() {
             true
         } else {
             try {
-                val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                val takeFlags = FLAG_GRANT_READ_URI_PERMISSION or FLAG_GRANT_WRITE_URI_PERMISSION
                 applicationContext.contentResolver.takePersistableUriPermission(uri, takeFlags)
                 true
             } catch (e: Exception) {
@@ -821,7 +972,16 @@ class MainActivity : SimpleActivity() {
 
         val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST else NoteType.TYPE_TEXT
         if (!canSyncNoteWithFile) {
-            val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
+            val note = Note(
+                id = null,
+                title = noteTitle,
+                value = content,
+                type = noteType,
+                path = "",
+                protectionType = PROTECTION_NONE,
+                protectionHash = ""
+            )
+
             displayNewNoteDialog(note.value, title = noteTitle, "")
         } else {
             val items = arrayListOf(
@@ -832,8 +992,16 @@ class MainActivity : SimpleActivity() {
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == IMPORT_FILE_SYNC
                 val path = if (syncFile) uri.toString() else ""
-                val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
-                displayNewNoteDialog(note.value, title = noteTitle, path)
+                val note = Note(
+                    id = null,
+                    title = noteTitle,
+                    value = content,
+                    type = noteType,
+                    path = "",
+                    protectionType = PROTECTION_NONE,
+                    protectionHash = ""
+                )
+                displayNewNoteDialog(value = note.value, title = noteTitle, path = path)
             }
         }
     }
@@ -845,9 +1013,25 @@ class MainActivity : SimpleActivity() {
                 val fileText = it.readText().trim()
                 val checklistItems = fileText.parseChecklistItems()
                 val note = if (checklistItems != null) {
-                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
+                    Note(
+                        id = null,
+                        title = title.substringBeforeLast('.'),
+                        value = fileText,
+                        type = NoteType.TYPE_CHECKLIST,
+                        path = "",
+                        protectionType = PROTECTION_NONE,
+                        protectionHash = ""
+                    )
                 } else {
-                    Note(null, title, "", NoteType.TYPE_TEXT, path, PROTECTION_NONE, "")
+                    Note(
+                        id = null,
+                        title = title,
+                        value = "",
+                        type = NoteType.TYPE_TEXT,
+                        path = path,
+                        protectionType = PROTECTION_NONE,
+                        protectionHash = ""
+                    )
                 }
 
                 if (mNotes.any { it.title.equals(note.title, true) }) {
@@ -918,13 +1102,23 @@ class MainActivity : SimpleActivity() {
 
     private fun exportAsFile() {
         ExportFileDialog(this, mCurrentNote) {
-            val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+            val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT) {
+                getCurrentNoteText()
+            } else {
+                mCurrentNote.value
+            }
+
             if (textToExport == null || textToExport.isEmpty()) {
                 toast(org.fossify.commons.R.string.unknown_error_occurred)
             } else if (mCurrentNote.type == NoteType.TYPE_TEXT) {
                 showExportFilePickUpdateDialog(it, textToExport)
             } else {
-                tryExportNoteValueToFile(it, mCurrentNote.title, textToExport, true)
+                tryExportNoteValueToFile(
+                    path = it,
+                    title = mCurrentNote.title,
+                    content = textToExport,
+                    showSuccessToasts = true
+                )
             }
         }
     }
@@ -937,7 +1131,12 @@ class MainActivity : SimpleActivity() {
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
-            tryExportNoteValueToFile(exportPath, mCurrentNote.title, textToExport, true) { exportedSuccessfully ->
+            tryExportNoteValueToFile(
+                path = exportPath,
+                title = mCurrentNote.title,
+                content = textToExport,
+                showSuccessToasts = true
+            ) { exportedSuccessfully ->
                 if (exportedSuccessfully) {
                     if (syncFile) {
                         mCurrentNote.path = exportPath
@@ -947,16 +1146,32 @@ class MainActivity : SimpleActivity() {
                         mCurrentNote.value = textToExport
                     }
 
-                    getPagerAdapter().updateCurrentNoteData(binding.viewPager.currentItem, mCurrentNote.path, mCurrentNote.value)
+                    getPagerAdapter().updateCurrentNoteData(
+                        position = binding.viewPager.currentItem,
+                        path = mCurrentNote.path,
+                        value = mCurrentNote.value
+                    )
                     NotesHelper(this).insertOrUpdateNote(mCurrentNote)
                 }
             }
         }
     }
 
-    fun tryExportNoteValueToFile(path: String, title: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
+    fun tryExportNoteValueToFile(
+        path: String,
+        title: String,
+        content: String,
+        showSuccessToasts: Boolean,
+        callback: ((success: Boolean) -> Unit)? = null,
+    ) {
         if (path.startsWith("content://")) {
-            exportNoteValueToUri(Uri.parse(path), title, content, showSuccessToasts, callback)
+            exportNoteValueToUri(
+                uri = path.toUri(),
+                title = title,
+                content = content,
+                showSuccessToasts = showSuccessToasts,
+                callback = callback
+            )
         } else {
             handlePermission(PERMISSION_WRITE_STORAGE) {
                 if (it) {
@@ -966,7 +1181,12 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun exportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
+    private fun exportNoteValueToFile(
+        path: String,
+        content: String,
+        showSuccessToasts: Boolean,
+        callback: ((success: Boolean) -> Unit)? = null,
+    ) {
         try {
             if (File(path).isDirectory) {
                 toast(org.fossify.commons.R.string.name_taken)
@@ -1009,7 +1229,13 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun exportNoteValueToUri(uri: Uri, title: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
+    private fun exportNoteValueToUri(
+        uri: Uri,
+        title: String,
+        content: String,
+        showSuccessToasts: Boolean,
+        callback: ((success: Boolean) -> Unit)? = null,
+    ) {
         try {
             val outputStream = contentResolver.openOutputStream(uri, "rwt")
             outputStream!!.bufferedWriter().use { out ->
@@ -1041,7 +1267,8 @@ class MainActivity : SimpleActivity() {
         try {
             val webView = WebView(this)
             webView.webViewClient = object : WebViewClient() {
-                override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest) = false
+                override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest) =
+                    false
 
                 override fun onPageFinished(view: WebView, url: String) {
                     createWebPrintJob(view)
@@ -1058,7 +1285,7 @@ class MainActivity : SimpleActivity() {
         val jobName = mCurrentNote.title
         val printAdapter = webView.createPrintDocumentAdapter(jobName)
 
-        (getSystemService(Context.PRINT_SERVICE) as? PrintManager)?.apply {
+        (getSystemService(PRINT_SERVICE) as? PrintManager)?.apply {
             try {
                 print(jobName, printAdapter, PrintAttributes.Builder().build())
             } catch (e: IllegalStateException) {
@@ -1069,7 +1296,9 @@ class MainActivity : SimpleActivity() {
 
     private fun getPagerAdapter() = binding.viewPager.adapter as NotesPagerAdapter
 
-    private fun getCurrentNoteText() = getPagerAdapter().getCurrentNoteViewText(binding.viewPager.currentItem)
+    private fun getCurrentNoteText(): String? {
+        return getPagerAdapter().getCurrentNoteViewText(binding.viewPager.currentItem)
+    }
 
     private fun getCurrentNoteValue(): String {
         return if (mCurrentNote.type == NoteType.TYPE_TEXT) {
@@ -1091,12 +1320,15 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun addTextToCurrentNote(text: String) = getPagerAdapter().appendText(binding.viewPager.currentItem, text)
+    private fun addTextToCurrentNote(text: String) {
+        getPagerAdapter().appendText(binding.viewPager.currentItem, text)
+    }
 
     private fun saveCurrentNote(force: Boolean, callback: ((note: Note) -> Unit)? = null) {
         getPagerAdapter().saveCurrentNote(binding.viewPager.currentItem, force, callback)
         if (mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
-            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(binding.viewPager.currentItem) ?: ""
+            mCurrentNote.value = getPagerAdapter()
+                .getNoteChecklistItems(binding.viewPager.currentItem) ?: ""
         }
     }
 
@@ -1129,7 +1361,8 @@ class MainActivity : SimpleActivity() {
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
         ensureBackgroundThread {
             val currentNoteIndex = mNotes.indexOf(note)
-            val noteToRefresh = mNotes[if (currentNoteIndex > 0) currentNoteIndex - 1 else currentNoteIndex + 1]
+            val noteToRefresh =
+                mNotes[if (currentNoteIndex > 0) currentNoteIndex - 1 else currentNoteIndex + 1]
 
             notesDB.deleteNote(note)
             widgetsDB.deleteNoteWidgets(note.id!!)
@@ -1199,7 +1432,12 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun shareText() {
-        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) {
+            getCurrentNoteText()
+        } else {
+            mCurrentNote.value
+        }
+
         if (text.isNullOrEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
@@ -1221,14 +1459,16 @@ class MainActivity : SimpleActivity() {
         val manager = getSystemService(ShortcutManager::class.java)
         if (manager.isRequestPinShortcutSupported) {
             val note = mCurrentNote
-            val drawable = resources.getDrawable(R.drawable.shortcut_note).mutate()
+            val drawable = AppCompatResources.getDrawable(this, R.drawable.shortcut_note)?.mutate()
             val appIconColor = baseConfig.appIconColor
-            (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
+            (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background)
+                .applyColorFilter(appIconColor)
 
             val intent = Intent(this, SplashActivity::class.java)
             intent.action = Intent.ACTION_VIEW
             intent.putExtra(OPEN_NOTE_ID, note.id)
-            intent.flags = intent.flags or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_HISTORY
+            intent.flags =
+                intent.flags or FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK or FLAG_ACTIVITY_NO_HISTORY
 
             val shortcut = ShortcutInfo.Builder(this, note.hashCode().toString())
                 .setShortLabel(mCurrentNote.title)
@@ -1241,7 +1481,13 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun lockNote() {
-        ConfirmationDialog(this, "", R.string.locking_warning, org.fossify.commons.R.string.ok, org.fossify.commons.R.string.cancel) {
+        ConfirmationDialog(
+            activity = this,
+            message = "",
+            messageId = R.string.locking_warning,
+            positive = org.fossify.commons.R.string.ok,
+            negative = org.fossify.commons.R.string.cancel
+        ) {
             SecurityDialog(this, "", SHOW_ALL_TABS) { hash, type, success ->
                 if (success) {
                     mCurrentNote.protectionHash = hash

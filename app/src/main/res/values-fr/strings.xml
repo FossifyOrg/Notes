@@ -8,7 +8,7 @@
     <string name="title_taken">Une note avec le même titre existe déjà</string>
     <string name="open_note">Ouvrir la note</string>
     <string name="delete_note">Supprimer la note</string>
-    <string name="delete_note_prompt_message">Voulez-vous vraiment supprimer la note « %s » \?</string>
+    <string name="delete_note_prompt_message">Voulez-vous vraiment supprimer la note « %s » ?</string>
     <string name="pick_a_note">Choisir une note</string>
     <string name="rename_note">Renommer la note</string>
     <string name="general_note">Note générale</string>
@@ -36,9 +36,9 @@
 \n(changer le fichier n\'affectera pas la note)</string>
     <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note
 \n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
-    <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
-    <string name="note_saved_successfully">La note « %s » a été sauvegardée avec succès</string>
-    <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
+    <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
+    <string name="note_saved_successfully">La note « %s » a été sauvegardée avec succès</string>
+    <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
     <string name="only_export_file_content">Exporter seulement le contenu du fichier
 \n(changer le fichier n\'affectera pas la note)</string>
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
@@ -68,6 +68,7 @@
     <string name="add_to_the_top">Ajouter en haut de la liste</string>
     <plurals name="num_checked_items">
         <item quantity="one">%d item coché</item>
+        <item quantity="many">%d items cochés</item>
         <item quantity="other">%d items cochés</item>
     </plurals>
     <string name="import_folder">Importer depuis un dossier</string>
