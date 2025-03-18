@@ -43,7 +43,6 @@ import org.fossify.notes.databases.NotesDatabase
 import org.fossify.notes.databinding.ActivityMainBinding
 import org.fossify.notes.dialogs.*
 import org.fossify.notes.extensions.*
-import org.fossify.notes.fragments.NoteFragment
 import org.fossify.notes.fragments.TextFragment
 import org.fossify.notes.helpers.*
 import org.fossify.notes.models.Note
@@ -92,7 +91,6 @@ class MainActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
-
         setupOptionsMenu()
         refreshMenuItems()
 
@@ -489,14 +487,6 @@ class MainActivity : SimpleActivity() {
                 hideKeyboard()
             }
             refreshMenuItems()
-        }
-    }
-
-    private fun checkReadOnlyState() {
-        getCurrentFragment()?.apply {
-            if (this is TextFragment) {
-                (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
-            }
         }
     }
 
@@ -1326,6 +1316,14 @@ class MainActivity : SimpleActivity() {
         SortChecklistDialog(this) {
             getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
+        }
+    }
+
+    private fun checkReadOnlyState() {
+        getCurrentFragment()?.apply {
+            if (this is TextFragment) {
+                (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
+            }
         }
     }
 
