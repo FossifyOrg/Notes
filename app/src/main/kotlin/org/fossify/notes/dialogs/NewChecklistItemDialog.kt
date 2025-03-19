@@ -57,7 +57,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             }
     }
 
-    private fun addNewEditText() {
+    private fun addNewEditText(initialText: String? = null) {
         ItemAddChecklistBinding.inflate(activity.layoutInflater).apply {
             titleEditText.setOnEditorActionListener { _, actionId, _ ->
                 if (actionId == EditorInfo.IME_ACTION_NEXT || actionId == EditorInfo.IME_ACTION_DONE || actionId == KeyEvent.KEYCODE_ENTER) {
@@ -66,6 +66,21 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
                 } else {
                     false
                 }
+            }
+            titleEditText.onTextChangeListener { text ->
+                val lines = text.split("\n").filter { it.trim().isNotEmpty() }
+                if (lines.size > 1) {
+                    lines.forEachIndexed { i, line ->
+                        if (i == 0) {
+                            titleEditText.setText(line)
+                        } else {
+                            addNewEditText(line)
+                        }
+                    }
+                }
+            }
+            if (initialText != null) {
+                titleEditText.setText(initialText)
             }
             titles.add(titleEditText)
             binding.checklistHolder.addView(this.root)
