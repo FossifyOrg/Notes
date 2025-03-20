@@ -61,7 +61,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
         ItemAddChecklistBinding.inflate(activity.layoutInflater).apply {
             titleEditText.setOnEditorActionListener { _, actionId, _ ->
                 if (actionId == EditorInfo.IME_ACTION_NEXT || actionId == EditorInfo.IME_ACTION_DONE || actionId == KeyEvent.KEYCODE_ENTER) {
-                    addNewEditText()
+                    addNewEditText(position = titles.indexOf(titleEditText) + 1)
                     true
                 } else {
                     false
@@ -81,7 +81,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
                 }
             }
             if (initialText != null) {
-                titleEditText.setText(initialText)
+                titleEditText.append(initialText)
             }
             if (position != null && position < titles.size) {
                 titles.add(position, titleEditText)
