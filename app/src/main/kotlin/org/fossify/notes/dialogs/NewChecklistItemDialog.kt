@@ -57,7 +57,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             }
     }
 
-    private fun addNewEditText(initialText: String? = null) {
+    private fun addNewEditText(initialText: String? = null, position: Int? = null) {
         ItemAddChecklistBinding.inflate(activity.layoutInflater).apply {
             titleEditText.setOnEditorActionListener { _, actionId, _ ->
                 if (actionId == EditorInfo.IME_ACTION_NEXT || actionId == EditorInfo.IME_ACTION_DONE || actionId == KeyEvent.KEYCODE_ENTER) {
@@ -70,11 +70,12 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             titleEditText.onTextChangeListener { text ->
                 val lines = text.lines().filter { it.trim().isNotEmpty() }
                 if (lines.size > 1) {
+                    val currentPosition = titles.indexOf(titleEditText)
                     lines.forEachIndexed { i, line ->
                         if (i == 0) {
                             titleEditText.setText(line)
                         } else {
-                            addNewEditText(line)
+                            addNewEditText(line, currentPosition + i)
                         }
                     }
                 }
@@ -82,8 +83,13 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             if (initialText != null) {
                 titleEditText.setText(initialText)
             }
-            titles.add(titleEditText)
-            binding.checklistHolder.addView(this.root)
+            if (position != null && position < titles.size) {
+                titles.add(position, titleEditText)
+                binding.checklistHolder.addView(this.root, position)
+            } else {
+                titles.add(titleEditText)
+                binding.checklistHolder.addView(this.root)
+            }
             activity.updateTextColors(binding.checklistHolder)
             binding.dialogHolder.post {
                 binding.dialogHolder.fullScroll(View.FOCUS_DOWN)
