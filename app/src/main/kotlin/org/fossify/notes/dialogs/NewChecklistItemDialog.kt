@@ -68,7 +68,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
                 }
             }
             titleEditText.onTextChangeListener { text ->
-                val lines = text.split("\n").filter { it.trim().isNotEmpty() }
+                val lines = text.lines().filter { it.trim().isNotEmpty() }
                 if (lines.size > 1) {
                     lines.forEachIndexed { i, line ->
                         if (i == 0) {
