@@ -1,3 +1,0 @@
-* Opravena bezpečnostní zranitelnost v zámku aplikace
-* Menší opravy chyb a vylepšení
-* Přidány nové překlady

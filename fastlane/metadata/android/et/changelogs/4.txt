@@ -1,3 +1,0 @@
-* Parandasime rakenduse lukustuse turvavea
-* Väikesed veaparandused ja täiendused
-* Lisasime uusi tõlkeid

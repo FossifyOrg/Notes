@@ -1,3 +1,0 @@
-* Sicherheitslücke in der App-Sperre behoben
-* Kleinere Fehlerkorrekturen und Verbesserungen
-* Neue Übersetzungen hinzugefügt
