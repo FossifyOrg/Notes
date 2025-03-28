@@ -73,8 +73,14 @@ class NotesHelper(val context: Context) {
     fun insertOrUpdateNote(note: Note, callback: ((newNoteId: Long) -> Unit)? = null) {
         ensureBackgroundThread {
             val noteId = context.notesDB.insertOrUpdate(note)
-            Handler(Looper.getMainLooper()).post {
-                callback?.invoke(noteId)
+            if (note.isReadOnly) {
+                Handler(Looper.getMainLooper()).post {
+                    callback?.invoke(noteId)
+                }
+            } else {
+                Handler(Looper.getMainLooper()).post {
+                    callback?.invoke(noteId)
+                }
             }
         }
     }
