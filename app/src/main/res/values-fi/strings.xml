@@ -53,7 +53,7 @@
     <string name="autosave_notes">Muistiinpanojen automaattinen tallennus</string>
     <string name="enable_line_wrap">Ota käyttöön automaattinen rivitys</string>
     <string name="use_incognito_mode">Käytä näppäimistöjen Incognito-tilaa</string>
-    <string name="move_done_checklist_items">Siirrä tekemättömät kohdat muistilistasta ylimmäksi</string>
+    <string name="move_done_checklist_items">Siirrä valitut kohteet alimmaksi</string>
     <string name="add_new_checklist_items_top">Lisää uusia merkattavia tehtäviä alkuun</string>
     <string name="checklist">Muistilista</string>
     <string name="checklists">Merkattavat listat</string>
@@ -69,4 +69,14 @@
     <string name="faq_1_text">Jos sinulla on vain yksi aktiivinen pienoissovellus, voit joko luoda sen uudelleen tai mukauttaa sitä sovelluksen asetukset-painikkeella. Jos sinulla on useita aktiivisia pienoissovelluksia, sovelluksessa oleva asetukset-painike ei ole käytettävissä. Koska sovellus tukee värien mukauttamista pienoissovellusta kohti, sinun on luotava uudelleen pienoissovellus, jonka haluat muokata.</string>
     <string name="password_protect_note_deletion">Salasanasuojaa muistiinpanon poistaminen</string>
     <string name="add_to_the_top">Lisää ylimmäiseksi</string>
+    <string name="this_note_is_linked">Tämä muistiinpano on linkitetty paikallisen tiedoston kanssa.</string>
+    <string name="widget_config">Kiitos, kun käytät Fossify Notes:ia.\nLisää Fossify:n sovelluksia osoitteesta fossify.org.</string>
+    <string name="cannot_load_over_internet">Sovellus ei voi ladata tiedostoja internetin kautta</string>
+    <string name="found_locked_notes_info">Seuraavat muistiinpanot on lukittu. Voit poistaa lukituksen yksitellen tai jättää niiden vienti välistä.</string>
+    <string name="unlock_notes">Poista muistiinpanojen lukitus</string>
+    <string name="allow_alarm_automatic_backups">Muistiinpanojen automaattinen varmuuskopiointi vaatii oikeuden luoda hälytyksiä.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d valittu kohde</item>
+        <item quantity="other">%d valittua kohdetta</item>
+    </plurals>
 </resources>
