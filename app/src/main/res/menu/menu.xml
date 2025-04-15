@@ -22,14 +22,14 @@
         android:title="@string/create_new_note"
         app:showAsAction="always" />
     <item
-        android:id="@+id/read_only"
+        android:id="@+id/preview_mode"
         android:icon="@drawable/ic_visibility_vector"
-        android:title="@string/read_only"
+        android:title="@string/preview_mode"
         app:showAsAction="always" />
     <item
-        android:id="@+id/unlock_read_only"
-        android:icon="@drawable/ic_visibility_off_vector"
-        android:title="@string/read_only_disable"
+        android:id="@+id/edit_mode"
+        android:icon="@drawable/ic_edit_vector"
+        android:title="@string/edit_mode"
         app:showAsAction="always" />
     <item
         android:id="@+id/undo"

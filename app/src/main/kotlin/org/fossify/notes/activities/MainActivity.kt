@@ -214,6 +214,7 @@ class MainActivity : SimpleActivity() {
             }
         }
 
+        applyReadOnlyStateToCurrentNote()
         refreshMenuItems()
         binding.pagerTabStrip.apply {
             val textSize = getPercentageFontSize()
@@ -283,8 +284,8 @@ class MainActivity : SimpleActivity() {
             saveNoteButton!!.isVisible =
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
 
-            findItem(R.id.read_only).isVisible = (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
-            findItem(R.id.unlock_read_only).isVisible =
+            findItem(R.id.preview_mode).isVisible = (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
+            findItem(R.id.edit_mode).isVisible =
                 (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
         }
 
@@ -312,8 +313,8 @@ class MainActivity : SimpleActivity() {
                 R.id.cab_create_shortcut -> createShortcut()
                 R.id.lock_note -> lockNote()
                 R.id.unlock_note -> unlockNote()
-                R.id.read_only -> toggleReadOnly()
-                R.id.unlock_read_only -> toggleReadOnly()
+                R.id.preview_mode -> toggleReadOnly()
+                R.id.edit_mode -> toggleReadOnly()
                 R.id.open_file -> tryOpenFile()
                 R.id.import_folder -> openFolder()
                 R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
@@ -571,14 +572,15 @@ class MainActivity : SimpleActivity() {
                 onPageChangeListener {
                     mCurrentNote = mNotes[it]
                     config.currentNoteId = mCurrentNote.id!!
+                    applyReadOnlyStateToCurrentNote()
                     refreshMenuItems()
-                    checkReadOnlyState()
                 }
             }
 
             if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
                 hideKeyboard()
             }
+            applyReadOnlyStateToCurrentNote()
             refreshMenuItems()
         }
     }
@@ -731,6 +733,7 @@ class MainActivity : SimpleActivity() {
             val index = getNoteIndexWithId(id)
             binding.viewPager.currentItem = index
             mCurrentNote = mNotes[index]
+            applyReadOnlyStateToCurrentNote()
         }
     }
 
@@ -755,6 +758,7 @@ class MainActivity : SimpleActivity() {
             showRedoButton = false
             initViewPager(newNoteId)
             updateSelectedNote(newNoteId)
+            applyReadOnlyStateToCurrentNote()
             binding.viewPager.onGlobalLayout {
                 mAdapter?.focusEditText(getNoteIndexWithId(newNoteId))
             }
@@ -1565,10 +1569,10 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun checkReadOnlyState() {
-        getCurrentFragment()?.apply {
-            if (this is TextFragment) {
-                (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
+    private fun applyReadOnlyStateToCurrentNote() {
+        getCurrentFragment()?.let { fragment ->
+            if (fragment is TextFragment) {
+                fragment.updateReadOnlyState(mCurrentNote.isReadOnly)
             }
         }
     }
@@ -1576,12 +1580,8 @@ class MainActivity : SimpleActivity() {
     private fun toggleReadOnly() {
         mCurrentNote.isReadOnly = !mCurrentNote.isReadOnly
         NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+            applyReadOnlyStateToCurrentNote()
             refreshMenuItems()
-            getCurrentFragment()?.apply {
-                if (this is TextFragment) {
-                    (this as TextFragment).getNotesView().isEnabled = !mCurrentNote.isReadOnly
-                }
-            }
         }
     }
 }
