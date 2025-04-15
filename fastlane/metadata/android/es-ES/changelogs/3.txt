@@ -1,3 +1,0 @@
-* Se ha añadido una sección de elementos comprobados plegable en la parte inferior.
-* Mejoras y correcciones de errores menores
-* Añadidas nuevas traducciones

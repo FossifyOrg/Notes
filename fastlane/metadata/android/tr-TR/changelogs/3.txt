@@ -1,3 +1,0 @@
-* Genişleyebilen ögeler bölümü eklendi
-* Küçük hata düzeltmeleri ve iyileştirmeler
-* Yeni çeviriler eklendi
