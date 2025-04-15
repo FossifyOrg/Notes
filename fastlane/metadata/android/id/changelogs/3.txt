@@ -1,3 +1,0 @@
-* Menambahkan bagian item yang dapat dicentang di bagian bawah
-* Perbaikan bug dan peningkatan kecil
-* Menambahkan terjemahan baru
