@@ -85,10 +85,10 @@ class WidgetConfigureActivity : SimpleActivity() {
         } else {
             mBgColor = extras?.getInt(CUSTOMIZED_WIDGET_BG_COLOR) ?: config.widgetBgColor
             mTextColor = extras?.getInt(CUSTOMIZED_WIDGET_TEXT_COLOR) ?: config.widgetTextColor
-            mShowTitle = extras?.getBoolean(CUSTOMIZED_WIDGET_SHOW_TITLE) ?: false
+            mShowTitle = extras?.getBoolean(CUSTOMIZED_WIDGET_SHOW_TITLE) == true
         }
 
-        if (mTextColor == resources.getColor(org.fossify.commons.R.color.default_widget_text_color) && config.isUsingSystemTheme) {
+        if (mTextColor == resources.getColor(org.fossify.commons.R.color.default_widget_text_color) && isDynamicTheme()) {
             mTextColor = resources.getColor(org.fossify.commons.R.color.you_primary_color, theme)
         }
 

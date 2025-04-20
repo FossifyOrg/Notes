@@ -1,3 +1,0 @@
-*Lade till en sektion för ikryssade objekt i botten av listan.
-*Mindre bugfixar och förbättringar
-*Lade till nya översättningar

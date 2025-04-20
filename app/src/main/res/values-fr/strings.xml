@@ -8,7 +8,7 @@
     <string name="title_taken">Une note avec le même titre existe déjà</string>
     <string name="open_note">Ouvrir la note</string>
     <string name="delete_note">Supprimer la note</string>
-    <string name="delete_note_prompt_message">Voulez-vous vraiment supprimer la note « %s » \?</string>
+    <string name="delete_note_prompt_message">Voulez-vous vraiment supprimer la note « %s » ?</string>
     <string name="pick_a_note">Choisir une note</string>
     <string name="rename_note">Renommer la note</string>
     <string name="general_note">Note générale</string>
@@ -36,9 +36,9 @@
 \n(changer le fichier n\'affectera pas la note)</string>
     <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note
 \n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
-    <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
-    <string name="note_saved_successfully">La note « %s » a été sauvegardée avec succès</string>
-    <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
+    <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
+    <string name="note_saved_successfully">La note « %s » a été sauvegardée avec succès</string>
+    <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
     <string name="only_export_file_content">Exporter seulement le contenu du fichier
 \n(changer le fichier n\'affectera pas la note)</string>
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
@@ -57,7 +57,7 @@
     <string name="autosave_notes">Sauvegarder automatiquement les notes</string>
     <string name="enable_line_wrap">Activer le retour à la ligne</string>
     <string name="use_incognito_mode">Utiliser le mode incognito du claviers</string>
-    <string name="move_done_checklist_items">Déplacer les éléments de liste de contrôle inachevés en-bas</string>
+    <string name="move_done_checklist_items">Déplacer les éléments cochés vers le bas</string>
     <string name="add_new_checklist_items_top">Ajouter un élément de liste de contrôle en-haut</string>
     <string name="checklist">Liste de contrôle</string>
     <string name="checklists">Listes de contrôle</string>
@@ -68,6 +68,7 @@
     <string name="add_to_the_top">Ajouter en haut de la liste</string>
     <plurals name="num_checked_items">
         <item quantity="one">%d item coché</item>
+        <item quantity="many">%d items cochés</item>
         <item quantity="other">%d items cochés</item>
     </plurals>
     <string name="import_folder">Importer depuis un dossier</string>
@@ -77,4 +78,7 @@
     <string name="faq_1_title">Comment puis-je changer la couleur des widgets \?</string>
     <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser.</string>
     <string name="app_launcher_name">Notes</string>
+    <string name="password_protect_note_deletion">La suppression des notes est protégée par un mot de passe</string>
+    <string name="allow_alarm_automatic_backups">Pour sauvegarder automatiquement les notes, veuillez autoriser l\'application à programmer des alarmes précises.</string>
+    <string name="this_note_is_linked">Cette note est liée à un fichier local.</string>
 </resources>

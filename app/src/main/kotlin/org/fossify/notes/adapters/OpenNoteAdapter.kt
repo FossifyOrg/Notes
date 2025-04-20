@@ -107,7 +107,7 @@ class OpenNoteAdapter(
                 Color.BLACK
             }
 
-            val cardBackground = if (context.config.isUsingSystemTheme) {
+            val cardBackground = if (context.isDynamicTheme()) {
                 org.fossify.commons.R.drawable.dialog_you_background
             } else {
                 org.fossify.commons.R.drawable.dialog_bg

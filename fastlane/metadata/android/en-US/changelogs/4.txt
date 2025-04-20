@@ -1,0 +1,3 @@
+* Fixed security vulnerability in app lock
+* Minor bug fixes and improvements
+* Added new translations

@@ -1,2 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="import_notes">കുറിപ്പുകൾ ഇറക്കുമതി ചെയ്യുക</string>
+    <string name="delete_checked_items">പരിശോധിച്ച ഇനങ്ങൾ ഇല്ലാതാക്കുക</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d പരിശോധിച്ച ഇനം</item>
+        <item quantity="other">%d പരിശോധിച്ച ഇനങ്ങൾ</item>
+    </plurals>
+    <string name="no_title">ദയവായി നിങ്ങളുടെ കുറിപ്പിന് പേര് നൽകുക</string>
+    <string name="app_launcher_name">കുറിപ്പുകൾ</string>
+    <string name="title_taken">ആ തലക്കെട്ടുള്ള ഒരു കുറിപ്പ് ഇതിനകം നിലവിലുണ്ട്</string>
+    <string name="open_note">കുറിപ്പ് തുറക്കുക</string>
+    <string name="delete_note">കുറിപ്പ് ഇല്ലാതാക്കുക</string>
+    <string name="delete_note_prompt_message">\"%s\" എന്ന കുറിപ്പ് ഇല്ലാതാക്കണമെന്ന് തീർച്ചയാണോ?</string>
+    <string name="pick_a_note">ഒരു കുറിപ്പ് തിരഞ്ഞെടുക്കുക</string>
+    <string name="rename_note">കുറിപ്പ് പുനർനാമകരണം ചെയ്യുക</string>
+    <string name="general_note">പൊതു കുറിപ്പ്</string>
+    <string name="create_new_note">ഒരു പുതിയ കുറിപ്പ് സൃഷ്ടിക്കുക</string>
+    <string name="cannot_share_empty_text">ശൂന്യമായ വാചകം പങ്കിടാൻ കഴിയില്ല</string>
+    <string name="new_note">ഒരു പുതിയ കുറിപ്പ് ചേർക്കുക</string>
+    <string name="text_note">വാചക കുറിപ്പ്</string>
+    <string name="new_note_type">പുതിയ കുറിപ്പ് തരം:</string>
+    <string name="widget_config">ഫോസിഫൈ നോട്ടുകൾ ഉപയോഗിച്ചതിന് നന്ദി.\nഫോസിഫൈയിൽ നിന്നുള്ള കൂടുതൽ ആപ്പുകൾക്കായി, ദയവായി fossify.org സന്ദർശിക്കുക.</string>
+    <string name="show_content">ഉള്ളടക്കം കാണിക്കുക</string>
+    <string name="new_text_note">പുതിയ വാചക കുറിപ്പ്</string>
+    <string name="display_success_message">വിജയിച്ച സന്ദേശങ്ങൾ പ്രദർശിപ്പിക്കുക</string>
+    <string name="note_saved_successfully">കുറിപ്പ് \"%s\" വിജയകരമായി സംരക്ഷിച്ചു</string>
+    <string name="note_exported_successfully">കുറിപ്പ് \"%s\" വിജയകരമായി കയറ്റുമതി ചെയ്തു</string>
+    <string name="add_to_note">കുറിപ്പിലേക്ക് ചേർക്കുക</string>
+    <string name="show_note_title">കുറിപ്പിൻ്റെ ശീർഷകം കാണിക്കുക</string>
+    <string name="unsaved_changes_warning">നിങ്ങൾക്ക് സംരക്ഷിക്കാത്ത ചില മാറ്റങ്ങളുണ്ട്. അവരുമായി നിങ്ങൾ എന്താണ് ചെയ്യാൻ ആഗ്രഹിക്കുന്നത്?</string>
+    <string name="move_done_checklist_items">പരിശോധിച്ച ഇനങ്ങൾ താഴേക്ക് നീക്കുക</string>
+    <string name="locking_warning">മുന്നറിയിപ്പ്: നിങ്ങൾ കുറിപ്പുകളുടെ പാസ്‌വേഡ് മറന്നാൽ, നിങ്ങൾക്ക് അത് വീണ്ടെടുക്കാനോ കുറിപ്പുകളുടെ ഉള്ളടക്കം പ്രവേശനം ചെയ്യാനോ കഴിയില്ല.</string>
+    <string name="add_to_the_top">മുകളിൽ ചേർക്കുക</string>
+    <string name="export_notes">കുറിപ്പുകൾ കയറ്റുമതി ചെയ്യുക</string>
+    <string name="import_notes_pro">കുറിപ്പുകൾ ഇറക്കുമതി ചെയ്യുക (പ്രൊ)</string>
+    <string name="show_word_count">വാക്കുകളുടെ എണ്ണം കാണിക്കുക</string>
+    <string name="left">ഇടത്</string>
+    <string name="center">കേന്ദ്രം</string>
+    <string name="right">വലത്</string>
+</resources>
