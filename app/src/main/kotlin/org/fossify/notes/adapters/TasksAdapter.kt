@@ -100,9 +100,9 @@ class TasksAdapter(
 
         menu.findItem(R.id.cab_rename).isVisible = isOneItemSelected()
         menu.findItem(R.id.cab_move_to_top).isVisible = selectedItems.none { it.isDone }
-            || !activity.config.getMoveDoneChecklistItems(noteId)
+            || !activity.config.moveDoneChecklistItems
         menu.findItem(R.id.cab_move_to_bottom).isVisible = selectedItems.none { it.isDone }
-            || !activity.config.getMoveDoneChecklistItems(noteId)
+            || !activity.config.moveDoneChecklistItems
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -177,7 +177,7 @@ class TasksAdapter(
             checklistCheckbox.isChecked = task.isDone
             checklistHolder.isSelected = isSelected
 
-            val canMoveTask = !task.isDone || !activity.config.getMoveDoneChecklistItems(noteId)
+            val canMoveTask = !task.isDone || !activity.config.moveDoneChecklistItems
             checklistDragHandle.beVisibleIf(beVisible = canMoveTask && selectedKeys.isNotEmpty())
             checklistDragHandle.applyColorFilter(textColor)
             checklistDragHandle.setOnTouchListener { _, event ->

@@ -161,7 +161,6 @@ class MainActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
-        config.migrateMoveDoneChecklistItems()
         setupOptionsMenu()
         refreshMenuItems()
 

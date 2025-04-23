@@ -134,7 +134,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
                 Task.sorting = sorting
                 tasks.sort()
             }
-            if (context.config.getMoveDoneChecklistItems(noteId)) {
+            if (context.config.moveDoneChecklistItems) {
                 tasks.sortBy { it.isDone }
             }
         }

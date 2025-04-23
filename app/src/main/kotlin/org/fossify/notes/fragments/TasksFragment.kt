@@ -162,7 +162,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     }
 
     private fun prepareTaskItems(): List<NoteItem> {
-        return if (config?.getMoveDoneChecklistItems(noteId) == true) {
+        return if (config?.moveDoneChecklistItems == true) {
             mutableListOf<NoteItem>().apply {
                 val (checked, unchecked) = tasks.partition { it.isDone }
                 this += unchecked

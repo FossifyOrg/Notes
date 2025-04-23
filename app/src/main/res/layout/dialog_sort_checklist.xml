@@ -75,25 +75,6 @@
         android:id="@+id/move_undone_checklist_items_divider"
         layout="@layout/divider" />
 
-    <RelativeLayout
-        android:id="@+id/settings_move_undone_checklist_items_holder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_margin"
-        android:background="?attr/selectableItemBackground"
-        android:paddingTop="@dimen/medium_margin"
-        android:paddingBottom="@dimen/medium_margin">
-
-        <org.fossify.commons.views.MyAppCompatCheckbox
-            android:id="@+id/settings_move_undone_checklist_items"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:clickable="false"
-            android:text="@string/move_done_checklist_items" />
-
-    </RelativeLayout>
-
     <org.fossify.commons.views.MyAppCompatCheckbox
         android:id="@+id/sorting_dialog_use_for_this_checklist"
         android:layout_width="match_parent"

@@ -12,7 +12,6 @@ import org.fossify.notes.R
 import org.fossify.notes.activities.SimpleActivity
 import org.fossify.notes.databinding.DialogSortChecklistBinding
 import org.fossify.notes.extensions.config
-import org.fossify.notes.helpers.SORT_MOVE_DONE_ITEMS
 
 class SortChecklistDialog(
     private val activity: SimpleActivity,
@@ -27,7 +26,6 @@ class SortChecklistDialog(
     init {
         setupSortRadio()
         setupOrderRadio()
-        setupMoveUndoneChecklistItems()
 
         activity.getAlertDialogBuilder()
             .setPositiveButton(org.fossify.commons.R.string.ok) { _, _ -> dialogConfirmed() }
@@ -74,13 +72,6 @@ class SortChecklistDialog(
         orderBtn.isChecked = true
     }
 
-    private fun setupMoveUndoneChecklistItems() {
-        binding.settingsMoveUndoneChecklistItems.isChecked = config.getMoveDoneChecklistItems(noteId)
-        binding.settingsMoveUndoneChecklistItemsHolder.setOnClickListener {
-            binding.settingsMoveUndoneChecklistItems.toggle()
-        }
-    }
-
     private fun dialogConfirmed() {
         val sortingRadio = binding.sortingDialogRadioSorting
         var sorting = when (sortingRadio.checkedRadioButtonId) {
@@ -93,10 +84,6 @@ class SortChecklistDialog(
             && binding.sortingDialogRadioOrder.checkedRadioButtonId == R.id.sorting_dialog_radio_descending
         ) {
             sorting = sorting or SORT_DESCENDING
-        }
-
-        if (binding.settingsMoveUndoneChecklistItems.isChecked) {
-            sorting = sorting or SORT_MOVE_DONE_ITEMS
         }
 
         if (binding.sortingDialogUseForThisChecklist.isChecked) {
