@@ -89,7 +89,6 @@ class TextFragment : NoteFragment() {
 
     override fun onResume() {
         super.onResume()
-
         NotesHelper(requireActivity()).getNoteWithId(noteId) {
             if (it != null) {
                 note = it
@@ -126,6 +125,7 @@ class TextFragment : NoteFragment() {
         super.onSaveInstanceState(outState)
         if (note != null) {
             outState.putString(TEXT, getCurrentNoteViewText())
+            outState.putBoolean("isReadOnly", note!!.isReadOnly)
         }
     }
 
@@ -135,6 +135,8 @@ class TextFragment : NoteFragment() {
             skipTextUpdating = true
             val newText = savedInstanceState.getString(TEXT) ?: ""
             innerBinding.root.findViewById<TextView>(R.id.text_note_view).text = newText
+            note!!.isReadOnly = savedInstanceState.getBoolean("isReadOnly")
+            updateReadOnlyState(note!!.isReadOnly)
         }
     }
 
@@ -356,21 +358,18 @@ class TextFragment : NoteFragment() {
             override val noteLockedShow: TextView = it.noteLockedShow
         }
     }
+
     fun updateReadOnlyState(isReadOnly: Boolean) {
         noteEditText.apply {
             if (isReadOnly == true) {
-                setTextColor(context.getProperPrimaryColor())
                 keyListener = null
             }
             if (isReadOnly == false) {
-                setTextColor(context.getProperTextColor())
                 keyListener = initialKeyListener
             }
             isLongClickable = true
             setTextIsSelectable(true)
-            saveText(force = true)
+            saveText(force = false)
         }
-        android.util.Log.d("TextFragment", "isReadOnly: $isReadOnly")
     }
 }
-
