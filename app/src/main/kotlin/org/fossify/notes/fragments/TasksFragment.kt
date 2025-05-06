@@ -191,7 +191,6 @@ class TasksFragment : NoteFragment(), TasksActionListener {
                 activity = activity as SimpleActivity,
                 listener = this,
                 recyclerView = binding.checklistList,
-                noteId = noteId,
                 itemClick = ::itemClicked
             )
             binding.checklistList.adapter = adapter

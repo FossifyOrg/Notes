@@ -38,7 +38,6 @@ class TasksAdapter(
     activity: BaseSimpleActivity,
     val listener: TasksActionListener?,
     recyclerView: MyRecyclerView,
-    val noteId: Long,
     itemClick: (Any) -> Unit = {},
 ) : MyRecyclerViewListAdapter<NoteItem>(
     activity = activity, recyclerView = recyclerView, diffUtil = TaskDiffCallback(), itemClick = itemClick
