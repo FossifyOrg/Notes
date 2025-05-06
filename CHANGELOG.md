@@ -7,27 +7,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Replaced checkboxes with switches (https://github.com/orgs/FossifyOrg/discussions/78)
+
+### Fixed
+
+- Security label color in settings
+
 ## [1.1.1] - 2025-03-18
 
 ### Changed
+
 - Minor bug fixes and improvements
 - Added more translations
 
 ### Fixed
+
 - Fixed security vulnerability in app lock
 
 ## [1.1.0] - 2024-07-22
 
 ### Added
+
 - Added collapsible checked items section at the bottom
 
 ### Changed
+
 - Minor bug fixes and improvements
 - Added new translations
 
 ## [1.0.0] - 2024-04-14
 
 ### Added
+
 - Initial release
 
 [Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.1.1...HEAD
