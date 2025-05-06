@@ -20,18 +20,16 @@
 
             <RelativeLayout
                 android:id="@+id/show_note_title_holder"
+                style="@style/SettingsHolderSwitchStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackground"
-                android:padding="@dimen/activity_margin">
+                android:background="?attr/selectableItemBackground">
 
-                <org.fossify.commons.views.MyAppCompatCheckbox
+                <org.fossify.commons.views.MyMaterialSwitch
                     android:id="@+id/show_note_title"
+                    style="@style/SettingsSwitchStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:clickable="false"
-                    android:layoutDirection="rtl"
                     android:text="@string/show_note_title"
                     app:switchPadding="@dimen/medium_margin" />
 
@@ -45,6 +43,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginBottom="@dimen/normal_margin"
                 android:paddingStart="@dimen/activity_margin"
+                android:paddingEnd="@dimen/activity_margin"
                 android:text="@string/note_shown_widget" />
 
             <org.fossify.commons.views.MyTextView

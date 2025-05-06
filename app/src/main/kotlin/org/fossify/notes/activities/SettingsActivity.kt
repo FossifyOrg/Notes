@@ -133,6 +133,7 @@ class SettingsActivity : SimpleActivity() {
             binding.settingsTextLabel,
             binding.settingsStartupLabel,
             binding.settingsSavingLabel,
+            binding.settingsSecurityLabel,
             binding.settingsMigratingLabel,
             binding.settingsBackupsLabel,
         ).forEach {
