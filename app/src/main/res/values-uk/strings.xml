@@ -82,4 +82,5 @@
         <item quantity="many">%d відмічених елементів</item>
         <item quantity="other">%d відмічених елементів</item>
     </plurals>
+    <string name="use_for_this_checklist">Використовувати тільки для цього контрольного списку</string>
 </resources>
