@@ -1349,8 +1349,10 @@ class MainActivity : SimpleActivity() {
                 doDeleteNote(mCurrentNote, deleteFile)
             }
         }
-        if (note.type == NoteType.TYPE_CHECKLIST) {
-            config.removeCustomSorting(note.id.toString())
+
+        val noteId = note.id
+        if (note.type == NoteType.TYPE_CHECKLIST && noteId != null) {
+            config.removeOwnSorting(noteId)
         }
     }
 

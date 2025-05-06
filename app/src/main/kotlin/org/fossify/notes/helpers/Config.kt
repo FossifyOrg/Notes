@@ -93,7 +93,9 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getBoolean(ADD_NEW_CHECKLIST_ITEMS_TOP, false)
         set(addNewCheckListItemsTop) = prefs.edit().putBoolean(ADD_NEW_CHECKLIST_ITEMS_TOP, addNewCheckListItemsTop).apply()
 
-    fun getSorting(noteId: Long?) = if (noteId == null) sorting else getFolderSorting(noteId.toString())
+    fun getSorting(noteId: Long?): Int {
+        return if (noteId == null) sorting else getFolderSorting(noteId.toString())
+    }
 
     fun hasOwnSorting(noteId: Long?) = noteId != null && hasCustomSorting(noteId.toString())
 
