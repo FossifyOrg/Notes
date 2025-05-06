@@ -111,6 +111,7 @@ class SettingsActivity : SimpleActivity() {
         setupMonospacedFont()
         setupShowKeyboard()
         setupShowNotePicker()
+        setupMoveUndoneChecklistItems()
         setupShowWordCount()
         setupEnableLineWrap()
         setupFontSize()
@@ -244,6 +245,14 @@ class SettingsActivity : SimpleActivity() {
         binding.settingsShowNotePickerHolder.setOnClickListener {
             binding.settingsShowNotePicker.toggle()
             config.showNotePicker = binding.settingsShowNotePicker.isChecked
+        }
+    }
+
+    private fun setupMoveUndoneChecklistItems() {
+        binding.settingsMoveUndoneChecklistItems.isChecked = config.moveDoneChecklistItems
+        binding.settingsMoveUndoneChecklistItemsHolder.setOnClickListener {
+            binding.settingsMoveUndoneChecklistItems.toggle()
+            config.moveDoneChecklistItems = binding.settingsMoveUndoneChecklistItems.isChecked
         }
     }
 

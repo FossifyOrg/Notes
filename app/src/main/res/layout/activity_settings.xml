@@ -228,6 +228,21 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/settings_move_undone_checklist_items_holder"
+                style="@style/SettingsHolderCheckboxStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <org.fossify.commons.views.MyAppCompatCheckbox
+                    android:id="@+id/settings_move_undone_checklist_items"
+                    style="@style/SettingsCheckboxStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/move_done_checklist_items" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/settings_gravity_holder"
                 style="@style/SettingsHolderTextViewStyle"
                 android:layout_width="match_parent"

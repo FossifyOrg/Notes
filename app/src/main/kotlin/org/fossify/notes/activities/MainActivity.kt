@@ -1349,6 +1349,11 @@ class MainActivity : SimpleActivity() {
                 doDeleteNote(mCurrentNote, deleteFile)
             }
         }
+
+        val noteId = note.id
+        if (note.type == NoteType.TYPE_CHECKLIST && noteId != null) {
+            config.removeOwnSorting(noteId)
+        }
     }
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
@@ -1552,7 +1557,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun displaySortChecklistDialog() {
-        SortChecklistDialog(this) {
+        SortChecklistDialog(this, mCurrentNote.id) {
             getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
         }
