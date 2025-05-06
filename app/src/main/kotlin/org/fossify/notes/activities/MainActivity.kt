@@ -184,12 +184,12 @@ class MainActivity : SimpleActivity() {
 
         binding.mainToolbar.menu.apply {
             findItem(R.id.undo).apply {
-                isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT
+                isVisible = showUndoButton && !mCurrentNote.isReadOnly && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
             findItem(R.id.redo).apply {
-                isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT
+                isVisible = showRedoButton && !mCurrentNote.isReadOnly && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 

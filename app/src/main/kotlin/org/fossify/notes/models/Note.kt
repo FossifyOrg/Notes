@@ -26,7 +26,7 @@ data class Note(
     @ColumnInfo(name = "path") var path: String,
     @ColumnInfo(name = "protection_type") var protectionType: Int,
     @ColumnInfo(name = "protection_hash") var protectionHash: String,
-    @ColumnInfo(name = "is_read_only") var isReadOnly: Boolean = false,
+    @ColumnInfo(name = "is_read_only") var isReadOnly: Boolean = false
 ) {
 
     fun getNoteStoredValue(context: Context): String? {

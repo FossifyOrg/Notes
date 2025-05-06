@@ -369,7 +369,7 @@ class TextFragment : NoteFragment() {
             }
             isLongClickable = true
             setTextIsSelectable(true)
-            saveText(force = false)
+            saveText(force = true)
         }
     }
 }
