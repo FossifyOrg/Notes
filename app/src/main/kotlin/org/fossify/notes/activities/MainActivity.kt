@@ -284,10 +284,8 @@ class MainActivity : SimpleActivity() {
             saveNoteButton!!.isVisible =
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
 
-            findItem(R.id.preview_mode).isVisible =
-                (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
-            findItem(R.id.edit_mode).isVisible =
-                (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
+            findItem(R.id.preview_mode).isVisible = (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
+            findItem(R.id.edit_mode).isVisible = (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
         }
 
         binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
