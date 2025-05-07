@@ -77,4 +77,5 @@
     <string name="this_note_is_linked">Tato poznámka je propojená s místním souborem.</string>
     <string name="allow_alarm_automatic_backups">Pro automatické zálohování poznámek prosím udělte aplikaci oprávnění k plánování přesných budíků.</string>
     <string name="num_checked_items">%d zaškrtnutých položek</string>
+    <string name="use_for_this_checklist">Použít pouze pro tento seznam</string>
 </resources>
