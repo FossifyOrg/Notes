@@ -29,7 +29,6 @@ import org.fossify.commons.helpers.NavigationIcon
 import org.fossify.commons.helpers.PROTECTION_FINGERPRINT
 import org.fossify.commons.helpers.SHOW_ALL_TABS
 import org.fossify.commons.helpers.ensureBackgroundThread
-import org.fossify.commons.helpers.isOreoPlus
 import org.fossify.commons.helpers.isQPlus
 import org.fossify.commons.helpers.isRPlus
 import org.fossify.commons.helpers.isSPlus
@@ -372,7 +371,6 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupIncognitoMode() {
-        binding.settingsUseIncognitoModeHolder.beVisibleIf(isOreoPlus())
         binding.settingsUseIncognitoMode.isChecked = config.useIncognitoMode
         binding.settingsUseIncognitoModeHolder.setOnClickListener {
             binding.settingsUseIncognitoMode.toggle()
