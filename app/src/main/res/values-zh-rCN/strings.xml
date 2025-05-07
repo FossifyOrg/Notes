@@ -28,7 +28,7 @@
     <string name="show_content">显示内容</string>
     <string name="locking_warning">警告：如果您忘记了笔记的密码，您将无法恢复或访问笔记的内容。</string>
     <string name="new_text_note">新建文本笔记</string>
-    <string name="new_checklist">新建清单</string>
+    <string name="new_checklist">新建核对清单</string>
     <string name="cannot_load_over_internet">此应用无法通过互联网加载文件</string>
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>
@@ -58,14 +58,14 @@
     <string name="autosave_notes">自动保存笔记</string>
     <string name="enable_line_wrap">自动换行</string>
     <string name="use_incognito_mode">使用隐私模式键盘</string>
-    <string name="move_done_checklist_items">将标记为完成的项目移至底部</string>
-    <string name="add_new_checklist_items_top">在顶部添加新清单项</string>
-    <string name="checklist">清单</string>
-    <string name="checklists">清单</string>
-    <string name="add_new_checklist_item">添加一个新的清单项目</string>
-    <string name="add_new_checklist_items">添加新的清单项目</string>
-    <string name="checklist_is_empty">清单为空</string>
-    <string name="delete_checked_items">删除完成的项目</string>
+    <string name="move_done_checklist_items">将已勾选项移至底部</string>
+    <string name="add_new_checklist_items_top">在顶部添加新的核对清单项</string>
+    <string name="checklist">核对清单</string>
+    <string name="checklists">核对清单</string>
+    <string name="add_new_checklist_item">添加一个新的核对清单项</string>
+    <string name="add_new_checklist_items">添加新的核对清单项</string>
+    <string name="checklist_is_empty">核对清单为空</string>
+    <string name="delete_checked_items">删除已勾选项</string>
     <string name="import_folder">导入文件夹</string>
     <string name="export_notes">导出笔记</string>
     <string name="import_notes">导入笔记</string>
@@ -77,4 +77,5 @@
     <string name="this_note_is_linked">此笔记和一个本地文件关联。</string>
     <string name="allow_alarm_automatic_backups">要自动备份笔记，请授予应用设置精确闹钟的权限。</string>
     <string name="num_checked_items">%d 个勾选的条目</string>
+    <string name="use_for_this_checklist">仅用于此核对清单</string>
 </resources>
