@@ -5,15 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.2.0] - 2025-05-07
+
+### Added
+
+- Support for per-note sorting ([#81])
 
 ### Changed
 
-- Replaced checkboxes with switches (https://github.com/orgs/FossifyOrg/discussions/78)
+- Replaced checkboxes in settings with switches
+- Moved "Move checked items to the bottom" sort option to app settings
+- Updated translations
 
 ### Fixed
 
-- Security label color in settings
+- Multiline pastes are now correctly reflected in the UI ([#99])
+- Fixed sorting in widgets and Open Notes dialog ([#83], [#110])
+- Corrected security label color in settings
+
+### Removed
+
+- Dropped support for Android 7 and older versions
 
 ## [1.1.1] - 2025-03-18
 
@@ -43,7 +55,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.1.1...HEAD
+[Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/FossifyOrg/Notes/compare/1.1.1...1.2.0
 [1.1.1]: https://github.com/FossifyOrg/Notes/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/FossifyOrg/Notes/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/FossifyOrg/Notes/releases/tag/1.0.0
+
+[#81]: https://github.com/FossifyOrg/Notes/issues/81
+[#83]: https://github.com/FossifyOrg/Notes/issues/83
+[#99]: https://github.com/FossifyOrg/Notes/issues/99
+[#110]: https://github.com/FossifyOrg/Notes/issues/110
