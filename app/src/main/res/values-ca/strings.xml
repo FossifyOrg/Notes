@@ -81,4 +81,5 @@
         <item quantity="many">%d elements marcats</item>
         <item quantity="other">%d elements marcats</item>
     </plurals>
+    <string name="use_for_this_checklist">Fes servir només en aquesta llista de comprovació</string>
 </resources>
