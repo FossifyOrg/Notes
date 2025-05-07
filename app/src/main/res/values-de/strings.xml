@@ -80,4 +80,5 @@
         <item quantity="one">%d erledigter Eintrag</item>
         <item quantity="other">%d erledigte Einträge</item>
     </plurals>
+    <string name="use_for_this_checklist">Nur für diese Checkliste verwenden</string>
 </resources>
