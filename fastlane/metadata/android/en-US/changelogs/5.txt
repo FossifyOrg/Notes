@@ -1,0 +1,19 @@
+Added:
+
+• Support for per-note sorting
+
+Changed:
+
+• Replaced checkboxes in settings with switches
+• Moved "Move checked items to the bottom" sort option to app settings
+• Updated translations
+
+Fixed:
+
+• Multiline pastes are now correctly reflected in the UI
+• Fixed sorting in widgets and Open Notes dialog
+• Corrected security label color in settings
+
+Removed:
+
+• Dropped support for Android 7 and older versions
