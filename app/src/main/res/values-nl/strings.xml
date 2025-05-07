@@ -79,4 +79,5 @@
         <item quantity="one">%d geselecteerd item</item>
         <item quantity="other">%d geselecteerde items</item>
     </plurals>
+    <string name="use_for_this_checklist">Alleen voor deze lijst</string>
 </resources>
