@@ -55,7 +55,7 @@
     <string name="autosave_notes">Autogem noter</string>
     <string name="enable_line_wrap">Aktiver tekstombrydning</string>
     <string name="use_incognito_mode">Anvend inkognito-tilstand til tastatur</string>
-    <string name="move_done_checklist_items">Flyt udførte tjeklistepunkter til bunden</string>
+    <string name="move_done_checklist_items">Flyt afkrydsede elementer til bunden</string>
     <string name="add_new_checklist_items_top">Tilføj nye tjeklistepunkter øverst</string>
     <string name="checklist">Tjekliste</string>
     <string name="checklists">Tjeklister</string>
@@ -73,4 +73,12 @@
     <string name="widget_config">Tak, fordi du bruger Fossify Notes.
 \nFor flere apps fra Fossify, kan du besøge fossify.org.</string>
     <string name="cannot_load_over_internet">Appen kan ikke indlæse filer over internettet</string>
+    <string name="this_note_is_linked">Denne note er knyttet til en lokal fil.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d afkrydset element</item>
+        <item quantity="other">%d afkrydsede elementer</item>
+    </plurals>
+    <string name="use_for_this_checklist">Brug kun til denne tjekliste</string>
+    <string name="allow_alarm_automatic_backups">For at sikkerhedskopiere noter automatisk skal du give appen tilladelse til at planlægge nøjagtige alarmer.</string>
+    <string name="password_protect_note_deletion">Adgangskodebeskyttet notesletning</string>
 </resources>
