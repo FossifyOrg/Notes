@@ -80,4 +80,5 @@
     <string name="this_note_is_linked">Den här anteckningen är länkad till en lokal fil.</string>
     <string name="password_protect_note_deletion">Lösenordsskydda borttagning av anteckningar</string>
     <string name="allow_alarm_automatic_backups">Ge appen behörighet att schemalägga exakta alarm om du vill säkerhetskopiera anteckningar automatiskt.</string>
+    <string name="use_for_this_checklist">Använd denna endast för checklistor</string>
 </resources>
