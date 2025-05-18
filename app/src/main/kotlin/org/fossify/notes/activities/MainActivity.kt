@@ -84,7 +84,6 @@ import org.fossify.commons.helpers.PROTECTION_NONE
 import org.fossify.commons.helpers.REAL_FILE_PATH
 import org.fossify.commons.helpers.SHOW_ALL_TABS
 import org.fossify.commons.helpers.ensureBackgroundThread
-import org.fossify.commons.helpers.isNougatMR1Plus
 import org.fossify.commons.helpers.isQPlus
 import org.fossify.commons.models.FAQItem
 import org.fossify.commons.models.FileDirItem
@@ -407,7 +406,7 @@ class MainActivity : SimpleActivity() {
     @SuppressLint("NewApi")
     private fun checkShortcuts() {
         val appIconColor = config.appIconColor
-        if (isNougatMR1Plus() && config.lastHandledShortcutColor != appIconColor) {
+        if (config.lastHandledShortcutColor != appIconColor) {
             val newTextNote = getNewTextNoteShortcut(appIconColor)
             val newChecklist = getNewChecklistShortcut(appIconColor)
 
@@ -1359,6 +1358,11 @@ class MainActivity : SimpleActivity() {
                 doDeleteNote(mCurrentNote, deleteFile)
             }
         }
+
+        val noteId = note.id
+        if (note.type == NoteType.TYPE_CHECKLIST && noteId != null) {
+            config.removeOwnSorting(noteId)
+        }
     }
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
@@ -1562,7 +1566,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun displaySortChecklistDialog() {
-        SortChecklistDialog(this) {
+        SortChecklistDialog(this, mCurrentNote.id) {
             getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
         }

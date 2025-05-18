@@ -139,7 +139,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     }
 
     private fun showNewItemDialog() {
-        NewChecklistItemDialog(activity as SimpleActivity) { titles ->
+        NewChecklistItemDialog(activity as SimpleActivity, noteId) { titles ->
             var currentMaxId = tasks.maxByOrNull { item -> item.id }?.id ?: 0
             val newItems = ArrayList<Task>()
 
@@ -201,7 +201,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
 
     private fun setupAdapter() {
         updateUIVisibility()
-        Task.sorting = requireContext().config.sorting
+        Task.sorting = requireContext().config.getSorting(noteId)
         if (Task.sorting and SORT_BY_CUSTOM == 0) {
             tasks.sort()
         }
@@ -282,7 +282,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     }
 
     override fun moveTask(fromPosition: Int, toPosition: Int) {
-        activity?.config?.sorting = SORT_BY_CUSTOM
+        switchToCustomSorting()
         if (fromPosition < toPosition) {
             for (i in fromPosition until toPosition) {
                 tasks.swap(i, i + 1)
@@ -297,12 +297,16 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         setupAdapter()
     }
 
-    override fun moveTasksToTop(taskIds: List<Int>) = moveTasks(taskIds.reversed(), targetPosition = 0)
+    override fun moveTasksToTop(taskIds: List<Int>) {
+        moveTasks(taskIds.reversed(), targetPosition = 0)
+    }
 
-    override fun moveTasksToBottom(taskIds: List<Int>) = moveTasks(taskIds, targetPosition = tasks.lastIndex)
+    override fun moveTasksToBottom(taskIds: List<Int>) {
+        moveTasks(taskIds, targetPosition = tasks.lastIndex)
+    }
 
     private fun moveTasks(taskIds: List<Int>, targetPosition: Int) {
-        activity?.config?.sorting = SORT_BY_CUSTOM
+        switchToCustomSorting()
         taskIds.forEach { id ->
             val position = tasks.indexOfFirst { it.id == id }
             if (position != -1) {
@@ -316,6 +320,15 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     override fun saveAndReload() {
         saveNote {
             loadNoteById(noteId)
+        }
+    }
+
+    private fun switchToCustomSorting() {
+        val config = activity?.config ?: return
+        if (config.hasOwnSorting(noteId) == true) {
+            config.saveOwnSorting(noteId, SORT_BY_CUSTOM)
+        } else {
+            config.sorting = SORT_BY_CUSTOM
         }
     }
 

@@ -29,7 +29,6 @@ import org.fossify.commons.helpers.NavigationIcon
 import org.fossify.commons.helpers.PROTECTION_FINGERPRINT
 import org.fossify.commons.helpers.SHOW_ALL_TABS
 import org.fossify.commons.helpers.ensureBackgroundThread
-import org.fossify.commons.helpers.isOreoPlus
 import org.fossify.commons.helpers.isQPlus
 import org.fossify.commons.helpers.isRPlus
 import org.fossify.commons.helpers.isSPlus
@@ -111,6 +110,7 @@ class SettingsActivity : SimpleActivity() {
         setupMonospacedFont()
         setupShowKeyboard()
         setupShowNotePicker()
+        setupMoveUndoneChecklistItems()
         setupShowWordCount()
         setupEnableLineWrap()
         setupFontSize()
@@ -132,6 +132,7 @@ class SettingsActivity : SimpleActivity() {
             binding.settingsTextLabel,
             binding.settingsStartupLabel,
             binding.settingsSavingLabel,
+            binding.settingsSecurityLabel,
             binding.settingsMigratingLabel,
             binding.settingsBackupsLabel,
         ).forEach {
@@ -244,6 +245,14 @@ class SettingsActivity : SimpleActivity() {
         binding.settingsShowNotePickerHolder.setOnClickListener {
             binding.settingsShowNotePicker.toggle()
             config.showNotePicker = binding.settingsShowNotePicker.isChecked
+        }
+    }
+
+    private fun setupMoveUndoneChecklistItems() {
+        binding.settingsMoveUndoneChecklistItems.isChecked = config.moveDoneChecklistItems
+        binding.settingsMoveUndoneChecklistItemsHolder.setOnClickListener {
+            binding.settingsMoveUndoneChecklistItems.toggle()
+            config.moveDoneChecklistItems = binding.settingsMoveUndoneChecklistItems.isChecked
         }
     }
 
@@ -362,7 +371,6 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupIncognitoMode() {
-        binding.settingsUseIncognitoModeHolder.beVisibleIf(isOreoPlus())
         binding.settingsUseIncognitoMode.isChecked = config.useIncognitoMode
         binding.settingsUseIncognitoModeHolder.setOnClickListener {
             binding.settingsUseIncognitoMode.toggle()

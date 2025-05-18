@@ -14,7 +14,6 @@ import org.fossify.commons.adapters.MyRecyclerViewAdapter
 import org.fossify.commons.extensions.*
 import org.fossify.commons.helpers.LOWER_ALPHA_INT
 import org.fossify.commons.helpers.SORT_BY_CUSTOM
-import org.fossify.commons.helpers.isOreoPlus
 import org.fossify.commons.views.MyRecyclerView
 import org.fossify.notes.R
 import org.fossify.notes.databinding.OpenNoteItemBinding
@@ -82,16 +81,10 @@ class OpenNoteAdapter(
             openNoteItemIcon.apply {
                 beVisibleIf(note.path.isNotEmpty())
                 applyColorFilter(textColor)
-                if (isOreoPlus()) {
-                    tooltipText = context.getString(R.string.this_note_is_linked)
-                }
+                tooltipText = context.getString(R.string.this_note_is_linked)
 
                 setOnClickListener {
-                    if (isOreoPlus()) {
-                        performLongClick()
-                    } else {
-                        activity.toast(R.string.this_note_is_linked)
-                    }
+                    performLongClick()
                 }
             }
         }
@@ -125,19 +118,16 @@ class OpenNoteAdapter(
                 val taskType = object : TypeToken<List<Task>>() {}.type
                 var items = Gson().fromJson<List<Task>>(getNoteStoredValue(context), taskType) ?: listOf()
                 items = items.let {
-                    val sorting = context.config.sorting
+                    val sorting = context.config.getSorting(id)
                     Task.sorting = sorting
+                    var result = it
                     if (Task.sorting and SORT_BY_CUSTOM == 0) {
-                        it.sorted().let {
-                            if (context.config.moveDoneChecklistItems) {
-                                it.sortedBy { it.isDone }
-                            } else {
-                                it
-                            }
-                        }
-                    } else {
-                        it
+                        result = result.sorted()
                     }
+                    if (context.config.moveDoneChecklistItems) {
+                        result = result.sortedBy { it.isDone }
+                    }
+                    result
                 }
 
                 val linePrefix = "• "

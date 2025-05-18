@@ -98,8 +98,10 @@ class TasksAdapter(
         }
 
         menu.findItem(R.id.cab_rename).isVisible = isOneItemSelected()
-        menu.findItem(R.id.cab_move_to_top).isVisible = selectedItems.none { it.isDone } || !activity.config.moveDoneChecklistItems
-        menu.findItem(R.id.cab_move_to_bottom).isVisible = selectedItems.none { it.isDone } || !activity.config.moveDoneChecklistItems
+        menu.findItem(R.id.cab_move_to_top).isVisible = selectedItems.none { it.isDone }
+            || !activity.config.moveDoneChecklistItems
+        menu.findItem(R.id.cab_move_to_bottom).isVisible = selectedItems.none { it.isDone }
+            || !activity.config.moveDoneChecklistItems
     }
 
     override fun getItemViewType(position: Int): Int {

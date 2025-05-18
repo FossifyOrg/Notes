@@ -56,7 +56,7 @@
     <string name="autosave_notes">Salvar notas automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
     <string name="use_incognito_mode">Usar o teclado no modo de Navegação Anônima</string>
-    <string name="move_done_checklist_items">Mover itens completos da lista de verificação para o final</string>
+    <string name="move_done_checklist_items">Mover os itens marcados para o final</string>
     <string name="add_new_checklist_items_top">Adicionar novos itens da lista de verificação na parte superior</string>
     <string name="checklist">Lista de verificação</string>
     <string name="checklists">Listas de verificação</string>
@@ -76,4 +76,9 @@
     <string name="password_protect_note_deletion">Proteger a eliminação de notas com senha</string>
     <string name="this_note_is_linked">Essa nota é conectada a um arquivo local.</string>
     <string name="allow_alarm_automatic_backups">Para fazer backup das notas automaticamente, conceda a permissão do app para agendar alarmes exatos.</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d item verificado</item>
+        <item quantity="many">%d itens verificados</item>
+        <item quantity="other">%d itens verificados</item>
+    </plurals>
 </resources>
