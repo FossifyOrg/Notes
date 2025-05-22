@@ -1,16 +1,16 @@
 [versions]
 #jetbrains
-kotlin = "1.9.25"
+kotlin = "2.1.21"
 #KSP
-kotlinxSerializationJson = "1.6.3"
-ksp = "1.9.25-1.0.20"
+kotlinxSerializationJson = "1.8.1"
+ksp = "2.1.21-2.0.1"
 #Detekt
-detekt = "1.23.3"
+detekt = "1.23.8"
 #AndroidX
 androidx-constraintlayout = "2.2.1"
 androidx-documentfile = "1.0.1"
 #Room
-room = "2.6.1"
+room = "2.7.1"
 #Fossify
 commons = "2.0.0"
 #Gradle
