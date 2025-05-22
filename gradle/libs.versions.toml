@@ -2,7 +2,7 @@
 #jetbrains
 kotlin = "2.1.21"
 #KSP
-kotlinxSerializationJson = "1.6.3"
+kotlinxSerializationJson = "1.8.1"
 ksp = "2.1.21-2.0.1"
 #Detekt
 detekt = "1.23.8"
