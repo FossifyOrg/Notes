@@ -8,7 +8,7 @@ ksp = "2.1.21-2.0.1"
 detekt = "1.23.8"
 #AndroidX
 androidx-constraintlayout = "2.2.1"
-androidx-documentfile = "1.0.1"
+androidx-documentfile = "1.1.0"
 #Room
 room = "2.7.1"
 #Fossify
