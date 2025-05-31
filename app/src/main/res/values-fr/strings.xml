@@ -81,4 +81,5 @@
     <string name="password_protect_note_deletion">La suppression des notes est protégée par un mot de passe</string>
     <string name="allow_alarm_automatic_backups">Pour sauvegarder automatiquement les notes, veuillez autoriser l\'application à programmer des alarmes précises.</string>
     <string name="this_note_is_linked">Cette note est liée à un fichier local.</string>
+    <string name="use_for_this_checklist">Utiliser seulement pour cette liste de contrôles</string>
 </resources>
