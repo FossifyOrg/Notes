@@ -79,4 +79,5 @@
     <string name="add_to_the_top">新增至頂部</string>
     <string name="import_notes">匯入筆記</string>
     <string name="import_notes_pro">匯入簡易筆記 Pro</string>
+    <string name="use_for_this_checklist">僅用於此待辦事項清單</string>
 </resources>

@@ -77,4 +77,5 @@
     <string name="this_note_is_linked">Эта заметка связана с локальным файлом.</string>
     <string name="allow_alarm_automatic_backups">Для автоматического резервного копирования заметок предоставьте приложению разрешение на установку будильников.</string>
     <string name="num_checked_items">Выполненных позиций: %d</string>
+    <string name="use_for_this_checklist">Только для этого списка</string>
 </resources>
