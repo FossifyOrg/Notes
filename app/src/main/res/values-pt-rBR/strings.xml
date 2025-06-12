@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_launcher_name">Fossify - Notas</string>
+    <string name="app_launcher_name">Notas</string>
     <string name="cannot_share_empty_text">Não é possível compartilhar textos vazios</string>
     <string name="new_note">Adicionar uma nota</string>
     <string name="no_title">Por favor, dê um nome à sua nota</string>
