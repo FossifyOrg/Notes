@@ -213,6 +213,7 @@ class MainActivity : SimpleActivity() {
             }
         }
 
+        applyReadOnlyStateToCurrentNote()
         refreshMenuItems()
         binding.pagerTabStrip.apply {
             val textSize = getPercentageFontSize()
@@ -255,12 +256,12 @@ class MainActivity : SimpleActivity() {
 
         binding.mainToolbar.menu.apply {
             findItem(R.id.undo).apply {
-                isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT
+                isVisible = showUndoButton && !mCurrentNote.isReadOnly && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
             findItem(R.id.redo).apply {
-                isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT
+                isVisible = showRedoButton && !mCurrentNote.isReadOnly && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
@@ -281,6 +282,9 @@ class MainActivity : SimpleActivity() {
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
+
+            findItem(R.id.preview_mode).isVisible = (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
+            findItem(R.id.edit_mode).isVisible = (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly && mCurrentNote.type != NoteType.TYPE_CHECKLIST)
         }
 
         binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
@@ -307,6 +311,8 @@ class MainActivity : SimpleActivity() {
                 R.id.cab_create_shortcut -> createShortcut()
                 R.id.lock_note -> lockNote()
                 R.id.unlock_note -> unlockNote()
+                R.id.preview_mode -> toggleReadOnly()
+                R.id.edit_mode -> toggleReadOnly()
                 R.id.open_file -> tryOpenFile()
                 R.id.import_folder -> openFolder()
                 R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
@@ -564,6 +570,7 @@ class MainActivity : SimpleActivity() {
                 onPageChangeListener {
                     mCurrentNote = mNotes[it]
                     config.currentNoteId = mCurrentNote.id!!
+                    applyReadOnlyStateToCurrentNote()
                     refreshMenuItems()
                 }
             }
@@ -571,6 +578,7 @@ class MainActivity : SimpleActivity() {
             if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
                 hideKeyboard()
             }
+            applyReadOnlyStateToCurrentNote()
             refreshMenuItems()
         }
     }
@@ -723,6 +731,7 @@ class MainActivity : SimpleActivity() {
             val index = getNoteIndexWithId(id)
             binding.viewPager.currentItem = index
             mCurrentNote = mNotes[index]
+            applyReadOnlyStateToCurrentNote()
         }
     }
 
@@ -747,6 +756,7 @@ class MainActivity : SimpleActivity() {
             showRedoButton = false
             initViewPager(newNoteId)
             updateSelectedNote(newNoteId)
+            applyReadOnlyStateToCurrentNote()
             binding.viewPager.onGlobalLayout {
                 mAdapter?.focusEditText(getNoteIndexWithId(newNoteId))
             }
@@ -1559,6 +1569,22 @@ class MainActivity : SimpleActivity() {
         SortChecklistDialog(this, mCurrentNote.id) {
             getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
+        }
+    }
+
+    private fun applyReadOnlyStateToCurrentNote() {
+        getCurrentFragment()?.let { fragment ->
+            if (fragment is TextFragment) {
+                fragment.updateReadOnlyState(mCurrentNote.isReadOnly)
+            }
+        }
+    }
+
+    private fun toggleReadOnly() {
+        mCurrentNote.isReadOnly = !mCurrentNote.isReadOnly
+        NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+            applyReadOnlyStateToCurrentNote()
+            refreshMenuItems()
         }
     }
 }
