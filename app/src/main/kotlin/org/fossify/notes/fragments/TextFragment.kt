@@ -10,6 +10,7 @@ import android.text.TextWatcher
 import android.text.method.KeyListener
 import android.text.style.UnderlineSpan
 import android.text.util.Linkify
+import android.text.InputType
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -22,6 +23,7 @@ import android.widget.TextView
 import androidx.viewbinding.ViewBinding
 import org.fossify.commons.extensions.*
 import org.fossify.commons.views.MyEditText
+import org.fossify.commons.extensions.hideKeyboard
 import org.fossify.notes.R
 import org.fossify.notes.activities.MainActivity
 import org.fossify.notes.databinding.FragmentTextBinding
@@ -361,14 +363,16 @@ class TextFragment : NoteFragment() {
 
     fun updateReadOnlyState(isReadOnly: Boolean) {
         noteEditText.apply {
+            val baseInputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
             if (isReadOnly == true) {
+                inputType = baseInputType or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
                 keyListener = null
+                requireActivity().hideKeyboard(this)
             }
             if (isReadOnly == false) {
+                inputType = baseInputType
                 keyListener = initialKeyListener
             }
-            isLongClickable = true
-            setTextIsSelectable(true)
             saveText(force = true)
         }
     }
