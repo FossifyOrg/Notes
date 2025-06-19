@@ -373,6 +373,8 @@ class TextFragment : NoteFragment() {
                 inputType = baseInputType
                 keyListener = initialKeyListener
             }
+            isLongClickable = true
+            setTextIsSelectable(true)
             saveText(force = true)
         }
     }
