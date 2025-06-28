@@ -80,4 +80,5 @@
         <item quantity="one">%d kész elem</item>
         <item quantity="other">%d kész elemek</item>
     </plurals>
+    <string name="use_for_this_checklist">Csak ehhez az ellenőrző listához használja</string>
 </resources>
