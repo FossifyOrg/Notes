@@ -11,14 +11,11 @@
     <ID>EmptyFunctionBlock:TasksAdapter.kt$TasksAdapter${}</ID>
     <ID>EmptyFunctionBlock:WidgetAdapter.kt$WidgetAdapter${}</ID>
     <ID>LargeClass:MainActivity.kt$MainActivity : SimpleActivity</ID>
-    <ID>LongMethod:Context.kt$fun Context.backupNotes()</ID>
     <ID>MagicNumber:AutomaticBackupReceiver.kt$AutomaticBackupReceiver$3000</ID>
     <ID>MagicNumber:Config.kt$Config$100</ID>
     <ID>MagicNumber:Constants.kt$6</ID>
     <ID>MagicNumber:Context.kt$100f</ID>
-    <ID>MagicNumber:ImportFolderDialog.kt$ImportFolderDialog$1000</ID>
     <ID>MagicNumber:MainActivity.kt$MainActivity$0.4f</ID>
-    <ID>MagicNumber:MainActivity.kt$MainActivity$1000</ID>
     <ID>MagicNumber:MainActivity.kt$MainActivity$127</ID>
     <ID>MagicNumber:MainActivity.kt$MainActivity$250</ID>
     <ID>MagicNumber:MainActivity.kt$MainActivity$255</ID>
