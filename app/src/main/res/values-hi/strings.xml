@@ -80,4 +80,5 @@
         <item quantity="one">%d चेक किया गया आइटम</item>
         <item quantity="other">%d चेक किए गए आइटम</item>
     </plurals>
+    <string name="use_for_this_checklist">केवल इस चेकलिस्ट के लिए उपयोग करें</string>
 </resources>
