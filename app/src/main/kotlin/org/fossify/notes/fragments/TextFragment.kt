@@ -27,6 +27,7 @@ import org.fossify.notes.databinding.FragmentTextBinding
 import org.fossify.notes.databinding.NoteViewHorizScrollableBinding
 import org.fossify.notes.databinding.NoteViewStaticBinding
 import org.fossify.notes.extensions.config
+import org.fossify.notes.extensions.enforcePlainText
 import org.fossify.notes.extensions.getPercentageFontSize
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.MyMovementMethod
@@ -67,6 +68,8 @@ class TextFragment : NoteFragment() {
                 noteEditText = textNoteView
             }
         }
+
+        noteEditText.enforcePlainText()
         if (config!!.clickableLinks) {
             noteEditText.apply {
                 linksClickable = true
