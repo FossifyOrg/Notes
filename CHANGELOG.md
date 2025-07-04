@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated translations
 
+### Fixed
+
+- Fixed keyboard hiding cursor on long notes ([#164])
+
 ## [1.2.0] - 2025-05-07
 
 ### Added
@@ -71,3 +75,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#83]: https://github.com/FossifyOrg/Notes/issues/83
 [#99]: https://github.com/FossifyOrg/Notes/issues/99
 [#110]: https://github.com/FossifyOrg/Notes/issues/110
+[#164]: https://github.com/FossifyOrg/Notes/issues/164
