@@ -7,8 +7,10 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.Selection
 import android.text.TextWatcher
+import android.text.method.KeyListener
 import android.text.style.UnderlineSpan
 import android.text.util.Linkify
+import android.text.InputType
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -21,6 +23,7 @@ import android.widget.TextView
 import androidx.viewbinding.ViewBinding
 import org.fossify.commons.extensions.*
 import org.fossify.commons.views.MyEditText
+import org.fossify.commons.extensions.hideKeyboard
 import org.fossify.notes.R
 import org.fossify.notes.activities.MainActivity
 import org.fossify.notes.databinding.FragmentTextBinding
@@ -47,6 +50,7 @@ class TextFragment : NoteFragment() {
     private var noteId = 0L
     private var touchDownX = 0f
     private var moveXThreshold = 0      // make sure swiping across notes works well, do not swallow the gestures
+    private var initialKeyListener: KeyListener? = null
 
     private lateinit var binding: FragmentTextBinding
     private lateinit var innerBinding: ViewBinding
@@ -81,17 +85,17 @@ class TextFragment : NoteFragment() {
                 casted.textNoteView.minWidth = casted.notesHorizontalScrollview.width
             }
         }
-
+        initialKeyListener = noteEditText.keyListener
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
-
         NotesHelper(requireActivity()).getNoteWithId(noteId) {
             if (it != null) {
                 note = it
                 setupFragment()
+                updateReadOnlyState(note!!.isReadOnly)
             }
         }
     }
@@ -123,6 +127,7 @@ class TextFragment : NoteFragment() {
         super.onSaveInstanceState(outState)
         if (note != null) {
             outState.putString(TEXT, getCurrentNoteViewText())
+            outState.putBoolean("isReadOnly", note!!.isReadOnly)
         }
     }
 
@@ -132,6 +137,8 @@ class TextFragment : NoteFragment() {
             skipTextUpdating = true
             val newText = savedInstanceState.getString(TEXT) ?: ""
             innerBinding.root.findViewById<TextView>(R.id.text_note_view).text = newText
+            note!!.isReadOnly = savedInstanceState.getBoolean("isReadOnly")
+            updateReadOnlyState(note!!.isReadOnly)
         }
     }
 
@@ -178,6 +185,7 @@ class TextFragment : NoteFragment() {
             } else {
                 imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
             }
+            updateReadOnlyState(note!!.isReadOnly)
         }
 
         noteEditText.setOnTouchListener { v, event ->
@@ -198,6 +206,7 @@ class TextFragment : NoteFragment() {
             setWordCounter(noteEditText.text.toString())
         }
 
+        updateReadOnlyState(note!!.isReadOnly)
         checkLockState()
         setTextWatcher()
     }
@@ -349,6 +358,24 @@ class TextFragment : NoteFragment() {
             override val noteLockedImage: ImageView = it.noteLockedImage
             override val noteLockedLabel: TextView = it.noteLockedLabel
             override val noteLockedShow: TextView = it.noteLockedShow
+        }
+    }
+
+    fun updateReadOnlyState(isReadOnly: Boolean) {
+        noteEditText.apply {
+            val baseInputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
+            if (isReadOnly == true) {
+                inputType = baseInputType or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
+                keyListener = null
+                requireActivity().hideKeyboard(this)
+            }
+            if (isReadOnly == false) {
+                inputType = baseInputType
+                keyListener = initialKeyListener
+            }
+            isLongClickable = true
+            setTextIsSelectable(true)
+            saveText(force = true)
         }
     }
 }

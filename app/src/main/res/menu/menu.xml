@@ -22,6 +22,16 @@
         android:title="@string/create_new_note"
         app:showAsAction="always" />
     <item
+        android:id="@+id/preview_mode"
+        android:icon="@drawable/ic_visibility_vector"
+        android:title="@string/preview_mode"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/edit_mode"
+        android:icon="@drawable/ic_edit_vector"
+        android:title="@string/edit_mode"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/undo"
         android:icon="@drawable/ic_undo_vector"
         android:title="@string/undo"
