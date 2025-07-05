@@ -266,7 +266,6 @@ class MainActivity : SimpleActivity() {
 
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
-            findItem(R.id.delete_note).isVisible = multipleNotesExist
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
             findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
@@ -1337,7 +1336,7 @@ class MainActivity : SimpleActivity() {
     }
 
     fun deleteNote(deleteFile: Boolean, note: Note) {
-        if (mNotes.size <= 1 || note != mCurrentNote) {
+        if (mNotes.isEmpty() || note != mCurrentNote) {
             return
         }
 
@@ -1358,22 +1357,33 @@ class MainActivity : SimpleActivity() {
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
         ensureBackgroundThread {
             val currentNoteIndex = mNotes.indexOf(note)
-            val noteToRefresh =
+
+            val noteToRefresh = if (mNotes.size == 1) {
+                 null
+            } else {
                 mNotes[if (currentNoteIndex > 0) currentNoteIndex - 1 else currentNoteIndex + 1]
+            }
 
             notesDB.deleteNote(note)
             widgetsDB.deleteNoteWidgets(note.id!!)
+
+            NotesHelper(this).getNotes {
+                mNotes = it
+                showSaveButton = false
+                initViewPager()
+            }
 
             refreshNotes(noteToRefresh, deleteFile)
         }
     }
 
-    private fun refreshNotes(note: Note, deleteFile: Boolean) {
+    private fun refreshNotes(note: Note?, deleteFile: Boolean) {
         NotesHelper(this).getNotes {
             mNotes = it
-            val noteId = note.id
+            val currentNote = note ?: mNotes[0]
+            val noteId = currentNote.id
             updateSelectedNote(noteId!!)
-            if (config.widgetNoteId == note.id) {
+            if (config.widgetNoteId == currentNote.id) {
                 config.widgetNoteId = mCurrentNote.id!!
                 updateWidgets()
             }
@@ -1381,7 +1391,7 @@ class MainActivity : SimpleActivity() {
             initViewPager()
 
             if (deleteFile) {
-                deleteFile(FileDirItem(note.path, note.title)) {
+                deleteFile(FileDirItem(currentNote.path, currentNote.title)) {
                     if (!it) {
                         toast(org.fossify.commons.R.string.unknown_error_occurred)
                     }
