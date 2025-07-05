@@ -94,6 +94,15 @@ class NewChecklistItemDialog(
                 titles.add(titleEditText)
                 binding.checklistHolder.addView(this.root)
             }
+
+            if (activity.config.useIncognitoMode == true) {
+                titleEditText.imeOptions =
+                    titleEditText.imeOptions or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
+            } else {
+                titleEditText.imeOptions =
+                    titleEditText.imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
+            }
+
             activity.updateTextColors(binding.checklistHolder)
             binding.dialogHolder.post {
                 binding.dialogHolder.fullScroll(View.FOCUS_DOWN)
