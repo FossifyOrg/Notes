@@ -18,6 +18,9 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsAnimationCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.viewbinding.ViewBinding
 import org.fossify.commons.extensions.*
 import org.fossify.commons.views.MyEditText
@@ -170,15 +173,10 @@ class TextFragment : NoteFragment() {
             if (config.showKeyboard && isMenuVisible && (!note!!.isLocked() || shouldShowLockedContent)) {
                 onGlobalLayout {
                     if (activity?.isDestroyed == false) {
+                        setupKeyboardListener()
                         requestFocus()
                         val inputManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                         inputManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
-
-                        val rect = Rect()
-                        noteEditText.getFocusedRect(rect)
-                        binding.notesScrollview.postDelayed({
-                            binding.notesScrollview.smoothScrollTo(0, rect.bottom)
-                        }, 1000)
                     }
                 }
             }
@@ -205,6 +203,35 @@ class TextFragment : NoteFragment() {
 
         checkLockState()
         setTextWatcher()
+    }
+
+    private fun setupKeyboardListener() {
+        requireActivity().window.decorView.setOnApplyWindowInsetsListener { view, insets ->
+            scrollToEndOfNote()
+            view.onApplyWindowInsets(insets)
+        }
+
+        val callback =
+            object : WindowInsetsAnimationCompat.Callback(DISPATCH_MODE_CONTINUE_ON_SUBTREE) {
+                override fun onPrepare(animation: WindowInsetsAnimationCompat) {
+                    super.onPrepare(animation)
+                    scrollToEndOfNote()
+                }
+
+                override fun onProgress(
+                    insets: WindowInsetsCompat,
+                    runningAnimations: MutableList<WindowInsetsAnimationCompat>,
+                ) = insets
+            }
+        ViewCompat.setWindowInsetsAnimationCallback(requireActivity().window.decorView, callback)
+    }
+
+    private fun scrollToEndOfNote() {
+        val rect = Rect()
+        noteEditText.getFocusedRect(rect)
+        binding.notesScrollview.post {
+            binding.notesScrollview.scrollTo(0, rect.bottom)
+        }
     }
 
     fun setTextWatcher() {
