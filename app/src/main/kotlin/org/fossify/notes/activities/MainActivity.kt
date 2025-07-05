@@ -23,8 +23,6 @@ import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
 import android.view.MenuItem
-import android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
-import android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
 import android.view.inputmethod.EditorInfo
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
@@ -551,7 +549,6 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun initViewPager(wantedNoteId: Long? = null) {
-        window.setSoftInputMode(SOFT_INPUT_STATE_VISIBLE or SOFT_INPUT_ADJUST_PAN)
         NotesHelper(this).getNotes { notes ->
             notes.filter { it.shouldBeUnlocked(this) }
                 .forEach(::removeProtection)

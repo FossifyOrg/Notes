@@ -2,6 +2,7 @@ package org.fossify.notes.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Rect
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Editable
@@ -172,6 +173,12 @@ class TextFragment : NoteFragment() {
                         requestFocus()
                         val inputManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                         inputManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+
+                        val rect = Rect()
+                        noteEditText.getFocusedRect(rect)
+                        binding.notesScrollview.postDelayed({
+                            binding.notesScrollview.smoothScrollTo(0, rect.bottom)
+                        }, 1000)
                     }
                 }
             }
