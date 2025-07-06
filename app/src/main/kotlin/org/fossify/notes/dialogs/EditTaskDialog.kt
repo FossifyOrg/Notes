@@ -4,11 +4,13 @@ import android.app.Activity
 import android.content.DialogInterface.BUTTON_POSITIVE
 import org.fossify.commons.extensions.*
 import org.fossify.notes.databinding.DialogRenameChecklistItemBinding
+import org.fossify.notes.extensions.maybeRequestIncognito
 
 class EditTaskDialog(val activity: Activity, val oldTitle: String, callback: (newTitle: String) -> Unit) {
     init {
         val binding = DialogRenameChecklistItemBinding.inflate(activity.layoutInflater).apply {
             checklistItemTitle.setText(oldTitle)
+            checklistItemTitle.maybeRequestIncognito()
         }
 
         activity.getAlertDialogBuilder()

@@ -14,7 +14,6 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.TextView
@@ -29,6 +28,7 @@ import org.fossify.notes.databinding.NoteViewStaticBinding
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.enforcePlainText
 import org.fossify.notes.extensions.getPercentageFontSize
+import org.fossify.notes.extensions.maybeRequestIncognito
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.MyMovementMethod
 import org.fossify.notes.helpers.NOTE_ID
@@ -175,12 +175,7 @@ class TextFragment : NoteFragment() {
                     }
                 }
             }
-
-            imeOptions = if (config.useIncognitoMode) {
-                imeOptions or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
-            } else {
-                imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
-            }
+            maybeRequestIncognito()
         }
 
         noteEditText.setOnTouchListener { v, event ->
