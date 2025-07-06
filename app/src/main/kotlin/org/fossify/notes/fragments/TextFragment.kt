@@ -206,9 +206,17 @@ class TextFragment : NoteFragment() {
     }
 
     private fun setupKeyboardListener() {
-        requireActivity().window.decorView.setOnApplyWindowInsetsListener { view, insets ->
-            scrollToEndOfNote()
-            view.onApplyWindowInsets(insets)
+        requireActivity().window.decorView.apply {
+            setOnApplyWindowInsetsListener { view, insets ->
+                val windowInsets = WindowInsetsCompat.toWindowInsetsCompat(insets)
+                if (windowInsets.isVisible(WindowInsetsCompat.Type.ime())) {
+                    if (config!!.placeCursorToEnd) {
+                        scrollToEndOfNote()
+                    }
+                    setOnApplyWindowInsetsListener(null) // clear to avoid scrolling every time
+                }
+                view.onApplyWindowInsets(insets)
+            }
         }
     }
 
