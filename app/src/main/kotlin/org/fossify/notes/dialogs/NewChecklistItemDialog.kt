@@ -13,6 +13,7 @@ import org.fossify.notes.R
 import org.fossify.notes.databinding.DialogNewChecklistItemBinding
 import org.fossify.notes.databinding.ItemAddChecklistBinding
 import org.fossify.notes.extensions.config
+import org.fossify.notes.extensions.maybeRequestIncognito
 
 class NewChecklistItemDialog(
     val activity: Activity,
@@ -95,13 +96,7 @@ class NewChecklistItemDialog(
                 binding.checklistHolder.addView(this.root)
             }
 
-            if (activity.config.useIncognitoMode == true) {
-                titleEditText.imeOptions =
-                    titleEditText.imeOptions or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
-            } else {
-                titleEditText.imeOptions =
-                    titleEditText.imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
-            }
+            titleEditText.maybeRequestIncognito()
 
             activity.updateTextColors(binding.checklistHolder)
             binding.dialogHolder.post {
