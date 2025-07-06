@@ -42,7 +42,8 @@ class NotesHelper(val context: Context) {
             if (notes.isEmpty()) {
                 val generalNote = context.resources.getString(R.string.general_note)
                 val note = Note(null, generalNote, "", NoteType.TYPE_TEXT, "", PROTECTION_NONE, "")
-                context.notesDB.insertOrUpdate(note)
+                val insertedId = context.notesDB.insertOrUpdate(note)
+                note.id = insertedId
                 notes.add(note)
             }
 
