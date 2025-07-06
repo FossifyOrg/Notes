@@ -212,20 +212,6 @@ class TextFragment : NoteFragment() {
             scrollToEndOfNote()
             view.onApplyWindowInsets(insets)
         }
-
-        val callback =
-            object : WindowInsetsAnimationCompat.Callback(DISPATCH_MODE_CONTINUE_ON_SUBTREE) {
-                override fun onPrepare(animation: WindowInsetsAnimationCompat) {
-                    super.onPrepare(animation)
-                    scrollToEndOfNote()
-                }
-
-                override fun onProgress(
-                    insets: WindowInsetsCompat,
-                    runningAnimations: MutableList<WindowInsetsAnimationCompat>,
-                ) = insets
-            }
-        ViewCompat.setWindowInsetsAnimationCallback(requireActivity().window.decorView, callback)
     }
 
     private fun scrollToEndOfNote() {
