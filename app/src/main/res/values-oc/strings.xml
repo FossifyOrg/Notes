@@ -1,3 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_launcher_name">Nòtas</string>
+    <string name="cannot_share_empty_text">Se pòt pas partejar un tèxt void</string>
+    <string name="no_title">Mercés de donar un nom a la nòta</string>
+    <string name="open_note">Dobrir una nòta</string>
+    <string name="delete_note">Suprimir la nòta</string>
+    <string name="rename_note">Renomenar la nòta</string>
+    <string name="general_note">Nòta generala</string>
+    <string name="create_new_note">Crear una nòta novèla</string>
+    <string name="add_to_note">Ajustar a la nòta</string>
+    <string name="text_note">Nòta de tèxte</string>
+    <string name="lock_note">Verrolhar la nòta</string>
+    <string name="unlock_note">Desverrolhar la nòta</string>
+    <string name="unlock_notes">Desverrolhar las nòtas</string>
+    <string name="show_content">Mostrar lo contengut</string>
+    <string name="new_checklist">Lista de contraròtle novèla</string>
+    <string name="open_file">Dobrir un fichièr</string>
+    <string name="export_as_file">Exportar coma fichièr</string>
+    <string name="alignment">Alinhament</string>
+    <string name="left">Esquèrra</string>
+    <string name="center">Centrar</string>
+    <string name="right">Drecha</string>
+    <string name="autosave_notes">Enregistrament automatic de las nòtas</string>
+    <string name="checklist">Lista de contraròtle</string>
+    <string name="checklists">Listas de contraròtle</string>
+    <string name="checklist_is_empty">La lista de contraròtle es voida</string>
+    <string name="delete_checked_items">Suprimir los elements marcats</string>
+    <string name="export_notes">Exportar las nòtas</string>
+    <string name="new_note">Ajustar una nòta novèla</string>
+    <string name="title_taken">Una nòta amb lo meteis títol existís ja</string>
+    <string name="delete_note_prompt_message">Volètz vertadièrament suprimir la nòta « %s » ?</string>
+    <string name="pick_a_note">Causir una nòta</string>
+    <string name="unsaved_changes_warning">Avètz de modificacions non salvagardas. De qué volètz far ?</string>
+    <string name="note_shown_widget">Nòta afichada dins lo widget :</string>
+    <string name="show_note_title">Mostrar lo títol de la nòta</string>
+    <string name="new_note_type">Tipe novèl de nòta :</string>
+    <string name="note_content_locked">Lo contengut de las nòtas es verrolhat.</string>
 </resources>
