@@ -12,7 +12,7 @@
     <string name="general_note">Nota general</string>
     <string name="create_new_note">Crea una nota nova</string>
     <string name="add_to_note">Afegeix a la nota</string>
-    <string name="unsaved_changes_warning">Hi ha canvis sense desar. Què voleu fer amb ells\?</string>
+    <string name="unsaved_changes_warning">Haveu canvis no salvagardats. Què voleu fer amb ells?</string>
     <string name="note_shown_widget">Nota mostrada al giny:</string>
     <string name="show_note_title">Mostra el títol de la nota</string>
     <string name="new_note_type">Tipus nou de nota:</string>
