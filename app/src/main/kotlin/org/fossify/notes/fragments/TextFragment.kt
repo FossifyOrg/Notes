@@ -205,29 +205,21 @@ class TextFragment : NoteFragment() {
         setTextWatcher()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupKeyboardListener()
+    }
+
     private fun setupKeyboardListener() {
-        requireActivity().window.decorView.apply {
-            setOnApplyWindowInsetsListener { view, insets ->
-                val windowInsets = WindowInsetsCompat.toWindowInsetsCompat(insets)
-                if (windowInsets.isVisible(WindowInsetsCompat.Type.ime())) {
-                    if (config!!.placeCursorToEnd) {
-                        scrollToEndOfNote()
-                    }
-                    setOnApplyWindowInsetsListener(null) // clear to avoid scrolling every time
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            if (insets.isVisible(WindowInsetsCompat.Type.ime())) {
+                noteEditText.post {
+                    noteEditText.bringPointIntoView(noteEditText.selectionEnd)
                 }
-                view.onApplyWindowInsets(insets)
             }
+            insets
         }
     }
-
-    private fun scrollToEndOfNote() {
-        val rect = Rect()
-        noteEditText.getFocusedRect(rect)
-        binding.notesScrollview.post {
-            binding.notesScrollview.scrollTo(0, rect.bottom)
-        }
-    }
-
     fun setTextWatcher() {
         noteEditText.apply {
             removeTextChangedListener(textWatcher)
