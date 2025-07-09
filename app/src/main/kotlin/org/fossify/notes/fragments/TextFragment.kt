@@ -15,7 +15,6 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.TextView
@@ -31,7 +30,9 @@ import org.fossify.notes.databinding.FragmentTextBinding
 import org.fossify.notes.databinding.NoteViewHorizScrollableBinding
 import org.fossify.notes.databinding.NoteViewStaticBinding
 import org.fossify.notes.extensions.config
+import org.fossify.notes.extensions.enforcePlainText
 import org.fossify.notes.extensions.getPercentageFontSize
+import org.fossify.notes.extensions.maybeRequestIncognito
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.MyMovementMethod
 import org.fossify.notes.helpers.NOTE_ID
@@ -71,6 +72,8 @@ class TextFragment : NoteFragment() {
                 noteEditText = textNoteView
             }
         }
+
+        noteEditText.enforcePlainText()
         if (config!!.clickableLinks) {
             noteEditText.apply {
                 linksClickable = true
@@ -177,12 +180,7 @@ class TextFragment : NoteFragment() {
                     }
                 }
             }
-
-            imeOptions = if (config.useIncognitoMode) {
-                imeOptions or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
-            } else {
-                imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
-            }
+            maybeRequestIncognito()
         }
 
         noteEditText.setOnTouchListener { v, event ->
@@ -207,29 +205,21 @@ class TextFragment : NoteFragment() {
         setTextWatcher()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupKeyboardListener()
+    }
+
     private fun setupKeyboardListener() {
-        requireActivity().window.decorView.apply {
-            setOnApplyWindowInsetsListener { view, insets ->
-                val windowInsets = WindowInsetsCompat.toWindowInsetsCompat(insets)
-                if (windowInsets.isVisible(WindowInsetsCompat.Type.ime())) {
-                    if (config!!.placeCursorToEnd) {
-                        scrollToEndOfNote()
-                    }
-                    setOnApplyWindowInsetsListener(null) // clear to avoid scrolling every time
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            if (insets.isVisible(WindowInsetsCompat.Type.ime())) {
+                noteEditText.post {
+                    noteEditText.bringPointIntoView(noteEditText.selectionEnd)
                 }
-                view.onApplyWindowInsets(insets)
             }
+            insets
         }
     }
-
-    private fun scrollToEndOfNote() {
-        val rect = Rect()
-        noteEditText.getFocusedRect(rect)
-        binding.notesScrollview.post {
-            binding.notesScrollview.scrollTo(0, rect.bottom)
-        }
-    }
-
     fun setTextWatcher() {
         noteEditText.apply {
             removeTextChangedListener(textWatcher)

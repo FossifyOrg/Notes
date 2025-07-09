@@ -13,6 +13,7 @@ import org.fossify.notes.R
 import org.fossify.notes.databinding.DialogNewChecklistItemBinding
 import org.fossify.notes.databinding.ItemAddChecklistBinding
 import org.fossify.notes.extensions.config
+import org.fossify.notes.extensions.maybeRequestIncognito
 
 class NewChecklistItemDialog(
     val activity: Activity,
@@ -94,6 +95,9 @@ class NewChecklistItemDialog(
                 titles.add(titleEditText)
                 binding.checklistHolder.addView(this.root)
             }
+
+            titleEditText.maybeRequestIncognito()
+
             activity.updateTextColors(binding.checklistHolder)
             binding.dialogHolder.post {
                 binding.dialogHolder.fullScroll(View.FOCUS_DOWN)
