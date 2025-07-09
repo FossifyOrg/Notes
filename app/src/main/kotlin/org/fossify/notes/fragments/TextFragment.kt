@@ -17,6 +17,8 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.viewbinding.ViewBinding
 import org.fossify.commons.extensions.*
 import org.fossify.commons.views.MyEditText
@@ -198,6 +200,22 @@ class TextFragment : NoteFragment() {
 
         checkLockState()
         setTextWatcher()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupKeyboardListener()
+    }
+
+    private fun setupKeyboardListener() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            if (insets.isVisible(WindowInsetsCompat.Type.ime())) {
+                noteEditText.post {
+                    noteEditText.bringPointIntoView(noteEditText.selectionEnd)
+                }
+            }
+            insets
+        }
     }
 
     fun setTextWatcher() {
