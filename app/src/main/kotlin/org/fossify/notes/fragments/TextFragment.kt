@@ -217,6 +217,7 @@ class TextFragment : NoteFragment() {
             insets
         }
     }
+
     fun setTextWatcher() {
         noteEditText.apply {
             removeTextChangedListener(textWatcher)
