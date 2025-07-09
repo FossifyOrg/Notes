@@ -173,7 +173,6 @@ class TextFragment : NoteFragment() {
             if (config.showKeyboard && isMenuVisible && (!note!!.isLocked() || shouldShowLockedContent)) {
                 onGlobalLayout {
                     if (activity?.isDestroyed == false) {
-                        setupKeyboardListener()
                         requestFocus()
                         val inputManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                         inputManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
