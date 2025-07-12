@@ -193,9 +193,9 @@ class TextFragment : NoteFragment() {
             false
         }
 
-        if (config.showWordCount) {
+        if (config.showWordCount || config.showCharacterCount) {
             binding.notesCounter.setTextColor(requireContext().getProperTextColor())
-            setWordCounter(noteEditText.text.toString())
+            setCounterText(noteEditText.text.toString(), config.showWordCount, config.showCharacterCount)
         }
 
         checkLockState()
@@ -233,7 +233,7 @@ class TextFragment : NoteFragment() {
         }
 
         binding.apply {
-            notesCounter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config!!.showWordCount)
+            notesCounter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && (config!!.showWordCount || config!!.showCharacterCount))
             notesScrollview.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
             setupLockedViews(this.toCommonBinding(), note!!)
         }
@@ -271,9 +271,20 @@ class TextFragment : NoteFragment() {
 
     fun getCurrentNoteViewText() = noteEditText.text?.toString()
 
-    private fun setWordCounter(text: String) {
-        val words = text.replace("\n", " ").split(" ")
-        binding.notesCounter.text = words.count { it.isNotEmpty() }.toString()
+    private fun setCounterText(text: String, showWordCount: Boolean, showCharCount: Boolean) {
+        val parts = mutableListOf<String>()
+
+        if (showWordCount) {
+            val words = text.replace("\n", " ").split(" ").count { it.isNotEmpty() }
+            parts.add("Words: $words")
+        }
+
+        if (showCharCount) {
+            val characters = text.count { !it.isWhitespace() }
+            parts.add("Characters: $characters")
+        }
+
+        binding.notesCounter.text = parts.joinToString(", ")
     }
 
     fun undo() {
@@ -353,7 +364,7 @@ class TextFragment : NoteFragment() {
 
         override fun afterTextChanged(editable: Editable) {
             val text = editable.toString()
-            setWordCounter(text)
+            setCounterText(text, config!!.showWordCount, config!!.showCharacterCount)
             (activity as MainActivity).currentNoteTextChanged(text, isUndoAvailable(), isRedoAvailable())
         }
     }

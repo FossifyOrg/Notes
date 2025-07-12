@@ -112,6 +112,7 @@ class SettingsActivity : SimpleActivity() {
         setupShowNotePicker()
         setupMoveUndoneChecklistItems()
         setupShowWordCount()
+        setupShowCharacterCount()
         setupEnableLineWrap()
         setupFontSize()
         setupGravity()
@@ -263,6 +264,15 @@ class SettingsActivity : SimpleActivity() {
             config.showWordCount = binding.settingsShowWordCount.isChecked
         }
     }
+
+    private fun setupShowCharacterCount() {
+        binding.settingsShowCharacterCount.isChecked = config.showCharacterCount
+        binding.settingsShowCharacterCountHolder.setOnClickListener {
+            binding.settingsShowCharacterCount.toggle()
+            config.showCharacterCount = binding.settingsShowCharacterCount.isChecked
+        }
+    }
+
 
     private fun setupEnableLineWrap() {
         binding.settingsEnableLineWrap.isChecked = config.enableLineWrap

@@ -168,6 +168,21 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/settings_show_character_count_holder"
+                style="@style/SettingsHolderSwitchStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <org.fossify.commons.views.MyMaterialSwitch
+                    android:id="@+id/settings_show_character_count"
+                    style="@style/SettingsSwitchStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/show_character_count" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/settings_clickable_links_holder"
                 style="@style/SettingsHolderSwitchStyle"
                 android:layout_width="match_parent"
