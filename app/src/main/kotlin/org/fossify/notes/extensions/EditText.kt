@@ -6,8 +6,13 @@ import org.fossify.commons.views.MyEditText
 
 fun MyEditText.enforcePlainText() {
     val stripSpans = InputFilter { source, start, end, _, _, _ ->
-        val sub = source.subSequence(start, end)
-        if (sub is Spanned) sub.toString() else sub
+        if (source !is Spanned) return@InputFilter null
+        val hasRealStyle = source.getSpans(start, end, Any::class.java)
+            .any { span ->
+                (source.getSpanFlags(span) and Spanned.SPAN_COMPOSING) == 0
+            }
+
+        if (hasRealStyle) source.subSequence(start, end).toString() else null
     }
     filters = (filters ?: emptyArray()) + stripSpans
 }
