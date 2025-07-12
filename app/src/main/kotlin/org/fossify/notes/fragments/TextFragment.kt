@@ -232,8 +232,10 @@ class TextFragment : NoteFragment() {
             return
         }
 
+        val showCounter = config!!.showWordCount || config!!.showCharacterCount
+
         binding.apply {
-            notesCounter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && (config!!.showWordCount || config!!.showCharacterCount))
+            notesCounter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && showCounter)
             notesScrollview.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
             setupLockedViews(this.toCommonBinding(), note!!)
         }
