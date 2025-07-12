@@ -256,6 +256,11 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         setupAdapter()
     }
 
+    fun uncheckCheckedItems() {
+        tasks = tasks.map { it.copy(isDone = false) }.toMutableList()
+        saveAndReload()
+    }
+
     private fun updateUIVisibility() {
         binding.apply {
             fragmentPlaceholder.beVisibleIf(tasks.isEmpty())
