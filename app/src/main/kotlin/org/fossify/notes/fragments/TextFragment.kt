@@ -193,9 +193,9 @@ class TextFragment : NoteFragment() {
             false
         }
 
-        if (config.showWordCount) {
+        if (config.showWordCount || config.showCharacterCount) {
             binding.notesCounter.setTextColor(requireContext().getProperTextColor())
-            setWordCounter(noteEditText.text.toString())
+            setCounterText(noteEditText.text.toString(), config.showWordCount, config.showCharacterCount)
         }
 
         checkLockState()
@@ -232,8 +232,10 @@ class TextFragment : NoteFragment() {
             return
         }
 
+        val showCounter = config!!.showWordCount || config!!.showCharacterCount
+
         binding.apply {
-            notesCounter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config!!.showWordCount)
+            notesCounter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && showCounter)
             notesScrollview.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
             setupLockedViews(this.toCommonBinding(), note!!)
         }
@@ -271,9 +273,23 @@ class TextFragment : NoteFragment() {
 
     fun getCurrentNoteViewText() = noteEditText.text?.toString()
 
-    private fun setWordCounter(text: String) {
-        val words = text.replace("\n", " ").split(" ")
-        binding.notesCounter.text = words.count { it.isNotEmpty() }.toString()
+    private fun setCounterText(text: String, showWordCount: Boolean, showCharCount: Boolean) {
+        val parts = mutableListOf<String>()
+        val context = binding.root.context
+
+        if (showWordCount) {
+            val wordCount = text.replace("\n", " ").split(" ").count { it.isNotEmpty() }
+            val wordText = context.resources.getQuantityString(R.plurals.word_count, wordCount, wordCount)
+            parts.add(wordText)
+        }
+
+        if (showCharCount) {
+            val charCount = text.length
+            val charText = context.resources.getQuantityString(R.plurals.char_count, charCount, charCount)
+            parts.add(charText)
+        }
+
+        binding.notesCounter.text = parts.joinToString(", ")
     }
 
     fun undo() {
@@ -353,7 +369,7 @@ class TextFragment : NoteFragment() {
 
         override fun afterTextChanged(editable: Editable) {
             val text = editable.toString()
-            setWordCounter(text)
+            setCounterText(text, config!!.showWordCount, config!!.showCharacterCount)
             (activity as MainActivity).currentNoteTextChanged(text, isUndoAvailable(), isRedoAvailable())
         }
     }

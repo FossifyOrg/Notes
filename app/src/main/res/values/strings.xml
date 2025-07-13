@@ -30,6 +30,15 @@
     <string name="new_checklist">New checklist</string>
     <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <string name="allow_alarm_automatic_backups">To backup notes automatically, please grant the app permission to schedule exact alarms.</string>
+    <plurals name="word_count">
+        <item quantity="one">%d word</item>
+        <item quantity="other">%d words</item>
+    </plurals>
+    <plurals name="char_count">
+        <item quantity="one">%d character</item>
+        <item quantity="other">%d characters</item>
+    </plurals>
+
 
     <!-- File notes -->
     <string name="open_file">Open file</string>

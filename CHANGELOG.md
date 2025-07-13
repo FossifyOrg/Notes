@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Option to show character count ([#65])
 - Option to uncheck all checked items ([#156])
+
 
 ## [1.3.1] - 2025-07-12
 ### Changed
@@ -59,6 +61,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release
 
+[#65]: https://github.com/FossifyOrg/Notes/issues/65
 [#81]: https://github.com/FossifyOrg/Notes/issues/81
 [#83]: https://github.com/FossifyOrg/Notes/issues/83
 [#99]: https://github.com/FossifyOrg/Notes/issues/99
