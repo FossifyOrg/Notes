@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Option to delete the last open note ([#157])
 
 ### Changed
 
@@ -71,3 +73,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#83]: https://github.com/FossifyOrg/Notes/issues/83
 [#99]: https://github.com/FossifyOrg/Notes/issues/99
 [#110]: https://github.com/FossifyOrg/Notes/issues/110
+[#157]: https://github.com/FossifyOrg/Notes/issues/157
