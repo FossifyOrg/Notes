@@ -273,7 +273,6 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-
     private fun setupEnableLineWrap() {
         binding.settingsEnableLineWrap.isChecked = config.enableLineWrap
         binding.settingsEnableLineWrapHolder.setOnClickListener {
