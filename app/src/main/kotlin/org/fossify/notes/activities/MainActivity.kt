@@ -147,6 +147,7 @@ class MainActivity : SimpleActivity() {
     private var searchIndex = 0
     private var searchMatches = emptyList<Int>()
     private var isSearchActive = false
+    private var wasNoteTextEmpty: Boolean = false
 
     private lateinit var searchQueryET: MyEditText
     private lateinit var searchPrevBtn: ImageView
@@ -402,8 +403,9 @@ class MainActivity : SimpleActivity() {
 
     private fun isDefaultEmptyNote(): Boolean {
         return if (::mCurrentNote.isInitialized) {
-             (mCurrentNote.title == getString(R.string.general_note) &&
-                 mAdapter?.getCurrentNoteViewText(binding.viewPager.currentItem)!!.isEmpty())
+            (mCurrentNote.title == getString(R.string.general_note) &&
+                getCurrentNoteText().isNullOrEmpty() &&
+                mCurrentNote.value.isEmpty())
         } else {
             false
         }
@@ -567,6 +569,7 @@ class MainActivity : SimpleActivity() {
 
             mNotes = notes
             mCurrentNote = mNotes[0]
+            wasNoteTextEmpty = mCurrentNote.value.isEmpty()
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
             binding.viewPager.apply {
                 adapter = mAdapter
@@ -1554,6 +1557,14 @@ class MainActivity : SimpleActivity() {
                 if (showSaveButton != saveNoteButton?.isVisible) {
                     shouldRecreateMenu = true
                 }
+            }
+
+            if (getCurrentNoteText().isNullOrEmpty()) {
+                wasNoteTextEmpty = true
+                shouldRecreateMenu = true
+            } else if (wasNoteTextEmpty) {
+                wasNoteTextEmpty = false
+                shouldRecreateMenu = true
             }
 
             if (shouldRecreateMenu) {
