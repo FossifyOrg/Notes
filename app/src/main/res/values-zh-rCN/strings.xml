@@ -78,4 +78,5 @@
     <string name="allow_alarm_automatic_backups">要自动备份笔记，请授予应用设置精确闹钟的权限。</string>
     <string name="num_checked_items">%d 个勾选的条目</string>
     <string name="use_for_this_checklist">仅用于此核对清单</string>
+    <string name="uncheck_all_items">取消勾选所有项</string>
 </resources>
