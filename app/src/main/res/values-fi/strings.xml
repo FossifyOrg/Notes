@@ -79,4 +79,5 @@
         <item quantity="one">%d valittu kohde</item>
         <item quantity="other">%d valittua kohdetta</item>
     </plurals>
+    <string name="use_for_this_checklist">Käytä vain tälle tarkastuslistalle</string>
 </resources>

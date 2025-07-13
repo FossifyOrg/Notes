@@ -269,6 +269,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
+            findItem(R.id.uncheck_all_items).isVisible = isCurrentItemChecklist
             findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
             findItem(R.id.import_folder).isVisible = !isQPlus()
             findItem(R.id.lock_note).isVisible =
@@ -317,6 +318,7 @@ class MainActivity : SimpleActivity() {
                 R.id.settings -> launchSettings()
                 R.id.about -> launchAbout()
                 R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
+                R.id.uncheck_all_items -> fragment?.handleUnlocking { uncheckAllItems() }
                 R.id.sort_checklist -> fragment?.handleUnlocking { displaySortChecklistDialog() }
                 else -> return@setOnMenuItemClickListener false
             }
@@ -1568,6 +1570,10 @@ class MainActivity : SimpleActivity() {
 
     private fun removeDoneItems() {
         getPagerAdapter().removeDoneCheckListItems(binding.viewPager.currentItem)
+    }
+
+    private fun uncheckAllItems() {
+        getPagerAdapter().uncheckAllItems(binding.viewPager.currentItem)
     }
 
     private fun displaySortChecklistDialog() {

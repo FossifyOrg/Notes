@@ -41,6 +41,10 @@
         android:title="@string/delete_checked_items"
         app:showAsAction="never" />
     <item
+        android:id="@+id/uncheck_all_items"
+        android:title="@string/uncheck_all_items"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/sort_checklist"
         android:icon="@drawable/ic_sort_vector"
         android:title="@string/sort_by"
