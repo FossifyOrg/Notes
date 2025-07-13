@@ -19,7 +19,6 @@ import android.print.PrintAttributes
 import android.print.PrintManager
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
-import android.util.Log
 import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
@@ -278,7 +277,7 @@ class MainActivity : SimpleActivity() {
                 mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
             findItem(R.id.more_apps_from_us).isVisible =
                 !resources.getBoolean(org.fossify.commons.R.bool.hide_google_relations)
-            findItem(R.id.delete_note).isVisible = !isDefaultEmptyNote
+            findItem(R.id.delete_note).isVisible = !isDefaultEmptyNote || mNotes.size > 1
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
