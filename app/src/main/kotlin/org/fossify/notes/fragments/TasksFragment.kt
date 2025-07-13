@@ -256,7 +256,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         setupAdapter()
     }
 
-    fun uncheckCheckedItems() {
+    fun uncheckAllItems() {
         tasks = tasks.map { it.copy(isDone = false) }.toMutableList()
         saveAndReload()
     }

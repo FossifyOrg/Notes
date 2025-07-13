@@ -41,8 +41,8 @@
         android:title="@string/delete_checked_items"
         app:showAsAction="never" />
     <item
-        android:id="@+id/uncheck_done_items"
-        android:title="@string/uncheck_checked_items"
+        android:id="@+id/uncheck_all_items"
+        android:title="@string/uncheck_all_items"
         app:showAsAction="never" />
     <item
         android:id="@+id/sort_checklist"

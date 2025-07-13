@@ -96,8 +96,8 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
         (fragments[position] as? TasksFragment)?.removeCheckedItems()
     }
 
-    fun uncheckCheckedItems(position: Int) {
-        (fragments[position] as? TasksFragment)?.uncheckCheckedItems()
+    fun uncheckAllItems(position: Int) {
+        (fragments[position] as? TasksFragment)?.uncheckAllItems()
     }
 
     fun refreshChecklist(position: Int) {
