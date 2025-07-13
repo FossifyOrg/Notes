@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Option to delete the last open note ([#157])
 - Option to uncheck all checked items ([#156])
 
 ## [1.3.1] - 2025-07-12
@@ -64,6 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#99]: https://github.com/FossifyOrg/Notes/issues/99
 [#110]: https://github.com/FossifyOrg/Notes/issues/110
 [#156]: https://github.com/FossifyOrg/Notes/issues/156
+[#157]: https://github.com/FossifyOrg/Notes/issues/157
 [#164]: https://github.com/FossifyOrg/Notes/issues/164
 [#178]: https://github.com/FossifyOrg/Notes/issues/178
 

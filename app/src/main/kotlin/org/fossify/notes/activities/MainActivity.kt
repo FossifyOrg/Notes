@@ -147,6 +147,7 @@ class MainActivity : SimpleActivity() {
     private var searchIndex = 0
     private var searchMatches = emptyList<Int>()
     private var isSearchActive = false
+    private var wasNoteTextEmpty: Boolean = false
 
     private lateinit var searchQueryET: MyEditText
     private lateinit var searchPrevBtn: ImageView
@@ -252,6 +253,7 @@ class MainActivity : SimpleActivity() {
     private fun refreshMenuItems() {
         val multipleNotesExist = mNotes.size > 1
         val isCurrentItemChecklist = isCurrentItemChecklist()
+        val isDefaultEmptyNote = isDefaultEmptyNote()
 
         binding.mainToolbar.menu.apply {
             findItem(R.id.undo).apply {
@@ -266,7 +268,6 @@ class MainActivity : SimpleActivity() {
 
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
-            findItem(R.id.delete_note).isVisible = multipleNotesExist
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
             findItem(R.id.uncheck_all_items).isVisible = isCurrentItemChecklist
@@ -278,6 +279,7 @@ class MainActivity : SimpleActivity() {
                 mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
             findItem(R.id.more_apps_from_us).isVisible =
                 !resources.getBoolean(org.fossify.commons.R.bool.hide_google_relations)
+            findItem(R.id.delete_note).isVisible = !isDefaultEmptyNote || mNotes.size > 1
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
@@ -394,6 +396,16 @@ class MainActivity : SimpleActivity() {
     private fun isCurrentItemChecklist(): Boolean {
         return if (::mCurrentNote.isInitialized) {
             mCurrentNote.type == NoteType.TYPE_CHECKLIST
+        } else {
+            false
+        }
+    }
+
+    private fun isDefaultEmptyNote(): Boolean {
+        return if (::mCurrentNote.isInitialized) {
+            (mCurrentNote.title == getString(R.string.general_note) &&
+                getCurrentNoteText().isNullOrEmpty() &&
+                mCurrentNote.value.isEmpty())
         } else {
             false
         }
@@ -557,6 +569,7 @@ class MainActivity : SimpleActivity() {
 
             mNotes = notes
             mCurrentNote = mNotes[0]
+            wasNoteTextEmpty = mCurrentNote.value.isEmpty()
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
             binding.viewPager.apply {
                 adapter = mAdapter
@@ -1339,7 +1352,7 @@ class MainActivity : SimpleActivity() {
     }
 
     fun deleteNote(deleteFile: Boolean, note: Note) {
-        if (mNotes.size <= 1 || note != mCurrentNote) {
+        if (mNotes.isEmpty() || note != mCurrentNote) {
             return
         }
 
@@ -1360,8 +1373,12 @@ class MainActivity : SimpleActivity() {
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
         ensureBackgroundThread {
             val currentNoteIndex = mNotes.indexOf(note)
-            val noteToRefresh =
+
+            val noteToRefresh = if (mNotes.size == 1) {
+                 null
+            } else {
                 mNotes[if (currentNoteIndex > 0) currentNoteIndex - 1 else currentNoteIndex + 1]
+            }
 
             notesDB.deleteNote(note)
             widgetsDB.deleteNoteWidgets(note.id!!)
@@ -1370,12 +1387,13 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun refreshNotes(note: Note, deleteFile: Boolean) {
+    private fun refreshNotes(note: Note?, deleteFile: Boolean) {
         NotesHelper(this).getNotes {
             mNotes = it
-            val noteId = note.id
+            val currentNote = note ?: mNotes[0]
+            val noteId = currentNote.id
             updateSelectedNote(noteId!!)
-            if (config.widgetNoteId == note.id) {
+            if (config.widgetNoteId == currentNote.id) {
                 config.widgetNoteId = mCurrentNote.id!!
                 updateWidgets()
             }
@@ -1383,7 +1401,7 @@ class MainActivity : SimpleActivity() {
             initViewPager()
 
             if (deleteFile) {
-                deleteFile(FileDirItem(note.path, note.title)) {
+                deleteFile(FileDirItem(currentNote.path, currentNote.title)) {
                     if (!it) {
                         toast(org.fossify.commons.R.string.unknown_error_occurred)
                     }
@@ -1539,6 +1557,14 @@ class MainActivity : SimpleActivity() {
                 if (showSaveButton != saveNoteButton?.isVisible) {
                     shouldRecreateMenu = true
                 }
+            }
+
+            if (getCurrentNoteText().isNullOrEmpty()) {
+                wasNoteTextEmpty = true
+                shouldRecreateMenu = true
+            } else if (wasNoteTextEmpty) {
+                wasNoteTextEmpty = false
+                shouldRecreateMenu = true
             }
 
             if (shouldRecreateMenu) {

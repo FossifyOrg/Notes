@@ -3,7 +3,6 @@ package org.fossify.notes.helpers
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.fossify.commons.activities.BaseSimpleActivity
 import org.fossify.commons.helpers.ExportResult
@@ -42,7 +41,8 @@ class NotesHelper(val context: Context) {
             if (notes.isEmpty()) {
                 val generalNote = context.resources.getString(R.string.general_note)
                 val note = Note(null, generalNote, "", NoteType.TYPE_TEXT, "", PROTECTION_NONE, "")
-                context.notesDB.insertOrUpdate(note)
+                val insertedId = context.notesDB.insertOrUpdate(note)
+                note.id = insertedId
                 notes.add(note)
             }
 
