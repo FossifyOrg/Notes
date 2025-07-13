@@ -81,5 +81,5 @@
         <item quantity="other">%d erledigte Einträge</item>
     </plurals>
     <string name="use_for_this_checklist">Nur für diese Checkliste verwenden</string>
-    <string name="uncheck_all_items">Alle Elemente abwählen</string>
+    <string name="uncheck_all_items">Alle Elemente als unerledigt markieren</string>
 </resources>
