@@ -19,6 +19,7 @@ import android.print.PrintAttributes
 import android.print.PrintManager
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
@@ -252,6 +253,7 @@ class MainActivity : SimpleActivity() {
     private fun refreshMenuItems() {
         val multipleNotesExist = mNotes.size > 1
         val isCurrentItemChecklist = isCurrentItemChecklist()
+        val isDefaultEmptyNote = isDefaultEmptyNote()
 
         binding.mainToolbar.menu.apply {
             findItem(R.id.undo).apply {
@@ -276,6 +278,7 @@ class MainActivity : SimpleActivity() {
                 mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
             findItem(R.id.more_apps_from_us).isVisible =
                 !resources.getBoolean(org.fossify.commons.R.bool.hide_google_relations)
+            findItem(R.id.delete_note).isVisible = !isDefaultEmptyNote
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
@@ -391,6 +394,14 @@ class MainActivity : SimpleActivity() {
     private fun isCurrentItemChecklist(): Boolean {
         return if (::mCurrentNote.isInitialized) {
             mCurrentNote.type == NoteType.TYPE_CHECKLIST
+        } else {
+            false
+        }
+    }
+
+    private fun isDefaultEmptyNote(): Boolean {
+        return if (::mCurrentNote.isInitialized) {
+             (mCurrentNote.title == getString(R.string.general_note) && mCurrentNote.value.isEmpty())
         } else {
             false
         }
