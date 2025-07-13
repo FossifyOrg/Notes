@@ -401,7 +401,7 @@ class MainActivity : SimpleActivity() {
 
     private fun isDefaultEmptyNote(): Boolean {
         return if (::mCurrentNote.isInitialized) {
-             (mCurrentNote.title == getString(R.string.general_note) && mCurrentNote.value.isEmpty())
+             (mCurrentNote.title == getString(R.string.general_note) && mAdapter?.getCurrentNoteViewText(binding.viewPager.currentItem)!!.isEmpty())
         } else {
             false
         }
