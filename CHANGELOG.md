@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Option to uncheck all checked items ([#156])
 
 ## [1.3.1] - 2025-07-12
 ### Changed
@@ -61,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#83]: https://github.com/FossifyOrg/Notes/issues/83
 [#99]: https://github.com/FossifyOrg/Notes/issues/99
 [#110]: https://github.com/FossifyOrg/Notes/issues/110
+[#156]: https://github.com/FossifyOrg/Notes/issues/156
 [#164]: https://github.com/FossifyOrg/Notes/issues/164
 [#178]: https://github.com/FossifyOrg/Notes/issues/178
 
