@@ -41,7 +41,7 @@ class Config(context: Context) : BaseConfig(context) {
 
     var showCharacterCount: Boolean
         get() = prefs.getBoolean(SHOW_CHARACTER_COUNT, false)
-        set(showWordCount) = prefs.edit().putBoolean(SHOW_CHARACTER_COUNT, showWordCount).apply()
+        set(showCharacterCount) = prefs.edit().putBoolean(SHOW_CHARACTER_COUNT, showCharacterCount).apply()
 
     var gravity: Int
         get() = prefs.getInt(GRAVITY, GRAVITY_START)
