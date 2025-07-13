@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Uncheck all checked items ([#156])
+- Option to uncheck all checked items ([#156]: https://github.com/FossifyOrg/Notes/issues/156)
 
 ## [1.3.1] - 2025-07-12
 ### Changed
