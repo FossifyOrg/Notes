@@ -275,15 +275,18 @@ class TextFragment : NoteFragment() {
 
     private fun setCounterText(text: String, showWordCount: Boolean, showCharCount: Boolean) {
         val parts = mutableListOf<String>()
+        val context = binding.root.context
 
         if (showWordCount) {
-            val words = text.replace("\n", " ").split(" ").count { it.isNotEmpty() }
-            parts.add("Words: $words")
+            val wordCount = text.replace("\n", " ").split(" ").count { it.isNotEmpty() }
+            val wordText = context.resources.getQuantityString(R.plurals.word_count, wordCount, wordCount)
+            parts.add(wordText)
         }
 
         if (showCharCount) {
-            val characters = text.count { !it.isWhitespace() }
-            parts.add("Characters: $characters")
+            val charCount = text.length
+            val charText = context.resources.getQuantityString(R.plurals.char_count, charCount, charCount)
+            parts.add(charText)
         }
 
         binding.notesCounter.text = parts.joinToString(", ")
