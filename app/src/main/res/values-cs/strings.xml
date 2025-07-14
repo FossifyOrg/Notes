@@ -78,4 +78,5 @@
     <string name="allow_alarm_automatic_backups">Pro automatické zálohování poznámek prosím udělte aplikaci oprávnění k plánování přesných budíků.</string>
     <string name="num_checked_items">%d zaškrtnutých položek</string>
     <string name="use_for_this_checklist">Použít pouze pro tento seznam</string>
+    <string name="uncheck_all_items">Odškrtnout všechny položky</string>
 </resources>
