@@ -78,4 +78,5 @@
     <string name="allow_alarm_automatic_backups">Для автоматического резервного копирования заметок предоставьте приложению разрешение на установку будильников.</string>
     <string name="num_checked_items">Выполненных позиций: %d</string>
     <string name="use_for_this_checklist">Только для этого списка</string>
+    <string name="uncheck_all_items">Убрать выполнение всех позиций</string>
 </resources>
