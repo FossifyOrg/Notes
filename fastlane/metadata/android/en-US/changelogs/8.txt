@@ -1,0 +1,9 @@
+Added:
+
+• Option to delete the last open note 
+• Option to uncheck all checked items 
+
+Changed:
+
+• Updated translations
+
