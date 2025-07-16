@@ -78,4 +78,5 @@
     <string name="allow_alarm_automatic_backups">כדי לגבות הערות באופן אוטומטי, אנא הענק לאפליקציה הרשאה לתזמן התראות מדויקות.</string>
     <string name="add_to_the_top">הוסף למעלה</string>
     <string name="use_for_this_checklist">לשימוש עבור רשימת בדיקה זו בלבד</string>
+    <string name="uncheck_all_items">בטל את סימון כל הפריטים</string>
 </resources>
