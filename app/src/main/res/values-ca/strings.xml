@@ -82,4 +82,5 @@
         <item quantity="other">%d elements marcats</item>
     </plurals>
     <string name="use_for_this_checklist">Fes servir només en aquesta llista de comprovació</string>
+    <string name="uncheck_all_items">Desmarca tots els elements</string>
 </resources>

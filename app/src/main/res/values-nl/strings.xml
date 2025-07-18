@@ -76,8 +76,9 @@
     <string name="this_note_is_linked">Deze notities is gekoppeld aan een lokaal bestand.</string>
     <string name="allow_alarm_automatic_backups">Om automatisch een back-up te maken van notities moet de app toestemming krijgen om precieze alarmen in te plannen.</string>
     <plurals name="num_checked_items">
-        <item quantity="one">%d geselecteerd item</item>
-        <item quantity="other">%d geselecteerde items</item>
+        <item quantity="one">%d afgevinkt item</item>
+        <item quantity="other">%d afgevinkte items</item>
     </plurals>
     <string name="use_for_this_checklist">Alleen voor deze lijst</string>
+    <string name="uncheck_all_items">Alle vinkjes wissen</string>
 </resources>
