@@ -64,7 +64,7 @@
     <string name="faq_1_title">כיצד אוכל לשנות את צבע הווידג\'טים\?</string>
     <string name="faq_1_text">במקרה שיש לך רק ווידג\'ט פעיל אחד, תוכל ליצור אותו מחדש או להשתמש בכפתור בהגדרות האפליקציה כדי להתאים אותו. אם יש לך מספר ווידג\'טים פעילים, הכפתור בהגדרות האפליקציה לא יהיה זמין. מכיוון שהאפליקציה תומכת בהתאמה אישית של צבע לכל ווידג\'ט, תצטרך ליצור מחדש את הווידג\'ט שברצונך להתאים אישית.</string>
     <string name="open_file">פתיחת קובץ</string>
-    <string name="widget_config">תודה על השימוש בהערות של Fossify.\nליישומונים נוספים של Fossify, יש לבקר בכתובת fossify.org.</string>
+    <string name="widget_config">תודה על השימוש בהערות של Fossify.\nליישומונים נוספים של Fossify יש לבקר בכתובת fossify.org.</string>
     <string name="unlock_notes">בטל נעילת הערות</string>
     <string name="this_note_is_linked">הערה זו מקושרת לקובץ מקומי.</string>
     <plurals name="num_checked_items">
