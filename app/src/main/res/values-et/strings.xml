@@ -81,4 +81,5 @@
         <item quantity="other">%d märgitud kirjet</item>
     </plurals>
     <string name="use_for_this_checklist">Kasuta seda vaid tööde loendi jaoks</string>
+    <string name="uncheck_all_items">Eemalda kõikide kirjete valik</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="faq_1_title">Conas is féidir liom dath an ghiuirléid a athrú?</string>
     <string name="checklist_is_empty">Tá an seicliosta folamh</string>
     <string name="use_for_this_checklist">Le húsáid don liosta seiceála seo amháin</string>
+    <string name="uncheck_all_items">Díthiceáil gach mír</string>
 </resources>
