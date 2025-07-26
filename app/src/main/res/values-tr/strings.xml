@@ -81,4 +81,5 @@
         <item quantity="other">%d tamamlanan öge</item>
     </plurals>
     <string name="use_for_this_checklist">Yalnızca bu liste için kullanın</string>
+    <string name="uncheck_all_items">Tüm işaretlemeleri kaldır</string>
 </resources>
