@@ -82,4 +82,5 @@
     <string name="allow_alarm_automatic_backups">Pour sauvegarder automatiquement les notes, veuillez autoriser l\'application à programmer des alarmes précises.</string>
     <string name="this_note_is_linked">Cette note est liée à un fichier local.</string>
     <string name="use_for_this_checklist">Utiliser seulement pour cette liste de contrôles</string>
+    <string name="uncheck_all_items">Décocher tous les éléments</string>
 </resources>
