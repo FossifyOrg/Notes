@@ -72,4 +72,14 @@
     <string name="faq_1_title">Ako viem zmeniť farby widgetu\?</string>
     <string name="faq_1_text">V prípade, že máte iba 1 aktívny widget, ho môžete buď znova vytvoriť, alebo použiť tlačidlo v nastaveniach apky na zmenu farby. Ak máte widgetov viacero, tlačidlo v nastaveniach apky zmizne. Keďže apka podporuje rôzne farby pre každý widget, budete musieť znovu vytvoriť ten widget, ktorého farby chcete zmeniť.</string>
     <string name="widget_config">Ďakujeme, že používate Fossify Poznámky\nPre viac Fossify aplikácií navštívte fossify.org.</string>
+    <string name="allow_alarm_automatic_backups">Pre automatickú zálohu poznámok prosím prideľte aplikácii povolenie pre nastavovanie budíkov a pripomenutí.</string>
+    <string name="this_note_is_linked">Táto poznámka je prepojená s lokálnym súborom.</string>
+    <string name="password_protect_note_deletion">Zabezpečiť vymazávanie poznámok heslom</string>
+    <string name="uncheck_all_items">Odškrtnúť všetky položky</string>
+    <string name="use_for_this_checklist">Použiť len pre tento zoznam</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">zaškrtnutá položka</item>
+        <item quantity="few">zaškrtnuté položky</item>
+        <item quantity="other">zaškrtnutých položiek</item>
+    </plurals>
 </resources>
