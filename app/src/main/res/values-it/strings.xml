@@ -82,4 +82,5 @@
         <item quantity="other">%d elementi spuntati</item>
     </plurals>
     <string name="use_for_this_checklist">Utilizza solo per questa lista di controllo</string>
+    <string name="uncheck_all_items">Deseleziona tutti gli elementi</string>
 </resources>
