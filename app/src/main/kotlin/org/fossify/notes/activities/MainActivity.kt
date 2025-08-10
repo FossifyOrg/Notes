@@ -321,6 +321,7 @@ class MainActivity : SimpleActivity() {
                 R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
                 R.id.uncheck_all_items -> fragment?.handleUnlocking { uncheckAllItems() }
                 R.id.sort_checklist -> fragment?.handleUnlocking { displaySortChecklistDialog() }
+                R.id.copy_note -> fragment?.handleUnlocking { copyNote() }
                 else -> return@setOnMenuItemClickListener false
             }
             return@setOnMenuItemClickListener true
@@ -1591,6 +1592,39 @@ class MainActivity : SimpleActivity() {
         SortChecklistDialog(this, mCurrentNote.id) {
             getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
+        }
+    }
+
+    private fun copyNote() {
+
+        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) {
+            getCurrentNoteText()
+        } else {
+            mCurrentNote.value
+        }
+
+        if (text.isNullOrEmpty()) {
+            toast(R.string.cannot_copy_empty_text)
+            return
+        }
+
+        NotesHelper(this).getNotes {
+            val notes = it
+            val list = arrayListOf<RadioItem>().apply {
+                add(RadioItem(0, getString(R.string.create_new_note)))
+                notes.forEachIndexed { index, note ->
+                    add(RadioItem(index + 1, note.title))
+                }
+            }
+
+            RadioGroupDialog(this, list, -1, R.string.add_to_note) {
+                if (it as Int == 0) {
+                    displayNewNoteDialog(text)
+                } else {
+                    updateSelectedNote(notes[it - 1].id!!)
+                    addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
+                }
+            }
         }
     }
 }

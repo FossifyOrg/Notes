@@ -50,6 +50,10 @@
         android:title="@string/sort_by"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/copy_note"
+        android:title="@string/copy_note"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/share"
         android:icon="@drawable/ic_share_vector"
         android:title="@string/share"
