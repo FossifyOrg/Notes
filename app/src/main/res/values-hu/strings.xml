@@ -81,4 +81,5 @@
         <item quantity="other">%d kész elemek</item>
     </plurals>
     <string name="use_for_this_checklist">Csak ehhez az ellenőrző listához használja</string>
+    <string name="uncheck_all_items">Az összes kijelölés megszüntetése</string>
 </resources>
