@@ -6,14 +6,14 @@ kotlinxSerializationJson = "1.9.0"
 ksp = "2.2.0-2.0.2"
 #Detekt
 detekt = "1.23.8"
-detektCompose = "0.4.26"
+detektCompose = "0.4.27"
 #AndroidX
 androidx-constraintlayout = "2.2.1"
 androidx-documentfile = "1.1.0"
 #Room
 room = "2.7.2"
 #Fossify
-commons = "4.4.0"
+commons = "4.4.2"
 #Gradle
 gradlePlugins-agp = "8.12.0"
 #build
