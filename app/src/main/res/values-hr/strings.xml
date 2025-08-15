@@ -82,4 +82,5 @@
     <string name="allow_alarm_automatic_backups">Za automatsko sigurnosno kopiranje bilješki dozvoli aplikaciji da zakaže točne alarme.</string>
     <string name="this_note_is_linked">Ova je bilješka povezana s jednom lokalnom datotekom.</string>
     <string name="use_for_this_checklist">Koristi samo za ovu kontrolnu listu</string>
+    <string name="uncheck_all_items">Odznači sve stavke</string>
 </resources>
