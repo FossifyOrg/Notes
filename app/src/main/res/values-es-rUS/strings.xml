@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_launcher_name">Notas</string>
+    <string name="open_file">Abrir archivo</string>
+    <string name="widget_config">Gracias por usar Fossify Notes.\nPara más aplicaciones de Fossify, visite fossify.org.</string>
+    <string name="cannot_share_empty_text">No se puede compartir texto vacío</string>
+</resources>
