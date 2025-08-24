@@ -80,4 +80,6 @@
         <item quantity="one">markatutako elementu %d</item>
         <item quantity="other">markatutako %d elementu</item>
     </plurals>
+    <string name="uncheck_all_items">Desmarkatu elementu guztiak</string>
+    <string name="use_for_this_checklist">Erabili kontrol zerrenda honetan soilik</string>
 </resources>

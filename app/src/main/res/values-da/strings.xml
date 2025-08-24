@@ -81,4 +81,5 @@
     <string name="use_for_this_checklist">Brug kun til denne tjekliste</string>
     <string name="allow_alarm_automatic_backups">For at sikkerhedskopiere noter automatisk skal du give appen tilladelse til at planlægge nøjagtige alarmer.</string>
     <string name="password_protect_note_deletion">Adgangskodebeskyttet notesletning</string>
+    <string name="uncheck_all_items">Fjern markeringen i alle elementer</string>
 </resources>
