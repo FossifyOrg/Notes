@@ -82,4 +82,5 @@
     <string name="allow_alarm_automatic_backups">Para criar backups automaticamente, conceda a permissão necessária para criar agendamento de alarmes.</string>
     <string name="this_note_is_linked">Esta nota está associada a um ficheiro local.</string>
     <string name="use_for_this_checklist">Utilizar apenas para esta lista</string>
+    <string name="uncheck_all_items">Desmarcar todos os elementos</string>
 </resources>

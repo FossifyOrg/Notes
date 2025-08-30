@@ -29,7 +29,7 @@
     <string name="new_text_note">Nouvelle note textuelle</string>
     <string name="new_checklist">Nouvelle liste de contrôle</string>
     <string name="cannot_load_over_internet">L\'application ne peut pas charger de fichiers depuis internet</string>
-    <string name="open_file">Ouvrir le fichier</string>
+    <string name="open_file">Ouvrir un fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>
     <string name="file_too_large">Fichier trop volumineux, la limite est de 1 Mo</string>
     <string name="only_import_file_content">Importer seulement le contenu du fichier
@@ -82,4 +82,5 @@
     <string name="allow_alarm_automatic_backups">Pour sauvegarder automatiquement les notes, veuillez autoriser l\'application à programmer des alarmes précises.</string>
     <string name="this_note_is_linked">Cette note est liée à un fichier local.</string>
     <string name="use_for_this_checklist">Utiliser seulement pour cette liste de contrôles</string>
+    <string name="uncheck_all_items">Décocher tous les éléments</string>
 </resources>

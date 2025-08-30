@@ -81,4 +81,5 @@
         <item quantity="many">%d elementos verificados</item>
         <item quantity="other">%d elementos verificados</item>
     </plurals>
+    <string name="use_for_this_checklist">Utilizar solamente para esta lista</string>
 </resources>

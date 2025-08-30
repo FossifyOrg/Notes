@@ -77,4 +77,5 @@
         <item quantity="other">%d elementoj ŝaltitaj</item>
     </plurals>
     <string name="use_for_this_checklist">Uzi nur por tiu ĉi kontrololisto</string>
+    <string name="uncheck_all_items">Malŝalti ĉiujn elementojn</string>
 </resources>
