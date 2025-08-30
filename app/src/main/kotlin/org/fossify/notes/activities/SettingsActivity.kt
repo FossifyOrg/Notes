@@ -9,7 +9,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.text.TextUtilsCompat
 import androidx.core.view.ViewCompat
 import kotlinx.serialization.SerializationException
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.fossify.commons.dialogs.ConfirmationDialog
 import org.fossify.commons.dialogs.PermissionRequiredDialog
@@ -45,12 +44,7 @@ import org.fossify.notes.extensions.requestUnlockNotes
 import org.fossify.notes.extensions.scheduleNextAutomaticBackup
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.extensions.widgetsDB
-import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_BG_COLOR
-import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_ID
-import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_KEY_ID
-import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_NOTE_ID
-import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_SHOW_TITLE
-import org.fossify.notes.helpers.CUSTOMIZED_WIDGET_TEXT_COLOR
+import org.fossify.notes.helpers.ALL_WIDGET_IDS
 import org.fossify.notes.helpers.FONT_SIZE_100_PERCENT
 import org.fossify.notes.helpers.FONT_SIZE_125_PERCENT
 import org.fossify.notes.helpers.FONT_SIZE_150_PERCENT
@@ -67,7 +61,6 @@ import org.fossify.notes.helpers.GRAVITY_END
 import org.fossify.notes.helpers.GRAVITY_START
 import org.fossify.notes.helpers.NotesHelper
 import org.fossify.notes.models.Note
-import org.fossify.notes.models.Widget
 import java.util.Locale
 import kotlin.system.exitProcess
 
@@ -343,30 +336,19 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupCustomizeWidgetColors() {
-        var widgetToCustomize: Widget? = null
+        var allWidgetIds = intArrayOf()
 
         binding.settingsWidgetColorCustomizationHolder.setOnClickListener {
             Intent(this, WidgetConfigureActivity::class.java).apply {
                 putExtra(IS_CUSTOMIZING_COLORS, true)
-
-                widgetToCustomize?.apply {
-                    putExtra(CUSTOMIZED_WIDGET_ID, widgetId)
-                    putExtra(CUSTOMIZED_WIDGET_KEY_ID, id)
-                    putExtra(CUSTOMIZED_WIDGET_NOTE_ID, noteId)
-                    putExtra(CUSTOMIZED_WIDGET_BG_COLOR, widgetBgColor)
-                    putExtra(CUSTOMIZED_WIDGET_TEXT_COLOR, widgetTextColor)
-                    putExtra(CUSTOMIZED_WIDGET_SHOW_TITLE, widgetShowTitle)
-                }
-
+                putExtra(ALL_WIDGET_IDS, allWidgetIds)
                 startActivity(this)
             }
         }
 
         ensureBackgroundThread {
             val widgets = widgetsDB.getWidgets().filter { it.widgetId != 0 }
-            if (widgets.size == 1) {
-                widgetToCustomize = widgets.first()
-            }
+            allWidgetIds = widgets.map { it.widgetId }.toIntArray()
         }
     }
 

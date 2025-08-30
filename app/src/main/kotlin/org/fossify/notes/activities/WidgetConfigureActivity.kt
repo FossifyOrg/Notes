@@ -41,6 +41,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mIsCustomizingColors = false
     private var mShowTitle = false
     private var mNotes = listOf<Note>()
+    private var mAllWidgetIds = intArrayOf()
     private val binding by viewBinding(WidgetConfigBinding::inflate)
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -107,6 +108,7 @@ class WidgetConfigureActivity : SimpleActivity() {
 
         updateTextColor()
         mIsCustomizingColors = extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
+        mAllWidgetIds = extras?.getIntArray(ALL_WIDGET_IDS) ?: intArrayOf()
         binding.notesPickerHolder.beVisibleIf(!mIsCustomizingColors)
         binding.textNoteViewTitle.beGoneIf(!mShowTitle)
 
@@ -189,23 +191,29 @@ class WidgetConfigureActivity : SimpleActivity() {
     }
 
     private fun saveConfig() {
-        if (mCurrentNoteId == 0L) {
+        if (!mIsCustomizingColors && mCurrentNoteId == 0L) {
             finish()
             return
         }
 
-        val views = RemoteViews(packageName, R.layout.activity_main)
-        views.setBackgroundColor(R.id.text_note_view, mBgColor)
-        views.setBackgroundColor(R.id.checklist_note_view, mBgColor)
-        AppWidgetManager.getInstance(this)?.updateAppWidget(mWidgetId, views) ?: return
+        if (!mIsCustomizingColors) {
+            val views = RemoteViews(packageName, R.layout.activity_main)
+            views.setBackgroundColor(R.id.text_note_view, mBgColor)
+            views.setBackgroundColor(R.id.checklist_note_view, mBgColor)
+            AppWidgetManager.getInstance(this)?.updateAppWidget(mWidgetId, views) ?: return
 
-        val extras = intent.extras
-        val id = if (extras?.containsKey(CUSTOMIZED_WIDGET_KEY_ID) == true) extras.getLong(CUSTOMIZED_WIDGET_KEY_ID) else null
-        mWidgetId = extras?.getInt(CUSTOMIZED_WIDGET_ID, mWidgetId) ?: mWidgetId
-        mCurrentNoteId = extras?.getLong(CUSTOMIZED_WIDGET_NOTE_ID, mCurrentNoteId) ?: mCurrentNoteId
-        val widget = Widget(id, mWidgetId, mCurrentNoteId, mBgColor, mTextColor, mShowTitle)
-        ensureBackgroundThread {
-            widgetsDB.insertOrUpdate(widget)
+            val extras = intent.extras
+            val id = if (extras?.containsKey(CUSTOMIZED_WIDGET_KEY_ID) == true) extras.getLong(CUSTOMIZED_WIDGET_KEY_ID) else null
+            mWidgetId = extras?.getInt(CUSTOMIZED_WIDGET_ID, mWidgetId) ?: mWidgetId
+            mCurrentNoteId = extras?.getLong(CUSTOMIZED_WIDGET_NOTE_ID, mCurrentNoteId) ?: mCurrentNoteId
+            val widget = Widget(id, mWidgetId, mCurrentNoteId, mBgColor, mTextColor, mShowTitle)
+            ensureBackgroundThread {
+                widgetsDB.insertOrUpdate(widget)
+            }
+        } else {
+            ensureBackgroundThread {
+                widgetsDB.updateWidgetColors(mBgColor, mTextColor)
+            }
         }
 
         storeWidgetBackground()
@@ -226,8 +234,9 @@ class WidgetConfigureActivity : SimpleActivity() {
     }
 
     private fun requestWidgetUpdate() {
+        val widgetIds = if (mAllWidgetIds.isNotEmpty()) mAllWidgetIds else intArrayOf(mWidgetId)
         Intent(AppWidgetManager.ACTION_APPWIDGET_UPDATE, null, this, MyWidgetProvider::class.java).apply {
-            putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, intArrayOf(mWidgetId))
+            putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIds)
             sendBroadcast(this)
         }
     }
