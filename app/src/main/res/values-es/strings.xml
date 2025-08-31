@@ -82,4 +82,5 @@
         <item quantity="other">%d elementos verificados</item>
     </plurals>
     <string name="use_for_this_checklist">Utilizar solamente para esta lista</string>
+    <string name="uncheck_all_items">Desmarcar todos los elementos</string>
 </resources>
