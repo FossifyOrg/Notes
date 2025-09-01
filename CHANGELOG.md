@@ -5,8 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.4.1] - 2025-09-01
+### Changed
+- Updated translations
+
 ### Fixed
-- Fixed widgets customization ([#201]) 
+- Fixed widgets customization ([#201])
 
 ## [1.4.0] - 2025-07-15
 ### Added
@@ -77,7 +82,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#178]: https://github.com/FossifyOrg/Notes/issues/178
 [#201]: https://github.com/FossifyOrg/Notes/issues/201
 
-[Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.4.0...HEAD
+[Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.4.1...HEAD
+[1.4.1]: https://github.com/FossifyOrg/Notes/compare/1.4.0...1.4.1
 [1.4.0]: https://github.com/FossifyOrg/Notes/compare/1.3.1...1.4.0
 [1.3.1]: https://github.com/FossifyOrg/Notes/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/FossifyOrg/Notes/compare/1.2.0...1.3.0
