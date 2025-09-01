@@ -22,12 +22,12 @@
     <issue
         id="RemoteViewLayout"
         message="`@layout/activity_main` includes views not allowed in a `RemoteView`: androidx.coordinatorlayout.widget.CoordinatorLayout, androidx.viewpager.widget.PagerTabStrip, com.google.android.material.appbar.MaterialToolbar, org.fossify.commons.views.MyViewPager"
-        errorLine1="        val views = RemoteViews(packageName, R.layout.activity_main)"
-        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            val views = RemoteViews(packageName, R.layout.activity_main)"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/kotlin/org/fossify/notes/activities/WidgetConfigureActivity.kt"
-            line="197"
-            column="21"/>
+            line="200"
+            column="25"/>
     </issue>
 
     <issue
@@ -87,7 +87,7 @@
 
     <issue
         id="AndroidGradlePluginVersion"
-        message="A newer version of com.android.application than 8.11.1 is available: 8.12.0"
+        message="A newer version of com.android.application than 8.11.1 is available: 8.12.2"
         errorLine1="gradlePlugins-agp = &quot;8.11.1&quot;"
         errorLine2="                    ~~~~~~~~">
         <location
@@ -1430,7 +1430,7 @@
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/kotlin/org/fossify/notes/helpers/Constants.kt"
-            line="19"
+            line="20"
             column="33"/>
     </issue>
 
@@ -1474,7 +1474,7 @@
         errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/kotlin/org/fossify/notes/activities/WidgetConfigureActivity.kt"
-            line="67"
+            line="68"
             column="48"/>
     </issue>
 
@@ -1485,7 +1485,7 @@
         errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/kotlin/org/fossify/notes/activities/WidgetConfigureActivity.kt"
-            line="67"
+            line="68"
             column="48"/>
     </issue>
 
