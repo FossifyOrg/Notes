@@ -564,6 +564,10 @@ class MainActivity : SimpleActivity() {
 
     private fun initViewPager(wantedNoteId: Long? = null) {
         NotesHelper(this).getNotes { notes ->
+            if (isFinishing || isDestroyed) {
+                return@getNotes
+            }
+
             notes.filter { it.shouldBeUnlocked(this) }
                 .forEach(::removeProtection)
 
