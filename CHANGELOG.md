@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Fixed crash in search ([#190])
 
 ## [1.4.1] - 2025-09-01
 ### Changed
@@ -80,6 +82,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#157]: https://github.com/FossifyOrg/Notes/issues/157
 [#164]: https://github.com/FossifyOrg/Notes/issues/164
 [#178]: https://github.com/FossifyOrg/Notes/issues/178
+[#190]: https://github.com/FossifyOrg/Notes/issues/190
 [#201]: https://github.com/FossifyOrg/Notes/issues/201
 
 [Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.4.1...HEAD
