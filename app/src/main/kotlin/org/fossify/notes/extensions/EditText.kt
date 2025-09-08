@@ -16,3 +16,9 @@ fun MyEditText.enforcePlainText() {
     }
     filters = (filters ?: emptyArray()) + stripSpans
 }
+
+fun MyEditText.safeSetSelection(position: Int) {
+    val length = text?.length ?: 0
+    setSelection(position.coerceIn(0, length))
+}
+

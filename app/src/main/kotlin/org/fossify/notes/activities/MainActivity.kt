@@ -107,6 +107,7 @@ import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.getPercentageFontSize
 import org.fossify.notes.extensions.notesDB
 import org.fossify.notes.extensions.parseChecklistItems
+import org.fossify.notes.extensions.safeSetSelection
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.extensions.widgetsDB
 import org.fossify.notes.fragments.TextFragment
@@ -608,6 +609,9 @@ class MainActivity : SimpleActivity() {
         }
 
         binding.viewPager.onPageChangeListener {
+            searchIndex = 0
+            searchMatches = emptyList()
+
             currentTextFragment?.removeTextWatcher()
             currentNotesView()?.let { noteView ->
                 noteView.text!!.clearBackgroundSpans()
@@ -641,7 +645,7 @@ class MainActivity : SimpleActivity() {
 
             if (searchMatches.isNotEmpty()) {
                 noteView.requestFocus()
-                noteView.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
+                noteView.safeSetSelection(searchMatches.getOrNull(searchIndex) ?: 0)
             }
 
             searchQueryET.postDelayed({
@@ -681,7 +685,7 @@ class MainActivity : SimpleActivity() {
     private fun selectSearchMatch(editText: MyEditText) {
         if (searchMatches.isNotEmpty()) {
             editText.requestFocus()
-            editText.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
+            editText.safeSetSelection(searchMatches.getOrNull(searchIndex) ?: 0)
         } else {
             hideKeyboard()
         }
@@ -694,7 +698,7 @@ class MainActivity : SimpleActivity() {
 
         currentNotesView()?.let { noteView ->
             noteView.requestFocus()
-            noteView.setSelection(0)
+            noteView.safeSetSelection(0)
         }
 
         searchQueryET.postDelayed({
