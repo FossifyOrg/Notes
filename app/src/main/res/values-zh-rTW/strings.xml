@@ -5,14 +5,14 @@
     <string name="new_note">新增筆記</string>
     <string name="no_title">請為你的筆記命名</string>
     <string name="title_taken">已有相同標題的筆記</string>
-    <string name="open_note">打開筆記</string>
+    <string name="open_note">開啟筆記</string>
     <string name="delete_note">刪除筆記</string>
     <string name="delete_note_prompt_message">確定要刪除筆記「%s」嗎？</string>
     <string name="pick_a_note">選擇筆記</string>
     <string name="rename_note">重新命名筆記</string>
     <string name="general_note">一般筆記</string>
     <string name="create_new_note">建立新筆記</string>
-    <string name="add_to_note">添加到筆記</string>
+    <string name="add_to_note">加入到筆記</string>
     <string name="unsaved_changes_warning">你有一些尚未儲存的變更。你想怎麼處理?</string>
     <string name="note_shown_widget">在小工具顯示的筆記:</string>
     <string name="show_note_title">顯示筆記標題</string>
@@ -22,7 +22,7 @@
     <string name="note_content_locked">筆記的內容已被鎖定。</string>
     <string name="locking_warning">警告：如果您遺忘了筆記的密碼，您將無法找回它或再次存取筆記的內容。</string>
     <string name="new_text_note">新文字筆記</string>
-    <string name="open_file">打開檔案</string>
+    <string name="open_file">開啟檔案</string>
     <string name="export_as_file">匯出成檔案</string>
     <string name="file_too_large">檔案太大，上限為 1MB</string>
     <string name="only_import_file_content">僅匯入檔案內容
