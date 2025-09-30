@@ -4,16 +4,16 @@
     <string name="cannot_share_empty_text">Kan ikke dele tom tekst</string>
     <string name="new_note">Tilføj en ny note</string>
     <string name="no_title">Navngiv din note</string>
-    <string name="title_taken">Dette navn bruges allerede til en anden note</string>
+    <string name="title_taken">En note med det navn findes allerede</string>
     <string name="open_note">Åbn note</string>
     <string name="delete_note">Slet note</string>
-    <string name="delete_note_prompt_message">Er du sikker på at du vil slette noten \"%s\"\?</string>
+    <string name="delete_note_prompt_message">Er du sikker på, at du vil slette noten \"%s\"?</string>
     <string name="pick_a_note">Vælg en note</string>
     <string name="rename_note">Omdøb note</string>
     <string name="general_note">Generel note</string>
     <string name="create_new_note">Opret en ny note</string>
     <string name="add_to_note">Føj til note</string>
-    <string name="unsaved_changes_warning">Du har ændringer der ikke er gemt. Hvad skal der ske med dem\?</string>
+    <string name="unsaved_changes_warning">Du har ikke-gemte ændringer. Hvad vil du gøre med dem?</string>
     <string name="note_shown_widget">Note vist i widget\'en:</string>
     <string name="show_note_title">Vis notens titel</string>
     <string name="new_note_type">Ny notetype:</string>
@@ -70,8 +70,7 @@
     <string name="import_notes_pro">Importer noter (Pro)</string>
     <string name="faq_1_title">Hvordan kan jeg ændre widget\'ens farve\?</string>
     <string name="faq_1_text">Hvis du kun har en aktiv widget, kan du enten genskabe den eller bruge knappen i appindstillingerne til at tilpasse den. Hvis du har flere aktive widgets, er knappen i appindstillingerne ikke tilgængelig. Da appen understøtter farvetilpasning pr. widget, skal du genskabe den widget, som du vil tilpasse.</string>
-    <string name="widget_config">Tak, fordi du bruger Fossify Notes.
-\nFor flere apps fra Fossify, kan du besøge fossify.org.</string>
+    <string name="widget_config">Tak, fordi du bruger Fossify Noter. \nSe flere apps fra Fossify på fossify.org.</string>
     <string name="cannot_load_over_internet">Appen kan ikke indlæse filer over internettet</string>
     <string name="this_note_is_linked">Denne note er knyttet til en lokal fil.</string>
     <plurals name="num_checked_items">
