@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_launcher_name">ویرداشت</string>
+    <string name="new_note">ٱووردن ویرداشت نۊ</string>
+    <string name="no_title">نوم ویرداشت خوتووه هؽل کۊنین</string>
 </resources>
