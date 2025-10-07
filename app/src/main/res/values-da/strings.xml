@@ -35,13 +35,12 @@
     <string name="delete_file_itself">Slet også filen \"%s\"</string>
     <string name="note_saved_successfully">Noten \"%s\" blev gemt</string>
     <string name="note_exported_successfully">Noten \"%s\" blev eksporteret</string>
-    <string name="only_export_file_content">Eksporter kun filens indhold
-\n(ændring af noten påvirker ikke filen</string>
-    <string name="display_success_message">Vis en meddelelse når en fil er gemt</string>
+    <string name="only_export_file_content">Eksportér kun filens indhold \n(ændring af noten påvirker ikke filen)</string>
+    <string name="display_success_message">Vis en meddelelse, når en fil er gemt</string>
     <string name="links_and_emails_clickable">Gør links og mailadresser klikbare</string>
     <string name="place_cursor_end">Placer markøren i slutningen af noten</string>
-    <string name="monospaced_font">Brug en monospatieret font</string>
-    <string name="show_keyboard">Vis tastatur fra start</string>
+    <string name="monospaced_font">Brug skrifttype med fast bredde</string>
+    <string name="show_keyboard">Vis tastatur ved opstart</string>
     <string name="show_word_count">Vis antal ord</string>
     <string name="show_character_count">Vis antal tegn</string>
     <string name="alignment">Justering</string>
@@ -51,8 +50,8 @@
     <string name="widget_note">Note vist i widget</string>
     <string name="show_note_picker">Vis en notevælger ved opstart</string>
     <string name="autosave_notes">Autogem noter</string>
-    <string name="enable_line_wrap">Aktiver tekstombrydning</string>
-    <string name="use_incognito_mode">Anvend inkognito-tilstand til tastatur</string>
+    <string name="enable_line_wrap">Aktivér tekstombrydning</string>
+    <string name="use_incognito_mode">Brug inkognitotilstand til tastatur</string>
     <string name="move_done_checklist_items">Flyt afkrydsede elementer til bunden</string>
     <string name="add_new_checklist_items_top">Tilføj nye tjeklistepunkter øverst</string>
     <string name="checklist">Tjekliste</string>
