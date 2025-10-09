@@ -3,4 +3,5 @@
     <string name="app_launcher_name">ویرداشت</string>
     <string name="new_note">ٱووردن ویرداشت نۊ</string>
     <string name="no_title">نوم ویرداشت خوتووه هؽل کۊنین</string>
+    <string name="cannot_share_empty_text">نتری هؽل پتی ن یک رسۊوی کۊنی</string>
 </resources>
