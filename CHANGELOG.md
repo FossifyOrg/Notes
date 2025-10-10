@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.5.0] - 2025-10-10
+### Changed
+- Updated translations
+
 ### Fixed
 - Fixed a glitch in pattern lock after incorrect attempts
 
@@ -92,7 +97,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#190]: https://github.com/FossifyOrg/Notes/issues/190
 [#201]: https://github.com/FossifyOrg/Notes/issues/201
 
-[Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.4.2...HEAD
+[Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.5.0...HEAD
+[1.5.0]: https://github.com/FossifyOrg/Notes/compare/1.4.2...1.5.0
 [1.4.2]: https://github.com/FossifyOrg/Notes/compare/1.4.1...1.4.2
 [1.4.1]: https://github.com/FossifyOrg/Notes/compare/1.4.0...1.4.1
 [1.4.0]: https://github.com/FossifyOrg/Notes/compare/1.3.1...1.4.0
