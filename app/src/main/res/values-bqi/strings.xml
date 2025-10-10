@@ -4,4 +4,8 @@
     <string name="new_note">ٱووردن ویرداشت نۊ</string>
     <string name="no_title">نوم ویرداشت خوتووه هؽل کۊنین</string>
     <string name="cannot_share_empty_text">نتری هؽل پتی ن یک رسۊوی کۊنی</string>
+    <string name="open_note">گۊشیڌن ویرداشت</string>
+    <string name="delete_note">پاک کردن ویرداشت</string>
+    <string name="delete_note_prompt_message">الن اخۊین ویرداشت «%s» پاک بۊ؟</string>
+    <string name="pick_a_note">پسند ی ویرداشت</string>
 </resources>
