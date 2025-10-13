@@ -8,4 +8,14 @@
     <string name="delete_note">پاک کردن ویرداشت</string>
     <string name="delete_note_prompt_message">الن اخۊین ویرداشت «%s» پاک بۊ؟</string>
     <string name="pick_a_note">پسند ی ویرداشت</string>
+    <string name="title_taken">هیم سکو ی ویرداشت وا هیم عونوان هڌ</string>
+    <string name="rename_note">آلشت نوم ویرداشت</string>
+    <string name="general_note">ویرداشت کول وولاتی</string>
+    <string name="create_new_note">وورکل ی ویرداشت نۊ</string>
+    <string name="add_to_note">ٱووردن و ویرداشت</string>
+    <string name="unsaved_changes_warning">ایسا ی قرده آلشتکاریا زفت نوابیڌه دارین. اخۊین واسووݩ چ کۊنین؟</string>
+    <string name="note_shown_widget">ویرداشتی ک من ویجت نشووݩ داڌه ابۊ:</string>
+    <string name="show_note_title">نشووݩ داڌن عونوان ویرداشت</string>
+    <string name="new_note_type">نوع ویرداشت نۊ:</string>
+    <string name="text_note">ویرداشت هؽلی</string>
 </resources>
