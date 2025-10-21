@@ -164,11 +164,7 @@ class MainActivity : SimpleActivity() {
         setupOptionsMenu()
         refreshMenuItems()
 
-                updateEdgeToEdge(
-            topAppBar = binding.mainToolbar,
-            scrollingView = binding.notesList,
-        )
-
+        setupEdgeToEdge(padBottomImeAndSystem = listOf(binding.viewPager))
         searchQueryET = findViewById(org.fossify.commons.R.id.search_query)
         searchPrevBtn = findViewById(org.fossify.commons.R.id.search_previous)
         searchNextBtn = findViewById(org.fossify.commons.R.id.search_next)
@@ -201,7 +197,7 @@ class MainActivity : SimpleActivity() {
 
     override fun onResume() {
         super.onResume()
-        setupTopAppBar(binding.mainToolbar)
+        setupTopAppBar(binding.mainAppbar)
         if (storedEnableLineWrap != config.enableLineWrap) {
             initViewPager()
         }
@@ -233,7 +229,7 @@ class MainActivity : SimpleActivity() {
             it.applyColorFilter(contrastColor)
         }
 
-        updateTopBarColors(binding.mainToolbar, getProperBackgroundColor())
+        updateTopBarColors(binding.mainAppbar, getProperBackgroundColor())
     }
 
     override fun onPause() {
