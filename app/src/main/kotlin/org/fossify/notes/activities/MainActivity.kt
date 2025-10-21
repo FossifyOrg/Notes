@@ -201,7 +201,7 @@ class MainActivity : SimpleActivity() {
 
     override fun onResume() {
         super.onResume()
-        setupToolbar(binding.mainToolbar)
+        setupTopAppBar(binding.mainToolbar)
         if (storedEnableLineWrap != config.enableLineWrap) {
             initViewPager()
         }
