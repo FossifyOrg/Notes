@@ -341,8 +341,8 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        if (!config.autosaveNotes && mAdapter?.anyHasUnsavedChanges() == true) {
+    override fun onBackPressedCompat(): Boolean {
+        return if (!config.autosaveNotes && mAdapter?.anyHasUnsavedChanges() == true) {
             ConfirmationAdvancedDialog(
                 activity = this,
                 message = "",
@@ -354,13 +354,15 @@ class MainActivity : SimpleActivity() {
                     mAdapter?.saveAllFragmentTexts()
                 }
                 appLockManager.lock()
-                super.onBackPressed()
+                performDefaultBack()
             }
+            true
         } else if (isSearchActive) {
             closeSearch()
+            true
         } else {
             appLockManager.lock()
-            super.onBackPressed()
+            false
         }
     }
 
