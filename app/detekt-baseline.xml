@@ -78,8 +78,6 @@
     <ID>NestedBlockDepth:MainActivity.kt$MainActivity$private fun checkIntents(intent: Intent)</ID>
     <ID>NestedBlockDepth:Note.kt$Note$fun getNoteStoredValue(context: Context): String?</ID>
     <ID>NestedBlockDepth:TasksFragment.kt$TasksFragment$private fun prepareTaskItems(): List&lt;NoteItem&gt;</ID>
-    <ID>ReturnCount:TasksFragment.kt$TasksFragment$private fun saveNote(callback: () -&gt; Unit = {})</ID>
-    <ID>ReturnCount:TextFragment.kt$TextFragment$fun saveText(force: Boolean, callback: ((note: Note) -&gt; Unit)? = null)</ID>
     <ID>SwallowedException:MainActivity.kt$MainActivity$e: ActivityNotFoundException</ID>
     <ID>SwallowedException:MainActivity.kt$MainActivity$e: Exception</ID>
     <ID>SwallowedException:MainActivity.kt$MainActivity$e: NetworkErrorException</ID>

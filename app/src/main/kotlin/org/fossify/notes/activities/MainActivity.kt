@@ -158,20 +158,13 @@ class MainActivity : SimpleActivity() {
     private val binding by viewBinding(ActivityMainBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        isMaterialActivity = true
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
         setupOptionsMenu()
         refreshMenuItems()
 
-        updateMaterialActivityViews(
-            mainCoordinatorLayout = binding.mainCoordinator,
-            nestedView = null,
-            useTransparentNavigation = false,
-            useTopSearchMenu = false
-        )
-
+        setupEdgeToEdge(padBottomImeAndSystem = listOf(binding.viewPager))
         searchQueryET = findViewById(org.fossify.commons.R.id.search_query)
         searchPrevBtn = findViewById(org.fossify.commons.R.id.search_previous)
         searchNextBtn = findViewById(org.fossify.commons.R.id.search_next)
@@ -204,7 +197,7 @@ class MainActivity : SimpleActivity() {
 
     override fun onResume() {
         super.onResume()
-        setupToolbar(binding.mainToolbar)
+        setupTopAppBar(binding.mainAppbar)
         if (storedEnableLineWrap != config.enableLineWrap) {
             initViewPager()
         }
@@ -236,7 +229,7 @@ class MainActivity : SimpleActivity() {
             it.applyColorFilter(contrastColor)
         }
 
-        updateTopBarColors(binding.mainToolbar, getProperBackgroundColor())
+        updateTopBarColors(binding.mainAppbar, getProperBackgroundColor())
     }
 
     override fun onPause() {
@@ -348,8 +341,8 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        if (!config.autosaveNotes && mAdapter?.anyHasUnsavedChanges() == true) {
+    override fun onBackPressedCompat(): Boolean {
+        return if (!config.autosaveNotes && mAdapter?.anyHasUnsavedChanges() == true) {
             ConfirmationAdvancedDialog(
                 activity = this,
                 message = "",
@@ -361,13 +354,15 @@ class MainActivity : SimpleActivity() {
                     mAdapter?.saveAllFragmentTexts()
                 }
                 appLockManager.lock()
-                super.onBackPressed()
+                performDefaultBack()
             }
+            true
         } else if (isSearchActive) {
             closeSearch()
+            true
         } else {
             appLockManager.lock()
-            super.onBackPressed()
+            false
         }
     }
 
