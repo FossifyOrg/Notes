@@ -26,7 +26,7 @@ class TextHistory {
 
     fun add(item: TextHistoryItem) {
         while (history.size > position) {
-            history.removeLast()
+            history.removeAt(history.lastIndex)
         }
 
         history.add(item)
