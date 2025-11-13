@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_launcher_name">Tizmilin</string>
+    <string name="alignment">Asettef</string>
+    <string name="left">Zelmaḍ</string>
+    <string name="center">Talemmast</string>
+    <string name="right">Yeffus</string>
+    <string name="open_note">Ldi tazmilt</string>
+    <string name="delete_note">Kkes tazmilt</string>
+    <string name="rename_note">Snifel idem n tezmilt</string>
+    <string name="general_note">Tazmilt tamatut</string>
+    <string name="text_note">Aḍris</string>
+    <string name="show_content">Sken-d agbur</string>
+    <string name="open_file">Ldi afaylu</string>
+    <string name="autosave_notes">Asekles awurman n tezmilin</string>
+    <string name="pick_a_note">Fren yiwet n tezmilt</string>
+    <string name="add_to_note">Rnu ar tezmilt</string>
+    <string name="show_note_title">Sken-d azwel n tezmilt</string>
 </resources>
