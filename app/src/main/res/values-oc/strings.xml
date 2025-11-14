@@ -36,4 +36,5 @@
     <string name="show_note_title">Mostrar lo títol de la nòta</string>
     <string name="new_note_type">Tipe novèl de nòta :</string>
     <string name="note_content_locked">Lo contengut de las nòtas es verrolhat.</string>
+    <string name="widget_config">Mercés d\'utilizar Fossify Notes.\nPer mai d\'aplicacions de Fossify, visitatz fossify.org.</string>
 </resources>
