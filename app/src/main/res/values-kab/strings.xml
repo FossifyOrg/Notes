@@ -16,4 +16,7 @@
     <string name="pick_a_note">Fren yiwet n tezmilt</string>
     <string name="add_to_note">Rnu ar tezmilt</string>
     <string name="show_note_title">Sken-d azwel n tezmilt</string>
+    <string name="delete_note_prompt_message">Tebɣiḍ ad tekkseḍ tazmilt \"%s\"?</string>
+    <string name="unsaved_changes_warning">Tesɛiḍ kra n yibeddilen ur nettwasekles ara. D acu i tebɣiḍ ad txedmeḍ yid-sen?</string>
+    <string name="new_note_type">Anaw n tezmilt tamaynut:</string>
 </resources>
