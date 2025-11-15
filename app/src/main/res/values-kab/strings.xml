@@ -19,4 +19,5 @@
     <string name="delete_note_prompt_message">Tebɣiḍ ad tekkseḍ tazmilt \"%s\"?</string>
     <string name="unsaved_changes_warning">Tesɛiḍ kra n yibeddilen ur nettwasekles ara. D acu i tebɣiḍ ad txedmeḍ yid-sen?</string>
     <string name="new_note_type">Anaw n tezmilt tamaynut:</string>
+    <string name="unlock_notes">Kkes asekkeṛ i tizmilin</string>
 </resources>
