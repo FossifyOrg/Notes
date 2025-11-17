@@ -20,4 +20,7 @@
     <string name="unsaved_changes_warning">Tesɛiḍ kra n yibeddilen ur nettwasekles ara. D acu i tebɣiḍ ad txedmeḍ yid-sen?</string>
     <string name="new_note_type">Anaw n tezmilt tamaynut:</string>
     <string name="unlock_notes">Kkes asekkeṛ i tizmilin</string>
+    <string name="locking_warning">Ɣur-k: ma tettuḍ awal uffir n tezmilt, ur tettizmireḍ ara ad t-id-terreḍ neɣ ad tkecmeḍ ɣer ugbur n tezmilin.</string>
+    <string name="export_as_file">Sifeḍ d afaylu</string>
+    <string name="file_too_large">Afaylu meqqer aṭas, talast d 1MAṬ</string>
 </resources>
