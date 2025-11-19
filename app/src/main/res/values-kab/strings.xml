@@ -23,4 +23,10 @@
     <string name="locking_warning">Ɣur-k: ma tettuḍ awal uffir n tezmilt, ur tettizmireḍ ara ad t-id-terreḍ neɣ ad tkecmeḍ ɣer ugbur n tezmilin.</string>
     <string name="export_as_file">Sifeḍ d afaylu</string>
     <string name="file_too_large">Afaylu meqqer aṭas, talast d 1MAṬ</string>
+    <string name="note_saved_successfully">Tazmilt \"%s\" tettwasekles akken iwata</string>
+    <string name="note_exported_successfully">Tazmilt \"%s\" tettwasifeḍ akken iwata</string>
+    <string name="only_export_file_content">Sifeḍ kan agbur n ufaylu amiran\n(Abeddel n tezmilt ur yettḥaz ara afaylu)</string>
+    <string name="this_note_is_linked">Tazmilt-a teqqen ɣer ufaylu adigan.</string>
+    <string name="display_success_message">Sken iznan n usekles i yeddan akken iwata</string>
+    <string name="show_character_count">Sken-d amḍan n isekkilen</string>
 </resources>
