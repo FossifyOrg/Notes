@@ -59,4 +59,23 @@
     <string name="move_done_checklist_items">Ssembiwel iferdisen yettwasenqad ɣer wedda</string>
     <string name="add_new_checklist_items_top">Rnu iferdisen imaynuten n wumuɣ n usenqed ɣer tqacuct</string>
     <string name="password_protect_note_deletion">Awal uffir yettḥuddu ɣef tukksa n tazmilt</string>
+    <string name="checklist">Umuɣ n usenqed</string>
+    <string name="checklists">Umuɣen n usenqed</string>
+    <string name="add_new_checklist_item">Rnu aferdis n wumuɣ n usenqed amaynut</string>
+    <string name="add_new_checklist_items">Rnu iferdisen n wumuɣ n usenqed amaynut</string>
+    <string name="checklist_is_empty">Umuɣ n usefqed d ilem</string>
+    <string name="delete_checked_items">Kkes iferdisen yettwasneqden</string>
+    <string name="uncheck_all_items">Kkes akk asenqed i yiferdisen</string>
+    <string name="add_to_the_top">Rnu ɣer tqacuct</string>
+    <string name="use_for_this_checklist">Seqdec kan i tebdart-agi n usenqed</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d Uferdis ittwasenqed</item>
+        <item quantity="other">%d Iferdisen yettwasneqden</item>
+    </plurals>
+    <string name="import_folder">Kter akaram</string>
+    <string name="export_notes">Sifeḍ tizmilin</string>
+    <string name="import_notes">Kter tizmilin</string>
+    <string name="import_notes_pro">Kter tizmilin (Pro)</string>
+    <string name="faq_1_title">Amek ay zemreɣ ad beddleɣ ini n yiwiǧiten?</string>
+    <string name="faq_1_text">Ma tesɛiḍ kan 1 n uwiǧet urmid, tzemreḍ ad tgeḍ tulsa n usnulfu, neɣ seqdec taqeffalt deg iɣewwaṛen n usnas akken ad tsagneḍ. Ma yella ɣur-k deqs n yiwiǧiten urmiden, taqeffalt n iɣewwaṛen n usnas ur tettili ara. Imi asnas-a yisefrak asagen n yini i yal awiǧet, yessefk ad as-talsed i usnulfu n uwiǧet i tebɣiḍ ad teggeḍ asagen.</string>
 </resources>
