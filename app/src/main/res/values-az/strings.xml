@@ -40,4 +40,5 @@
     <string name="autosave_notes">Qeydləri avtomatik saxla</string>
     <string name="enable_line_wrap">Cız sarğısını göstər</string>
     <string name="import_folder">Qovluq daxil et</string>
-    </resources>
+    <string name="widget_config">Fossify Qeydləri istifadə etdiyiniz üçün təşəkkür edirik!\nFossify-dan olan digər tətbiqlər üçün, fossify.org saytına daxil olun.</string>
+</resources>
