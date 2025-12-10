@@ -97,6 +97,17 @@
     </issue>
 
     <issue
+        id="NewerVersionAvailable"
+        message="A newer version of io.nlopez.compose.rules:detekt than 0.4.28 is available: 0.5.1"
+        errorLine1="detektCompose = &quot;0.4.28&quot;"
+        errorLine2="                ~~~~~~~~">
+        <location
+            file="$HOME/work/Notes/Notes/gradle/libs.versions.toml"
+            line="9"
+            column="17"/>
+    </issue>
+
+    <issue
         id="RestrictedApi"
         message="Fragment.isMenuVisible can only be called from within the same library group prefix (referenced groupId=`androidx.fragment` with prefix androidx from groupId=`Notes`)"
         errorLine1="            if (config.showKeyboard &amp;&amp; isMenuVisible &amp;&amp; (!note!!.isLocked() || shouldShowLockedContent)) {"
