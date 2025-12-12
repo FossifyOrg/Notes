@@ -56,7 +56,7 @@
     <string name="autosave_notes">Αυτόματη αποθήκευση σημειώσεων</string>
     <string name="enable_line_wrap">Ενεργοποίηση αναδίπλωσης γραμμής</string>
     <string name="use_incognito_mode">Χρήση λειτουργίας πληκτ/γιου Incognito</string>
-    <string name="move_done_checklist_items">Μετακίνηση ανεπιτυχών λίστας ελέγχου στην κορυφή</string>
+    <string name="move_done_checklist_items">Μετακίνηση επιλεγμένων στοιχείων στο κάτω μέρος</string>
     <string name="add_new_checklist_items_top">Προσθήκη νέων στοιχείων λίστας ελέγχου στην κορυφή</string>
     <string name="checklist">Λίστα ελέγχου</string>
     <string name="checklists">Λίστες ελέγχου</string>

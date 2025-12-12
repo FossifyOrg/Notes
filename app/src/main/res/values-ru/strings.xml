@@ -76,7 +76,12 @@
     <string name="password_protect_note_deletion">Удалять заметки, защищённые паролем</string>
     <string name="this_note_is_linked">Эта заметка связана с локальным файлом.</string>
     <string name="allow_alarm_automatic_backups">Для автоматического резервного копирования заметок предоставьте приложению разрешение на установку будильников.</string>
-    <string name="num_checked_items">Выполненных позиций: %d</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d выполненная позиция</item>
+        <item quantity="few">%d выполненные позиции</item>
+        <item quantity="many">%d выполненных позиций</item>
+        <item quantity="other">%d выполненных позиций</item>
+    </plurals>
     <string name="use_for_this_checklist">Только для этого списка</string>
     <string name="uncheck_all_items">Убрать выполнение всех позиций</string>
 </resources>
