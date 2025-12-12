@@ -69,4 +69,6 @@
     <string name="faq_1_title">ウィジェットの色はどう変更できますか？</string>
     <string name="faq_1_text">アクティブなウィジェットが一つしかない場合、ウィジェットを再作成するか、アプリ設定内のボタンを押してカスタマイズできます。アクティブなウィジェットが複数ある場合、アプリ設定内のボタンは使用できません。アプリはウィジェットごとの色のカスタマイズをサポートしているので、カスタマイズしたいウィジェットは再作成する必要があります。</string>
     <string name="widget_config">Fossify Notesをご利用いただきありがとうございます。\nFossifyからより多くのアプリのために、訪問してくださいfossify.org...</string>
+    <string name="unlock_notes">ノートのロックを解除する</string>
+    <string name="found_locked_notes_info">以下のノートはロックされています。1つずつロックを解除するか、エクスポートをスキップしてください。</string>
 </resources>
