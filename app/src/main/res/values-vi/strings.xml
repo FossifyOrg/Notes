@@ -29,8 +29,8 @@
     <string name="locking_warning">Cảnh Báo: Nếu bạn quên mật khẩu ghi chú, bạn sẽ không thể nào lấy lại hay truy cập vào những ghi chú nữa</string>
     <string name="new_text_note">Ghi chú văn bản mới</string>
     <string name="new_checklist">Danh sách kiểm tra mới</string>
-    <string name="cannot_load_over_internet">Ứng dụng không thể tải tập tin qua internet</string>
-    <string name="open_file">Mở tập tin</string>
+    <string name="cannot_load_over_internet">Ứng dụng không thể tải tệp qua internet</string>
+    <string name="open_file">Mở tệp</string>
     <string name="export_as_file">Xuất dưới dạng tệp</string>
     <string name="file_too_large">Tệp quá lớn, giới hạn là 1MB</string>
     <string name="only_import_file_content">Chỉ nhập nội dung tệp \n (việc thay đổi tệp sẽ không ảnh hưởng đến ghi chú)</string>
@@ -70,4 +70,5 @@
     <string name="import_notes_pro">Nhập ghi chú (Bản trả phí)</string>
     <string name="faq_1_title">Làm cách nào để thay đổi màu tiện ích?</string>
     <string name="faq_1_text">Trong trường hợp bạn chỉ có 1 tiện ích con đang hoạt động, bạn có thể tạo lại nó hoặc sử dụng nút trong cài đặt ứng dụng để tùy chỉnh nó. Nếu bạn có nhiều tiện ích con đang hoạt động, nút trong cài đặt ứng dụng sẽ không khả dụng. Vì ứng dụng hỗ trợ tùy chỉnh màu sắc cho mỗi tiện ích, bạn sẽ phải tạo lại tiện ích mà bạn muốn tùy chỉnh.</string>
+    <string name="this_note_is_linked">Ghi chú này được liên kết với một tệp cục bộ.</string>
 </resources>
