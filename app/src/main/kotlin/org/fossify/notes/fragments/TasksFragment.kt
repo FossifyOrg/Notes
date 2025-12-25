@@ -14,6 +14,7 @@ import org.fossify.commons.helpers.ensureBackgroundThread
 import org.fossify.notes.activities.SimpleActivity
 import org.fossify.notes.adapters.TasksAdapter
 import org.fossify.notes.databinding.FragmentChecklistBinding
+import org.fossify.notes.dialogs.ChecklistItemDialogFragment
 import org.fossify.notes.dialogs.EditTaskDialog
 import org.fossify.notes.dialogs.NewChecklistItemDialog
 import org.fossify.notes.extensions.config
@@ -41,6 +42,24 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         noteId = requireArguments().getLong(NOTE_ID, 0L)
         setupFragmentColors()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Listen for results from the ChecklistItemDialogFragment
+        childFragmentManager.setFragmentResultListener(ChecklistItemDialogFragment.REQUEST_KEY, viewLifecycleOwner) { _, bundle ->
+            val text = bundle.getString(ChecklistItemDialogFragment.RESULT_TEXT_KEY) ?: return@setFragmentResultListener
+            val taskId = bundle.getInt(ChecklistItemDialogFragment.RESULT_TASK_ID_KEY, -1)
+
+            if (taskId == -1) {
+                // ID is -1, so we are adding a NEW item
+                addNewChecklistItems(text)
+            } else {
+                // ID exists, so we are EDITING an existing item
+                updateExistingTask(taskId, text)
+            }
+        }
     }
 
     override fun onResume() {
@@ -137,30 +156,30 @@ class TasksFragment : NoteFragment(), TasksActionListener {
             setupLockedViews(this.toCommonBinding(), note!!)
         }
     }
-
     private fun showNewItemDialog() {
-        NewChecklistItemDialog(activity as SimpleActivity, noteId) { titles ->
-            var currentMaxId = tasks.maxByOrNull { item -> item.id }?.id ?: 0
-            val newItems = ArrayList<Task>()
-
-            titles.forEach { title ->
-                title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
-                    newItems.add(Task(currentMaxId + 1, System.currentTimeMillis(), row, false))
-                    currentMaxId++
-                }
-            }
-
-            if (config?.addNewChecklistItemsTop == true) {
-                tasks.addAll(0, newItems)
-            } else {
-                tasks.addAll(newItems)
-            }
-
-            saveNote()
-            setupAdapter()
-        }
+        // Pass -1 to indicate a NEW item
+        ChecklistItemDialogFragment.newInstance(taskId = -1, text = "")
+            .show(childFragmentManager, ChecklistItemDialogFragment.DIALOG_TAG)
     }
 
+    private fun addNewChecklistItems(text: String) {
+        var currentMaxId = tasks.maxByOrNull { item -> item.id }?.id ?: 0
+        val newItems = ArrayList<Task>()
+
+        text.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
+            newItems.add(Task(currentMaxId + 1, System.currentTimeMillis(), row, false))
+            currentMaxId++
+        }
+
+        if (config?.addNewChecklistItemsTop == true) {
+            tasks.addAll(0, newItems)
+        } else {
+            tasks.addAll(newItems)
+        }
+
+        saveNote()
+        setupAdapter()
+    }
     private fun prepareTaskItems(): List<NoteItem> {
         return if (config?.moveDoneChecklistItems == true) {
             mutableListOf<NoteItem>().apply {
@@ -272,12 +291,17 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     fun getTasks() = Gson().toJson(tasks)
 
     override fun editTask(task: Task, callback: () -> Unit) {
-        EditTaskDialog(activity as SimpleActivity, task.title) { title ->
-            val editedTask = task.copy(title = title)
-            val index = tasks.indexOf(task)
-            tasks[index] = editedTask
+        ChecklistItemDialogFragment.newInstance(taskId = task.id, text = task.title)
+            .show(childFragmentManager, ChecklistItemDialogFragment.DIALOG_TAG)
+    }
+
+    private fun updateExistingTask(taskId: Int, newTitle: String) {
+        val taskIndex = tasks.indexOfFirst { it.id == taskId }
+        if (taskIndex != -1) {
+            val task = tasks[taskIndex]
+            val editedTask = task.copy(title = newTitle)
+            tasks[taskIndex] = editedTask
             saveAndReload()
-            callback()
         }
     }
 
