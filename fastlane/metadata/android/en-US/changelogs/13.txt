@@ -1,0 +1,8 @@
+Changed:
+
+• Updated translations
+
+Fixed:
+
+• Fixed inconsistent checklist sorting when the "Move checked items to the bottom" option is enabled 
+
