@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Fixed inconsistent checklist sorting when the "Move checked items to the bottom" option is enabled ([#59])
+
 ## [1.6.0] - 2025-10-29
 ### Changed
 - Compatibility updates for Android 15 & 16
@@ -91,6 +94,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release
 
+[#59]: https://github.com/FossifyOrg/Notes/issues/59
 [#81]: https://github.com/FossifyOrg/Notes/issues/81
 [#83]: https://github.com/FossifyOrg/Notes/issues/83
 [#99]: https://github.com/FossifyOrg/Notes/issues/99

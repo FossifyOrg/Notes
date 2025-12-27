@@ -288,13 +288,28 @@ class TasksFragment : NoteFragment(), TasksActionListener {
 
     override fun moveTask(fromPosition: Int, toPosition: Int) {
         switchToCustomSorting()
+
+        val sortableIndices = mutableListOf<Int>()
+        val checkedCanBeMoved = config?.moveDoneChecklistItems == false
+        for (i in 0 until tasks.size) {
+            if (checkedCanBeMoved || !tasks[i].isDone) {
+                sortableIndices.add(i)
+            }
+        }
+
         if (fromPosition < toPosition) {
             for (i in fromPosition until toPosition) {
-                tasks.swap(i, i + 1)
+                val toMoveIndex = sortableIndices[i]
+                if (i + 1 < sortableIndices.size) {
+                    val headingIndex = sortableIndices[i + 1]
+                    tasks.swap(toMoveIndex, headingIndex)
+                }
             }
         } else {
             for (i in fromPosition downTo toPosition + 1) {
-                tasks.swap(i, i - 1)
+                val toMoveIndex = sortableIndices[i]
+                val headingIndex = sortableIndices[i - 1]
+                tasks.swap(toMoveIndex, headingIndex)
             }
         }
 
