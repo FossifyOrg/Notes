@@ -118,7 +118,8 @@ class ChecklistItemDialogFragment : DialogFragment() {
         val rowBinding = ItemAddChecklistBinding.inflate(layoutInflater)
 
         // We disable automatic state saving for this view.
-        // This prevents Android from confusing the multiple EditTexts (which all share the same ID) and overwriting our manually restored text with the last view's text.
+        // This prevents Android from confusing the multiple EditTexts (which all share the same ID)
+        // and overwriting our manually restored text with the last view's text.
         rowBinding.titleEditText.isSaveEnabled = false
 
         rowBinding.titleEditText.setText(text)

@@ -15,8 +15,6 @@ import org.fossify.notes.activities.SimpleActivity
 import org.fossify.notes.adapters.TasksAdapter
 import org.fossify.notes.databinding.FragmentChecklistBinding
 import org.fossify.notes.dialogs.ChecklistItemDialogFragment
-import org.fossify.notes.dialogs.EditTaskDialog
-import org.fossify.notes.dialogs.NewChecklistItemDialog
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.NOTE_ID
@@ -48,7 +46,9 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         super.onViewCreated(view, savedInstanceState)
 
         // Listen for results from the ChecklistItemDialogFragment
-        childFragmentManager.setFragmentResultListener(ChecklistItemDialogFragment.REQUEST_KEY, viewLifecycleOwner) { _, bundle ->
+        childFragmentManager.setFragmentResultListener(ChecklistItemDialogFragment.REQUEST_KEY,
+            viewLifecycleOwner)
+        { _, bundle ->
             val text = bundle.getString(ChecklistItemDialogFragment.RESULT_TEXT_KEY) ?: return@setFragmentResultListener
             val taskId = bundle.getInt(ChecklistItemDialogFragment.RESULT_TASK_ID_KEY, -1)
 
