@@ -12,7 +12,7 @@
     <plurals name="num_checked_items">
         <item quantity="one">%d item assinalado</item>
         <item quantity="many">%d itens assinalados</item>
-        <item quantity="other"></item>
+        <item quantity="other"/>
     </plurals>
     <string name="app_launcher_name">Notas</string>
     <string name="widget_config">Obrigado por utilizar Fossify Notes.
@@ -81,4 +81,6 @@
     <string name="allow_alarm_automatic_backups">Para criar backups automaticamente, conceda a permissão necessária para criar agendamento de alarmes.</string>
     <string name="add_new_checklist_items_top">Adicionar novos itens ao topo da lista de verificação</string>
     <string name="checklist">Lista de verificação</string>
+    <string name="uncheck_all_items">Desmarque todos os itens</string>
+    <string name="use_for_this_checklist">Usar apenas para esta lista de verificação</string>
 </resources>
