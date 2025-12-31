@@ -15,6 +15,8 @@ import org.fossify.notes.activities.SimpleActivity
 import org.fossify.notes.adapters.TasksAdapter
 import org.fossify.notes.databinding.FragmentChecklistBinding
 import org.fossify.notes.dialogs.ChecklistItemDialogFragment
+import org.fossify.notes.dialogs.EditTaskDialogFragment
+import org.fossify.notes.dialogs.NewChecklistItemDialogFragment
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.NOTE_ID
@@ -35,6 +37,9 @@ class TasksFragment : NoteFragment(), TasksActionListener {
 
     var tasks = mutableListOf<Task>()
 
+    // Variable to track the callback function
+    private var editTaskCallback: (() -> Unit)? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentChecklistBinding.inflate(inflater, container, false)
         noteId = requireArguments().getLong(NOTE_ID, 0L)
@@ -45,19 +50,27 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Listen for results from the ChecklistItemDialogFragment
-        childFragmentManager.setFragmentResultListener(ChecklistItemDialogFragment.REQUEST_KEY,
+        // Listen for results from the NewChecklistItemDialogFragment
+        childFragmentManager.setFragmentResultListener(NewChecklistItemDialogFragment.REQUEST_KEY,
             viewLifecycleOwner)
         { _, bundle ->
-            val text = bundle.getString(ChecklistItemDialogFragment.RESULT_TEXT_KEY) ?: return@setFragmentResultListener
-            val taskId = bundle.getInt(ChecklistItemDialogFragment.RESULT_TASK_ID_KEY, -1)
+            val text = bundle.getString(NewChecklistItemDialogFragment.RESULT_TEXT) ?: return@setFragmentResultListener
+            addNewChecklistItems(text)
+        }
 
-            if (taskId == -1) {
-                // ID is -1, so we are adding a NEW item
-                addNewChecklistItems(text)
-            } else {
-                // ID exists, so we are EDITING an existing item
-                updateExistingTask(taskId, text)
+        // Listen for EditTaskDialogFragment
+        childFragmentManager.setFragmentResultListener(EditTaskDialogFragment.REQUEST_KEY,
+            viewLifecycleOwner)
+        { _, bundle ->
+            val taskId = bundle.getInt(EditTaskDialogFragment.RESULT_TASK_ID)
+            val newTitle = bundle.getString(EditTaskDialogFragment.RESULT_TITLE)
+
+            if (newTitle != null) {
+                updateExistingTask(taskId, newTitle)
+
+                // Invoke the callback
+                editTaskCallback?.invoke()
+                editTaskCallback = null
             }
         }
     }
@@ -157,9 +170,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         }
     }
     private fun showNewItemDialog() {
-        // Pass -1 to indicate a NEW item
-        ChecklistItemDialogFragment.newInstance(taskId = -1, text = "")
-            .show(childFragmentManager, ChecklistItemDialogFragment.DIALOG_TAG)
+        NewChecklistItemDialogFragment.show(childFragmentManager, noteId)
     }
 
     private fun addNewChecklistItems(text: String) {
@@ -291,8 +302,9 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     fun getTasks() = Gson().toJson(tasks)
 
     override fun editTask(task: Task, callback: () -> Unit) {
-        ChecklistItemDialogFragment.newInstance(taskId = task.id, text = task.title)
-            .show(childFragmentManager, ChecklistItemDialogFragment.DIALOG_TAG)
+        // Save the callback to be used when the result arrives
+        this.editTaskCallback = callback
+        EditTaskDialogFragment.show(childFragmentManager, task)
     }
 
     private fun updateExistingTask(taskId: Int, newTitle: String) {
