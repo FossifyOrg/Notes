@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Disabled touch outside the checklist dialog to prevent loss of content ([#291])
 
 ### Fixed
 - Fixed inconsistent checklist sorting when the "Move checked items to the bottom" option is enabled ([#59])
@@ -105,6 +107,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#178]: https://github.com/FossifyOrg/Notes/issues/178
 [#190]: https://github.com/FossifyOrg/Notes/issues/190
 [#201]: https://github.com/FossifyOrg/Notes/issues/201
+[#291]: https://github.com/FossifyOrg/Notes/issues/291
 
 [Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.6.0...HEAD
 [1.6.0]: https://github.com/FossifyOrg/Notes/compare/1.5.0...1.6.0
