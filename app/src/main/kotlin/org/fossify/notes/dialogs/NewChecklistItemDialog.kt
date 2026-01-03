@@ -45,7 +45,12 @@ class NewChecklistItemDialog(
             .setPositiveButton(org.fossify.commons.R.string.ok, null)
             .setNegativeButton(org.fossify.commons.R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this, R.string.add_new_checklist_items) { alertDialog ->
+                activity.setupDialogStuff(
+                    view = view,
+                    dialog = this,
+                    titleId = R.string.add_new_checklist_items,
+                    cancelOnTouchOutside = false
+                ) { alertDialog ->
                     alertDialog.showKeyboard(titles.first())
                     alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
                         activity.config.addNewChecklistItemsTop = binding.settingsAddChecklistTop.isChecked
