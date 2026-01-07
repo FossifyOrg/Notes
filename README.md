@@ -35,3 +35,23 @@ Experience the simplicity and efficiency of note-taking with Fossify Notes. Down
 <img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2_en-US.png" width="30%">
 <img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/3_en-US.png" width="30%">
 </div>
+
+## Build & Run (Android)
+
+### Requirements
+- Android Studio Hedgehog or newer
+- Android SDK 30+
+- Gradle (bundled with Android Studio)
+
+### Steps
+1. Clone the repository
+2. Open the project in Android Studio
+3. Allow Gradle sync to complete
+4. Select the `appDebug` build variant
+5. Run the app on:
+   - Emulator (API 30+ recommended), or
+   - Physical device with USB debugging enabled
+
+### Notes
+- First Gradle sync may take a few minutes
+- If sync fails, try **Invalidate Caches & Restart**
