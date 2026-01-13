@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_launcher_name">تێبینی</string>
+    <string name="open_file">کردنەوەی پەڕگە</string>
+    <string name="new_note">تێبینییەکی نوێ زیاد بکە</string>
+    <string name="no_title">ناوێک لە تێبینییەکەت بنێ</string>
+    <string name="open_note">کردنەوەی تێبینی</string>
+</resources>
