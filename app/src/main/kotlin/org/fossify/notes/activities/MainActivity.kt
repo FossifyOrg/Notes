@@ -41,6 +41,7 @@ import org.fossify.commons.dialogs.SecurityDialog
 import org.fossify.commons.extensions.appLaunched
 import org.fossify.commons.extensions.appLockManager
 import org.fossify.commons.extensions.applyColorFilter
+import org.fossify.commons.extensions.applyFontToViewRecursively
 import org.fossify.commons.extensions.baseConfig
 import org.fossify.commons.extensions.beVisibleIf
 import org.fossify.commons.extensions.checkWhatsNew
@@ -218,6 +219,7 @@ class MainActivity : SimpleActivity() {
             setNonPrimaryAlpha(0.4f)
             setTextColor(getProperPrimaryColor())
             tabIndicatorColor = getProperPrimaryColor()
+            applyFontToViewRecursively(this)
         }
         updateTextColors(binding.viewPager)
 
