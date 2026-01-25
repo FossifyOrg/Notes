@@ -21,6 +21,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewbinding.ViewBinding
 import org.fossify.commons.extensions.*
+import org.fossify.commons.helpers.FontHelper
 import org.fossify.commons.views.MyEditText
 import org.fossify.notes.R
 import org.fossify.notes.activities.MainActivity
@@ -144,7 +145,7 @@ class TextFragment : NoteFragment() {
     private fun setupFragment() {
         val config = config ?: return
         noteEditText.apply {
-            typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
+            typeface = if (config.monospacedFont) Typeface.MONOSPACE else FontHelper.getTypeface(context)
 
             val fileContents = note!!.getNoteStoredValue(context)
             if (fileContents == null) {
