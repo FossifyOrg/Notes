@@ -104,6 +104,7 @@ import org.fossify.notes.dialogs.OpenFileDialog
 import org.fossify.notes.dialogs.OpenNoteDialog
 import org.fossify.notes.dialogs.RenameNoteDialog
 import org.fossify.notes.dialogs.SortChecklistDialog
+import org.fossify.notes.extensions.checklistToPlainText
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.getPercentageFontSize
 import org.fossify.notes.extensions.notesDB
@@ -1457,7 +1458,7 @@ class MainActivity : SimpleActivity() {
         val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) {
             getCurrentNoteText()
         } else {
-            mCurrentNote.value
+            mCurrentNote.value.checklistToPlainText(config.moveDoneChecklistItems) ?: mCurrentNote.value
         }
 
         if (text.isNullOrEmpty()) {

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added support for custom fonts
 
 ### Changed
+- Checklists are now shared as plain text ([#96])
 - Disabled touch outside the checklist dialog to prevent loss of content ([#291])
 
 ### Fixed
@@ -102,6 +103,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#59]: https://github.com/FossifyOrg/Notes/issues/59
 [#81]: https://github.com/FossifyOrg/Notes/issues/81
 [#83]: https://github.com/FossifyOrg/Notes/issues/83
+[#96]: https://github.com/FossifyOrg/Notes/issues/96
 [#99]: https://github.com/FossifyOrg/Notes/issues/99
 [#110]: https://github.com/FossifyOrg/Notes/issues/110
 [#156]: https://github.com/FossifyOrg/Notes/issues/156
