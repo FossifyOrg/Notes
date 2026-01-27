@@ -14,3 +14,12 @@ fun String.parseChecklistItems(): ArrayList<Task>? {
     }
     return null
 }
+
+fun String.checklistToPlainText(moveDoneToBottom: Boolean = true): String? {
+    val tasks = parseChecklistItems() ?: return null
+    val sortedTasks = if (moveDoneToBottom) tasks.sortedBy { it.isDone } else tasks
+    return sortedTasks.joinToString("\n") { task ->
+        val checkbox = if (task.isDone) "[x]" else "[ ]"
+        "$checkbox ${task.title}"
+    }
+}
