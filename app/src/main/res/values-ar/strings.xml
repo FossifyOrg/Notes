@@ -19,7 +19,7 @@
     <string name="new_note_type">نوع ملاحظة جديد:</string>
     <string name="text_note">ملاحظة نصية</string>
     <string name="unlock_note">إلغاء تأمين الملاحظة</string>
-    <string name="unlock_notes">إلغاء تأمين الملاحظة</string>
+    <string name="unlock_notes">إلغاء تأمين الملاحظات</string>
     <string name="found_locked_notes_info">الملاحظات التالية مقفلة. يمكنك إما إلغاء قفلها واحدة تلو الأخرى أو تخطي تصديرها.</string>
     <string name="note_content_locked">محتوى الملاحظات مؤمن.</string>
     <string name="show_content">إظهار المحتوى</string>
@@ -55,7 +55,7 @@
     <string name="autosave_notes">حفظ الملاحظات تلقائيا</string>
     <string name="enable_line_wrap">تفعيل التفاف الخط</string>
     <string name="use_incognito_mode">استخدام وضع التصفح المتخفي للوحات المفاتيح</string>
-    <string name="move_done_checklist_items">نقل عناصر قائمة التحقق المنجزة إلى الأسفل</string>
+    <string name="move_done_checklist_items">انقل العناصر المحددة إلى الأسفل</string>
     <string name="add_new_checklist_items_top">إضافة عناصر قائمة اختيار جديدة في الأعلى</string>
     <string name="checklist">قائمة تدقيق</string>
     <string name="checklists">قوائم</string>
@@ -68,4 +68,11 @@
     <string name="import_notes_pro">استيراد الملاحظات (Pro)</string>
     <string name="faq_1_title">كيف يمكنني تغيير لون القطع؟</string>
     <string name="faq_1_text">في حال كان لديك عنصر واجهة مستخدم نشط واحد فقط، يمكنك إما إعادة إنشائه، أو استخدام الزر في إعدادات التطبيق لتخصيصه. إذا كان لديك العديد من الحاجيات النشطة، لن يكون الزر الموجود في إعدادات التطبيق متاحا. بما أن التطبيق يدعم تخصيص الألوان لكل عنصر واجهة مستخدم ، سيكون عليك إعادة إنشاء القطعة التي تريد تخصيصها.</string>
+    <string name="lock_note">قم بتأمين الملاحظة</string>
+    <string name="allow_alarm_automatic_backups">لعمل نسخ احتياطية تلقائية للملاحظات، يرجى منح التطبيق إذنًا لجدولة التنبيهات.</string>
+    <string name="this_note_is_linked">هذه الملاحظة مرتبطة بملف محلي.</string>
+    <string name="password_protect_note_deletion">أحمي حذف الملاحظات بكلمة مرور</string>
+    <string name="uncheck_all_items">قم بإلغاء تحديد جميع العناصر</string>
+    <string name="add_to_the_top">أضف إلى الأعلى</string>
+    <string name="use_for_this_checklist">استخدم لهذه القائمة فقط</string>
 </resources>
