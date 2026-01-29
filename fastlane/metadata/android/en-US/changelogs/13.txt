@@ -1,0 +1,14 @@
+Added:
+
+• Added support for custom fonts
+
+Changed:
+
+• Checklists are now shared as plain text 
+• Disabled touch outside the checklist dialog to prevent loss of content 
+• Updated translations
+
+Fixed:
+
+• Fixed inconsistent checklist sorting when the "Move checked items to the bottom" option is enabled 
+
