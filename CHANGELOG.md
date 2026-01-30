@@ -5,12 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.7.0] - 2026-01-30
 ### Added
 - Added support for custom fonts
 
 ### Changed
 - Checklists are now shared as plain text ([#96])
 - Disabled touch outside the checklist dialog to prevent loss of content ([#291])
+- Updated translations
 
 ### Fixed
 - Fixed inconsistent checklist sorting when the "Move checked items to the bottom" option is enabled ([#59])
@@ -114,7 +117,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#201]: https://github.com/FossifyOrg/Notes/issues/201
 [#291]: https://github.com/FossifyOrg/Notes/issues/291
 
-[Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.6.0...HEAD
+[Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.7.0...HEAD
+[1.7.0]: https://github.com/FossifyOrg/Notes/compare/1.6.0...1.7.0
 [1.6.0]: https://github.com/FossifyOrg/Notes/compare/1.5.0...1.6.0
 [1.5.0]: https://github.com/FossifyOrg/Notes/compare/1.4.2...1.5.0
 [1.4.2]: https://github.com/FossifyOrg/Notes/compare/1.4.1...1.4.2
