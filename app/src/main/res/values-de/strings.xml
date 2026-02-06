@@ -9,7 +9,7 @@
     <string name="title_taken">Eine Notiz mit diesem Namen existiert bereits</string>
     <string name="open_note">Notiz öffnen</string>
     <string name="delete_note">Notiz löschen</string>
-    <string name="delete_note_prompt_message">Die Notiz „%s“ wirklich löschen\?</string>
+    <string name="delete_note_prompt_message">Soll wirklich die Notiz „%s“ gelöscht werden?</string>
     <string name="pick_a_note">Notiz auswählen</string>
     <string name="rename_note">Notiz umbenennen</string>
     <string name="general_note">Hauptnotiz</string>
