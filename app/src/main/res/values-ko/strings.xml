@@ -1,2 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_launcher_name">노트</string>
+    <string name="widget_config">Fossify 노트를 사용해 주셔서 감사합니다.\nFossify의 더 많은 앱들을 보려면, fossify.org를 방문해주세요.</string>
+    <string name="cannot_share_empty_text">빈 텍스트는 공유할 수 없습니다</string>
+    <string name="new_note">새 노트 추가</string>
+    <string name="no_title">노트의 이름을 정해주세요</string>
+    <string name="title_taken">해당 이름을 가진 노트가 이미 존재합니다</string>
+    <string name="open_note">노트 열기</string>
+    <string name="delete_note">노트 삭제</string>
+    <string name="delete_note_prompt_message">노트 \"%s\"를 정말로 삭제할까요?</string>
+    <string name="pick_a_note">노트 고르기</string>
+    <string name="rename_note">노트 이름 바꾸기</string>
+    <string name="general_note">일반 노트</string>
+    <string name="create_new_note">새 노트 만들기</string>
+    <string name="add_to_note">노트에 추가</string>
+    <string name="unsaved_changes_warning">저장되지 않은 변경 사항이 있습니다. 어떻게 하시겠습니까?</string>
+    <string name="note_shown_widget">위젯에 보여지는 노트:</string>
+    <string name="show_note_title">노트 제목 보이기</string>
+    <string name="new_note_type">새로운 노트의 유형:</string>
+    <string name="text_note">텍스트 노트</string>
+    <string name="lock_note">노트 잠금</string>
+    <string name="unlock_note">노트 잠금 해제</string>
+    <string name="unlock_notes">노트 잠금 해제</string>
+    <string name="found_locked_notes_info">다음 메모는 잠겨 있습니다. 하나씩 잠금을 해제하거나 건너뛰고 내보낼 수 있습니다.</string>
+    <string name="note_content_locked">노트의 컨텐츠가 잠겨 있습니다.</string>
+    <string name="show_content">컨텐츠 보이기</string>
+    <string name="locking_warning">경고: 노트의 비밀번호를 잊어버리면, 노트의 컨텐츠에 접근하거나 복구할 수 없게 됩니다.</string>
+    <string name="new_text_note">새로운 텍스트 노트</string>
+    <string name="new_checklist">새로운 체크리스트</string>
+    <string name="cannot_load_over_internet">이 앱은 인터넷을 통해 파일을 불러올 수 없습니다</string>
+    <string name="allow_alarm_automatic_backups">메모를 자동으로 백업하려면 앱에 정확한 알람 예약 권한을 허용해 주세요.</string>
+    <string name="open_file">파일 열기</string>
+    <string name="export_as_file">파일로 내보내기</string>
+    <string name="file_too_large">파일이 너무 큽니다, 제한은 1MB입니다</string>
+    <string name="only_import_file_content">파일 내용만 가져오기\n(파일을 변경해도 노트에는 영향을 미치지 않습니다)</string>
+    <string name="update_file_at_note">메모를 업데이트할 때 파일도 업데이트\n(파일이 삭제되거나 경로가 변경되면 메모도 삭제됩니다)</string>
+</resources>
