@@ -75,4 +75,14 @@
     <string name="uncheck_all_items">قم بإلغاء تحديد جميع العناصر</string>
     <string name="add_to_the_top">أضف إلى الأعلى</string>
     <string name="use_for_this_checklist">استخدم لهذه القائمة فقط</string>
+    <string name="widget_config">شكرًا لاستخدامك Fossify Notes.\nللمزيد من تطبيقات Fossify، يُرجى زيارة fossify.org.</string>
+    <plurals name="num_checked_items">
+        <item quantity="zero">لم يُحدد أي عنصر</item>
+        <item quantity="one">عنصر واحد محدد</item>
+        <item quantity="two">عنصران محددان</item>
+        <item quantity="few">عناصر محددة %d</item>
+        <item quantity="many">عنصرًا محددا %d</item>
+        <item quantity="other">عنصر محدد %d</item>
+    </plurals>
+    <string name="import_notes">استورد ملاحظات</string>
 </resources>
