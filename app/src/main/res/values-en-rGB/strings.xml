@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="open_file">Open file</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d checked item</item>
+        <item quantity="other">%d checked items</item>
+    </plurals>
 </resources>
