@@ -56,7 +56,7 @@
     <string name="autosave_notes">Automaticky ukladať poznámky</string>
     <string name="enable_line_wrap">Povoliť zalamovanie riadkov</string>
     <string name="use_incognito_mode">Použiť Inkognito mód klávesníc</string>
-    <string name="move_done_checklist_items">Presunúť splnené položky zo zoznamu položiek na spodok</string>
+    <string name="move_done_checklist_items">Presunúť splnené položky na spodok</string>
     <string name="add_new_checklist_items_top">Pridávať nové položky do zoznamov na vrch</string>
     <string name="checklist">Zoznam položiek</string>
     <string name="checklists">Zoznamy položiek</string>
