@@ -14,7 +14,7 @@
     <string name="general_note">Note générale</string>
     <string name="create_new_note">Créer une nouvelle note</string>
     <string name="add_to_note">Ajouter à la note</string>
-    <string name="unsaved_changes_warning">Vous avez des changements non sauvegardés. Que voulez-vous faire avec \?</string>
+    <string name="unsaved_changes_warning">Vous avez des changements non sauvegardés. Que voulez-vous en faire ?</string>
     <string name="note_shown_widget">Note affichée dans le widget :</string>
     <string name="show_note_title">Afficher le titre de la note</string>
     <string name="new_note_type">Type de la note :</string>
@@ -25,22 +25,19 @@
     <string name="found_locked_notes_info">Les notes suivantes sont verrouillées. Vous pouvez les déverrouiller une par une ou ne pas les exporter.</string>
     <string name="note_content_locked">Le contenu des notes est verrouillé.</string>
     <string name="show_content">Montrer le contenu</string>
-    <string name="locking_warning">AVERTISSEMENT : Si vous oubliez le mot de passe des notes, vous ne pourrez plus le récupérer ni accéder au contenu des notes.</string>
+    <string name="locking_warning">AVERTISSEMENT : Si vous oubliez le mot de passe des notes, vous ne pourrez plus le récupérer ni accéder à leur contenu.</string>
     <string name="new_text_note">Nouvelle note textuelle</string>
-    <string name="new_checklist">Nouvelle liste de contrôle</string>
+    <string name="new_checklist">Nouvelle liste de tâches</string>
     <string name="cannot_load_over_internet">L\'application ne peut pas charger de fichiers depuis internet</string>
     <string name="open_file">Ouvrir un fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>
     <string name="file_too_large">Fichier trop volumineux, la limite est de 1 Mo</string>
-    <string name="only_import_file_content">Importer seulement le contenu du fichier
-\n(changer le fichier n\'affectera pas la note)</string>
-    <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note
-\n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
+    <string name="only_import_file_content">Importer seulement le contenu du fichier\n(modifier le fichier n\'affectera pas la note)</string>
+    <string name="update_file_at_note">Mettre à jour le fichier lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
     <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
     <string name="note_saved_successfully">La note « %s » a été sauvegardée avec succès</string>
     <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
-    <string name="only_export_file_content">Exporter seulement le contenu du fichier
-\n(changer le fichier n\'affectera pas la note)</string>
+    <string name="only_export_file_content">Exporter seulement le contenu du fichier actuel\n(modifier le fichier n\'affectera pas la note)</string>
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
     <string name="links_and_emails_clickable">Rendre les liens et les courriels cliquables</string>
     <string name="place_cursor_end">Placez le curseur à la fin de la note</string>
@@ -56,20 +53,20 @@
     <string name="show_note_picker">Choisir une note au démarrage</string>
     <string name="autosave_notes">Sauvegarder automatiquement les notes</string>
     <string name="enable_line_wrap">Activer le retour à la ligne</string>
-    <string name="use_incognito_mode">Utiliser le mode incognito du claviers</string>
-    <string name="move_done_checklist_items">Déplacer les éléments cochés vers le bas</string>
-    <string name="add_new_checklist_items_top">Ajouter un élément de liste de contrôle en-haut</string>
-    <string name="checklist">Liste de contrôle</string>
-    <string name="checklists">Listes de contrôle</string>
-    <string name="add_new_checklist_item">Ajouter un nouvel élément</string>
-    <string name="add_new_checklist_items">Ajouter de nouveaux éléments</string>
-    <string name="checklist_is_empty">La liste de contrôle est vide</string>
-    <string name="delete_checked_items">Supprimer les éléments cochés</string>
+    <string name="use_incognito_mode">Utiliser le mode incognito du clavier</string>
+    <string name="move_done_checklist_items">Déplacer les tâches cochées vers le bas</string>
+    <string name="add_new_checklist_items_top">Ajouter les nouvelles tâches en haut</string>
+    <string name="checklist">Liste de tâches</string>
+    <string name="checklists">Listes de tâches</string>
+    <string name="add_new_checklist_item">Ajouter une nouvelle tâche</string>
+    <string name="add_new_checklist_items">Ajouter de nouvelles tâches</string>
+    <string name="checklist_is_empty">La liste de tâches est vide</string>
+    <string name="delete_checked_items">Supprimer les tâches cochées</string>
     <string name="add_to_the_top">Ajouter en haut de la liste</string>
     <plurals name="num_checked_items">
-        <item quantity="one">%d élément coché</item>
-        <item quantity="many">%d éléments cochés</item>
-        <item quantity="other">%d éléments cochés</item>
+        <item quantity="one">%d tâche cochée</item>
+        <item quantity="many">%d tâches cochées</item>
+        <item quantity="other">%d tâches cochées</item>
     </plurals>
     <string name="import_folder">Importer depuis un dossier</string>
     <string name="export_notes">Exporter les notes</string>
@@ -81,6 +78,6 @@
     <string name="password_protect_note_deletion">La suppression des notes est protégée par un mot de passe</string>
     <string name="allow_alarm_automatic_backups">Pour sauvegarder automatiquement les notes, veuillez autoriser l\'application à programmer des alarmes précises.</string>
     <string name="this_note_is_linked">Cette note est liée à un fichier local.</string>
-    <string name="use_for_this_checklist">Utiliser seulement pour cette liste de contrôles</string>
-    <string name="uncheck_all_items">Décocher tous les éléments</string>
+    <string name="use_for_this_checklist">Utiliser seulement pour cette liste de tâches</string>
+    <string name="uncheck_all_items">Décocher toutes les tâches</string>
 </resources>
