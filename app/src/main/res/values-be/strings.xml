@@ -70,4 +70,17 @@
     <string name="faq_1_title">Як змяніць колер віджэта\?</string>
     <string name="faq_1_text">Калі ў вас ёсць толькі 1 Актыўны віджэт, вы можаце альбо ўзнавіць яго зноўку, альбо выкарыстоўваць кнопку ў наладах прыкладання для яго Налады. Калі ў вас некалькі актыўных віджэтаў, кнопка ў наладах прыкладання будзе недаступная. Паколькі прыкладанне падтрымлівае наладу колеру для кожнага фішкі, вам прыйдзецца ўзнавіць віджэт, які вы хочаце наладзіць.</string>
     <string name="widget_config">Дзякуй за выкарыстанне Нататак Fossify. \nБольш праграм ад Fossify даступна на fossify.org.</string>
+    <string name="cannot_load_over_internet">Праграма не можа загрузіць файлы праз сетку</string>
+    <string name="allow_alarm_automatic_backups">Каб рэзерваваць нататкі аўтаматычна, калі ласка, дазвольце праграме задаваць пэўныя будзільнікі.</string>
+    <string name="this_note_is_linked">Гэта нататка звязана з лакальным файлам.</string>
+    <string name="password_protect_note_deletion">Выдаленне нататак абароненых паролем</string>
+    <string name="uncheck_all_items">Зняць выбар з усіх</string>
+    <string name="add_to_the_top">Дадаць у пачатак</string>
+    <string name="use_for_this_checklist">Дадаць толькі для гэтага спіса</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d адзначаны прадмет</item>
+        <item quantity="few">%d адзначаных прадметаў</item>
+        <item quantity="many">%d адзначаных прадметаў</item>
+        <item quantity="other">%d адзначаных прадметаў</item>
+    </plurals>
 </resources>
