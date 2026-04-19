@@ -38,7 +38,7 @@
     <string name="only_export_file_content">Eksportér kun filens indhold \n(ændring af noten påvirker ikke filen)</string>
     <string name="display_success_message">Vis en meddelelse, når en fil er gemt</string>
     <string name="links_and_emails_clickable">Gør links og mailadresser klikbare</string>
-    <string name="place_cursor_end">Placer markøren i slutningen af noten</string>
+    <string name="place_cursor_end">Placér markøren i slutningen af noten</string>
     <string name="monospaced_font">Brug skrifttype med fast bredde</string>
     <string name="show_keyboard">Vis tastatur ved opstart</string>
     <string name="show_word_count">Vis antal ord</string>
