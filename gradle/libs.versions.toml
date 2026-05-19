@@ -3,7 +3,7 @@
 kotlin = "2.3.21"
 #KSP
 kotlinxSerializationJson = "1.11.0"
-ksp = "2.3.7"
+ksp = "2.3.8"
 #Detekt
 detekt = "1.23.8"
 detektCompose = "0.4.28"
