@@ -24,6 +24,7 @@ import android.view.ActionMode
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
+import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -1285,6 +1286,13 @@ class MainActivity : SimpleActivity() {
 
                 override fun onPageFinished(view: WebView, url: String) {
                     createWebPrintJob(view)
+                }
+
+                override fun onReceivedError(view: WebView, request: WebResourceRequest, error: WebResourceError) {
+                    super.onReceivedError(view, request, error)
+                    if (request.isForMainFrame) {
+                        toast(org.fossify.commons.R.string.unknown_error_occurred)
+                    }
                 }
             }
 
