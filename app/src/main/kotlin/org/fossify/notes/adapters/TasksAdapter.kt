@@ -146,10 +146,12 @@ class TasksAdapter(
 
     private fun moveSelectedItemsToTop() {
         listener?.moveTasksToTop(taskIds = getSelectedItems().map { it.id })
+        finishActMode()
     }
 
     private fun moveSelectedItemsToBottom() {
         listener?.moveTasksToBottom(taskIds = getSelectedItems().map { it.id })
+        finishActMode()
     }
 
     private fun getSelectedItems() = currentList.filterIsInstance<Task>().filter { selectedKeys.contains(it.id) }.toMutableList()
