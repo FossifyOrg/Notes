@@ -53,7 +53,7 @@
     <string name="autosave_notes">Samodejno shrani zapiske</string>
     <string name="enable_line_wrap">Omogoči prelamljanje vrstic</string>
     <string name="use_incognito_mode">Uporabi način inkognito na tipkovnicah</string>
-    <string name="move_done_checklist_items">Opravljene elemente premakni na dno seznama</string>
+    <string name="move_done_checklist_items">Premakni označene elemente na dno</string>
     <string name="add_new_checklist_items_top">Dodaj nov element na vrh seznama</string>
     <string name="checklist">Seznam</string>
     <string name="checklists">Seznami</string>
@@ -73,4 +73,15 @@
     <string name="unlock_notes">Odkleni zapiske</string>
     <string name="found_locked_notes_info">Naslednje opombe so zaklenjene. Lahko jih posamezno odklenete ali pa preskočite njihovo izvažanje.</string>
     <string name="cannot_load_over_internet">Aplikacija ne more naložiti datotek prek interneta</string>
+    <string name="allow_alarm_automatic_backups">Za samodejno varnostno kopiranje zapiskov dovolite aplikaciji, da načrtuje natančne alarme.</string>
+    <string name="this_note_is_linked">Ta zapis je povezan z lokalno datoteko.</string>
+    <string name="password_protect_note_deletion">Zaščita z geslom za brisanje zapiskov</string>
+    <string name="uncheck_all_items">Počistite vse elemente</string>
+    <string name="use_for_this_checklist">Uporabite samo za ta kontrolni seznam</string>
+    <plurals name="num_checked_items">
+        <item quantity="one">%d označen element</item>
+        <item quantity="two">%d označena elementa</item>
+        <item quantity="few">%d označeni elementi</item>
+        <item quantity="other">%d označenih elementov</item>
+    </plurals>
 </resources>
