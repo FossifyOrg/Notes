@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Option to make a note read-only ([#69])
 
 ## [1.7.0] - 2026-01-30
 ### Added
@@ -104,6 +106,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release
 
 [#59]: https://github.com/FossifyOrg/Notes/issues/59
+[#69]: https://github.com/FossifyOrg/Notes/issues/69
 [#81]: https://github.com/FossifyOrg/Notes/issues/81
 [#83]: https://github.com/FossifyOrg/Notes/issues/83
 [#96]: https://github.com/FossifyOrg/Notes/issues/96

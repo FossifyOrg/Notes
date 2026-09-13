@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.text.Selection
 import android.text.TextWatcher
 import android.text.style.UnderlineSpan
@@ -28,6 +29,7 @@ import org.fossify.notes.activities.MainActivity
 import org.fossify.notes.databinding.FragmentTextBinding
 import org.fossify.notes.databinding.NoteViewHorizScrollableBinding
 import org.fossify.notes.databinding.NoteViewStaticBinding
+import org.fossify.notes.extensions.applyReadOnlyFilters
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.enforcePlainText
 import org.fossify.notes.extensions.getPercentageFontSize
@@ -120,7 +122,7 @@ class TextFragment : NoteFragment() {
         if (menuVisible && noteId != 0L) {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
-                (activity as MainActivity).currentNoteTextChanged(currentText, isUndoAvailable(), isRedoAvailable())
+                (activity as MainActivity).currentNoteTextChanged(currentText, canUndo(), canRedo())
             }
         }
     }
@@ -169,7 +171,7 @@ class TextFragment : NoteFragment() {
                 setSelection(if (config.placeCursorToEnd) text!!.length else 0)
             }
 
-            if (config.showKeyboard && isMenuVisible && (!note!!.isLocked() || shouldShowLockedContent)) {
+            if (config.showKeyboard && isMenuVisible && !note!!.isReadOnly && (!note!!.isLocked() || shouldShowLockedContent)) {
                 onGlobalLayout {
                     if (activity?.isDestroyed == false) {
                         requestFocus()
@@ -179,6 +181,7 @@ class TextFragment : NoteFragment() {
                 }
             }
             maybeRequestIncognito()
+            updateReadOnlyState(note!!.isReadOnly)
         }
 
         noteEditText.setOnTouchListener { v, event ->
@@ -200,6 +203,38 @@ class TextFragment : NoteFragment() {
         }
 
         checkLockState()
+        setTextWatcher()
+    }
+
+    override fun updateReadOnlyState(isReadOnly: Boolean) {
+        note?.isReadOnly = isReadOnly
+        if (!::noteEditText.isInitialized) {
+            return
+        }
+
+        removeTextWatcher()
+        val selection = noteEditText.selectionEnd
+        noteEditText.apply {
+            val baseInputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
+            inputType = if (isReadOnly) {
+                baseInputType or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
+            } else {
+                baseInputType
+            }
+            showSoftInputOnFocus = !isReadOnly
+            isCursorVisible = true
+            isLongClickable = true
+            setTextIsSelectable(true)
+            applyReadOnlyFilters(isReadOnly)
+            maybeRequestIncognito()
+            if (isReadOnly) {
+                activity?.hideKeyboard(this)
+            }
+            val length = text?.length ?: 0
+            if (length > 0) {
+                setSelection(selection.coerceIn(0, length))
+            }
+        }
         setTextWatcher()
     }
 
@@ -255,6 +290,11 @@ class TextFragment : NoteFragment() {
             return
         }
 
+        if (note!!.isReadOnly) {
+            note?.let { callback?.invoke(it) }
+            return
+        }
+
         val newText = getCurrentNoteViewText()
         val oldText = note!!.getNoteStoredValue(requireContext())
         if (newText != null && (newText != oldText || force)) {
@@ -278,6 +318,9 @@ class TextFragment : NoteFragment() {
     }
 
     fun undo() {
+        if (note?.isReadOnly == true) {
+            return
+        }
         val edit = textHistory.getPrevious() ?: return
 
         val text = noteEditText.editableText
@@ -308,6 +351,9 @@ class TextFragment : NoteFragment() {
     }
 
     fun redo() {
+        if (note?.isReadOnly == true) {
+            return
+        }
         val edit = textHistory.getNext() ?: return
 
         val text = noteEditText.editableText
@@ -335,6 +381,10 @@ class TextFragment : NoteFragment() {
 
     fun isRedoAvailable() = textHistory.position < textHistory.history.size
 
+    private fun canUndo() = note?.isReadOnly != true && isUndoAvailable()
+
+    private fun canRedo() = note?.isReadOnly != true && isRedoAvailable()
+
     private var textWatcher: TextWatcher = object : TextWatcher {
         private var beforeChange: CharSequence? = null
         private var afterChange: CharSequence? = null
@@ -355,7 +405,7 @@ class TextFragment : NoteFragment() {
         override fun afterTextChanged(editable: Editable) {
             val text = editable.toString()
             setWordCounter(text)
-            (activity as MainActivity).currentNoteTextChanged(text, isUndoAvailable(), isRedoAvailable())
+            (activity as MainActivity).currentNoteTextChanged(text, canUndo(), canRedo())
         }
     }
 

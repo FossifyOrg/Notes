@@ -30,6 +30,9 @@
     <string name="new_checklist">New checklist</string>
     <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <string name="allow_alarm_automatic_backups">To backup notes automatically, please grant the app permission to schedule exact alarms.</string>
+    <string name="make_read_only">Make read-only</string>
+    <string name="allow_editing">Allow editing</string>
+    <string name="note_is_read_only">This note is read-only</string>
 
     <!-- File notes -->
     <string name="open_file">Open file</string>

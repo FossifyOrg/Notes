@@ -45,6 +45,7 @@ class TasksAdapter(
 
     private var touchHelper: ItemTouchHelper? = null
     private var startReorderDragListener: StartReorderDragListener
+    private var readOnly = false
 
     init {
         setupDragListener(true)
@@ -63,7 +64,7 @@ class TasksAdapter(
     override fun getActionMenuId() = R.menu.cab_checklist
 
     override fun actionItemPressed(id: Int) {
-        if (selectedKeys.isEmpty()) {
+        if (readOnly || selectedKeys.isEmpty()) {
             return
         }
 
@@ -123,7 +124,7 @@ class TasksAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bindView(item, allowSingleClick = true, allowLongClick = true) { itemView, _ ->
+        holder.bindView(item, allowSingleClick = true, allowLongClick = !readOnly) { itemView, _ ->
             when (item) {
                 is Task -> setupView(itemView, item, holder)
                 is CompletedTasks -> setupCompletedTasks(itemView, item)
@@ -174,9 +175,11 @@ class TasksAdapter(
             }
 
             checklistCheckbox.isChecked = task.isDone
+            checklistCheckbox.isClickable = !readOnly
+            checklistCheckbox.isFocusable = !readOnly
             checklistHolder.isSelected = isSelected
 
-            val canMoveTask = !task.isDone || !activity.config.moveDoneChecklistItems
+            val canMoveTask = !readOnly && (!task.isDone || !activity.config.moveDoneChecklistItems)
             checklistDragHandle.beVisibleIf(beVisible = canMoveTask && selectedKeys.isNotEmpty())
             checklistDragHandle.applyColorFilter(textColor)
             checklistDragHandle.setOnTouchListener { _, event ->
@@ -207,7 +210,18 @@ class TasksAdapter(
         }
     }
 
+    fun setReadOnly(enabled: Boolean) {
+        readOnly = enabled
+        setupDragListener(!enabled)
+        if (enabled) {
+            finishActMode()
+        }
+    }
+
     override fun onRowMoved(fromPosition: Int, toPosition: Int) {
+        if (readOnly) {
+            return
+        }
         listener?.moveTask(fromPosition, toPosition)
     }
 

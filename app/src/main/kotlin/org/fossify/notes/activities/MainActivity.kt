@@ -254,33 +254,37 @@ class MainActivity : SimpleActivity() {
 
         binding.mainToolbar.menu.apply {
             findItem(R.id.undo).apply {
-                isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT
+                isVisible = showUndoButton && ::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
             findItem(R.id.redo).apply {
-                isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT
+                isVisible = showRedoButton && ::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
-            findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
-            findItem(R.id.uncheck_all_items).isVisible = isCurrentItemChecklist
-            findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
+            findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist && ::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly
+            findItem(R.id.uncheck_all_items).isVisible = isCurrentItemChecklist && ::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly
+            findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist && ::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly
             findItem(R.id.import_folder).isVisible = !isQPlus()
             findItem(R.id.lock_note).isVisible =
                 mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && !mCurrentNote.isLocked())
             findItem(R.id.unlock_note).isVisible =
                 mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
+            findItem(R.id.make_read_only).isVisible =
+                mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && !mCurrentNote.isReadOnly)
+            findItem(R.id.allow_editing).isVisible =
+                mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly)
             findItem(R.id.more_apps_from_us).isVisible =
                 !resources.getBoolean(org.fossify.commons.R.bool.hide_google_relations)
             findItem(R.id.delete_note).isVisible = !isDefaultEmptyNote || mNotes.size > 1
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
-                !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
+                !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT && !mCurrentNote.isReadOnly)
         }
 
         binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
@@ -307,6 +311,7 @@ class MainActivity : SimpleActivity() {
                 R.id.cab_create_shortcut -> createShortcut()
                 R.id.lock_note -> lockNote()
                 R.id.unlock_note -> unlockNote()
+                R.id.make_read_only, R.id.allow_editing -> fragment?.handleUnlocking { toggleReadOnly() }
                 R.id.open_file -> tryOpenFile()
                 R.id.import_folder -> openFolder()
                 R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
@@ -582,13 +587,15 @@ class MainActivity : SimpleActivity() {
                 onPageChangeListener {
                     mCurrentNote = mNotes[it]
                     config.currentNoteId = mCurrentNote.id!!
+                    applyReadOnlyStateToCurrentNote()
                     refreshMenuItems()
                 }
             }
 
-            if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
+            if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST || mCurrentNote.isReadOnly) {
                 hideKeyboard()
             }
+            applyReadOnlyStateToCurrentNote()
             refreshMenuItems()
         }
     }
@@ -744,6 +751,7 @@ class MainActivity : SimpleActivity() {
             val index = getNoteIndexWithId(id)
             binding.viewPager.currentItem = index
             mCurrentNote = mNotes[index]
+            applyReadOnlyStateToCurrentNote()
         }
     }
 
@@ -1334,6 +1342,10 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun addTextToCurrentNote(text: String) {
+        if (::mCurrentNote.isInitialized && mCurrentNote.isReadOnly) {
+            toast(R.string.note_is_read_only)
+            return
+        }
         getPagerAdapter().appendText(binding.viewPager.currentItem, text)
     }
 
@@ -1598,5 +1610,30 @@ class MainActivity : SimpleActivity() {
             getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
         }
+    }
+
+    private fun toggleReadOnly() {
+        if (!::mCurrentNote.isInitialized) {
+            return
+        }
+
+        mCurrentNote.isReadOnly = !mCurrentNote.isReadOnly
+        if (mCurrentNote.isReadOnly) {
+            showUndoButton = false
+            showRedoButton = false
+            showSaveButton = false
+        }
+        NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+            mNotes.firstOrNull { it.id == mCurrentNote.id }?.isReadOnly = mCurrentNote.isReadOnly
+            applyReadOnlyStateToCurrentNote()
+            refreshMenuItems()
+        }
+    }
+
+    private fun applyReadOnlyStateToCurrentNote() {
+        if (!::mCurrentNote.isInitialized) {
+            return
+        }
+        getCurrentFragment()?.updateReadOnlyState(mCurrentNote.isReadOnly)
     }
 }

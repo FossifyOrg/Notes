@@ -111,6 +111,9 @@ class TasksFragment : NoteFragment(), TasksActionListener {
             )
 
             setOnClickListener {
+                if (note?.isReadOnly == true) {
+                    return@setOnClickListener
+                }
                 showNewItemDialog()
                 (binding.checklistList.adapter as? TasksAdapter)?.finishActMode()
             }
@@ -121,6 +124,9 @@ class TasksFragment : NoteFragment(), TasksActionListener {
             setTextColor(adjustedPrimaryColor)
             underlineText()
             setOnClickListener {
+                if (note?.isReadOnly == true) {
+                    return@setOnClickListener
+                }
                 showNewItemDialog()
             }
         }
@@ -132,9 +138,18 @@ class TasksFragment : NoteFragment(), TasksActionListener {
         }
 
         binding.apply {
+            val canEdit = (!note!!.isLocked() || shouldShowLockedContent) && !note!!.isReadOnly
             checklistContentHolder.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
-            checklistFab.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
+            checklistFab.beVisibleIf(canEdit)
             setupLockedViews(this.toCommonBinding(), note!!)
+        }
+    }
+
+    override fun updateReadOnlyState(isReadOnly: Boolean) {
+        note?.isReadOnly = isReadOnly
+        if (::binding.isInitialized) {
+            checkLockState()
+            setupAdapter()
         }
     }
 
@@ -206,12 +221,18 @@ class TasksFragment : NoteFragment(), TasksActionListener {
             tasks.sort()
         }
 
-        getTasksAdapter().submitList(prepareTaskItems())
+        getTasksAdapter().apply {
+            setReadOnly(note?.isReadOnly == true)
+            submitList(prepareTaskItems())
+        }
     }
 
     private fun itemClicked(item: Any) {
         when (item) {
             is Task -> {
+                if (note?.isReadOnly == true) {
+                    return
+                }
                 val index = tasks.indexOf(item)
                 if (index != -1) {
                     tasks[index] = item.copy(isDone = !item.isDone)
@@ -228,6 +249,10 @@ class TasksFragment : NoteFragment(), TasksActionListener {
 
     private fun saveNote(callback: () -> Unit = {}) {
         if (note == null) {
+            return
+        }
+
+        if (note!!.isReadOnly) {
             return
         }
 
@@ -251,12 +276,18 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     }
 
     fun removeCheckedItems() {
+        if (note?.isReadOnly == true) {
+            return
+        }
         tasks = tasks.filter { !it.isDone }.toMutableList()
         saveNote()
         setupAdapter()
     }
 
     fun uncheckAllItems() {
+        if (note?.isReadOnly == true) {
+            return
+        }
         tasks = tasks.map { it.copy(isDone = false) }.toMutableList()
         saveAndReload()
     }
@@ -264,7 +295,7 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     private fun updateUIVisibility() {
         binding.apply {
             fragmentPlaceholder.beVisibleIf(tasks.isEmpty())
-            fragmentPlaceholder2.beVisibleIf(tasks.isEmpty())
+            fragmentPlaceholder2.beVisibleIf(tasks.isEmpty() && note?.isReadOnly != true)
             checklistList.beVisibleIf(tasks.isNotEmpty())
         }
     }
@@ -272,6 +303,9 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     fun getTasks() = Gson().toJson(tasks)
 
     override fun editTask(task: Task, callback: () -> Unit) {
+        if (note?.isReadOnly == true) {
+            return
+        }
         EditTaskDialog(activity as SimpleActivity, task.title) { title ->
             val editedTask = task.copy(title = title)
             val index = tasks.indexOf(task)
@@ -282,11 +316,17 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     }
 
     override fun deleteTasks(tasksToDelete: List<Task>) {
+        if (note?.isReadOnly == true) {
+            return
+        }
         tasks.removeAll(tasksToDelete)
         saveAndReload()
     }
 
     override fun moveTask(fromPosition: Int, toPosition: Int) {
+        if (note?.isReadOnly == true) {
+            return
+        }
         switchToCustomSorting()
 
         val sortableIndices = mutableListOf<Int>()
@@ -326,6 +366,9 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     }
 
     private fun moveTasks(taskIds: List<Int>, targetPosition: Int) {
+        if (note?.isReadOnly == true) {
+            return
+        }
         switchToCustomSorting()
         taskIds.forEach { id ->
             val position = tasks.indexOfFirst { it.id == id }

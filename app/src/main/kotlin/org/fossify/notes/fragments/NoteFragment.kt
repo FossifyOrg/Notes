@@ -77,6 +77,8 @@ abstract class NoteFragment : Fragment() {
 
     abstract fun checkLockState()
 
+    open fun updateReadOnlyState(isReadOnly: Boolean) {}
+
     interface CommonNoteBinding {
         val root: View
         val noteLockedLayout: View
