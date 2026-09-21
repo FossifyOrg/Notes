@@ -21,6 +21,7 @@
 
         <ImageView
             android:id="@+id/add_item"
+        android:contentDescription="@string/add"
             style="@style/ColoredButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
