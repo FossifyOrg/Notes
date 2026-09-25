@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated translations
 
 ### Fixed
+- Fixed the checklist dialog disappearing on screen rotation
 - Fixed inconsistent checklist sorting when the "Move checked items to the bottom" option is enabled ([#59])
 
 ## [1.6.0] - 2025-10-29
