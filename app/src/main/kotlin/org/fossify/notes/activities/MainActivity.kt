@@ -280,7 +280,7 @@ class MainActivity : SimpleActivity() {
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
-                !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
+                !config.autosaveNotes && showSaveButton && mAdapter?.anyHasUnsavedChanges() == true && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
         }
 
         binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
