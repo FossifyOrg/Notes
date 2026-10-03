@@ -1342,6 +1342,8 @@ class MainActivity : SimpleActivity() {
         if (mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
             mCurrentNote.value = getPagerAdapter()
                 .getNoteChecklistItems(binding.viewPager.currentItem) ?: ""
+        } else {
+            mCurrentNote.value = getCurrentNoteText() ?: mCurrentNote.value
         }
     }
 
