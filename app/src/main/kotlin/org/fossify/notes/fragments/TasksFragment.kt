@@ -14,8 +14,9 @@ import org.fossify.commons.helpers.ensureBackgroundThread
 import org.fossify.notes.activities.SimpleActivity
 import org.fossify.notes.adapters.TasksAdapter
 import org.fossify.notes.databinding.FragmentChecklistBinding
-import org.fossify.notes.dialogs.EditTaskDialog
-import org.fossify.notes.dialogs.NewChecklistItemDialog
+import org.fossify.notes.dialogs.ChecklistItemDialogFragment
+import org.fossify.notes.dialogs.EditTaskDialogFragment
+import org.fossify.notes.dialogs.NewChecklistItemDialogFragment
 import org.fossify.notes.extensions.config
 import org.fossify.notes.extensions.updateWidgets
 import org.fossify.notes.helpers.NOTE_ID
@@ -36,11 +37,42 @@ class TasksFragment : NoteFragment(), TasksActionListener {
 
     var tasks = mutableListOf<Task>()
 
+    // Variable to track the callback function
+    private var editTaskCallback: (() -> Unit)? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentChecklistBinding.inflate(inflater, container, false)
         noteId = requireArguments().getLong(NOTE_ID, 0L)
         setupFragmentColors()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Listen for results from the NewChecklistItemDialogFragment
+        childFragmentManager.setFragmentResultListener(NewChecklistItemDialogFragment.REQUEST_KEY,
+            viewLifecycleOwner)
+        { _, bundle ->
+            val text = bundle.getString(NewChecklistItemDialogFragment.RESULT_TEXT) ?: return@setFragmentResultListener
+            addNewChecklistItems(text)
+        }
+
+        // Listen for EditTaskDialogFragment
+        childFragmentManager.setFragmentResultListener(EditTaskDialogFragment.REQUEST_KEY,
+            viewLifecycleOwner)
+        { _, bundle ->
+            val taskId = bundle.getInt(EditTaskDialogFragment.RESULT_TASK_ID)
+            val newTitle = bundle.getString(EditTaskDialogFragment.RESULT_TITLE)
+
+            if (newTitle != null) {
+                updateExistingTask(taskId, newTitle)
+
+                // Invoke the callback
+                editTaskCallback?.invoke()
+                editTaskCallback = null
+            }
+        }
     }
 
     override fun onResume() {
@@ -137,30 +169,28 @@ class TasksFragment : NoteFragment(), TasksActionListener {
             setupLockedViews(this.toCommonBinding(), note!!)
         }
     }
-
     private fun showNewItemDialog() {
-        NewChecklistItemDialog(activity as SimpleActivity, noteId) { titles ->
-            var currentMaxId = tasks.maxByOrNull { item -> item.id }?.id ?: 0
-            val newItems = ArrayList<Task>()
-
-            titles.forEach { title ->
-                title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
-                    newItems.add(Task(currentMaxId + 1, System.currentTimeMillis(), row, false))
-                    currentMaxId++
-                }
-            }
-
-            if (config?.addNewChecklistItemsTop == true) {
-                tasks.addAll(0, newItems)
-            } else {
-                tasks.addAll(newItems)
-            }
-
-            saveNote()
-            setupAdapter()
-        }
+        NewChecklistItemDialogFragment.show(childFragmentManager, noteId)
     }
 
+    private fun addNewChecklistItems(text: String) {
+        var currentMaxId = tasks.maxByOrNull { item -> item.id }?.id ?: 0
+        val newItems = ArrayList<Task>()
+
+        text.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
+            newItems.add(Task(currentMaxId + 1, System.currentTimeMillis(), row, false))
+            currentMaxId++
+        }
+
+        if (config?.addNewChecklistItemsTop == true) {
+            tasks.addAll(0, newItems)
+        } else {
+            tasks.addAll(newItems)
+        }
+
+        saveNote()
+        setupAdapter()
+    }
     private fun prepareTaskItems(): List<NoteItem> {
         return if (config?.moveDoneChecklistItems == true) {
             mutableListOf<NoteItem>().apply {
@@ -272,12 +302,18 @@ class TasksFragment : NoteFragment(), TasksActionListener {
     fun getTasks() = Gson().toJson(tasks)
 
     override fun editTask(task: Task, callback: () -> Unit) {
-        EditTaskDialog(activity as SimpleActivity, task.title) { title ->
-            val editedTask = task.copy(title = title)
-            val index = tasks.indexOf(task)
-            tasks[index] = editedTask
+        // Save the callback to be used when the result arrives
+        this.editTaskCallback = callback
+        EditTaskDialogFragment.show(childFragmentManager, task)
+    }
+
+    private fun updateExistingTask(taskId: Int, newTitle: String) {
+        val taskIndex = tasks.indexOfFirst { it.id == taskId }
+        if (taskIndex != -1) {
+            val task = tasks[taskIndex]
+            val editedTask = task.copy(title = newTitle)
+            tasks[taskIndex] = editedTask
             saveAndReload()
-            callback()
         }
     }
 
