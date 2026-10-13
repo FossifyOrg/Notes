@@ -6,8 +6,8 @@
     <string name="no_title">Introduza o nome da nota</string>
     <string name="title_taken">Já existe uma nota com este nome</string>
     <string name="open_note">Abrir nota</string>
-    <string name="delete_note">Apagar nota</string>
-    <string name="delete_note_prompt_message">Pretende mesmo apagar a nota \"%s\"\?</string>
+    <string name="delete_note">Eliminar nota</string>
+    <string name="delete_note_prompt_message">Tem a certeza de que deseja eliminar a nota \"%s\"?</string>
     <string name="pick_a_note">Selecione uma nota</string>
     <string name="rename_note">Renomear nota</string>
     <string name="general_note">Nota genérica</string>
@@ -33,9 +33,8 @@
     <string name="file_too_large">Ficheiro demasiado grande, o limite é 1 MB</string>
     <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro
 \n(se alterar o ficheiro, a nota fica intacta)</string>
-    <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota
-\n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>
-    <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
+    <string name="update_file_at_note">Atualizar ficheiro ao atualizar a nota \n(A nota será removida se eliminar o ficheiro ou se mudar a sua localização)</string>
+    <string name="delete_file_itself">Eliminar também o ficheiro \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
     <string name="only_export_file_content">Exportar apenas o conteúdo do ficheiro atual
@@ -63,7 +62,7 @@
     <string name="add_new_checklist_item">Adicionar item à lista de verificação</string>
     <string name="add_new_checklist_items">Adicionar itens à lista de verificação</string>
     <string name="checklist_is_empty">A lista está vazia</string>
-    <string name="delete_checked_items">Remover itens concluídos</string>
+    <string name="delete_checked_items">Eliminar itens marcados</string>
     <string name="import_folder">Importar pasta</string>
     <string name="export_notes">Exportar notas</string>
     <string name="import_notes">Importar notas</string>
