@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="pick_a_note">Dibab un notenn</string>
+    <string name="center">Kreizet</string>
+    <string name="new_note">Ouzhpennañ un notenn nevez</string>
+    <string name="monospaced_font">Implijout ur font unesaouennet</string>
+    <string name="checklist_is_empty">Goullo eo ar roll-gwiriañ</string>
+    <string name="show_note_title">Diskouez titl an notenn</string>
+</resources>
