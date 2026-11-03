@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Fixed the Save icon reappearing on an already-saved note after swiping between notes with autosave turned off ([#210])
 
 ## [1.7.0] - 2026-01-30
 ### Added
@@ -115,6 +117,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [#178]: https://github.com/FossifyOrg/Notes/issues/178
 [#190]: https://github.com/FossifyOrg/Notes/issues/190
 [#201]: https://github.com/FossifyOrg/Notes/issues/201
+[#210]: https://github.com/FossifyOrg/Notes/issues/210
 [#291]: https://github.com/FossifyOrg/Notes/issues/291
 
 [Unreleased]: https://github.com/FossifyOrg/Notes/compare/1.7.0...HEAD
