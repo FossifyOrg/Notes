@@ -16,21 +16,21 @@
     <string name="unsaved_changes_warning">Det finns några ändringar som inte har sparats. Vad vill du göra med dem\?</string>
     <string name="note_shown_widget">Anteckning som visas i widgeten:</string>
     <string name="show_note_title">Visa anteckningstitel</string>
-    <string name="new_note_type">Format:</string>
-    <string name="text_note">Anteckning</string>
+    <string name="new_note_type">Typ av anteckning:</string>
+    <string name="text_note">Textanteckning</string>
     <string name="lock_note">Lås</string>
     <string name="unlock_note">Lås upp</string>
     <string name="unlock_notes">Lås upp anteckningar</string>
     <string name="found_locked_notes_info">Följande anteckningar är låsta. Du kan antingen låsa upp dem en i taget eller hoppa över att exportera dem.</string>
     <string name="note_content_locked">Anteckningens innehåll är låst.</string>
     <string name="show_content">Visa innehåll</string>
-    <string name="locking_warning">VARNING: Om du glömmer anteckningens lösenord så finns ingen möjlighet att återställa detta och du kommer således förlora åtkomsten till anteckningens innehåll.</string>
+    <string name="locking_warning">VARNING: Om du glömmer lösenordet till anteckningen går det inte att återställa. Då förlorar du åtkomsten till anteckningens innehåll.</string>
     <string name="new_text_note">Ny textanteckning</string>
     <string name="new_checklist">Ny checklista</string>
     <string name="cannot_load_over_internet">Appen kan inte läsa in filer på internet</string>
     <string name="open_file">Öppna fil</string>
     <string name="export_as_file">Exportera</string>
-    <string name="file_too_large">Filen är för stor, gränsen är 1MB</string>
+    <string name="file_too_large">Filen är för stor. Gränsen är 1 MB</string>
     <string name="only_import_file_content">Importera bara innehållet i filen
 \n(anteckningen påverkas inte om filen ändras)</string>
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras
@@ -79,7 +79,7 @@
     </plurals>
     <string name="this_note_is_linked">Den här anteckningen är länkad till en lokal fil.</string>
     <string name="password_protect_note_deletion">Lösenordsskydda borttagning av anteckningar</string>
-    <string name="allow_alarm_automatic_backups">Ge appen behörighet att schemalägga exakta alarm om du vill säkerhetskopiera anteckningar automatiskt.</string>
+    <string name="allow_alarm_automatic_backups">Ge appen behörighet att schemalägga exakta larm om du vill säkerhetskopiera anteckningar automatiskt.</string>
     <string name="use_for_this_checklist">Använd endast för den här checklistan</string>
     <string name="uncheck_all_items">Avmarkera alla objekt</string>
 </resources>
